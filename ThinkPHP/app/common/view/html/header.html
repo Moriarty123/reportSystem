@@ -7,11 +7,17 @@
         </div>
     </div>
     <div class="headR">
-        <span style="margin-bottom: 8px;display: inline-block;"></span>
+
         <br />
         <div class="head_op">
+            {eq name="Think.session.user_id" value=""}
             <a href="/index/index/login" >【登录】</a>
-            <a href="">【转到后台】</a>
+            {else}
+            <span>欢迎你，</span>
+            <a href="" >【{$Think.session.account}】</a>
+            <a href="/index/login/logout" >【安全退出】</a>
+            {/eq}
+            <a href="/index/index/index">【转到后台】</a>
         </div>
     </div>
 </div>

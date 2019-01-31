@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="__IMG__/school.ico" />
-    <link rel="stylesheet" href="__CSS__/index/index.css" />
-    <link rel="stylesheet" href="__CSS__/common/common.css" />
-    <link rel="stylesheet" href="__CSS__/common/footer.css" />
-
+    
     <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
     <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
     <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
 </head>
 <body>
     <!-- 头部开始-->
@@ -31,11 +34,10 @@
 			<td colspan="2">
 				<span class="time" style="color: black;">
 
-					{eq name="Think.session.admin_id" value=""}
+					{eq name="Think.session.user_id" value=""}
 					<a href="/admin/login/index" class=""><i class="fa fa-plus-circle"></i> 登录</a>
 					{else}
-					<span>管理员账号：{$Think.session.admin_name}</span>&nbsp;&nbsp;
-					<a href="" class=""><i class="fa fa-plus-circle"></i> 添加新管理员</a>
+					<span>管理员账号：{$Think.session.account}</span>&nbsp;&nbsp;
 					<div class="top">
 						<span class="left">您上次的登录时间： {$Think.session.lastLoginTime} &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
 						<a href="/admin/admin/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
