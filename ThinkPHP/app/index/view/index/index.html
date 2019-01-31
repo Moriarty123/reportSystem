@@ -15,24 +15,9 @@
     <script type="text/javascript" src="__JS__/index/public.js"></script>
 </head>
 <body>
-    <!-- 头部 -->
-    <div class="head">
-        <div class="headL">
-            <img class="headLogo" src="__IMG__/school.png" style="width: 100px; float: left;"/>
-            <div class="titleDiv">
-                <p class="title">计算机学院实验报告在线撰写系统</p>
-            </div>
-        </div>
-        <div class="headR">
-            <span style="margin-bottom: 8px;display: inline-block;"></span>
-            <br />
-            <div class="head_op">
-                <a href="/index/index/login" >【登录】</a>
-                <a href="">【转到后台】</a>
-            </div>
-        </div>
-    </div>
-    <!-- 头部结束 -->
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
 
     <!-- 主体开始 -->
     <div class="container" style="margin-top: 50px; height: 500px; margin-left:80px;">
@@ -45,15 +30,9 @@
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
 
-    <!-- 底部开始 -->
-    <footer>
-        <div class="footer-body">
-            <div class="footer">
-                <font class="footerText"><string>© 2018 DGUT All Rights Reserved</string></font>
-            </div>
-        </div>
-    </footer>
-    <!-- 底部结束 -->
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
 
 </body>
 </html>
