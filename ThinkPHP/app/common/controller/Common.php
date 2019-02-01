@@ -12,7 +12,7 @@ class Common extends Controller
         $account = session('account');
 
         if(empty($account)) {
-        	$this->error('请先登录','/index/user/login');
+        	$this->error('请先登录','/index/index/login');
         }
     }
 
