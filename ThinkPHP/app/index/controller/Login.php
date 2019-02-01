@@ -56,8 +56,13 @@ class Login extends Controller
 
     	//4.登录系统
     	//4.1保存账号信息
+        //登录次数递增1
+        $userModel->where($where)->setInc('count');
+
     	session('account', $account);
         session('user_id', $login['user_id']);
+        session('lastTime',$login['lastTime']);
+        session('count', $login['count']+1);
 
     	//4.2判断登录角色，账号长度为7是教师，为12是学生
     	if (strlen($account) == 7) {
@@ -73,6 +78,8 @@ class Login extends Controller
     {
         session('account', null);
         session('user_id', null);
+        session('lastTime',null);
+        session('count', null);
 
         $this->success('退出登录成功！', '/index/index/index');
     }
