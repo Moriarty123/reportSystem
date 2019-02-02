@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="__CSS__/common/footer.css" />
     <link rel="stylesheet" href="__CSS__/common/menu.css">
     <link rel="stylesheet" href="__CSS__/common/detail.css">
-    <link rel="stylesheet" href="__CSS__/teacher/course.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/task.css" />
     <link rel="stylesheet" href="__CSS__/teacher/display.css" />
 </head>
 <body>
@@ -33,8 +33,8 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>课程列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+				<h2>实验任务列表</h2>
+				<form action="/teacher/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="课程名" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
@@ -48,50 +48,48 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th style="width:100px;">课程编号</th>
-					<th>课程名称</th>
-					<th style="width: 80px;">任课老师</th>
-					<th style="width: 220px;">任课班级</th>
+					<th>实验课程</th>
+					<th>实验任务</th>
+					<th>实验指导</th>
 					<th style="position: relative; top:0px; left:0px;">
-						任课时间
-						<span id="termFilter">
+						发布状态
+						<span id="publishedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
-						<div id="termFilterDiv" class="termFilterDiv" >
-							<form >
-								<div class="termFilterRadio" style="text-align: left;">	
-									<label><input name="term" type="radio"/>本学期</label>
+						<div id="publishedFilterDiv" class="publishedFilterDiv" >
+							<form>
+								<div class="publishedFilterRadio">	
+									<label><input name="published" type="radio"/>未发布</label>
 								</div>
-								<div class="termFilterRadio" style="text-align: left;">
-									<label><input name="term" type="radio"/>之前学期</label>
+								<div class="publishedFilterRadio">
+									<label><input name="published" type="radio"/>已发布</label>
 								</div>
 								<div>
-									<input type="submit" name="" class="submit">
-									<input type="reset" name="" class="reset">
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
 								</div>
 							</form>
 						</div>
 					</th>
-					<th style="width: 80px;">课程类型</th>
-					<th style="width: 80px;">实验课时</th>
-					<th style="width: 80px;">考查方式</th>
-					<th style="width: 80px;">操作</th>
+					<th>开始时间</th>
+					<th>截止时间</th>
+					<th>任务描述</th>
+					<th>操作</th>
 				</tr>
-				{volist name="courseList" id="vo"}
+				{volist name="taskList" id="vo"}
 				<tr>
-					<td>{$vo.courseNo}</td>
 					<td>{$vo.courseName}</td>
-					<td>{$vo.teacherName}</td>
-					<td>{$vo.courseGrade.'级'.$vo.courseMajor.$vo.courseClass}班</td>
-					<td>{$vo.openTime}</td>
-					<td>{$vo.courseNature}</td>
-					<td>{$vo.coursePeriod}</td>
-					<td>{$vo.examType}</td>
+					<td>{$vo.taskName}</td>
+					<td>查看实验指导</td>
+					<td>{$vo.status}</td>
+					<td>{$vo.startDate|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.closingDate|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.taskDescribe}</td>
 					<td>
 						<a href="">
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
-						<a href="/teacher/course/studentList?courseNo={$vo.courseNo}" style='margin-left: 5px;'>
+						<a href="/teacher/task/studentList?taskNo={$vo.taskNo}" style='margin-left: 5px;'>
 							<i class="fa fa-user-graduate" title="查看学生"></i>
 						</a>
 					</td>
@@ -99,10 +97,10 @@
 				{/volist}
 			</table>
 			<p class="msg">
-				共找到{$courseNumber}条课程信息，每页显示15条记录
+				共找到{$taskNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
-			{$courseList->render()}
+			{$taskList->render()}
 			</div>
 			</form>
 		</div>
@@ -123,8 +121,8 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-  		$("#termFilter").click(function(){
-  			$("#termFilterDiv").slideToggle();
+  		$("#publishedFilter").click(function(){
+  			$("#publishedFilterDiv").slideToggle();
 		});
 	});
 </script>

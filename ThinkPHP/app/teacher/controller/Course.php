@@ -32,11 +32,11 @@ class Course extends Common
 
     	$where = "teacherNo = '$account'";
 
-    	$courseList = $teacherModel	->courses()
+    	$courseList = $teacherModel	->course()
 			    				    ->where($where)
 			    				    ->paginate(15);
 
-		$courseNumber = $teacherModel    ->courses()
+		$courseNumber = $teacherModel    ->course()
 			    				         ->where($where)
 			    				         ->count();
 
@@ -48,7 +48,7 @@ class Course extends Common
     }
 
     //模糊查找课程
-    public function courseSearch()
+    public function courseearch()
     {
         //0.测试
         // dump($_POST); 
@@ -61,12 +61,12 @@ class Course extends Common
         //2.获取该账号教师的实验课程
         //2.1构造搜索条件
         if(!empty($search)) {
-            session('coursesearch', $search);
+            session('courseearch', $search);
             $where['courseName'] = array('like','%'.$search.'%');//封装模糊查询 赋值到数组  
         }
         else 
         {
-            $search = session('coursesearch');
+            $search = session('courseearch');
             $where['courseName'] = array('like','%'.$search.'%');    
         }
 
@@ -75,12 +75,12 @@ class Course extends Common
 
         $teacherNoWhere = "teacherNo = '$account'";
 
-        $courseList = $teacherModel ->courses()
+        $courseList = $teacherModel ->course()
                                     ->where($teacherNoWhere)
                                     ->where($where)
                                     ->paginate(15);
 
-        $courseNumber = $teacherModel   ->courses()
+        $courseNumber = $teacherModel   ->course()
                                         ->where($teacherNoWhere)
                                         ->where($where)
                                         ->count();
