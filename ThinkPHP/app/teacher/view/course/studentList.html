@@ -48,61 +48,31 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th style="width:100px;">课程编号</th>
-					<th>课程名称</th>
-					<th style="width: 80px;">任课老师</th>
-					<th style="width: 220px;">任课班级</th>
-					<th style="position: relative; top:0px; left:0px; text-align: left;">
-								任课时间
-								<span id="termFilter">
-									<i class="fa fa-filter" title="筛选"></i>
-								</span>
-								<div id="termFilterDiv" class="termFilterDiv" >
-									<form >
-										<div class="termFilterRadio">	
-											<label><input name="term" type="radio"/>本学期</label>
-										</div>
-										<div class="termFilterRadio">
-											<label><input name="term" type="radio"/>之前学期</label>
-										</div>
-										<div>
-											<input type="submit" name="" class="submit">
-											<input type="reset" name="" class="reset">
-										</div>
-									</form>
-								</div>
-							</th>
-					<th style="width: 80px;">课程类型</th>
-					<th style="width: 80px;">实验课时</th>
-					<th style="width: 80px;">考查方式</th>
-					<th style="width: 80px;">操作</th>
+					<th>课程编号</th>
+					<th>课程名</th>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年级</th>
+					<th>专业班级</th>
 				</tr>
-				{volist name="courseList" id="vo"}
+				{volist name="studentList" id="vo"}
 				<tr>
 					<td>{$vo.courseNo}</td>
 					<td>{$vo.courseName}</td>
-					<td>{$vo.teacherName}</td>
-					<td>{$vo.courseGrade.'级'.$vo.courseMajor.$vo.courseClass}班</td>
-					<td>{$vo.openTime}</td>
-					<td>{$vo.courseNature}</td>
-					<td>{$vo.coursePeriod}</td>
-					<td>{$vo.examType}</td>
-					<td>
-						<a href="">
-							<i class="fa fa-eye" title="查看实验指导"></i>
-						</a>
-						<a href="/teacher/course/studentList?courseNo={$vo.courseNo}" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
-						</a>
-					</td>
+					<td>{$vo.studentNo}</td>
+					<td>{$vo.studentName}</td>
+					<td>{$vo.sex}</td>
+					<td>{$vo.grade}</td>
+					<td>{$vo.major.$vo.classes}班</td>
 				</tr>
 				{/volist}
 			</table>
 			<p class="msg">
-				共找到{$courseNumber}条课程信息，每页显示15条记录
+				共找到{$studentNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
-			{$courseList->render()}
+			{$studentList->render()}
 			</div>
 			</form>
 		</div>

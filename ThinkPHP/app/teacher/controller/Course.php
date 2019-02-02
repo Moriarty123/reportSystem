@@ -6,6 +6,8 @@ use think\Log;
 
 use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
+use app\teacher\model\Student as studentModel;
+use app\teacher\model\Elective as electiveModel;
 
 class Course extends Common
 {
@@ -90,6 +92,47 @@ class Course extends Common
 
         return $this->fetch('courseList');
 
+    }
+
+    //查看学生
+    public function studentList()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record('查看该课程学生');
+
+        //1.获取数据
+        //分页保存courseNo
+        $courseNo = session('courseNo');
+        if (empty($courseNo)) {
+            $courseNo = input('get.courseNo');
+            session('courseNo', $courseNo);
+        }
+
+        $account = session('account');
+
+        //2.获取课程学生列表
+        $electiveModel = new electiveModel();
+
+        $where = "a.courseNo = '$courseNo'";
+        $studentList = $electiveModel   ->where($where)
+                                        ->alias('a')
+                                        ->join('teacher b', 'a.teacherNo = b.teacherNo')
+                                        ->join('student c', 'a.studentNo = c.studentNo')
+                                        ->join('course d', 'a.courseNo = d.courseNo')
+                                        ->paginate(5);
+
+        $studentNumber = $electiveModel ->where($where)
+                                        ->alias('a')
+                                        ->join('teacher b', 'a.teacherNo = b.teacherNo')
+                                        ->join('student c', 'a.studentNo = c.studentNo')
+                                        ->join('course d', 'a.courseNo = d.courseNo')
+                                        ->count();
+        //3.页面渲染
+        $this->assign('studentList', $studentList);
+        $this->assign('studentNumber',$studentNumber);
+
+        return $this->fetch('studentList');
     }
 
 }
