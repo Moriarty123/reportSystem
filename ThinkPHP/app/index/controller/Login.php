@@ -75,6 +75,7 @@ class Login extends Controller
     	//4.1保存账号信息
         //登录次数递增1
         $userModel->where($where)->setInc('count');
+        $userModel->where($where)->setField('lastTime', time());
 
     	session('account', $account);
         session('user_id', $login['user_id']);
