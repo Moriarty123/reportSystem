@@ -28,7 +28,7 @@
     <!-- 左边菜单结束-->
 
 	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 100px; ">
+	<div style="position: absolute; left: 250px; top: 92px; ">
 	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
 		<tr>
 			<td colspan="2">
@@ -37,10 +37,10 @@
 					{eq name="Think.session.user_id" value=""}
 					<a href="/admin/login/index" class=""><i class="fa fa-plus-circle"></i> 登录</a>
 					{else}
-					<span>管理员账号：{$Think.session.account}</span>&nbsp;&nbsp;
+					<span>账号：{$Think.session.account}</span>&nbsp;&nbsp;
 					<div class="top">
-						<span class="left">您上次的登录时间： {$Think.session.lastLoginTime} &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/admin/admin/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
+						<span class="left">您上次的登录时间： {$Think.session.lastTime|date='Y-m-d H:i:s',###} &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
+						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
 					</div>
 					<div class="sec">这是您第<span class="num">{$Think.session.count}</span>次登录！</div>
 					{/eq}
@@ -62,7 +62,7 @@
 			<td colspan="2" align="left" valign="top">
 				<div class="main-corpy">系统提示</div>
 				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您将IE7以上版本或其他的浏览器
+					2=>强烈建议您使用IE7以上版本或其他的浏览器
 				</div>
 			</td>
 		</tr>

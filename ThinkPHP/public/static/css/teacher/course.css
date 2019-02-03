@@ -1,0 +1,88 @@
+* {
+	margin: 0px; 
+	padding: 0px;
+}
+
+i {
+	color: #0EC1DE;
+}
+
+table{
+   
+    table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+}
+td{
+    width:100%;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+.course-container {
+	width: 90%;  padding: 10px; margin:20px 5%; background: #f4f4f4;
+}
+
+.course-padding {
+	width: 100%; height: 100%; background: #FFF;  
+}
+
+.course-title {
+	margin-left: 30px; padding-top: 10px; width: 150px;  height:70px; line-height:50px; padding-bottom:10px;  border-bottom: 2px blue solid;
+}
+
+.course-msg {
+	width: 95%; height: 30px; line-height: 30px; margin-left:30px; margin-top:30px; background:#ecf6fd; border-radius: 5px; padding-left: 10px;
+}
+
+
+.courseDiv {
+	width: 95%; margin-left:30px; margin-top:20px;
+	
+}
+.courseTable {
+	height: 600px;
+	overflow: hidden;
+}
+
+.courseTable thead {
+	background: #F7F7F7; padding:10px; margin:10px; height:50px; line-height: 50px;
+	overflow: hidden;
+}
+
+.courseTable thead th {
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.courseTable tbody {
+	background:#FFF; height:50px; line-height:50px;
+}
+
+.courseTable tbody tr {
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.courseTable tbody td {
+	padding-left:10px;
+	padding-right:10px;
+}
+
+/*学期筛选开始*/
+.termFilterDiv {
+	width: 100px; height: 100px; 
+	border:1px solid #F0F0F0;
+	border-radius: 5px; position: absolute; left:40px; top:50px; background: #FFF; display: none;
+}
+
+.termFilterDiv .termFilterRadio {
+	width: 100%; height: 30px; margin-left: 10px;
+}
+
+.termFilterDiv .submit {
+	float: left; margin-left: 5px; border:0; background: #FFF; color: #00C1DE;
+}
+
+.termFilterDiv .reset {
+	float: right; margin-right: 5px; border:0; background: #FFF; color: #00C1DE;
+}

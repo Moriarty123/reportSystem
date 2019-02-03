@@ -27,16 +27,28 @@
             <form class="loginForm" action="/index/login/login" method="post">
                 <div class="sectionDiv">
                     <label class="sectionLabel">账号：</label>
+                    {eq name="Think.session.isRemember" value="false"}
                     <input type="text" name="account" class="form-control sectionInput">
+                    {else}
+                    <input type="text" name="account" class="form-control sectionInput" value="{$Think.session.reaccount}">
+                    {/eq}
                 </div>
                 <br>
                 <div class="sectionDiv">
                     <label class="sectionLabel">密码：</label>
+                    {eq name="Think.session.isRemember" value="false"}
                     <input type="password" name="password" class="form-control sectionInput">
+                    {else}
+                    <input type="password" name="password" class="form-control sectionInput" value="{$Think.session.repassword}">
+                    {/eq}
                 </div>
                 <div style="clear: both;"></div>
                 <div class="sectionCheckBoxDiv">
-                    <input type="checkbox" name="">
+                    {eq name="Think.session.isRemember" value="false"}
+                    <input type="checkbox" name="rememberMe">
+                    {else}
+                    <input type="checkbox" name="rememberMe" checked="true">
+                    {/eq}
                     <label style="font-size: 16px;">记住我</label>
                 </div>
 
