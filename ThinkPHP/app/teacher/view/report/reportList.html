@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/report.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>实验指导列表</h2>
+				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="实验指导名称" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
+				</div>
+			</div>
+			<form action="/admin/user/checkedUserDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th>实验课程</th>
+					<th>实验任务</th>
+					<th>提交学生</th>
+					<th style="position: relative; top:0px; left:0px;">
+						提交状态
+						<span id="submitedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							<form >
+								<div class="submitedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="submited" type="radio"/>未提交</label>
+								</div>
+								<div class="submitedFilterRadio" style="margin-left: 5px;">
+									<label><input name="submited" type="radio"/>已提交</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
+								</div>
+							</form>
+						</div>
+					</th>
+					<th style="position: relative; top:0px; left:0px;">
+						批阅状态
+						<span id="submitedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							<form >
+								<div class="submitedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="submited" type="radio"/>未批阅</label>
+								</div>
+								<div class="submitedFilterRadio" style="margin-left: 5px;">
+									<label><input name="submited" type="radio"/>已批阅</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
+								</div>
+							</form>
+						</div>
+					</th>
+					<th>提交时间</th>
+					<th>操作</th>
+				</tr>
+				{volist name="reportList" id="vo"}
+				<tr>
+					<td>{$vo.courseName}</td>
+					<td>{$vo.taskName}</td>
+					<td>{$vo.studentName}</td>
+					<td>{$vo.submitStatus}</td>
+					<td>{$vo.reviewStatus}</td>
+					<td>{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
+					<td>
+						<a href="">
+							<i class="fa fa-eye" title="查看"></i>
+						</a>
+					
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-edit" title="编辑"></i>
+						</a>
+					</td>
+				</tr>
+				{/volist}
+			</table>
+			<p class="msg">
+				共找到{$reportNumber}条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			{$reportList->render()}
+			</div>
+			</form>
+		</div>
+	</div>
+	<!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#submitedFilter").click(function(){
+  			$("#submitedFilterDiv").slideToggle();
+		});
+	});
+</script>
+<!-- 筛选框结束 -->

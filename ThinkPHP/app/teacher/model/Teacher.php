@@ -22,4 +22,10 @@ class Teacher extends Model
     {
         return $this->hasMany('Guide');
     }
+
+    //关联report表
+    public function report()
+    {
+        return $this->hasMany('Guide');
+    }
 }
