@@ -33,9 +33,9 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>实验任务列表</h2>
+				<h2>实验指导列表</h2>
 				<form action="/teacher/guide/guideSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验任务名称" name="search" />
+					<input type="text" class="search" placeholder="实验指导名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
@@ -77,8 +77,8 @@
 				{volist name="guideList" id="vo"}
 				<tr>
 					<td>{$vo.courseName}</td>
-					<td>{$vo.taskName}</td>
-					<td>查看实验指导</td>
+					<td>{$vo.taskNo}</td>
+					<td>{$vo.guideName}</td>
 					{eq name='$vo.taskNo' value=""}
 						<td style="color: rgb(16, 142, 233)">未归属</td>
 					{else}
