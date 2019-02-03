@@ -7,6 +7,7 @@ use think\Log;
 use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
 use app\teacher\model\Report as reportModel;
+use app\teacher\model\Course as courseModel;
 
 class Report extends Common
 {
@@ -32,6 +33,7 @@ class Report extends Common
     	$where = "a.teacherNo = '$account'";
 
         $reportModel = new reportModel();
+        $courseModel = new courseModel();
 
     	$reportList = $reportModel	
                                     ->where($where)
@@ -49,11 +51,16 @@ class Report extends Common
                                     ->join('report c', 'a.teacherNo = c.teacherNo')
                                     ->join('student d', 'c.studentNo = d.studentNo')
                                     ->join('task e', 'a.taskNo = e.taskNo')
-			    				        ->count();
+			    				     ->count();
+
+        $courseWhere = "teacherNo = '$account'";
+        $courseList = $courseModel  ->where($courseWhere)
+                                    ->select();
 
     	//3.页面渲染
 		$this->assign('reportList', $reportList);
 		$this->assign('reportNumber', $reportNumber);
+        $this->assign('courseList', $courseList);
 
 		return $this->fetch('reportList');
     }
@@ -72,33 +79,49 @@ class Report extends Common
         //2.获取该账号教师的实验实验报告
         //2.1构造搜索条件
         if(!empty($search)) {
-            session('Reportearch', $search);
-            $where['ReportName'] = array('like','%'.$search.'%');//封装模糊查询 赋值到数组  
+            session('reportSearch', $search);
+            $where['reportName'] = array('like','%'.$search.'%');//封装模糊查询 赋值到数组  
         }
         else 
         {
-            $search = session('Reportearch');
-            $where['ReportName'] = array('like','%'.$search.'%');    
+            $search = session('reportSearch');
+            $where['reportName'] = array('like','%'.$search.'%');    
         }
 
         //2.2获取符合条件的实验报告
-        $teacherModel = new teacherModel();
+        $reportModel = new reportModel();
+        $courseModel = new courseModel();
 
-        $teacherNoWhere = "teacherNo = '$account'";
+        $teacherNoWhere = "a.teacherNo = '$account'";
 
-        $ReportList = $teacherModel ->Report()
-                                    ->where($teacherNoWhere)
+        $reportList = $reportModel 
                                     ->where($where)
+                                    ->where($teacherNoWhere)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
+                                    ->join('task e', 'a.taskNo = e.taskNo')
                                     ->paginate(15);
 
-        $ReportNumber = $teacherModel   ->Report()
-                                        ->where($teacherNoWhere)
+        $reportNumber = $reportModel   
                                         ->where($where)
+                                        ->where($teacherNoWhere)
+                                        ->alias('a')
+                                        ->join('course b', 'a.courseNo = b.courseNo')
+                                        ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                        ->join('student d', 'a.studentNo = d.studentNo')
+                                        ->join('task e', 'a.taskNo = e.taskNo')
                                         ->count();
 
+        $courseWhere = "teacherNo = '$account'";
+        $courseList = $courseModel  ->where($courseWhere)
+                                    ->select();
+
         //3.页面渲染
-        $this->assign('ReportList', $ReportList);
-        $this->assign('ReportNumber', $ReportNumber);
+        $this->assign('reportList', $reportList);
+        $this->assign('reportNumber', $reportNumber);
+        $this->assign('courseList', $courseList);
 
 
         return $this->fetch('ReportList');
