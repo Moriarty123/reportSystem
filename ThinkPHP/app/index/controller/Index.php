@@ -27,4 +27,22 @@ class Index extends Controller
 
     	return $this->fetch('login');
     }
+
+    //跳转到首页
+    public function toIndex()
+    {
+        $account = session('account');
+
+        if (!empty($account)) {
+            if (strlen($account) == 7) {
+                $this->redirect('/teacher/index/index');
+            }
+            else if(strlen($account) == 12){
+                $this->redirect('/student/index/index');
+            }
+        }
+        else {
+            $this->redirect('/index/index/index');
+        }
+    }
 }

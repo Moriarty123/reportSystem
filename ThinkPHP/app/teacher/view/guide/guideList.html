@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="__CSS__/common/footer.css" />
     <link rel="stylesheet" href="__CSS__/common/menu.css">
     <link rel="stylesheet" href="__CSS__/common/detail.css">
-    <link rel="stylesheet" href="__CSS__/teacher/task.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/guide.css" />
     <link rel="stylesheet" href="__CSS__/teacher/display.css" />
 </head>
 <body>
@@ -34,7 +34,7 @@
 		<div class="form_boxA">
 			<div class="a">
 				<h2>实验任务列表</h2>
-				<form action="/teacher/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+				<form action="/teacher/guide/guideSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验任务名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
@@ -52,17 +52,17 @@
 					<th>实验任务</th>
 					<th>实验指导</th>
 					<th style="position: relative; top:0px; left:0px;">
-						发布状态
-						<span id="publishedFilter">
+						归属状态
+						<span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
-						<div id="publishedFilterDiv" class="publishedFilterDiv" >
-							<form>
-								<div class="publishedFilterRadio">	
-									<label><input name="published" type="radio"/>未发布</label>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							<form >
+								<div class="submitedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="submited" type="radio"/>未归属</label>
 								</div>
-								<div class="publishedFilterRadio">
-									<label><input name="published" type="radio"/>已发布</label>
+								<div class="submitedFilterRadio" style="margin-left: 5px;">
+									<label><input name="submited" type="radio"/>已归属</label>
 								</div>
 								<div>
 									<input type="submit" name="" class="submit" value="确定">
@@ -71,36 +71,38 @@
 							</form>
 						</div>
 					</th>
-					<th>开始时间</th>
-					<th>截止时间</th>
-					<th>任务描述</th>
+					<th>创建时间</th>
 					<th>操作</th>
 				</tr>
-				{volist name="taskList" id="vo"}
+				{volist name="guideList" id="vo"}
 				<tr>
 					<td>{$vo.courseName}</td>
 					<td>{$vo.taskName}</td>
 					<td>查看实验指导</td>
-					<td>{$vo.status}</td>
-					<td>{$vo.startDate|date="Y-m-d h:m:s",###}</td>
-					<td>{$vo.closingDate|date="Y-m-d h:m:s",###}</td>
-					<td>{$vo.taskDescribe}</td>
+					{eq name='$vo.taskNo' value=""}
+						<td style="color: rgb(16, 142, 233)">未归属</td>
+					{else}
+						<td style="color: rgb(32, 163, 15)">已归属</td>	
+					{/eq}
+					
+					<td>{$vo.createTime|date="Y-m-d h:m:s",###}</td>
 					<td>
 						<a href="">
-							<i class="fa fa-eye" title="查看实验指导"></i>
+							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/teacher/task/studentList?taskNo={$vo.taskNo}" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
+					
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-edit" title="编辑"></i>
 						</a>
 					</td>
 				</tr>
 				{/volist}
 			</table>
 			<p class="msg">
-				共找到{$taskNumber}条课程信息，每页显示15条记录
+				共找到{$guideNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
-			{$taskList->render()}
+			{$guideList->render()}
 			</div>
 			</form>
 		</div>
@@ -121,8 +123,8 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
+  		$("#submitedFilter").click(function(){
+  			$("#submitedFilterDiv").slideToggle();
 		});
 	});
 </script>

@@ -48,7 +48,7 @@ class Course extends Common
     }
 
     //模糊查找课程
-    public function courseearch()
+    public function courseSearch()
     {
         //0.测试
         // dump($_POST); 
