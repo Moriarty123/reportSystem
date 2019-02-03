@@ -5,7 +5,7 @@
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="__IMG__/school.ico" />
     
-    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/fontawesome.min.css" />
     <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
     <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
 
@@ -73,16 +73,16 @@
 					</th>
 					<th style="position: relative; top:0px; left:0px;">
 						批阅状态
-						<span id="submitedFilter">
+						<span id="reviewedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
-						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
 							<form >
-								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未批阅</label>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="reviewed" type="radio"/>未批阅</label>
 								</div>
-								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已批阅</label>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">
+									<label><input name="reviewed" type="radio"/>已批阅</label>
 								</div>
 								<div>
 									<input type="submit" name="" class="submit" value="确定">
@@ -141,6 +141,10 @@
 	$(document).ready(function(){
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
+		});
+
+		$("#reviewedFilter").click(function(){
+  			$("#reviewedFilterDiv").slideToggle();
 		});
 	});
 </script>
