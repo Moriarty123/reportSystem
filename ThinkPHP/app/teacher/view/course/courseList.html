@@ -33,7 +33,7 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>课程列表</h2>
+				<h2>实验课程列表</h2>
 				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="课程名" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
@@ -88,8 +88,8 @@
 					<td>{$vo.coursePeriod}</td>
 					<td>{$vo.examType}</td>
 					<td>
-						<a href="">
-							<i class="fa fa-eye" title="查看实验指导"></i>
+						<a href="/teacher/task/courseTask?courseNo={$vo.courseNo}">
+							<i class="fa fa-eye" title="查看实验任务"></i>
 						</a>
 						<a href="/teacher/course/studentList?courseNo={$vo.courseNo}" style='margin-left: 5px;'>
 							<i class="fa fa-user-graduate" title="查看学生"></i>
