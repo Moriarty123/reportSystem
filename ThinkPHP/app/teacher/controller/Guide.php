@@ -98,5 +98,40 @@ class Guide extends Common
 
     }
 
+    //查看实验指导
+    public function taskGuide()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record('显示实验指导列表','notice');
 
+        //1.获取账号
+        $account = session('account');
+        $taskNo = input('get.taskNo');
+
+        //2.获取该账号教师的实验实验指导
+        $teacherModel = new teacherModel();
+
+        $where = "a.teacherNo = '$account' and taskNo = '$taskNo'";
+
+        $guideList = $teacherModel  ->guide()
+                                    ->where($where)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    // ->join('task c', 'a.taskNo = c.taskNo')
+                                    ->paginate(15);
+
+        $guideNumber = $teacherModel    ->guide()
+                                        ->where($where)
+                                        ->alias('a')
+                                        ->join('course b', 'a.courseNo = b.courseNo')
+                                        // ->join('task c', 'a.taskNo = c.taskNo')
+                                        ->count();
+
+        //3.页面渲染
+        $this->assign('guideList', $guideList);
+        $this->assign('guideNumber', $guideNumber);
+
+        return $this->fetch('guideList');
+    }
 }
