@@ -80,7 +80,7 @@
 				<tr>
 					<td>{$vo.courseName}</td>
 					<td>{$vo.taskName}</td>
-					<td>查看实验指导</td>
+					<td><a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">查看实验指导</a></td>
 					<td>{$vo.status}</td>
 					<td>{$vo.startDate|date="Y-m-d h:m:s",###}</td>
 					<td>{$vo.closingDate|date="Y-m-d h:m:s",###}</td>
@@ -89,9 +89,15 @@
 						<a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
-						<a href="/teacher/task/studentList?taskNo={$vo.taskNo}" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
+						{eq name="$vo.status" value="已发布"}
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
+						{else}
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-edit" title="编辑实验指导"></i>
+						</a>
+						{/eq}
 					</td>
 				</tr>
 				{/volist}
