@@ -6,6 +6,8 @@ use think\Log;
 
 use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
+use app\teacher\model\Course as courseModel;
+use app\teacher\model\Task as taskModel;
 
 class Task extends Common
 {
@@ -134,5 +136,62 @@ class Task extends Common
 
     }
 
+    //添加实验任务页面
+    public function addPage()
+    {
 
+        //获取课程
+        $courseModel = new courseModel();
+
+        $teacherNo = session('account');
+        $where = "teacherNo = '$teacherNo'";
+        $courseList = $courseModel->where($where)->select();
+
+        $this->assign('courseList', $courseList);
+
+        return $this->fetch('taskAdd');
+    }
+
+    //添加实验任务
+    public function taskAdd()
+    {
+        //0.测试
+        // dump($_POST);
+        // $shijian=str_replace("T"," ",$_POST['startTime']);
+        // dump($shijian);
+        // dump(strtotime($shijian));
+
+        //1.获取数据
+        $teacherNo  = session('account');
+        $taskName   = input('post.taskName');
+        $courseNo   = input('post.courseNo');
+        $startTime   = input('post.startTime');
+        $endTime  = input('post.endTime');
+        $describe   = input('post.taskDescribe');
+
+        //格式转换
+        $startTime = str_replace("T"," ",$startTime);
+        $startTime = strtotime($startTime);
+        $endTime = str_replace("T"," ",$endTime);
+        $endTime = strtotime($endTime);
+
+        $data = [
+            'teacherNo'     => $teacherNo,
+            'taskName'      => $taskName,
+            'courseNo'      => $courseNo,
+            'startTime'      => $startTime,
+            'endTime'     => $endTime,
+            'taskDescribe'  => $describe,
+        ];
+        dump($data);
+
+        //2.保存到数据库
+        $taskModel = new taskModel();
+        $taskModel->data($data);
+        $taskModel->save();
+        dump($taskModel->taskNo);
+
+        //3.跳转到实验任务列表页面
+        $this->taskList();
+    }
 }

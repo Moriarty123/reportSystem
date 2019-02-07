@@ -82,8 +82,8 @@
 					<td>{$vo.taskName}</td>
 					<td><a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">查看实验指导</a></td>
 					<td>{$vo.status}</td>
-					<td>{$vo.startDate|date="Y-m-d h:m:s",###}</td>
-					<td>{$vo.closingDate|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.startTime|date="Y-m-d h:m",###}</td>
+					<td>{$vo.endTime|date="Y-m-d h:m",###}</td>
 					<td>{$vo.taskDescribe}</td>
 					<td>
 						<a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">
