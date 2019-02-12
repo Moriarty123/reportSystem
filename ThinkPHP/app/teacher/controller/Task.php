@@ -183,15 +183,15 @@ class Task extends Common
             'endTime'     => $endTime,
             'taskDescribe'  => $describe,
         ];
-        dump($data);
+        // dump($data);
 
         //2.保存到数据库
         $taskModel = new taskModel();
         $taskModel->data($data);
         $taskModel->save();
-        dump($taskModel->taskNo);
+        // dump($taskModel->taskNo);
 
         //3.跳转到实验任务列表页面
-        $this->taskList();
+        $this->redirect('/teacher/task/taskList');
     }
 }

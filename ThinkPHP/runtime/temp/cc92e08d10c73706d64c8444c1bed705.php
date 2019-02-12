@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1549508858;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549465854;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1549022152;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
-    <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -114,7 +111,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/scomment/commentList" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -156,52 +153,48 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--添加用户开始-->
-	<div id="MainForm">
-		<div class="form_boxA">
-			<div class="a">
-				<h2>添加新实验任务</h2>
-			</div>
-			<form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkAddTask()">
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>任务名称：</label>
-					<input type="text" name="taskName" placeholder="输入实验任务名称" class="add_input" onfocus="Name()" onblur="checkName()"/>
-					<span class="tip" id="tip-name">请输入实验任务名称</span>
-				</div>
+	<!--main开始-->
+	<div style="position: absolute; left: 250px; top: 92px; ">
+	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
+		<tr>
+			<td colspan="2">
+				<span class="time" style="color: black;">
 
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>所属课程：</label>
-					<select name="courseNo" class="add_input">
-						<option>--请选择--</option>
-						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-						<option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
+					<?php if(\think\Session::get('user_id') == ''): ?>
+					<a href="/admin/login/index" class=""><i class="fa fa-plus-circle"></i> 登录</a>
+					<?php else: ?>
+					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
+					<div class="top">
+						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
+						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
+					</div>
+					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
+					<?php endif; ?>
+				</span>
 
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>开始时间：</label>
-					<input type="datetime-local" name="openTime" class="add_input" onfocus="openTime()" onblur="checkOpenTime()"/>
-					<span class="tip" id="tip-name">请选择开始时间</span>
+			</td>
+		</tr>
+		<tr>
+			<td align="left" valign="top" colspan="2">
+				<div class="main-tit">服务器信息</div>
+				<div class="main-con">
+					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
+					PHP版本：5.6.31<br/>
+					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
 				</div>
-
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>截止时间：</label>
-					<input type="datetime-local" name="closeTime" class="add_input" onfocus="closeTime()" onblur="checkCloseTime()"/>
-					<span class="tip" id="tip-name">请选择截止时间</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="left" valign="top">
+				<div class="main-corpy">系统提示</div>
+				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
+					2=>强烈建议您使用IE7以上版本或其他的浏览器
 				</div>
-
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>任务描述：</label>
-					<textarea name="taskDescribe" class="add_textarea"></textarea>
-					<span class="tip" id="tip-name">请选择截止时间</span>
-				</div>
-				
-				<input type="submit" value="提交" class="add_submit" />
-			</form>
-		</div>
+			</td>
+		</tr>
+	</table>
 	</div>
-	<!--添加用户结束-->
+	<!--main结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -220,14 +213,3 @@
 
 </body>
 </html>
-
-<!-- 筛选框开始-->
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
-		});
-	});
-</script>
-<!-- 筛选框结束 -->

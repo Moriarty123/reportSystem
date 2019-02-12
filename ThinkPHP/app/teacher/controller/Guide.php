@@ -134,4 +134,17 @@ class Guide extends Common
 
         return $this->fetch('guideList');
     }
+
+    //撰写实验指导
+    public function addPage() 
+    {
+        return $this->fetch('guideAdd');
+    }
+
+    //添加实验指导
+    public function guideAdd()
+    {
+        //0.测试
+        dump($_POST);
+    }
 }
