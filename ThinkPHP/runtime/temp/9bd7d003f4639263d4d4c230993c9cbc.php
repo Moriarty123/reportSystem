@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1549985862;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1549988056;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/js/wangEditor/wangEditor.js">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+
+    <script type="text/javascript" src="/static/wangEditor-3.1.1/release/wangEditor.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -238,7 +239,7 @@
 </script>
 <!-- 筛选框结束 -->
 <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
-<script type="text/javascript" src="/static/wangEditor-3.1.1/wangEditor.js"></script>
+
 <script type="text/javascript">
     var E = window.wangEditor
     var testAim = new E('#testAim')
@@ -257,25 +258,30 @@
 
 <script type="text/javascript">
     
+    //一般情况下，onblur事件只在input等元素中才有，而div却没有，因为div没有tabindex属性，所以要给div加上此属性。定义tabindex属性后，元素是默认会加上焦点虚线的，那么在IE中可以通过hidefocus="true"去除！其他浏览器通过outline=0进行去除！
+    $(document).ready(function(){
+        $(".w-e-text").attr('tabindex',0);
+        $(".w-e-text").attr('hidefocus','true');
+        $(".w-e-text").css('outline',0);
+    });
 
+    //提交校验
     function checkSubmit() {
-        
-        
-        $testAimText = $("#testAim .w-e-text p").html();
-        $testEnvironmentText = $("#testEnvironment .w-e-text p").html();
 
-        //&& checkRequest() == true && checkContent() == true && checkTask() == true
-        if(checkName() == true && checkAim() == true && checkEnvironment() == true ) {
+        // //判断保存或提交
+        // $submit = 
+        // if (true) {}
+        //
+        if(checkName() == true && checkAim() == true && checkEnvironment() == true && checkRequest() == true && checkTask() == true && checkContent() == true) {
             // alert('确认提交？');
             return true;
         }
         else {
             return false;
         }
-
-
     }
 
+    //名称校验
     function checkName() {
         $guideName = $("#guideName").val();
 
@@ -288,7 +294,7 @@
         }
     }
 
-    //一般情况下，onblur事件只在input等元素中才有，而div却没有，因为div没有tabindex属性，所以要给div加上此属性。定义tabindex属性后，元素是默认会加上焦点虚线的，那么在IE中可以通过hidefocus="true"去除！其他浏览器通过outline=0进行去除！
+    //实验目的校验
     function checkAim() {
         $testAimText = $("#testAim .w-e-text p").html();
 
@@ -302,11 +308,7 @@
         }
     }
 
-    $(document).ready(function(){
-            $(".w-e-text").attr('tabindex',0);
-            $(".w-e-text").attr('hidefocus','true');
-            $(".w-e-text").css('outline',0);
-        });
+    //实验环境校验
     function checkEnvironment() {
         $testEnvironmentText = $("#testEnvironment .w-e-text p").html();
 
@@ -320,6 +322,47 @@
         }
     }
 
+    //实验要求校验
+    function checkRequest() {
+        $testRequestText = $("#testRequest .w-e-text p").html();
+
+        if ($testRequestText == "<br>") {
+           alert('实验要求不能为空');
+           return false;
+        }
+        else {
+            $('#request').val($testRequestText);
+            return true;
+        }
+    }
+
+    //实验任务校验
+    function checkTask() {
+        $testTaskText = $("#testTask .w-e-text p").html();
+
+        if ($testTaskText == "<br>") {
+           alert('实验任务不能为空');
+           return false;
+        }
+        else {
+            $('#task').val($testTaskText);
+            return true;
+        }
+    }
+
+    //实验内容校验
+    function checkContent() {
+        $testContentText = $("#testContent .w-e-text p").html();
+
+        if ($testContentText == "<br>") {
+           alert('实验内容不能为空');
+           return false;
+        }
+        else {
+            $('#content').val($testContentText);
+            return true;
+        }
+    }
     
 
 </script>

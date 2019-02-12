@@ -2285,7 +2285,7 @@
             d = n.children(),
             n.append(a).append(s),
             a.css("background-color", "#f1f1f1").css("border", "1px solid #ccc"),
-            s.css("border", "1px solid #ccc").css("border-top", "none").css("height", "200px")) : (a = n,
+            s.css("border", "1px solid #ccc").css("border-top", "none").css("height", "300px")) : (a = n,
             s = o(i),
             d = s.children()),
             l = o("<div></div>"),
