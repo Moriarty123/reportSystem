@@ -6,6 +6,7 @@ use think\Log;
 
 use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
+use app\teacher\model\Guide as guideModel;
 
 class Guide extends Common
 {
@@ -146,5 +147,41 @@ class Guide extends Common
     {
         //0.测试
         dump($_POST);
+
+        //1.获取数据
+        $guideName          = input('post.guideName');
+        $testAim            = input('post.aim');
+        $testEnvironment    = input('post.environment');
+        $testRequire        = input('post.request');
+        $testTask           = input('post.task');
+        $testContent        = input('post.content');
+
+        $teacherNo = session('account');
+        $createTime = time();
+
+        $data = [
+            'teacherNo'         => $teacherNo,
+            'guideName'         => $guideName,
+            'testAim'           => $testAim,
+            'testEnvironment'   => $testEnvironment,
+            'testRequire'       => $testRequire,
+            'testTask'          => $testTask,
+            'testContent'       => $testContent,
+            'createTime'        => $createTime
+        ];
+
+        dump($data);
+
+        //2.保存数据库
+        $guideModel = new guideModel();
+
+        $res = $guideModel->create($data);
+        dump($res);
+
+        //3.生成文件
+        
+
+        //4.后续操作
+
     }
 }

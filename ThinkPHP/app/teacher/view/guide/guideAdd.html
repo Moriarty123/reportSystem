@@ -11,8 +11,10 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
-
-    <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script>
+    <script type="text/javascript" src="__JS__/teacher/guideAdd.js"></script>
+    <script type="text/javascript" src="__JS__/wangEditor/wangEditor.js"></script>
+    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
+    
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -21,6 +23,8 @@
     <link rel="stylesheet" href="__CSS__/common/detail.css">
     <link rel="stylesheet" href="__CSS__/teacher/guide.css" />
     <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/guideAdd.css" />
+
 </head>
 <body>
     <!-- 头部开始-->
@@ -37,43 +41,43 @@
             <div class="a">
                 <h2>撰写实验指导</h2>
             </div>
-            <div style="width: 500px; margin-top: 20px;">
+            <div class="guideAddDiv">
                 <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
-                    <div style="margin-left: 20px; margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验指导名称：</label>
-                        <input type="text" id="guideName" name="guideName" style="width: 500px; " onblur="checkName();">
+                    <div class="add-list">
+                        <label>实验指导名称：</label>
+                        <input type="text" id="guideName" name="guideName" class="test-text" onblur="checkName();">
                     </div>
-                    <div style="margin-left: 20px;margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验目的：</label>
-                        <div id="testAim" name="testAim" style="width: 500px; outline:0;">
+                    <div class="add-list">
+                        <label>实验目的：</label>
+                        <div id="testAim" name="testAim" class="test-text">
                         </div>
                         <input type="hidden" id="aim" name="aim" value="">
                     </div>
-                    <div style="margin-left: 20px;margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验环境：</label>
-                        <div id="testEnvironment" style="width: 500px;">
+                    <div class="add-list">
+                        <label>实验环境：</label>
+                        <div id="testEnvironment" class="test-text">
                         </div>
                         <input type="hidden" id="environment" name="environment" value="">
                     </div>
-                    <div style="margin-left: 20px;margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验要求：</label>
-                        <div id="testRequest" style="width: 500px;">
+                    <div class="add-list">
+                        <label>实验要求：</label>
+                        <div id="testRequire" class="test-text">
                         </div>
                         <input type="hidden" id="request" name="request" value="">
                     </div>
-                    <div style="margin-left: 20px;margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验任务：</label>
-                        <div id="testTask" style="width: 500px;">
+                    <div class="add-list">
+                        <label>实验任务：</label>
+                        <div id="testTask" class="test-text">
                         </div>
                         <input type="hidden" id="task" name="task" value="">
                     </div>
-                    <div style="margin-left: 20px;margin-bottom: 10px;">
-                        <label style="font-size: 16px;">实验内容：</label>
-                        <div id="testContent" style="width: 500px;">
+                    <div class="add-list">
+                        <label>实验内容：</label>
+                        <div id="testContent" class="test-text">
                         </div>
                         <input type="hidden" id="content" name="content" value="">
                     </div>
-                    <div class="ButtonDiv" style="width:100%; height: 30px; line-height: 30px;margin-bottom: 20px;">
+                    <div class="ButtonDiv submitDiv">
                         <input type="submit" class="Button" name="save" value="保存" >
                         <input type="submit" class="Button" name="submit" value="提交" onclick="checkSubmit()">
                     </div>
@@ -104,131 +108,22 @@
     });
 </script>
 <!-- 筛选框结束 -->
-<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
 
+<!-- 创建编辑器 -->
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
 <script type="text/javascript">
     var E = window.wangEditor
     var testAim = new E('#testAim')
     var testEnvironment = new E('#testEnvironment');
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
-    var testRequest = new E('#testRequest')
+    var testRequire = new E('#testRequire')
 
     testAim.create();
     testEnvironment.create();
     testTask.create();
     testContent.create();
-    testRequest.create();
+    testRequire.create();
 
 </script>
 
-<script type="text/javascript">
-    
-    //一般情况下，onblur事件只在input等元素中才有，而div却没有，因为div没有tabindex属性，所以要给div加上此属性。定义tabindex属性后，元素是默认会加上焦点虚线的，那么在IE中可以通过hidefocus="true"去除！其他浏览器通过outline=0进行去除！
-    $(document).ready(function(){
-        $(".w-e-text").attr('tabindex',0);
-        $(".w-e-text").attr('hidefocus','true');
-        $(".w-e-text").css('outline',0);
-    });
-
-    //提交校验
-    function checkSubmit() {
-
-        // //判断保存或提交
-        // $submit = 
-        // if (true) {}
-        //
-        if(checkName() == true && checkAim() == true && checkEnvironment() == true && checkRequest() == true && checkTask() == true && checkContent() == true) {
-            // alert('确认提交？');
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    //名称校验
-    function checkName() {
-        $guideName = $("#guideName").val();
-
-        if($guideName == "") {
-            alert("实验指导名称不能为空");
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-
-    //实验目的校验
-    function checkAim() {
-        $testAimText = $("#testAim .w-e-text p").html();
-
-        if ($testAimText == "<br>") {
-           alert('实验目的不能为空');
-           return false;
-        }
-        else {
-            $('#aim').val($testAimText);
-            return true;
-        }
-    }
-
-    //实验环境校验
-    function checkEnvironment() {
-        $testEnvironmentText = $("#testEnvironment .w-e-text p").html();
-
-        if ($testEnvironmentText == "<br>") {
-           alert('实验环境不能为空');
-           return false;
-        }
-        else {
-            $('#environment').val($testEnvironmentText);
-            return true;
-        }
-    }
-
-    //实验要求校验
-    function checkRequest() {
-        $testRequestText = $("#testRequest .w-e-text p").html();
-
-        if ($testRequestText == "<br>") {
-           alert('实验要求不能为空');
-           return false;
-        }
-        else {
-            $('#request').val($testRequestText);
-            return true;
-        }
-    }
-
-    //实验任务校验
-    function checkTask() {
-        $testTaskText = $("#testTask .w-e-text p").html();
-
-        if ($testTaskText == "<br>") {
-           alert('实验任务不能为空');
-           return false;
-        }
-        else {
-            $('#task').val($testTaskText);
-            return true;
-        }
-    }
-
-    //实验内容校验
-    function checkContent() {
-        $testContentText = $("#testContent .w-e-text p").html();
-
-        if ($testContentText == "<br>") {
-           alert('实验内容不能为空');
-           return false;
-        }
-        else {
-            $('#content').val($testContentText);
-            return true;
-        }
-    }
-    
-
-</script>
