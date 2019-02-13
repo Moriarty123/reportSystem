@@ -7,6 +7,7 @@ use think\Log;
 use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
 use app\teacher\model\Guide as guideModel;
+use app\teacher\model\Course as courseModel;
 
 class Guide extends Common
 {
@@ -136,9 +137,20 @@ class Guide extends Common
         return $this->fetch('guideList');
     }
 
-    //撰写实验指导
+    //撰写实验指导页面
     public function addPage() 
     {
+        Log::record('撰写实验指导页面', 'notice');
+
+        $courseModel = new courseModel();
+
+        $teacherNo = session('account');
+        $where = "teacherNo = '$teacherNo'";
+
+        $courseList = $courseModel->where($where)->select();
+
+        $this->assign('courseList', $courseList);
+
         return $this->fetch('guideAdd');
     }
 
@@ -146,9 +158,11 @@ class Guide extends Common
     public function guideAdd()
     {
         //0.测试
-        dump($_POST);
+        // dump($_POST);
+        Log::record('添加实验指导','notice');
 
         //1.获取数据
+        $courseNo           = input('post.courseNo');
         $guideName          = input('post.guideName');
         $testAim            = input('post.aim');
         $testEnvironment    = input('post.environment');
@@ -161,6 +175,7 @@ class Guide extends Common
 
         $data = [
             'teacherNo'         => $teacherNo,
+            'courseNo'          => $courseNo,
             'guideName'         => $guideName,
             'testAim'           => $testAim,
             'testEnvironment'   => $testEnvironment,
@@ -170,18 +185,72 @@ class Guide extends Common
             'createTime'        => $createTime
         ];
 
-        dump($data);
+        // dump($data);
 
         //2.保存数据库
         $guideModel = new guideModel();
 
         $res = $guideModel->create($data);
-        dump($res);
-
+        // dump($res);
+        if (empty($res)) {
+            Log::record('添加实验指导失败！', 'error');
+            $this->error('添加实验指导失败！请稍后再试。', '/teacher/guide/guideList');
+        }
         //3.生成文件
-        
+
 
         //4.后续操作
+        $guideNo = $res->guideNo;
+        $this->success('添加实验指导成功', "/teacher/guide/guideShow?guideNo='$guideNo'");
+    }
 
+    //显示实验指导
+    public function guideShow() 
+    {
+        //0.测试
+        //dump($_GET);
+
+        //1.获取该ID的实验指导
+        $guideNo = input('get.guideNo');
+
+        //创建guideModel,获取实验指导
+        $guideModel = new guideModel();
+        $where = "guideNo = $guideNo";
+        $guide = $guideModel->where($where)->find();
+
+        //获取实验指导数据
+        $guideName = $guide['guideName'];
+        $testAim = $guide['testAim'];
+        $testEnvironment = $guide['testEnvironment'];
+        $testRequire = $guide['testRequire'];
+        $testTask = $guide['testTask'];
+        $testContent = $guide['testContent'];
+        $courseNo = $guide['courseNo'];
+
+        //创建courseModel,获取课程名称
+        $where = "courseNo = '$courseNo'";
+        $courseModel = new courseModel();
+        $course = $courseModel->where($where)->find();
+        $courseName = $course['courseName'];
+
+        $html = 
+            '实验指导名称：'.$guideName.'<br>'.
+            '实验课程：'.$courseName.'<br>'.
+            '实验目的：'.$testAim.'<br>'.
+            '实验环境：'.$testEnvironment.'<br>'.
+            '实验要求：'.$testRequire.'<br>'.
+            '实验任务：'.$testTask.'<br>'.
+            '实验内容：'.$testContent.'<br>';
+
+        guidePdf($html);
+        //2.数据
+
+
+    }
+
+    public function test()
+    {
+        
+        guidePdf('<h1>hello world</h1>');
     }
 }

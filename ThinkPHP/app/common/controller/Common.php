@@ -5,6 +5,12 @@ use think\Controller;
 
 class Common extends Controller
 {
+	//index
+	public function index()
+	{
+		return "hello world";
+	}
+
 	// 初始化
     public function _initialize()
     {

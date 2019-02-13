@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1550046014;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1550049999;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,6 +170,16 @@
             <div class="guideAddDiv">
                 <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
                     <div class="add-list">
+                        <label>实验课程：</label>
+                        <br>
+                        <select style="width: 500px;" name="courseNo">
+                            <option>--请选择实验课程--</option>
+                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                    </div>
+                    <div class="add-list">
                         <label>实验指导名称：</label>
                         <input type="text" id="guideName" name="guideName" class="test-text" onblur="checkName();">
                     </div>
@@ -187,7 +197,7 @@
                     </div>
                     <div class="add-list">
                         <label>实验要求：</label>
-                        <div id="testRequest" class="test-text">
+                        <div id="testRequire" class="test-text">
                         </div>
                         <input type="hidden" id="request" name="request" value="">
                     </div>
@@ -251,13 +261,13 @@
     var testEnvironment = new E('#testEnvironment');
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
-    var testRequest = new E('#testRequest')
+    var testRequire = new E('#testRequire')
 
     testAim.create();
     testEnvironment.create();
     testTask.create();
     testContent.create();
-    testRequest.create();
+    testRequire.create();
 
 </script>
 

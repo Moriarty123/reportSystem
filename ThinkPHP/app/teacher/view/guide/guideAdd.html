@@ -44,6 +44,16 @@
             <div class="guideAddDiv">
                 <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
                     <div class="add-list">
+                        <label>实验课程：</label>
+                        <br>
+                        <select style="width: 500px;" name="courseNo">
+                            <option>--请选择实验课程--</option>
+                            {volist name="courseList" id="vo"}
+                            <option value="{$vo.courseNo}">{$vo.courseName}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="add-list">
                         <label>实验指导名称：</label>
                         <input type="text" id="guideName" name="guideName" class="test-text" onblur="checkName();">
                     </div>

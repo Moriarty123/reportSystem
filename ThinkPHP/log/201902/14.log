@@ -1,0 +1,964 @@
+---------------------------------------------------------------
+[ 2019-02-14T00:00:29+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：0.187347s][吞吐率：5.34req/s] [内存消耗：5,020.30kb] [文件加载：47]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002425s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.003014s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.001406s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:07:22+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：0.224665s][吞吐率：4.45req/s] [内存消耗：5,122.07kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002778s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.021639s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.001803s ]
+[ error ] [8]未定义变量: courseModel[F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php:232]
+---------------------------------------------------------------
+[ 2019-02-14T00:09:16+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：0.484427s][吞吐率：2.06req/s] [内存消耗：16,695.98kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002890s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.005043s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.002108s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003803s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.002660s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:12:38+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：0.355890s][吞吐率：2.81req/s] [内存消耗：14,512.18kb] [文件加载：45]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+  'if-modified-since' => 'Wed, 13 Feb 2019 15:45:57 GMT',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:14:44+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：0.350325s][吞吐率：2.85req/s] [内存消耗：14,511.74kb] [文件加载：45]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:25:34+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：1.820734s][吞吐率：0.55req/s] [内存消耗：14,480.86kb] [文件加载：45]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:32:16+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：0.295960s][吞吐率：3.38req/s] [内存消耗：14,480.86kb] [文件加载：45]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:33:37+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：5.428068s][吞吐率：0.18req/s] [内存消耗：14,902.57kb] [文件加载：46]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:35:42+08:00 ] 0.0.0.0 GET /teacher/guide/test
+[ info ] reportsystem/teacher/guide/test [运行时间：5.695654s][吞吐率：0.18req/s] [内存消耗：14,903.28kb] [文件加载：46]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+  'if-modified-since' => 'Wed, 13 Feb 2019 16:33:37 GMT',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->test[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:36:34+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：5.554277s][吞吐率：0.18req/s] [内存消耗：16,910.84kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+  'if-modified-since' => 'Wed, 13 Feb 2019 16:09:16 GMT',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004114s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.006371s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.002115s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002407s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.001499s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:40:27+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：0.566741s][吞吐率：1.76req/s] [内存消耗：5,194.11kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+  'if-modified-since' => 'Wed, 13 Feb 2019 16:36:34 GMT',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003583s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002356s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003094s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.001366s ]
+[ error ] [8]未定义变量: testContent[F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php:243]
+---------------------------------------------------------------
+[ 2019-02-14T00:40:49+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：5.687269s][吞吐率：0.18req/s] [内存消耗：17,049.35kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002597s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002605s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.001579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003515s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.001631s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:41:20+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2725%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2725%27 [运行时间：6.675769s][吞吐率：0.15req/s] [内存消耗：17,049.30kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+  'if-modified-since' => 'Wed, 13 Feb 2019 16:40:49 GMT',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'25\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005859s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.004282s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '25' ) LIMIT 1 [ RunTime:0.002366s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.028303s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.003007s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:41:26+08:00 ] 0.0.0.0 GET /teacher/guide/addPage
+[ info ] reportsystem/teacher/guide/addPage [运行时间：0.342874s][吞吐率：2.92req/s] [内存消耗：5,047.33kb] [文件加载：48]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'addPage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->addPage[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html [ array (
+  0 => 'courseList',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 撰写实验指导页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003011s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.006758s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  teacherNo = '1999013' ) [ RunTime:0.003488s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:41:27+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.140052s][吞吐率：7.14req/s] [内存消耗：2,477.20kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/guide/addPage',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:41:30+08:00 ] 0.0.0.0 GET /teacher/guide/addPage
+[ info ] reportsystem/teacher/guide/addPage [运行时间：0.174780s][吞吐率：5.72req/s] [内存消耗：5,047.41kb] [文件加载：48]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'addPage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->addPage[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html [ array (
+  0 => 'courseList',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 撰写实验指导页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002773s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003191s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  teacherNo = '1999013' ) [ RunTime:0.004805s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:41:30+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.170504s][吞吐率：5.86req/s] [内存消耗：2,477.20kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/guide/addPage',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:45:09+08:00 ] 0.0.0.0 POST /teacher/guide/guideAdd
+[ info ] reportsystem/teacher/guide/guideAdd [运行时间：0.355413s][吞吐率：2.81req/s] [内存消耗：5,046.90kb] [文件加载：48]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideAdd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '2661',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/addPage',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '507',
+  'guideName' => '实验三  IEEE14443 读取标签数据实验 ',
+  'aim' => '1. 熟悉 S50 卡的存储结构&nbsp;',
+  'environment' => '1. 安装有 RFID_Tool 的 PC 机一台&nbsp;',
+  'request' => '1. 要求：了解 IEEE14443 读取数据的方法。&nbsp;',
+  'task' => '1. S50 卡存储结构 S50 非接触式卡符合 MIFARE I 的国际标准，容量为 8K 位，数据保存期为 10 年，可改写 10 万次，读无限次。S50 卡不带电源，自带天线，内含加密控制逻辑电路和通讯逻辑电路，卡与读 写器之间的通讯采用国际通用的 DES 和 RES 保密交叉算法，具有极高的保密性能。 M1 卡分为 16 个扇区，每个扇区由 4 块（块 0、块 1、块 2、块 3）组成，（我们也将 16 个扇 区的 64 个块按绝对地址编号为 0~63，S50 卡存储结构如图 7.11所示：&nbsp;',
+  'content' => '1. 将实验箱左侧的SW5 开关拨至“PC”一侧，并使用串口线将实验箱左侧标有 “13.56MHZ”的VB3 串口座与PC机的串口相连，如图 7.12所示； <br> <br>图 7.12 13.56MHz读写器硬件连接&nbsp;',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideAdd[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 添加实验指导
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002247s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.005646s ]
+[ sql ] [ SQL ] INSERT INTO `guide` (`teacherNo` , `courseNo` , `guideName` , `testAim` , `testEnvironment` , `testRequire` , `testTask` , `testContent` , `createTime`) VALUES (1999013 , 507 , '实验三  IEEE14443 读取标签数据实验 ' , '1. 熟悉 S50 卡的存储结构&nbsp;' , '1. 安装有 RFID_Tool 的 PC 机一台&nbsp;' , '1. 要求：了解 IEEE14443 读取数据的方法。&nbsp;' , '1. S50 卡存储结构 S50 非接触式卡符合 MIFARE I 的国际标准，容量为 8K 位，数据保存期为 10 年，可改写 10 万次，读无限次。S50 卡不带电源，自带天线，内含加密控制逻辑电路和通讯逻辑电路，卡与读 写器之间的通讯采用国际通用的 DES 和 RES 保密交叉算法，具有极高的保密性能。 M1 卡分为 16 个扇区，每个扇区由 4 块（块 0、块 1、块 2、块 3）组成，（我们也将 16 个扇 区的 64 个块按绝对地址编号为 0~63，S50 卡存储结构如图 7.11所示：&nbsp;' , '1. 将实验箱左侧的SW5 开关拨至“PC”一侧，并使用串口线将实验箱左侧标有 “13.56MHZ”的VB3 串口座与PC机的串口相连，如图 7.12所示； <br> <br>图 7.12 13.56MHz读写器硬件连接&nbsp;' , '1550076308') [ RunTime:0.063089s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:45:18+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2726%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2726%27 [运行时间：5.927470s][吞吐率：0.17req/s] [内存消耗：17,024.12kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'26\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002435s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002918s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '26' ) LIMIT 1 [ RunTime:0.001244s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004120s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.002451s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:46:08+08:00 ] 0.0.0.0 GET /teacher/guide/addPage
+[ info ] reportsystem/teacher/guide/addPage [运行时间：0.212412s][吞吐率：4.71req/s] [内存消耗：5,047.33kb] [文件加载：48]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'addPage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->addPage[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html [ array (
+  0 => 'courseList',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 撰写实验指导页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003373s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004168s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  teacherNo = '1999013' ) [ RunTime:0.003168s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:46:08+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.095183s][吞吐率：10.51req/s] [内存消耗：2,477.20kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/guide/addPage',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T00:46:54+08:00 ] 0.0.0.0 POST /teacher/guide/guideAdd
+[ info ] reportsystem/teacher/guide/guideAdd [运行时间：0.221477s][吞吐率：4.52req/s] [内存消耗：5,038.43kb] [文件加载：48]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideAdd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '208',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/addPage',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '507',
+  'guideName' => '实验三  IEEE14443 读取标签数据实验 ',
+  'aim' => '1',
+  'environment' => '1',
+  'request' => '1',
+  'task' => '1',
+  'content' => '1',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideAdd[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 添加实验指导
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002156s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.003166s ]
+[ sql ] [ SQL ] INSERT INTO `guide` (`teacherNo` , `courseNo` , `guideName` , `testAim` , `testEnvironment` , `testRequire` , `testTask` , `testContent` , `createTime`) VALUES (1999013 , 507 , '实验三  IEEE14443 读取标签数据实验 ' , '1' , '1' , '1' , '1' , '1' , '1550076414') [ RunTime:0.061864s ]
+---------------------------------------------------------------
+[ 2019-02-14T00:47:02+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=%2727%27
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=%2727%27 [运行时间：5.291485s][吞吐率：0.19req/s] [内存消耗：16,932.34kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideAdd',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cc91k2tnqdmej5gvds01hj5i57',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '\'27\'',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002444s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002571s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '27' ) LIMIT 1 [ RunTime:0.001650s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002419s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  (  courseNo = '507' ) LIMIT 1 [ RunTime:0.001659s ]
