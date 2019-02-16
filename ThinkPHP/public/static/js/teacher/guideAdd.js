@@ -8,10 +8,8 @@ $(document).ready(function(){
 //提交校验
 function checkSubmit() {
 
-    // //判断保存或提交
-    // $submit = 
-    // if (true) {}
-    //
+    //判断保存或提交
+
     if(
         checkCourse() == true &&
         checkName() == true && 

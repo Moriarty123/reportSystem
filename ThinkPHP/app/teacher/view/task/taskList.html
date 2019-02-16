@@ -78,13 +78,13 @@
 				</tr>
 				{volist name="taskList" id="vo"}
 				<tr>
-					<td>{$vo.courseName}</td>
-					<td>{$vo.taskName}</td>
+					<td style="max-width: 150px;">{$vo.courseName}</td>
+					<td style="max-width: 150px;">{$vo.taskName}</td>
 					<td><a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">查看实验指导</a></td>
 					<td>{$vo.status}</td>
 					<td>{$vo.startTime|date="Y-m-d h:m",###}</td>
 					<td>{$vo.endTime|date="Y-m-d h:m",###}</td>
-					<td>{$vo.taskDescribe}</td>
+					<td style="width: 150px;">{$vo.taskDescribe}</td>
 					<td>
 						<a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">
 							<i class="fa fa-eye" title="查看实验指导"></i>

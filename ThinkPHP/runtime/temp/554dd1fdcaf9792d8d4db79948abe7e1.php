@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1549195328;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1550333262;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -213,7 +213,7 @@
 					
 					<td><?php echo date("Y-m-d h:m:s",$vo['createTime']); ?></td>
 					<td>
-						<a href="">
+						<a href="/teacher/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 					
@@ -261,5 +261,11 @@
   			$("#submitedFilterDiv").slideToggle();
 		});
 	});
+	
 </script>
 <!-- 筛选框结束 -->
+
+<script>
+   	// var url = 'http://reportSystem/teacher/guide/guideList';
+   	// window.open(url);
+</script>

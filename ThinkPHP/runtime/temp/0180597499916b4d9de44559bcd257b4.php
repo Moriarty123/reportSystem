@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550310369;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550330838;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -204,13 +204,13 @@
 				</tr>
 				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['taskName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
 					<td><a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">查看实验指导</a></td>
 					<td><?php echo $vo['status']; ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
-					<td><?php echo $vo['taskDescribe']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
 					<td>
 						<a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">
 							<i class="fa fa-eye" title="查看实验指导"></i>

@@ -196,7 +196,7 @@ class Guide extends Common
             'createTime'        => $createTime
         ];
 
-        dump($data);
+        // dump($data);
 
         //2.保存数据库
         $guideModel = new guideModel();
@@ -253,6 +253,7 @@ class Guide extends Common
         $course = $courseModel->where($where)->find();
         $courseName = $course['courseName'];
 
+        //生成pdf
         $html = 
             '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
             .$guideName.
@@ -263,8 +264,11 @@ class Guide extends Common
             '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
             '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
-        
-        // guidePdf($html);
+        // $url = 'http://reportSystem/teacher/guide/guideList';
+        // $path = "<script>window.open('".$url."')</script>";
+        // dump($path);
+
+        guidePdf($html);
         //2.跳转到实验指导列表
         $this->redirect('teacher/guide/guideList');
 
