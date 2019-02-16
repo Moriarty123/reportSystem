@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1549515820;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1550307241;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,7 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/taskAdd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -162,17 +163,16 @@
 			<div class="a">
 				<h2>添加新实验任务</h2>
 			</div>
-			<form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkAddTask()">
+			<form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
 				<div class="add_list">
 					<label class="add_label"><span class="xing">*</span>任务名称：</label>
-					<input type="text" name="taskName" placeholder="输入实验任务名称" class="add_input" onfocus="Name()" onblur="checkName()"/>
-					<span class="tip" id="tip-name">请输入实验任务名称</span>
+					<input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
 				</div>
 
 				<div class="add_list">
 					<label class="add_label"><span class="xing">*</span>所属课程：</label>
-					<select name="courseNo" class="add_input">
-						<option>--请选择--</option>
+					<select name="courseNo" class="add_input" id="courseNo">
+						<option value="-1">--请选择--</option>
 						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 						<option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
 						<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -181,22 +181,18 @@
 
 				<div class="add_list">
 					<label class="add_label"><span class="xing">*</span>开始时间：</label>
-					<input type="datetime-local" name="startTime" class="add_input" onfocus="openTime()" onblur="checkOpenTime()"/>
-					<span class="tip" id="tip-name">请选择开始时间</span>
+					<input type="datetime-local" id="startTime" name="startTime" class="add_input"/>
 				</div>
 
 				<div class="add_list">
 					<label class="add_label"><span class="xing">*</span>截止时间：</label>
-					<input type="datetime-local" name="endTime" class="add_input" onfocus="closeTime()" onblur="checkCloseTime()"/>
-					<span class="tip" id="tip-name">请选择截止时间</span>
+					<input type="datetime-local" id="endTime" name="endTime" class="add_input"/>
 				</div>
 
 				<div class="add_list">
 					<label class="add_label"><span class="xing">*</span>任务描述：</label>
-					<textarea name="taskDescribe" class="add_textarea"></textarea>
-					<span class="tip" id="tip-name">请选择截止时间</span>
+					<textarea name="taskDescribe" class="add_textarea" id="taskDescribe"></textarea>
 				</div>
-				
 				<input type="submit" value="提交" class="add_submit" />
 			</form>
 		</div>
@@ -231,3 +227,5 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+
+
