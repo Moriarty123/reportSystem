@@ -217,7 +217,7 @@ class Guide extends Common
             $taskModel = new taskModel();
             $taskWhere = "taskNo = '$taskNo'";
             $task['guideNo'] = $guideNo;
-            $taskModel->where($taskWhere)->update($task,$taskWhere);
+            $taskModel->update($task,$taskWhere);
         }
         
         

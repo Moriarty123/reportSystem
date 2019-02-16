@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550284848;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550310369;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -220,7 +220,7 @@
 							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
 						<?php else: ?>
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/task/taskPublish?taskNo=<?php echo $vo['taskNo']; ?>" style='margin-left: 5px;' onclick="return checkPublish();">
 							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
 						</a>
 						<?php endif; ?>
@@ -267,3 +267,9 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+<script type="text/javascript">
+	function checkPublish()
+	{
+		return window.confirm("您确认要发布此实验任务吗？");
+	}
+</script>

@@ -139,6 +139,7 @@ class Task extends Common
     //添加实验任务页面
     public function addPage()
     {
+        Log::record('添加实验任务页面', 'notice');
 
         //获取课程
         $courseModel = new courseModel();
@@ -160,6 +161,7 @@ class Task extends Common
         // $shijian=str_replace("T"," ",$_POST['startTime']);
         // dump($shijian);
         // dump(strtotime($shijian));
+        Log::record('添加实验任务', 'notice');
 
         //1.获取数据
         $teacherNo  = session('account');
@@ -193,5 +195,43 @@ class Task extends Common
 
         //3.跳转到实验任务列表页面
         $this->redirect('/teacher/task/taskList');
+    }
+
+    //发布实验任务
+    public function taskPublish()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record('发布实验任务', 'notice');
+
+        //获取taskNo
+        $taskNo = input('get.taskNo');
+
+        //判断是否设置实验指导
+        $taskModel = new taskModel();
+        $where = "taskNo = '$taskNo'";
+        $task = $taskModel->where($where)->find();
+        $guideNo = $task['guideNo'];
+
+        if (empty($guideNo)) {
+            Log::record('未设置实验指导！', 'error');
+            $this->error('未设置实验指导！', '/teacher/task/taskList');
+        }
+
+        //修改发布状态
+        $data = [
+            'status' => 1
+        ];
+
+        $update = $taskModel->update($data, $where);
+
+        if (empty($update)) {
+            Log::record('发布实验指导失败！', 'error');
+            $this->error('发布实验指导失败！请稍后再试。', '/teacher/task/taskList');
+        }
+
+        //发布成功
+        $this->success('发布实验指导成功！', '/teacher/task/taskList');
+
     }
 }

@@ -94,7 +94,7 @@
 							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
 						{else}
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/task/taskPublish?taskNo={$vo.taskNo}" style='margin-left: 5px;' onclick="return checkPublish();">
 							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
 						</a>
 						{/eq}
@@ -133,3 +133,9 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+<script type="text/javascript">
+	function checkPublish()
+	{
+		return window.confirm("您确认要发布此实验任务吗？");
+	}
+</script>
