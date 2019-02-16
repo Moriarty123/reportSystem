@@ -12,7 +12,15 @@ function checkSubmit() {
     // $submit = 
     // if (true) {}
     //
-    if(checkName() == true && checkAim() == true && checkEnvironment() == true && checkRequest() == true && checkTask() == true && checkContent() == true) {
+    if(
+        checkCourse() == true &&
+        checkName() == true && 
+        checkAim() == true && 
+        checkEnvironment() == true && 
+        checkRequest() == true && 
+        checkTask() == true && 
+        checkContent() == true
+         ) {
         // alert('确认提交？');
         return true;
     }
@@ -34,11 +42,25 @@ function checkName() {
     }
 }
 
+//课程校验
+function checkCourse() {
+    $courseNo = $('#courseNo').val();
+
+    if ($courseNo == 'null') {
+        alert("未选择实验课程");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
 //实验目的校验
 function checkAim() {
-    $testAimText = $("#testAim .w-e-text p").html();
+    $testAimText = $("#testAim .w-e-text").html();
 
-    if ($testAimText == "<br>") {
+    if ($testAimText == "<p><br></p>") {
        alert('实验目的不能为空');
        return false;
     }
@@ -50,9 +72,9 @@ function checkAim() {
 
 //实验环境校验
 function checkEnvironment() {
-    $testEnvironmentText = $("#testEnvironment .w-e-text p").html();
+    $testEnvironmentText = $("#testEnvironment .w-e-text").html();
 
-    if ($testEnvironmentText == "<br>") {
+    if ($testEnvironmentText == "<p><br></p>") {
        alert('实验环境不能为空');
        return false;
     }
@@ -64,9 +86,9 @@ function checkEnvironment() {
 
 //实验要求校验
 function checkRequest() {
-    $testRequireText = $("#testRequire .w-e-text p").html();
+    $testRequireText = $("#testRequire .w-e-text").html();
 
-    if ($testRequireText == "<br>") {
+    if ($testRequireText == "<p><br></p>") {
        alert('实验要求不能为空');
        return false;
     }
@@ -78,9 +100,9 @@ function checkRequest() {
 
 //实验任务校验
 function checkTask() {
-    $testTaskText = $("#testTask .w-e-text p").html();
+    $testTaskText = $("#testTask .w-e-text").html();
 
-    if ($testTaskText == "<br>") {
+    if ($testTaskText == "<p><br></p>") {
        alert('实验任务不能为空');
        return false;
     }
@@ -92,9 +114,9 @@ function checkTask() {
 
 //实验内容校验
 function checkContent() {
-    $testContentText = $("#testContent .w-e-text p").html();
+    $testContentText = $("#testContent .w-e-text").html();
 
-    if ($testContentText == "<br>") {
+    if ($testContentText == "<p><br></p>") {
        alert('实验内容不能为空');
        return false;
     }

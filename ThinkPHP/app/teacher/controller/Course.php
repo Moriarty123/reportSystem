@@ -91,7 +91,6 @@ class Course extends Common
 
 
         return $this->fetch('courseList');
-
     }
 
     //查看学生
@@ -120,7 +119,7 @@ class Course extends Common
                                         ->join('teacher b', 'a.teacherNo = b.teacherNo')
                                         ->join('student c', 'a.studentNo = c.studentNo')
                                         ->join('course d', 'a.courseNo = d.courseNo')
-                                        ->paginate(5);
+                                        ->paginate(15);
 
         $studentNumber = $electiveModel ->where($where)
                                         ->alias('a')

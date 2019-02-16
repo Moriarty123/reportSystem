@@ -26,6 +26,14 @@
     <link rel="stylesheet" href="__CSS__/teacher/guideAdd.css" />
 
 </head>
+<style type="text/css">
+    .guideAddDiv .test-text {
+        width: 500px;
+    }
+    .guideAddDiv select {
+        width: 500px;
+    }
+</style>
 <body>
     <!-- 头部开始-->
     {include file="../app/common/view/html/header.html"}
@@ -46,10 +54,20 @@
                     <div class="add-list">
                         <label>实验课程：</label>
                         <br>
-                        <select style="width: 500px;" name="courseNo">
-                            <option>--请选择实验课程--</option>
+                        <select name="courseNo" id="courseNo">
+                            <option value="null">--请选择实验课程--</option>
                             {volist name="courseList" id="vo"}
                             <option value="{$vo.courseNo}">{$vo.courseName}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="add-list">
+                        <label>实验任务：</label>
+                        <br>
+                        <select name="taskNo" id="taskNo">
+                            <option value="-1">--请选择实验任务--</option>
+                            {volist name="taskList" id="vo"}
+                            <option value="{$vo.taskNo}">{$vo.taskName}</option>
                             {/volist}
                         </select>
                     </div>

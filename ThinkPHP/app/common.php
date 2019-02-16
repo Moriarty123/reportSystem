@@ -40,7 +40,7 @@ function GuidePdf($content)
 	//设置文档信息
 	$pdf->SetCreator('Helloweba');
 	$pdf->SetAuthor('yueguangguang');
-	$pdf->SetTitle('Welcome to helloweba.com!');
+	$pdf->SetTitle('计算机学院实验报告在线撰写系统');
 	$pdf->SetSubject('TCPDF Tutorial');
 	$pdf->SetKeywords('TCPDF, PDF, PHP');
 
