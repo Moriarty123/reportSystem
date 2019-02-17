@@ -264,19 +264,108 @@ class Guide extends Common
             '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
             '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
-        // $url = 'http://reportSystem/teacher/guide/guideList';
-        // $path = "<script>window.open('".$url."')</script>";
-        // dump($path);
-
         guidePdf($html);
         //2.跳转到实验指导列表
         $this->redirect('teacher/guide/guideList');
 
     }
 
-    public function test()
+    //编辑实验指导
+    public function editPage()
     {
+        //0.测试
+        // dump($_GET);
+        // Log::record('撰写实验指导页面', 'notice');
+
+        //1.获取guideNo
+        $guideNo = input('get.guideNo');
+
+        //2.获取guide
+        $guideModel = new guideModel();
+        $courseModel = new courseModel();
+        $taskModel = new taskModel();
+
+        $teacherNo = session('account');
+        $courseWhere = "teacherNo = '$teacherNo'";
+        $taskWhere = "teacherNo = '$teacherNo' and status = 0";
+        $guideWhere = "guideNo = '$guideNo'";
+
+        $guide = $guideModel->where($guideWhere)->find();
+        $courseList = $courseModel->where($courseWhere)->select();
+        $taskList = $taskModel->where($taskWhere)->select();
+
+        //3.渲染页面
+        $this->assign('courseList', $courseList);
+        $this->assign('taskList', $taskList);
+        $this->assign('guide', $guide);
         
-        guidePdf('<h1>hello world</h1>');
+        return $this->fetch('guideEdit');
+    }
+
+    //编辑实验指导
+    public function guideEdit()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record('编辑实验指导','notice');
+
+        //1.获取数据
+        $guideNo            = input('post.guideNo');
+        $courseNo           = input('post.courseNo');
+        $taskNo             = input('post.taskNo');
+        $guideName          = input('post.guideName');
+        $testAim            = input('post.aim');
+        $testEnvironment    = input('post.environment');
+        $testRequire        = input('post.request');
+        $testTask           = input('post.task');
+        $testContent        = input('post.content');
+
+        $teacherNo = session('account');
+        $createTime = time();
+
+        if ($taskNo == -1) {
+            $taskNo = Null;
+        }
+
+        $data = [
+            'teacherNo'         => $teacherNo,
+            'courseNo'          => $courseNo,
+            'taskNo'            => $taskNo,
+            'guideName'         => $guideName,
+            'testAim'           => $testAim,
+            'testEnvironment'   => $testEnvironment,
+            'testRequire'       => $testRequire,
+            'testTask'          => $testTask,
+            'testContent'       => $testContent,
+            'createTime'        => $createTime
+        ];
+
+        // dump($data);
+
+        //2.保存数据库
+        $guideModel = new guideModel();
+
+        $guideWhere = "guideNo = '$guideNo'";
+        $guide = $guideModel->update($data, $guideWhere);
+
+
+        if (empty($guide)) {
+            Log::record('编辑实验指导失败！', 'error');
+            $this->error('编辑实验指导失败！请稍后再试。', '/teacher/guide/guideList');
+        }
+        //3.生成文件
+
+
+        //4.后续操作
+        //4.1更新task表
+        if($taskNo != null) {
+            $taskModel = new taskModel();
+            $taskWhere = "taskNo = '$taskNo'";
+            $task['guideNo'] = $guideNo;
+            $taskModel->update($task,$taskWhere);
+        }
+        
+        
+        $this->success('编辑实验指导成功', "teacher/guide/guideList");
     }
 }

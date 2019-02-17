@@ -47,17 +47,23 @@
     <div id="MainForm">
         <div class="form_boxA">
             <div class="a">
-                <h2>撰写实验指导</h2>
+                <h2>编辑实验指导</h2>
             </div>
             <div class="guideAddDiv">
-                <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
+                <form action="/teacher/guide/guideEdit" method="post" onsubmit="return checkSubmit()">
+                    <input type="hidden" id="guideNo" name="guideNo">
                     <div class="add-list">
                         <label>实验课程：</label>
                         <br>
                         <select name="courseNo" id="courseNo">
                             <option value="null">--请选择实验课程--</option>
                             {volist name="courseList" id="vo"}
-                            <option value="{$vo.courseNo}">{$vo.courseName}</option>
+                                {eq name="$vo.courseNo" value="$guide.courseNo"}
+                                    <option value="{$vo.courseNo}" selected = "selected">{$vo.courseName}</option>
+                                {else}
+                                    <option value="{$vo.courseNo}">{$vo.courseName}</option>
+                                {/eq}
+                            
                             {/volist}
                         </select>
                     </div>
@@ -67,13 +73,17 @@
                         <select name="taskNo" id="taskNo">
                             <option value="-1">--请选择实验任务--</option>
                             {volist name="taskList" id="vo"}
-                            <option value="{$vo.taskNo}">{$vo.taskName}</option>
+                                {eq name="$vo.taskNo" value="$guide.taskNo"}
+                                    <option value="{$vo.taskNo}" selected = "selected">{$vo.taskName}</option>
+                                {else}
+                                    <option value="{$vo.taskNo}">{$vo.taskName}</option>
+                                {/eq}
                             {/volist}
                         </select>
                     </div>
                     <div class="add-list">
                         <label>实验指导名称：</label>
-                        <input type="text" id="guideName" name="guideName" class="test-text">
+                        <input type="text" id="guideName" name="guideName" class="test-text" onblur="checkName();">
                     </div>
                     <div class="add-list">
                         <label>实验目的：</label>
@@ -133,6 +143,15 @@
         $("#submitedFilter").click(function(){
             $("#submitedFilterDiv").slideToggle();
         });
+
+        //加载guide数据
+        $("#guideName").val("{$guide.guideName}");
+        $("#guideNo").val("{$guide.guideNo}");
+        $("#testAim .w-e-text").html("{$guide.testAim}");
+        $("#testEnvironment .w-e-text").html("{$guide.testAim}");
+        $("#testRequire .w-e-text").html("{$guide.testEnvironment}");
+        $("#testTask .w-e-text").html("{$guide.testTask}");
+        $("#testContent .w-e-text").html("{$guide.testContent}");
     });
 </script>
 <!-- 筛选框结束 -->
