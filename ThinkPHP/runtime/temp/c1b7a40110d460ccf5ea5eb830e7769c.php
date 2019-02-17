@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550394094;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550392553;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550406482;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550392553;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -200,13 +200,13 @@
 				<tr>
 					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
-					<td><a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">查看实验指导</a></td>
+					<td><a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">查看实验指导</a></td>
 					<td><?php echo $vo['status']; ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
 					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
 					<td>
-						<a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">
+						<a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank"> 
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
 					</td>
