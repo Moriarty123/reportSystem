@@ -5,7 +5,7 @@
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="__IMG__/school.ico" />
     
-    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/fontawesome.min.css" />
     <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
     <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
 
@@ -32,10 +32,19 @@
 	<!--课程列表开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
-			<div class="a">
+			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>实验指导列表</h2>
+				<div style="position: absolute; left: 150px; top: 33px;">
+					<select>
+						<option>--请选择实验课程--</option>
+						{volist name="courseList" id="course"}
+						<option>{$course.courseName}</option>
+						{/volist}
+					</select>
+				</div>
+				
 				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验指导名称" name="search" />
+					<input type="text" class="search" placeholder="实验报告名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
@@ -50,6 +59,7 @@
 				<tr>
 					<th>实验课程</th>
 					<th>实验任务</th>
+					<th>实验报告</th>
 					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
@@ -73,16 +83,16 @@
 					</th>
 					<th style="position: relative; top:0px; left:0px;">
 						批阅状态
-						<span id="submitedFilter">
+						<span id="reviewedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
-						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
 							<form >
-								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未批阅</label>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="reviewed" type="radio"/>未批阅</label>
 								</div>
-								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已批阅</label>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">
+									<label><input name="reviewed" type="radio"/>已批阅</label>
 								</div>
 								<div>
 									<input type="submit" name="" class="submit" value="确定">
@@ -98,6 +108,7 @@
 				<tr>
 					<td>{$vo.courseName}</td>
 					<td>{$vo.taskName}</td>
+					<td>{$vo.reportName}</td>
 					<td>{$vo.studentName}</td>
 					<td>{$vo.submitStatus}</td>
 					<td>{$vo.reviewStatus}</td>
@@ -141,6 +152,10 @@
 	$(document).ready(function(){
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
+		});
+
+		$("#reviewedFilter").click(function(){
+  			$("#reviewedFilterDiv").slideToggle();
 		});
 	});
 </script>

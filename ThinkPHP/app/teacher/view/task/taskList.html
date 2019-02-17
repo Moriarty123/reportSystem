@@ -78,20 +78,26 @@
 				</tr>
 				{volist name="taskList" id="vo"}
 				<tr>
-					<td>{$vo.courseName}</td>
-					<td>{$vo.taskName}</td>
-					<td>查看实验指导</td>
+					<td style="max-width: 150px;">{$vo.courseName}</td>
+					<td style="max-width: 150px;">{$vo.taskName}</td>
+					<td><a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">查看实验指导</a></td>
 					<td>{$vo.status}</td>
-					<td>{$vo.startDate|date="Y-m-d h:m:s",###}</td>
-					<td>{$vo.closingDate|date="Y-m-d h:m:s",###}</td>
-					<td>{$vo.taskDescribe}</td>
+					<td>{$vo.startTime|date="Y-m-d h:m",###}</td>
+					<td>{$vo.endTime|date="Y-m-d h:m",###}</td>
+					<td style="width: 150px;">{$vo.taskDescribe}</td>
 					<td>
-						<a href="">
+						<a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
-						<a href="/teacher/task/studentList?taskNo={$vo.taskNo}" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
+						{eq name="$vo.status" value="已发布"}
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
+						{else}
+						<a href="/teacher/task/taskPublish?taskNo={$vo.taskNo}" style='margin-left: 5px;' onclick="return checkPublish();">
+							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
+						</a>
+						{/eq}
 					</td>
 				</tr>
 				{/volist}
@@ -127,3 +133,9 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+<script type="text/javascript">
+	function checkPublish()
+	{
+		return window.confirm("您确认要发布此实验任务吗？");
+	}
+</script>
