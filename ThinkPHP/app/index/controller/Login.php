@@ -87,7 +87,7 @@ class Login extends Controller
     		$this->success('教师登录成功','/teacher/index/index');
     	}
     	else if (strlen($account) == 12) {
-    		$this->success('学生登录成功','/index/index/index');
+    		$this->success('学生登录成功','/student/index/index');
     	}
     }
 
