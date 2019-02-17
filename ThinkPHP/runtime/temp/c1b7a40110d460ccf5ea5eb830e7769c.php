@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550406482;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550392553;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550408152;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550392553;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,7 +154,7 @@
 		<div class="form_boxA">
 			<div class="a">
 				<h2>实验任务列表</h2>
-				<form action="/teacher/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+				<form action="/student/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验任务名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
@@ -171,26 +171,6 @@
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
-					<th style="position: relative; top:0px; left:0px;">
-						发布状态
-						<span id="publishedFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="publishedFilterDiv" class="publishedFilterDiv" >
-							<form>
-								<div class="publishedFilterRadio">	
-									<label><input name="published" type="radio"/>未发布</label>
-								</div>
-								<div class="publishedFilterRadio">
-									<label><input name="published" type="radio"/>已发布</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
-						</div>
-					</th>
 					<th>开始时间</th>
 					<th>截止时间</th>
 					<th>任务描述</th>
@@ -201,7 +181,6 @@
 					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
 					<td><a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">查看实验指导</a></td>
-					<td><?php echo $vo['status']; ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
 					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
 					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>

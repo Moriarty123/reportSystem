@@ -34,7 +34,7 @@
 		<div class="form_boxA">
 			<div class="a">
 				<h2>实验任务列表</h2>
-				<form action="/teacher/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+				<form action="/student/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验任务名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
@@ -51,26 +51,6 @@
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
-					<th style="position: relative; top:0px; left:0px;">
-						发布状态
-						<span id="publishedFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="publishedFilterDiv" class="publishedFilterDiv" >
-							<form>
-								<div class="publishedFilterRadio">	
-									<label><input name="published" type="radio"/>未发布</label>
-								</div>
-								<div class="publishedFilterRadio">
-									<label><input name="published" type="radio"/>已发布</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
-						</div>
-					</th>
 					<th>开始时间</th>
 					<th>截止时间</th>
 					<th>任务描述</th>
@@ -81,7 +61,6 @@
 					<td style="max-width: 150px;">{$vo.courseName}</td>
 					<td style="max-width: 150px;">{$vo.taskName}</td>
 					<td><a href="/student/guide/guideShow?guideNo={$vo.guideNo}" target="_blank">查看实验指导</a></td>
-					<td>{$vo.status}</td>
 					<td>{$vo.startTime|date="Y-m-d h:m",###}</td>
 					<td>{$vo.endTime|date="Y-m-d h:m",###}</td>
 					<td style="width: 150px;">{$vo.taskDescribe}</td>

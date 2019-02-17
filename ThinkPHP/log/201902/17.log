@@ -22392,3 +22392,1137 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:54:52+08:00 ] 0.0.0.0 GET /student/task/taskList
+[ info ] reportsystem/student/task/taskList [运行时间：0.374472s][吞吐率：2.67req/s] [内存消耗：5,487.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011840s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002705s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.002192s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.005151s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001860s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:54:52+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.108157s][吞吐率：9.25req/s] [内存消耗：2,476.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:06+08:00 ] 0.0.0.0 POST /teacher/task/taskSearch
+[ info ] reportsystem/teacher/task/taskSearch [运行时间：0.350090s][吞吐率：2.86req/s] [内存消耗：5,408.77kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002501s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003537s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002503s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%程序设计%'  AND (  a.teacherNo = '201541402313' ) LIMIT 1 [ RunTime:0.001973s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%程序设计%'  AND (  a.teacherNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.003287s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%程序设计%'  AND (  a.teacherNo = '201541402313' ) LIMIT 1 [ RunTime:0.001410s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:55:07+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.112864s][吞吐率：8.86req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:09+08:00 ] 0.0.0.0 GET /student/task/taskList
+[ info ] reportsystem/student/task/taskList [运行时间：0.213633s][吞吐率：4.68req/s] [内存消耗：5,227.81kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003242s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002611s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.002136s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.003574s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001941s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:55:09+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.126582s][吞吐率：7.90req/s] [内存消耗：2,476.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:20+08:00 ] 0.0.0.0 POST /teacher/task/taskSearch
+[ info ] reportsystem/teacher/task/taskSearch [运行时间：0.241251s][吞吐率：4.15req/s] [内存消耗：5,408.49kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013597s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003086s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.003148s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '201541402313' ) LIMIT 1 [ RunTime:0.001610s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.002850s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '201541402313' ) LIMIT 1 [ RunTime:0.001365s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:55:20+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.117907s][吞吐率：8.48req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:24+08:00 ] 0.0.0.0 GET /student/task/taskList
+[ info ] reportsystem/student/task/taskList [运行时间：0.193560s][吞吐率：5.17req/s] [内存消耗：5,227.90kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002255s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.003355s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.003056s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.003127s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001592s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:55:25+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.129240s][吞吐率：7.74req/s] [内存消耗：2,476.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:56+08:00 ] 0.0.0.0 GET /student/task/taskList
+[ info ] reportsystem/student/task/taskList [运行时间：0.328357s][吞吐率：3.05req/s] [内存消耗：5,487.25kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002622s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004109s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.002017s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.003278s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001615s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:55:56+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.101067s][吞吐率：9.89req/s] [内存消耗：2,476.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:55:59+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.208080s][吞吐率：4.81req/s] [内存消耗：5,295.69kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002227s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004755s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 1 [ RunTime:0.002235s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 0,15 [ RunTime:0.002546s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 1 [ RunTime:0.002301s ]
+[ error ] [8]未定义变量: guideList[F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php:110]
+---------------------------------------------------------------
+[ 2019-02-17T20:56:34+08:00 ] 0.0.0.0 GET /teacher/task/taskList
+[ info ] reportsystem/teacher/task/taskList [运行时间：0.203784s][吞吐率：4.91req/s] [内存消耗：5,422.75kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/index/index',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002327s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.006588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002133s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001228s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  (  a.teacherNo = '2012032' ) LIMIT 0,15 [ RunTime:0.001803s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001189s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:56:35+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.182588s][吞吐率：5.48req/s] [内存消耗：2,477.19kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/css,*/*;q=0.1',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:56:45+08:00 ] 0.0.0.0 POST /teacher/task/taskSearch
+[ info ] reportsystem/teacher/task/taskSearch [运行时间：0.184608s][吞吐率：5.42req/s] [内存消耗：5,424.45kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '25',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002744s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002094s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001087s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '2012032' ) LIMIT 0,15 [ RunTime:0.002970s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验%'  AND (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001280s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:56:45+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.143652s][吞吐率：6.96req/s] [内存消耗：2,477.20kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/css,*/*;q=0.1',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/task/taskSearch',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:56:53+08:00 ] 0.0.0.0 POST /teacher/task/taskSearch
+[ info ] reportsystem/teacher/task/taskSearch [运行时间：0.246928s][吞吐率：4.05req/s] [内存消耗：5,416.87kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/task/taskSearch',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '34',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验三',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003072s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.004509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.004656s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验三%'  AND (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001594s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验三%'  AND (  a.teacherNo = '2012032' ) LIMIT 0,15 [ RunTime:0.002807s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE  `taskName` LIKE '%实验三%'  AND (  a.teacherNo = '2012032' ) LIMIT 1 [ RunTime:0.001500s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:56:54+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.159022s][吞吐率：6.29req/s] [内存消耗：2,477.20kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+  'accept' => 'text/css,*/*;q=0.1',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/teacher/task/taskSearch',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=jkoh40eif6najbt72te6r02j24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:56:59+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.240126s][吞吐率：4.16req/s] [内存消耗：5,205.35kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002477s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002211s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 1 [ RunTime:0.001461s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 0,15 [ RunTime:0.003965s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%程序设计%' LIMIT 1 [ RunTime:0.001752s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:57:00+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.102686s][吞吐率：9.74req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:57:04+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.210450s][吞吐率：4.75req/s] [内存消耗：5,205.47kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '无线',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002183s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002910s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%无线%' LIMIT 1 [ RunTime:0.001706s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%无线%' LIMIT 0,15 [ RunTime:0.004243s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%无线%' LIMIT 1 [ RunTime:0.001596s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:57:04+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.100339s][吞吐率：9.97req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:57:07+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.204535s][吞吐率：4.89req/s] [内存消耗：5,227.91kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003037s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002494s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验%' LIMIT 1 [ RunTime:0.001640s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验%' LIMIT 0,15 [ RunTime:0.003247s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验%' LIMIT 1 [ RunTime:0.002098s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:57:08+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.116665s][吞吐率：8.57req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:57:14+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.186863s][吞吐率：5.35req/s] [内存消耗：5,217.37kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验三',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002659s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002286s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验三%' LIMIT 1 [ RunTime:0.001933s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验三%' LIMIT 0,15 [ RunTime:0.003428s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验三%' LIMIT 1 [ RunTime:0.001468s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:57:14+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.120042s][吞吐率：8.33req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-17T20:57:20+08:00 ] 0.0.0.0 POST /student/task/taskSearch
+[ info ] reportsystem/student/task/taskSearch [运行时间：0.189135s][吞吐率：5.29req/s] [内存消耗：5,217.55kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'task',
+    2 => 'taskSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验二',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Task->taskSearch[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验任务
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002209s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002008s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验二%' LIMIT 1 [ RunTime:0.001234s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验二%' LIMIT 0,15 [ RunTime:0.003217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `student` `b` ON `a`.`studentNo`=`b`.`studentNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` INNER JOIN `task` `e` ON `e`.`courseNo`=`a`.`courseNo` WHERE  (  status = 1 )  AND (  a.studentNo = '201541402313' )  AND `taskName` LIKE '%实验二%' LIMIT 1 [ RunTime:0.001492s ]
+---------------------------------------------------------------
+[ 2019-02-17T20:57:21+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.112727s][吞吐率：8.87req/s] [内存消耗：2,477.09kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/student/task/taskSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=m0pencjbcgqshgtv2i7pm3jm27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
