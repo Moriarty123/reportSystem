@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\index\index.html";i:1550375729;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550376598;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\course\courseList.html";i:1550390801;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550376598;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/teacher/course.css" />
+    <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -153,48 +155,82 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; ">
-	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
-		<tr>
-			<td colspan="2">
-				<span class="time" style="color: black;">
-
-					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
-					<?php else: ?>
-					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
-					<div class="top">
-						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/student/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
-					</div>
-					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
-					<?php endif; ?>
-				</span>
-
-			</td>
-		</tr>
-		<tr>
-			<td align="left" valign="top" colspan="2">
-				<div class="main-tit">服务器信息</div>
-				<div class="main-con">
-					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
-					PHP版本：5.6.31<br/>
-					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>实验课程列表</h2>
+				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="课程名" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left" valign="top">
-				<div class="main-corpy">系统提示</div>
-				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您使用IE7以上版本或其他的浏览器
-				</div>
-			</td>
-		</tr>
-	</table>
+			</div>
+			<form action="/admin/user/checkedUserDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th style="width:100px;">课程编号</th>
+					<th>课程名称</th>
+					<th style="width: 80px;">任课老师</th>
+					<th style="width: 220px;">任课班级</th>
+					<th style="position: relative; top:0px; left:0px;">
+						任课时间
+						<span id="termFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="termFilterDiv" class="termFilterDiv" >
+							<form >
+								<div class="termFilterRadio" style="text-align: left;">	
+									<label><input name="term" type="radio"/>本学期</label>
+								</div>
+								<div class="termFilterRadio" style="text-align: left;">
+									<label><input name="term" type="radio"/>之前学期</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit">
+									<input type="reset" name="" class="reset">
+								</div>
+							</form>
+						</div>
+					</th>
+					<th style="width: 80px;">课程类型</th>
+					<th style="width: 80px;">实验课时</th>
+					<th style="width: 80px;">考查方式</th>
+					<th style="width: 80px;">操作</th>
+				</tr>
+				<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<tr>
+					<td><?php echo $vo['courseNo']; ?></td>
+					<td><?php echo $vo['courseName']; ?></td>
+					<td><?php echo $vo['teacherName']; ?></td>
+					<td><?php echo $vo['courseGrade'].'级'.$vo['courseMajor'].$vo['courseClass']; ?>班</td>
+					<td><?php echo $vo['openTime']; ?></td>
+					<td><?php echo $vo['courseNature']; ?></td>
+					<td><?php echo $vo['coursePeriod']; ?></td>
+					<td><?php echo $vo['examType']; ?></td>
+					<td>
+						<a href="/teacher/task/courseTask?courseNo=<?php echo $vo['courseNo']; ?>">
+							<i class="fa fa-eye" title="查看实验任务"></i>
+						</a>
+					</td>
+				</tr>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</table>
+			<p class="msg">
+				共找到<?php echo $courseNumber; ?>条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			<?php echo $courseList->render(); ?>
+			</div>
+			</form>
+		</div>
 	</div>
-	<!--main结束-->
+	<!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -213,3 +249,14 @@
 
 </body>
 </html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#termFilter").click(function(){
+  			$("#termFilterDiv").slideToggle();
+		});
+	});
+</script>
+<!-- 筛选框结束 -->
