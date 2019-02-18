@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550408452;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550409405;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1550477611;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550409453;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,13 +101,13 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/guide/guideList" class="cks">实验报告列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/guide/addPage" class="cks">撰写实验报告</a>
+				<a href="/student/report/addPage" class="cks">撰写实验报告</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -188,8 +188,8 @@
 						<a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank"> 
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
-						<a href="/student/guide/guideEdit?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank" style="margin-left: 5px;"> 
-							<i class="fa fa-edit" title="查看实验指导"></i>
+						<a href="/student/report/addPage?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank" style="margin-left: 5px;"> 
+							<i class="fa fa-edit" title="撰写实验报告"></i>
 						</a>
 					</td>
 				</tr>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550409647;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550460219;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -178,6 +178,46 @@
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验报告</th>
+					<th style="position: relative; top:0px; left:0px;">
+						提交状态
+						<span id="submitedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							<form >
+								<div class="submitedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="submited" type="radio"/>未提交</label>
+								</div>
+								<div class="submitedFilterRadio" style="margin-left: 5px;">
+									<label><input name="submited" type="radio"/>已提交</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
+								</div>
+							</form>
+						</div>
+					</th>
+					<th style="position: relative; top:0px; left:0px;">
+						批阅状态
+						<span id="reviewedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
+							<form >
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="reviewed" type="radio"/>未批阅</label>
+								</div>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">
+									<label><input name="reviewed" type="radio"/>已批阅</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
+								</div>
+							</form>
+						</div>
+					</th>
 					<th>提交时间</th>
 					<th>操作</th>
 				</tr>
@@ -186,15 +226,23 @@
 					<td><?php echo $vo['courseName']; ?></td>
 					<td><?php echo $vo['taskName']; ?></td>
 					<td><?php echo $vo['reportName']; ?></td>
+					<td><?php echo $vo['submitStatus']; ?></td>
+					<td><?php echo $vo['reviewStatus']; ?></td>
 					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
 					<td>
 						<a href="">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-					
+						<?php if($vo['reviewStatus'] == '已批阅'): ?>
 						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出"></i>
+						</a>
+						<?php else: ?>
+						<a href="/student/report/addPage" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
+						<?php endif; ?>
+						
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
