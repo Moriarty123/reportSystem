@@ -18,4 +18,14 @@ class Report extends Model
         $status = [-1=>'未知',0=>'未批阅',1=>'已批阅'];
         return $status[$value];
     }
+
+    //提交时间获取器
+    public function getSubmitTime($value)
+    {
+        if ($value == null) {
+            return "";
+        }
+
+        return $value;
+    }
 }

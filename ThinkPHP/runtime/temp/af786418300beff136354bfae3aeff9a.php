@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550460219;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550568439;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550409453;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,13 +65,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					我的课程
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
+				<a class="cks" href="/student/course/courseList">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -80,19 +80,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-book-open a"></i>
-					实验任务
+					我的任务
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/student/task/taskList">实验任务列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -101,19 +95,19 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					我的报告
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/student/report/addPage" class="cks">撰写实验报告</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -122,13 +116,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					批阅报告
+					我的成绩
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -159,7 +153,7 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
-				<h2>实验指导列表</h2>
+				<h2>实验报告列表</h2>
 				
 				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验报告名称" name="search" />
@@ -175,9 +169,9 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验报告</th>
+					<th style="max-width: 150px;">实验课程</th>
+					<th style="max-width: 150px;">实验任务</th>
+					<th style="max-width: 150px;">实验报告</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
 						<span id="submitedFilter">
@@ -218,17 +212,24 @@
 							</form>
 						</div>
 					</th>
+					<th>最后编辑时间</th>
 					<th>提交时间</th>
 					<th>操作</th>
 				</tr>
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['taskName']; ?></td>
-					<td><?php echo $vo['reportName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['reportName']; ?></td>
 					<td><?php echo $vo['submitStatus']; ?></td>
 					<td><?php echo $vo['reviewStatus']; ?></td>
+					<td><?php echo date("Y-m-d h:m:s",$vo['testTime']); ?></td>
+					<?php if($vo['submitTime'] == ''): ?>
+					<td>未提交</td>
+					<?php else: ?>
 					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<?php endif; ?>
+					
 					<td>
 						<a href="">
 							<i class="fa fa-eye" title="查看"></i>

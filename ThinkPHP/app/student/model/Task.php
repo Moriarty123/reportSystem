@@ -1,5 +1,5 @@
 <?php
-namespace app\teacher\model;
+namespace app\student\model;
 
 use think\Model;
 

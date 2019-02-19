@@ -5,10 +5,11 @@ use think\Controller;
 use think\Log;
 
 use app\common\controller\Common;
-use app\student\model\student as studentModel;
+use app\student\model\Student as studentModel;
 use app\student\model\Report as reportModel;
 use app\student\model\Course as courseModel;
 use app\student\model\Guide as guideModel;
+use app\student\model\Task as taskModel;
 
 class Report extends Common
 {
@@ -73,9 +74,100 @@ class Report extends Common
         return $this->fetch('reportAdd');
     }
 
+    //添加实验报告
+    public function reportAdd()
+    {
+        //0.测试
+        // dump($_POST);
+
+        //1.获取数据
+        $courseNo       = input('post.courseNo');
+        $teacherNo      = input('post.teacherNo');
+        $studentNo      = input('post.studentNo');
+        $taskNo         = input('post.taskNo');
+        $reportName     = input('post.reportName');
+        $testRequire    = input('post.testRequire');
+        $testAnalysis   = input('post.testAnalysis');
+        $testContent    = input('post.testContent');
+        $testScreen     = input('post.testScreen');
+        $testCode       = input('post.testCode');
+        $testSummary    = input('post.testSummary');
+        $testTime       = time();
+
+        $data = [
+            'courseNo'      => $courseNo,
+            'teacherNo'     => $teacherNo,
+            'studentNo'     => $studentNo,
+            'taskNo'        => $taskNo,
+            'reportName'    => $reportName,
+            'testRequire'   => $testRequire,
+            'testAnalysis'  => $testAnalysis,
+            'testContent'   => $testContent,
+            'testScreen'    => $testScreen,
+            'testCode'      => $testCode,
+            'testSummary'   => $testSummary,
+            'testTime'      => $testTime,
+        ];
+
+        // dump($data);
+
+        //2.存入数据库
+        $reportModel = new reportModel();
+
+        $report = $reportModel->create($data);
+
+        if (empty($report)) {
+            Log::record("添加实验报告失败！", "error");
+            $this->error("添加实验报告失败！", "/student/task/addFail");
+        }
+
+        //3.后续操作
+        $this->success("添加实验报告成功！", "/student/report/addSuccess");
+    }
+
+    //
+    public function addSuccess()
+    {
+        return $this->fetch('addSuccess');
+    }
+
+    //
+    public function addFail()
+    {
+        return $this->fetch('addFail');
+    }
+
     //显示实验报告
     public function reportPage()
     {
+        //0.测试
+        // dump($_GET);
+        Log::record('显示实验报告','notice');
+
+        //1.获取teacherName、courseName、studentName
+        //1.1获取student
+        $studentNo = session('account');
+        $studentModel = new studentModel();
+        $studentWhere = "studentNo = '$studentNo'";
+        $student = $studentModel->where($studentWhere)->find();
+
+        //1.2获取guide
+        $guideNo = input('get.guideNo');
+        $guideModel = new guideModel();
+
+        $guideWhere = "a.guideNo = '$guideNo'";
+        $guide = $guideModel->where($guideWhere)
+                            ->alias("a")
+                            ->join("teacher b", "a.teacherNo = b.teacherNo")
+                            ->join("course c", "a.courseNo = c.courseNo")
+                            ->join("task d", "a.taskNo = d.taskNo")
+                            ->field("a.*,b.teacherNo,b.teacherName,c.courseNo,c.courseName, d.taskNo, d.taskName")
+                            ->find();
+
+        //2.渲染
+        $this->assign('student', $student);  
+        $this->assign('guide', $guide);
+
         return $this->fetch('reportPage');
     }
 

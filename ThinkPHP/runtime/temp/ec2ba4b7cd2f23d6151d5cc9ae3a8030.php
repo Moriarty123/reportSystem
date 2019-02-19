@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportAdd.html";i:1550479781;s:35:"../app/common/view/html/header.html";i:1549160695;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportAdd.html";i:1550483475;s:35:"../app/common/view/html/header.html";i:1549160695;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="/static/css/common/detail.css">
 	<link rel="stylesheet" href="/static/css/teacher/report.css" />
 	<link rel="stylesheet" href="/static/css/teacher/display.css" />
-	
+
 </head>
 <body>
 	<!-- 头部开始-->
@@ -64,7 +64,7 @@
 				</div>
 			</div>
 			<div style="margin-top: 10px; margin-left: 20px;">
-				<iframe src="/student/report/reportPage" style="width: 600px; height: 875px; frameborder="0""></iframe>
+				<iframe src="/student/report/reportPage?guideNo=<?php echo $guideNo; ?>" style="width: 600px; height: 875px; frameborder="0""></iframe>
 				<iframe src="/student/report/guideShow?guideNo=<?php echo $guideNo; ?>" style="width: 600px; height: 875px; frameborder="0""></iframe>
 			</div>
 		</div>
