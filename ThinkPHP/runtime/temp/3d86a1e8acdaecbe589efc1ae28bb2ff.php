@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550585531;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550409453;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEdit.html";i:1550587147;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550409453;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,21 +6,33 @@
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="/static/images/school.ico" />
     
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script> 
+    <script type="text/javascript" src="/static/js/student/reportPage.js"></script>  
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/report.css" />
+
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
+    <link rel="stylesheet" href="/static/css/student/reportEdit.css" />
+
 </head>
+<style type="text/css">
+    .reportAddDiv .test-text {
+        width: 500px;
+    }
+    .reportAddDiv select {
+        width: 500px;
+    }
+</style>
 <body>
     <!-- 头部开始-->
     <!-- 头部 -->
@@ -149,115 +161,81 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--课程列表开始-->
-	<div id="MainForm">
-		<div class="form_boxA">
-			<div class="a" style="position: relative; left: 0px; top: 0px;">
-				<h2>实验报告列表</h2>
-				
-				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验报告名称" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
-				</div>
-			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th style="max-width: 150px;">实验课程</th>
-					<th style="max-width: 150px;">实验任务</th>
-					<th style="max-width: 150px;">实验报告</th>
-					<th style="position: relative; top:0px; left:0px;">
-						提交状态
-						<span id="submitedFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
-								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未提交</label>
-								</div>
-								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已提交</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>编辑实验报告</h2>
+            </div>
+            <div class="reportAddDiv">
+                <form action="/student/report/reportEdit" method="post" onsubmit="return checkSubmit()">
+                    <input type="hidden" id="reportNo" name="reportNo">
+                    <div class="add-list">
+						<label>实验课程：<?php echo $report['courseName']; ?></label>
+						<input type="hidden" id="courseName" name="courseNo" value="<?php echo $report['courseNo']; ?>">
+					</div>
+					<div class="add-list">
+						<label>指导老师：<?php echo $report['teacherName']; ?></label>
+						<input type="hidden" id="teacherNo" name="teacherNo" value="<?php echo $report['teacherNo']; ?>">
+					</div>
+					<div class="add-list">
+						<label>实验报告作者：<?php echo $report['studentName']; ?></label>
+						<input type="hidden" id="studentNo" name="studentNo" value="<?php echo $report['studentNo']; ?>">
+					</div>
+					<div class="add-list">
+						<label>实验任务：<?php echo $report['taskName']; ?></label>
+						<input type="hidden" id="taskNo" name="taskNo" value="<?php echo $report['taskNo']; ?>">
+					</div>
+					<div class="add-list">
+						<label>实验报告名称：</label>
+						<input type="text" id="reportName" name="reportName" class="test-text">
+					</div>
+					<div class="add-list">
+						<label>实验要求：</label>
+						<div id="testRequire" class="test-text">
 						</div>
-					</th>
-					<th style="position: relative; top:0px; left:0px;">
-						批阅状态
-						<span id="reviewedFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
-							<form >
-								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="reviewed" type="radio"/>未批阅</label>
-								</div>
-								<div class="reviewedFilterRadio" style="margin-left: 5px;">
-									<label><input name="reviewed" type="radio"/>已批阅</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
+						<input type="hidden" id="require" name="testRequire">
+					</div>
+					<div class="add-list">
+						<label>实验分析：</label>
+						<div id="testAnalysis" class="test-text">
 						</div>
-					</th>
-					<th>最后编辑时间</th>
-					<th>提交时间</th>
-					<th>操作</th>
-				</tr>
-				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
-					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
-					<td style="max-width: 150px;"><?php echo $vo['reportName']; ?></td>
-					<td><?php echo $vo['submitStatus']; ?></td>
-					<td><?php echo $vo['reviewStatus']; ?></td>
-					<td><?php echo date("Y-m-d h:m:s",$vo['testTime']); ?></td>
-					<?php if($vo['submitTime'] == ''): ?>
-					<td>未提交</td>
-					<?php else: ?>
-					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
-					<?php endif; ?>
-					
-					<td>
-						<a href="">
-							<i class="fa fa-eye" title="查看"></i>
-						</a>
-						<?php if($vo['reviewStatus'] == '已批阅'): ?>
-						<a href="" style='margin-left: 5px;'>
-							<i class="fa fa-file-export" title="导出"></i>
-						</a>
-						<?php else: ?>
-						<a href="/student/report/editPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
-						</a>
-						<?php endif; ?>
-						
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				共找到<?php echo $reportNumber; ?>条课程信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $reportList->render(); ?>
-			</div>
-			</form>
-		</div>
-	</div>
-	<!--课程列表结束-->
+						<input type="hidden" id="analysis" name="testAnalysis">
+					</div>
+					<div class="add-list">
+						<label>实验内容：</label>
+						<div id="testContent" class="test-text">
+						</div>
+						<input type="hidden" id="content" name="testContent">
+					</div>
+					<div class="add-list">
+						<label>实验截图：</label>
+						<div id="testScreen" class="test-text">
+						</div>
+						<input type="hidden" id="screen" name="testScreen">
+					</div>
+					<div class="add-list">
+						<label>实验代码：</label>
+						<div id="testCode" class="test-text">
+						</div>
+						<input type="hidden" id="code" name="testCode">
+					</div>
+					<div class="add-list">
+						<label>实验总结：</label>
+						<div id="testSummary" class="test-text">
+						</div>
+						<input type="hidden" id="summary" name="testSummary">
+					</div>
+					<div class="ButtonDiv submitDiv">
+                        <input type="submit" class="Button" name="save" value="保存" >
+                        <input type="submit" class="Button" name="submit" value="提交">
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -279,15 +257,42 @@
 
 <!-- 筛选框开始-->
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#submitedFilter").click(function(){
-  			$("#submitedFilterDiv").slideToggle();
-		});
+    
+    $(document).ready(function(){
+        $("#submitedFilter").click(function(){
+            $("#submitedFilterDiv").slideToggle();
+        });
 
-		$("#reviewedFilter").click(function(){
-  			$("#reviewedFilterDiv").slideToggle();
-		});
-	});
+        //加载report数据
+        $("#reportName").val("<?php echo $report['reportName']; ?>");
+        $("#reportNo").val("<?php echo $report['reportNo']; ?>");
+        $("#testRequire .w-e-text").html("<?php echo $report['testRequire']; ?>");
+        $("#testAnalysis .w-e-text").html("<?php echo $report['testAnalysis']; ?>");
+        $("#testContent .w-e-text").html("<?php echo $report['testContent']; ?>");
+        $("#testCode .w-e-text").html("<?php echo $report['testCode']; ?>");
+        $("#testScreen .w-e-text").html("<?php echo $report['testScreen']; ?>");
+        $("#testSummary .w-e-text").html("<?php echo $report['testSummary']; ?>");
+     });
 </script>
 <!-- 筛选框结束 -->
+
+<!-- 创建编辑器 -->
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<script type="text/javascript">
+    var E = window.wangEditor
+
+    var testRequire = new E('#testRequire');
+    var testAnalysis = new E('#testAnalysis');
+    var testContent = new E('#testContent');
+    var testScreen = new E('#testScreen');
+    var testCode = new E('#testCode');
+    var testSummary = new E('#testSummary');
+
+    testRequire.create();
+    testAnalysis.create();
+    testContent.create();
+    testScreen.create();
+    testCode.create();
+    testSummary.create();
+
+</script>

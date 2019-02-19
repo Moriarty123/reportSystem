@@ -79,6 +79,7 @@ class Report extends Common
     {
         //0.测试
         // dump($_POST);
+        Log::record("添加实验报告", "notice");
 
         //1.获取数据
         $courseNo       = input('post.courseNo');
@@ -217,5 +218,87 @@ class Report extends Common
 
     }
 
+    //编辑实验报告页面
+    public function editPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("编辑实验报告页面", "notice");
 
+        //1.获取数据
+        //1.1获取reportNo
+        $reportNo = input('get.reportNo');
+
+        //1.2获取guide对象
+        $reportModel = new reportModel();
+        $reportWhere = "a.reportNo = '$reportNo'";
+
+        $report = $reportModel  ->where($reportWhere)
+                                ->alias("a")
+                                ->join("teacher b", "a.teacherNo = b.teacherNo")
+                                ->join("student c", "a.studentNo = c.studentNo")
+                                ->join("course d", "a.courseNo = d.courseNo")
+                                ->join("task e", "a.taskNo = e.taskNo")
+                                ->field("a.*,b.teacherNo,b.teacherName, c.studentNo, c.studentName, d.courseNo,d.courseName, e.taskNo, e.taskName")
+                                ->find();
+ 
+
+        //2.页面渲染
+        $this->assign("report", $report);
+
+        return $this->fetch('reportEdit');
+    }
+
+    //编辑实验报告
+    public function reportEdit()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("编辑实验报告", "notice");
+
+        //1.获取数据
+        $reportNo       = input('post.reportNo');
+        $courseNo       = input('post.courseNo');
+        $teacherNo      = input('post.teacherNo');
+        $studentNo      = input('post.studentNo');
+        $taskNo         = input('post.taskNo');
+        $reportName     = input('post.reportName');
+        $testRequire    = input('post.testRequire');
+        $testAnalysis   = input('post.testAnalysis');
+        $testContent    = input('post.testContent');
+        $testScreen     = input('post.testScreen');
+        $testCode       = input('post.testCode');
+        $testSummary    = input('post.testSummary');
+        $testTime       = time();
+
+        $data = [
+            'courseNo'      => $courseNo,
+            'teacherNo'     => $teacherNo,
+            'studentNo'     => $studentNo,
+            'taskNo'        => $taskNo,
+            'reportName'    => $reportName,
+            'testRequire'   => $testRequire,
+            'testAnalysis'  => $testAnalysis,
+            'testContent'   => $testContent,
+            'testScreen'    => $testScreen,
+            'testCode'      => $testCode,
+            'testSummary'   => $testSummary,
+            'testTime'      => $testTime,
+        ];
+
+        // dump($data);
+
+        //2.更新数据
+        $reportWhere = "reportNo = '$reportNo'";
+        $reportModel = new reportModel();
+        $report = $reportModel->update($data, $reportWhere);
+
+        if (empty($report)) {
+            Log::record("修改实验报告失败！", "error");
+            $this->error("修改实验报告失败！请稍后再试。", "/student/report/reportList");
+        }
+
+        //3.后续操作
+        $this->success("修改实验报告成功！", "/student/report/reportList");
+    }
 }
