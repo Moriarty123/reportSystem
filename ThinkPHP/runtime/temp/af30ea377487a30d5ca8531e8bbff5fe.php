@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1550375773;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\index\index.html";i:1550375729;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,20 +56,20 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-home a"></i>
-					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					<a href="/student/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
 		<!--实验课程开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					我的课程
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
+				<a class="cks" href="/student/course/courseList">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -78,19 +78,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-book-open a"></i>
-					实验任务
+					我的任务
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/student/task/taskList">实验任务列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -99,19 +93,19 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					我的报告
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/student/report/writePage" class="cks">撰写实验报告</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -120,13 +114,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					批阅报告
+					我的成绩
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -166,7 +160,7 @@
 					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
 					<div class="top">
 						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
+						<a href="/student/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
 					</div>
 					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
 					<?php endif; ?>

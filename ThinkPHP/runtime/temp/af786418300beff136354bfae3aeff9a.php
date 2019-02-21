@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550393460;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550736890;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="/static/images/school.ico" />
     
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
+    <link rel="stylesheet" href="/static/css/teacher/report.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
 <body>
@@ -58,20 +58,20 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-home a"></i>
-					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					<a href="/student/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
 		<!--实验课程开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					我的课程
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
+				<a class="cks" href="/student/course/courseList">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -80,19 +80,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-book-open a"></i>
-					实验任务
+					我的任务
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/student/task/taskList">实验任务列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -101,19 +95,19 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					我的报告
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/student/report/writePage" class="cks">撰写实验报告</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -122,13 +116,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					批阅报告
+					我的成绩
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -158,10 +152,11 @@
 	<!--课程列表开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
-			<div class="a">
-				<h2>实验任务列表</h2>
-				<form action="/teacher/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验任务名称" name="search" />
+			<div class="a" style="position: relative; left: 0px; top: 0px;">
+				<h2>实验报告列表</h2>
+				
+				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="实验报告名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
@@ -174,21 +169,21 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验指导</th>
+					<th style="max-width: 150px;">实验课程</th>
+					<th style="max-width: 150px;">实验任务</th>
+					<th style="max-width: 150px;">实验报告</th>
 					<th style="position: relative; top:0px; left:0px;">
-						发布状态
-						<span id="publishedFilter">
+						提交状态
+						<span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
-						<div id="publishedFilterDiv" class="publishedFilterDiv" >
-							<form>
-								<div class="publishedFilterRadio">	
-									<label><input name="published" type="radio"/>未发布</label>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							<form >
+								<div class="submitedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="submited" type="radio"/>未提交</label>
 								</div>
-								<div class="publishedFilterRadio">
-									<label><input name="published" type="radio"/>已发布</label>
+								<div class="submitedFilterRadio" style="margin-left: 5px;">
+									<label><input name="submited" type="radio"/>已提交</label>
 								</div>
 								<div>
 									<input type="submit" name="" class="submit" value="确定">
@@ -197,42 +192,67 @@
 							</form>
 						</div>
 					</th>
-					<th>开始时间</th>
-					<th>截止时间</th>
-					<th>任务描述</th>
+					<th style="position: relative; top:0px; left:0px;">
+						批阅状态
+						<span id="reviewedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
+							<form >
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+									<label><input name="reviewed" type="radio"/>未批阅</label>
+								</div>
+								<div class="reviewedFilterRadio" style="margin-left: 5px;">
+									<label><input name="reviewed" type="radio"/>已批阅</label>
+								</div>
+								<div>
+									<input type="submit" name="" class="submit" value="确定">
+									<input type="reset" name="" class="reset" value="重置">
+								</div>
+							</form>
+						</div>
+					</th>
+					<th>最后编辑时间</th>
+					<th>提交时间</th>
 					<th>操作</th>
 				</tr>
-				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
 					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
-					<td><a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">查看实验指导</a></td>
-					<td><?php echo $vo['status']; ?></td>
-					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
-					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
-					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['reportName']; ?></td>
+					<td><?php echo $vo['submitStatus']; ?></td>
+					<td><?php echo $vo['reviewStatus']; ?></td>
+					<td><?php echo date("Y-m-d h:m:s",$vo['testTime']); ?></td>
+					<?php if($vo['submitTime'] == ''): ?>
+					<td>未提交</td>
+					<?php else: ?>
+					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<?php endif; ?>
+					
 					<td>
-						<a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">
-							<i class="fa fa-eye" title="查看实验指导"></i>
+						<a href="/student/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
+							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<?php if($vo['status'] == '已发布'): ?>
+						<?php if($vo['reviewStatus'] == '已批阅'): ?>
 						<a href="" style='margin-left: 5px;'>
-							<i class="fa fa-file-export" title="导出实验指导"></i>
+							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 						<?php else: ?>
-						<a href="/teacher/task/taskPublish?taskNo=<?php echo $vo['taskNo']; ?>" style='margin-left: 5px;' onclick="return checkPublish();">
-							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
+						<a href="/student/report/editPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
+							<i class="fa fa-edit" title="编辑"></i>
 						</a>
 						<?php endif; ?>
+						
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 			<p class="msg">
-				共找到<?php echo $taskNumber; ?>条课程信息，每页显示15条记录
+				共找到<?php echo $reportNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $taskList->render(); ?>
+			<?php echo $reportList->render(); ?>
 			</div>
 			</form>
 		</div>
@@ -261,15 +281,13 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
+  		$("#submitedFilter").click(function(){
+  			$("#submitedFilterDiv").slideToggle();
+		});
+
+		$("#reviewedFilter").click(function(){
+  			$("#reviewedFilterDiv").slideToggle();
 		});
 	});
 </script>
 <!-- 筛选框结束 -->
-<script type="text/javascript">
-	function checkPublish()
-	{
-		return window.confirm("您确认要发布此实验任务吗？");
-	}
-</script>
