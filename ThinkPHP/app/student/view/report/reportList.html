@@ -12,6 +12,7 @@
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
     <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
+    <script type="text/javascript" src="__JS__/student/report.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -99,26 +100,26 @@
 					<th>操作</th>
 				</tr>
 				{volist name="reportList" id="vo"}
-				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.reportNo}"/></td>
+				<tr class="reportTr">
+					<td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.reportNo}" id="{$vo.reportNo}" /></td>
 					<td style="max-width: 150px;">{$vo.courseName}</td>
 					<td style="max-width: 150px;">{$vo.taskName}</td>
 					<td style="max-width: 150px;">{$vo.reportName}</td>
 					{eq name="$vo.submitStatus" value="未提交"}
-					<td style="color: rgb(16, 142, 233)">{$vo.submitStatus}</td>
+					<td style="color: rgb(16, 142, 233)" id="submit{$vo.reportNo}">{$vo.submitStatus}</td>
 					{else}
-					<td style="color: rgb(32, 163, 15)">{$vo.submitStatus}</td>
+					<td style="color: rgb(32, 163, 15)" id="submit{$vo.reportNo}">{$vo.submitStatus}</td>
 					{/eq}
 					{eq name="$vo.reviewStatus" value="未批阅"}
 					<td style="color: rgb(16, 142, 233)">{$vo.reviewStatus}</td>
 					{else}
 					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
 					{/eq}
-					<td>{$vo.testTime|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.testTime|date="Y-m-d H:m:s",###}</td>
 					{eq name="$vo.submitTime" value=""}
-					<td>未提交</td>
+					<td><a href="/student/report/reportSubmit?reportNo={$vo.reportNo}" onclick="checkRealSubmit();">去提交</a></td>
 					{else}
-					<td>{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.submitTime|date="Y-m-d H:m:s",###}</td>
 					{/eq}
 					
 					<td>
@@ -130,9 +131,12 @@
 							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 						{else}
-						<a href="/student/report/editPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
-						</a>
+							{eq name="$vo.submitStatus" value="未提交"}
+							<a href="/student/report/editPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
+								<i class="fa fa-edit" title="编辑"></i>
+							</a>
+							{/eq}
+						
 						{/eq}
 						
 					</td>
@@ -141,7 +145,7 @@
 			</table>
 			<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return reportDelete();'/>
 				共找到{$reportNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
@@ -176,3 +180,43 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+
+<script type="text/javascript">
+//删除实验报告
+function reportDelete(){
+	
+	return checkReportDelete() && checkSubmitStatus();
+}
+
+function checkReportDelete(){
+	return window.confirm("你确认要删除选中的实验报告吗？");
+}
+
+function checkSubmitStatus()
+{
+	$reports = $(".reportTr");
+	$flag = true;
+
+  	$(".reportTr .eachChoose").each(function(){
+  		$checked = $(this).prop('checked');//判断是否选中
+  		if ($checked == true) {
+  			$no = $(this).attr('id');
+
+  			$submitStatus = $("#submit"+$no).html();//获取同行的submitStatus
+
+  			if ($submitStatus == "已提交") {//判断是否已提交
+	    		alert("已提交的实验报告不可删除！");
+	    		$flag = false;
+	    		return false;//返回 false 仅停止循环。不是返回false
+	    	}
+  		}
+  	});
+
+  	return $flag;
+}
+
+function checkRealSubmit()
+{
+	return window.confirm("你确认要提交此实验报告吗？");
+}
+</script>

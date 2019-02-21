@@ -466,6 +466,34 @@ class Report extends Common
         $this->success('删除实验报告成功！', '/student/report/reportList');
     }
 
+    //提交实验报告
+    public function reportSubmit()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("提交实验报告", "notice");
+
+        //1.查询report
+        $reportModel = new reportModel();
+        $reportNo = input("get.reportNo");
+        $reportWhere = "reportNo = '$reportNo'";
+
+        $update = [
+            'submitStatus' => 1,
+            'submitTime'   => time()
+        ];
+
+        //2.更新操作
+        $report = $reportModel->update($update, $reportWhere);
+
+        if (empty($report)) {
+            Log::record("提交实验报告失败！", "error");
+            $this->error("提交实验报告失败！请稍后再试。", "/student/report/reportList");
+        }
+
+        $this->success("提交实验报告成功！", "/student/report/reportList");  
+
+    }
 
     //筛选实验报告
     public function reportFilter()
