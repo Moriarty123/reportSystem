@@ -216,7 +216,7 @@ class Report extends Common
 
         guidePdf($html);
         //2.跳转到实验指导列表
-        $this->redirect('student/report/reportList');
+        $this->redirect('student/guide/guideList');
 
     }
 
@@ -396,7 +396,43 @@ class Report extends Common
     public function reportShow()
     {
         //0.测试
-        dump($_GET);
+        // dump($_GET);
         Log::record("显示实验报告", "notice");
+
+        //1.获取数据
+        //1.1获取reportNo
+        $reportNo = input("get.reportNo");
+
+        //1.2获取report数据
+        $reportModel = new reportModel();
+        $reportWhere = "reportNo = '$reportNo'";
+        $report = $reportModel->where($reportWhere)->find();
+
+        $reportName = $report['reportName'];
+        $testRequire = $report['testRequire'];
+        $testAnalysis = $report['testAnalysis'];
+        $testContent = $report['testContent'];
+        $testScreen = $report['testScreen'];
+        $testCode = $report['testCode'];
+        $testSummary = $report['testSummary'];
+
+        //1.3拼接HTML
+        $html = 
+            '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
+            .$reportName.
+            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+            '<p style="font-size:24px;"><strong>实验分析</strong></p>'.$testAnalysis.
+            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent.
+            '<p style="font-size:24px;"><strong>实验截图</strong></p>'.$testScreen.
+            '<p style="font-size:24px;"><strong>实验代码</strong></p>'.$testCode.
+            '<p style="font-size:24px;"><strong>实验总结</strong></p>'.$testSummary;
+
+        // dump($html);
+
+        reportPdf($html);
+
+        //2.跳转到实验报告列表
+        $this->redirect('student/report/reportList');
+
     }
 }

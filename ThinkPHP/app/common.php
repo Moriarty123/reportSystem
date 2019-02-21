@@ -81,7 +81,7 @@ EOD;
 	exit();
 }
 
-function GuidePdf($content)
+function reportPdf($content)
 {
 	require_once('../vendor/tcpdf/tcpdf.php');
 
