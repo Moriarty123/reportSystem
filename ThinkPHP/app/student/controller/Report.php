@@ -10,6 +10,7 @@ use app\student\model\Report as reportModel;
 use app\student\model\Course as courseModel;
 use app\student\model\Guide as guideModel;
 use app\student\model\Task as taskModel;
+use app\student\model\Elective as electiveModel;
 
 class Report extends Common
 {
@@ -126,19 +127,19 @@ class Report extends Common
         $this->success("添加实验报告成功！", "/student/report/addSuccess");
     }
 
-    //
+    //添加实验报告成功
     public function addSuccess()
     {
         return $this->fetch('addSuccess');
     }
 
-    //
+    //添加实验报告失败
     public function addFail()
     {
         return $this->fetch('addFail');
     }
 
-    //显示实验报告
+    //实验报告页面
     public function reportPage()
     {
         //0.测试
@@ -177,6 +178,7 @@ class Report extends Common
     {
         //0.测试
         //dump($_GET);
+        Log::record("显示实验指导", "notice");
 
         //1.获取该ID的实验指导
         $guideNo = input('get.guideNo');
@@ -300,5 +302,101 @@ class Report extends Common
 
         //3.后续操作
         $this->success("修改实验报告成功！", "/student/report/reportList");
+    }
+
+    //撰写实验报告页面
+    public function writePage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("撰写实验报告页面", "notice");
+
+        //1.获取选择框选项
+        $account = session('account');
+
+        $electiveModel = new electiveModel();
+        $studentWhere = "a.studentNo = '$account'";
+        $taskWhere = 'status = 1';
+
+        $taskList = $electiveModel  ->alias('a')
+                                    ->join('student b', 'a.studentNo = b.studentNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('course d', 'a.courseNo = d.courseNo')
+                                    ->join('task e', 'e.courseNo = a.courseNo')
+                                    ->where($taskWhere)
+                                    ->where($studentWhere)
+                                    ->select();
+
+        $this->assign("task", $taskList);
+
+        return $this->fetch('reportWrite');
+    }
+
+    //撰写实验报告
+    public function reportWrite()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("撰写实验报告", "notice");
+
+        //1.获取数据
+        //1.1获取表单数据
+        $taskNo         = input('post.taskNo');
+        $reportName     = input('post.reportName');
+        $testRequire    = input('post.testRequire');
+        $testAnalysis   = input('post.testAnalysis');
+        $testContent    = input('post.testContent');
+        $testScreen     = input('post.testScreen');
+        $testCode       = input('post.testCode');
+        $testSummary    = input('post.testSummary');
+        $testTime       = time();
+
+        //1.2获取teacher、courseNo、studentNo
+        $studentNo      = session("account");
+
+        $taskWhere = "taskNo = '$taskNo'";
+        $taskModel = new taskModel();
+        $task = $taskModel->where($taskWhere)->find();
+
+        $teacherNo = $task['teacherNo'];
+        $courseNo = $task['courseNo'];
+
+        $data = [
+            'courseNo'      => $courseNo,
+            'teacherNo'     => $teacherNo,
+            'studentNo'     => $studentNo,
+            'taskNo'        => $taskNo,
+            'reportName'    => $reportName,
+            'testRequire'   => $testRequire,
+            'testAnalysis'  => $testAnalysis,
+            'testContent'   => $testContent,
+            'testScreen'    => $testScreen,
+            'testCode'      => $testCode,
+            'testSummary'   => $testSummary,
+            'testTime'      => $testTime,
+        ];
+
+        // dump($data);
+
+        //2.存入数据库
+        $reportModel = new reportModel();
+
+        $report = $reportModel->create($data);
+
+        if (empty($report)) {
+            Log::record("添加实验报告失败！", "error");
+            $this->error("添加实验报告失败！", "/student/report/reportList");
+        }
+
+        //3.后续操作
+        $this->success("添加实验报告成功！", "/student/report/reportList");
+    }
+
+    //显示实验报告
+    public function reportShow()
+    {
+        //0.测试
+        dump($_GET);
+        Log::record("显示实验报告", "notice");
     }
 }
