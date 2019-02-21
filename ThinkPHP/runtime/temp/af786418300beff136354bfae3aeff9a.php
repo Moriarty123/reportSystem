@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550736890;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550739802;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,7 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -166,19 +167,20 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/student/report/reportDelete" method="post" id="delete">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th style="max-width: 150px;">实验课程</th>
 					<th style="max-width: 150px;">实验任务</th>
 					<th style="max-width: 150px;">实验报告</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
-						<span id="submitedFilter">
+						<!-- <span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
+							<form action="/student/report/reportFilter" method="post" id="submitFilter">
 								<div class="submitedFilterRadio" style="margin-left: 5px;">	
 									<label><input name="submited" type="radio"/>未提交</label>
 								</div>
@@ -186,15 +188,15 @@
 									<label><input name="submited" type="radio"/>已提交</label>
 								</div>
 								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
+									<input type="submit" name="" class="submit" value="确定" form="submitFilter">
+									<input type="reset" name="" class="reset" value="重置" form="submitFilter">
 								</div>
 							</form>
-						</div>
+						</div> -->
 					</th>
 					<th style="position: relative; top:0px; left:0px;">
 						批阅状态
-						<span id="reviewedFilter">
+						<!-- <span id="reviewedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
@@ -210,7 +212,7 @@
 									<input type="reset" name="" class="reset" value="重置">
 								</div>
 							</form>
-						</div>
+						</div> -->
 					</th>
 					<th>最后编辑时间</th>
 					<th>提交时间</th>
@@ -218,11 +220,19 @@
 				</tr>
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['reportNo']; ?>"/></td>
 					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['reportName']; ?></td>
-					<td><?php echo $vo['submitStatus']; ?></td>
-					<td><?php echo $vo['reviewStatus']; ?></td>
+					<?php if($vo['submitStatus'] == '未提交'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitStatus']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(32, 163, 15)"><?php echo $vo['submitStatus']; ?></td>
+					<?php endif; if($vo['reviewStatus'] == '未批阅'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php endif; ?>
 					<td><?php echo date("Y-m-d h:m:s",$vo['testTime']); ?></td>
 					<?php if($vo['submitTime'] == ''): ?>
 					<td>未提交</td>
@@ -249,6 +259,8 @@
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到<?php echo $reportNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">

@@ -11,6 +11,7 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -46,19 +47,20 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/student/report/reportDelete" method="post" id="delete">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th style="max-width: 150px;">实验课程</th>
 					<th style="max-width: 150px;">实验任务</th>
 					<th style="max-width: 150px;">实验报告</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
-						<span id="submitedFilter">
+						<!-- <span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
+							<form action="/student/report/reportFilter" method="post" id="submitFilter">
 								<div class="submitedFilterRadio" style="margin-left: 5px;">	
 									<label><input name="submited" type="radio"/>未提交</label>
 								</div>
@@ -66,15 +68,15 @@
 									<label><input name="submited" type="radio"/>已提交</label>
 								</div>
 								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
+									<input type="submit" name="" class="submit" value="确定" form="submitFilter">
+									<input type="reset" name="" class="reset" value="重置" form="submitFilter">
 								</div>
 							</form>
-						</div>
+						</div> -->
 					</th>
 					<th style="position: relative; top:0px; left:0px;">
 						批阅状态
-						<span id="reviewedFilter">
+						<!-- <span id="reviewedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
@@ -90,7 +92,7 @@
 									<input type="reset" name="" class="reset" value="重置">
 								</div>
 							</form>
-						</div>
+						</div> -->
 					</th>
 					<th>最后编辑时间</th>
 					<th>提交时间</th>
@@ -98,11 +100,20 @@
 				</tr>
 				{volist name="reportList" id="vo"}
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.reportNo}"/></td>
 					<td style="max-width: 150px;">{$vo.courseName}</td>
 					<td style="max-width: 150px;">{$vo.taskName}</td>
 					<td style="max-width: 150px;">{$vo.reportName}</td>
-					<td>{$vo.submitStatus}</td>
-					<td>{$vo.reviewStatus}</td>
+					{eq name="$vo.submitStatus" value="未提交"}
+					<td style="color: rgb(16, 142, 233)">{$vo.submitStatus}</td>
+					{else}
+					<td style="color: rgb(32, 163, 15)">{$vo.submitStatus}</td>
+					{/eq}
+					{eq name="$vo.reviewStatus" value="未批阅"}
+					<td style="color: rgb(16, 142, 233)">{$vo.reviewStatus}</td>
+					{else}
+					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
+					{/eq}
 					<td>{$vo.testTime|date="Y-m-d h:m:s",###}</td>
 					{eq name="$vo.submitTime" value=""}
 					<td>未提交</td>
@@ -129,6 +140,8 @@
 				{/volist}
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到{$reportNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
