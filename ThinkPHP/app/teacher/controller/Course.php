@@ -8,6 +8,7 @@ use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
 use app\teacher\model\Student as studentModel;
 use app\teacher\model\Elective as electiveModel;
+use app\teacher\model\Course as courseModel;
 
 class Course extends Common
 {
@@ -132,6 +133,25 @@ class Course extends Common
         $this->assign('studentNumber',$studentNumber);
 
         return $this->fetch('studentList');
+    }
+
+    //实验课程删除(软删除)
+    public function courseDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验课程删除(软删除)");
+
+        $courseNo = input("post.courseNo/a");
+
+        //创建模型
+        $courseModel = new courseModel();
+
+        foreach ($courseNo as $key => $no) {
+           $courseModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/teacher/course/courseList');
     }
 
 }
