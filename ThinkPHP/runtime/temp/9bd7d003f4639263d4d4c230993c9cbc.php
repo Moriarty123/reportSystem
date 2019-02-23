@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1550288161;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1550337339;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,41 +199,41 @@
                     </div>
                     <div class="add-list">
                         <label>实验指导名称：</label>
-                        <input type="text" id="guideName" name="guideName" class="test-text" onblur="checkName();">
+                        <input type="text" id="guideName" name="guideName" class="test-text">
                     </div>
                     <div class="add-list">
                         <label>实验目的：</label>
                         <div id="testAim" name="testAim" class="test-text">
                         </div>
-                        <input type="hidden" id="aim" name="aim" value="">
+                        <input type="hidden" id="aim" name="aim">
                     </div>
                     <div class="add-list">
                         <label>实验环境：</label>
                         <div id="testEnvironment" class="test-text">
                         </div>
-                        <input type="hidden" id="environment" name="environment" value="">
+                        <input type="hidden" id="environment" name="environment">
                     </div>
                     <div class="add-list">
                         <label>实验要求：</label>
                         <div id="testRequire" class="test-text">
                         </div>
-                        <input type="hidden" id="request" name="request" value="">
+                        <input type="hidden" id="request" name="request">
                     </div>
                     <div class="add-list">
                         <label>实验任务：</label>
                         <div id="testTask" class="test-text">
                         </div>
-                        <input type="hidden" id="task" name="task" value="">
+                        <input type="hidden" id="task" name="task">
                     </div>
                     <div class="add-list">
                         <label>实验内容：</label>
                         <div id="testContent" class="test-text">
                         </div>
-                        <input type="hidden" id="content" name="content" value="">
+                        <input type="hidden" id="content" name="content">
                     </div>
                     <div class="ButtonDiv submitDiv">
                         <input type="submit" class="Button" name="save" value="保存" >
-                        <input type="submit" class="Button" name="submit" value="提交" onclick="checkSubmit()">
+                        <input type="submit" class="Button" name="submit" value="提交">
                     </div>
                 </form>
             </div>
