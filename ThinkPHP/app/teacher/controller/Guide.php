@@ -370,4 +370,23 @@ class Guide extends Common
         
         $this->success('编辑实验指导成功', "teacher/guide/guideList");
     }
+
+    //实验指导删除（软删除）
+    public function guideDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验指导删除");
+
+        $guideNo = input("post.guideNo/a");
+
+        //创建模型
+        $guideModel = new guideModel();
+
+        foreach ($guideNo as $key => $no) {
+           $guideModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/teacher/guide/guideList');
+    }
 }

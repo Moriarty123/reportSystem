@@ -1,4 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550393460;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550941902;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +14,7 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -171,9 +174,10 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/teacher/task/taskDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
@@ -204,6 +208,7 @@
 				</tr>
 				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="taskNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['taskNo']; ?>"/></td>
 					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
 					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
 					<td><a href="/teacher/guide/taskGuide?taskNo=<?php echo $vo['taskNo']; ?>">查看实验指导</a></td>
@@ -229,6 +234,8 @@
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到<?php echo $taskNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
@@ -272,4 +279,14 @@
 	{
 		return window.confirm("您确认要发布此实验任务吗？");
 	}
+</script>
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验任务吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验任务吗？");
+}
+
 </script>
