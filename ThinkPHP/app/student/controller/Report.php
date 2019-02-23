@@ -435,4 +435,71 @@ class Report extends Common
         $this->redirect('student/report/reportList');
 
     }
+
+    //删除实验报告
+    public function reportDelete()
+    {
+        //0.测试
+        // dump($_POST);
+
+        //1.获取reportNo
+        //TP5的post方法不能提交数组，在表单name添加/a表示要提交有关数组，获取时同样要添加/a
+        $reportNo = input("post.reportNo/a");
+        
+        try {
+            foreach ($reportNo as $key => $no) {
+                $where = "reportNo = '$no'";
+                //暂时取消外链，删除后恢复
+                $reportModel = new reportModel();
+
+                $reportModel->query('SET FOREIGN_KEY_CHECKS = 0;');
+                $ret = $reportModel->where($where)->delete();
+                $reportModel->query('SET FOREIGN_KEY_CHECKS = 1;');
+            }
+        }
+        catch (\Exception $e){
+            Log::record("删除实验报告失败！", "error");
+            $this->error('删除实验报告失败！', '/student/report/reportList');
+        }
+        
+
+        $this->success('删除实验报告成功！', '/student/report/reportList');
+    }
+
+    //提交实验报告
+    public function reportSubmit()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("提交实验报告", "notice");
+
+        //1.查询report
+        $reportModel = new reportModel();
+        $reportNo = input("get.reportNo");
+        $reportWhere = "reportNo = '$reportNo'";
+
+        $update = [
+            'submitStatus' => 1,
+            'submitTime'   => time()
+        ];
+
+        //2.更新操作
+        $report = $reportModel->update($update, $reportWhere);
+
+        if (empty($report)) {
+            Log::record("提交实验报告失败！", "error");
+            $this->error("提交实验报告失败！请稍后再试。", "/student/report/reportList");
+        }
+
+        $this->success("提交实验报告成功！", "/student/report/reportList");  
+
+    }
+
+    //筛选实验报告
+    public function reportFilter()
+    {
+        //0.测试
+        // dump($_POST);
+
+    }
 }
