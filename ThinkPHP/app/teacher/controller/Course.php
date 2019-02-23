@@ -140,7 +140,7 @@ class Course extends Common
     {
         //0.测试
         // dump($_POST);
-        Log::record("实验课程删除(软删除)");
+        Log::record("实验课程删除");
 
         $courseNo = input("post.courseNo/a");
 
