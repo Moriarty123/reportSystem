@@ -1,4 +1,6 @@
+
 <?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1550936185;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,7 +163,7 @@
 				<span class="time" style="color: black;">
 
 					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/admin/login/index" class=""><i class="fa fa-plus-circle"></i> 登录</a>
+					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
 					<?php else: ?>
 					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
 					<div class="top">
