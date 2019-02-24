@@ -57,9 +57,10 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验报告</th>
+					<!-- <th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th> -->
+					<th style="width: 150px;">实验课程</th>
+					<th style="width: 150px;">实验任务</th>
+					<th style="width: 150px;">实验报告</th>
 					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
@@ -101,31 +102,43 @@
 							</form>
 						</div>
 					</th>
-					<th>提交时间</th>
+					<th style="width: 200px;">提交时间</th>
 					<th>操作</th>
 				</tr>
 				{volist name="reportList" id="vo"}
 				<tr>
-					<td>{$vo.courseName}</td>
-					<td>{$vo.taskName}</td>
-					<td>{$vo.reportName}</td>
+					<!-- <td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.reportNo}"/></td> -->
+					<td style="width: 150px;">{$vo.courseName}</td>
+					<td style="width: 150px;">{$vo.taskName}</td>
+					<td style="width: 150px;">{$vo.reportName}</td>
 					<td>{$vo.studentName}</td>
-					<td>{$vo.submitStatus}</td>
-					<td>{$vo.reviewStatus}</td>
-					<td>{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
+					<td style="color: rgb(16, 142, 233)">{$vo.submitStatus}</td>
+					{eq name="$vo.reviewStatus" value="未批阅"}
+					<td style="color: rgb(16, 142, 233)">{$vo.reviewStatus}</td>
+					{else}
+					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
+					{/eq}
+					<td style="width: 200px;">{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
 					<td>
-						<a href="">
+						<a href="/teacher/report/reportShow?reportNo={$vo.reportNo}" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-					
+						{eq name="$vo.reviewStatus" value="未批阅"}
 						<a href="" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
+							<i class="fa fa-edit" title="批阅"></i>
 						</a>
+						{else}
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出"></i>
+						</a>
+						{/eq}
 					</td>
 				</tr>
 				{/volist}
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到{$reportNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
@@ -160,3 +173,13 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验报告吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验报告吗？");
+}
+
+</script>
