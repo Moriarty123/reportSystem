@@ -1,6 +1,5 @@
 
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1550937015;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1550998312;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -185,9 +184,9 @@
 			<form action="/admin/user/checkedUserDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验报告</th>
+					<th style="width: 150px;">实验课程</th>
+					<th style="width: 150px;">实验任务</th>
+					<th style="width: 150px;">实验报告</th>
 					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
 						提交状态
@@ -229,18 +228,22 @@
 							</form>
 						</div>
 					</th>
-					<th>提交时间</th>
+					<th style="width: 200px;">提交时间</th>
 					<th>操作</th>
 				</tr>
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['taskName']; ?></td>
-					<td><?php echo $vo['reportName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['taskName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['reportName']; ?></td>
 					<td><?php echo $vo['studentName']; ?></td>
-					<td><?php echo $vo['submitStatus']; ?></td>
-					<td><?php echo $vo['reviewStatus']; ?></td>
-					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitStatus']; ?></td>
+					<?php if($vo['reviewStatus'] == '未批阅'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php endif; ?>
+					<td style="width: 200px;"><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
 					<td>
 						<a href="">
 							<i class="fa fa-eye" title="查看"></i>
