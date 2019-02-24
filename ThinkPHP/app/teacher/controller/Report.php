@@ -178,4 +178,105 @@ class Report extends Common
         $this->redirect('teacher/report/reportList');
     }
 
+    //实验课程筛选
+    public function courseFilter()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验课程筛选", "notice");
+
+        //获取courseNo
+        $courseNo = input('post.courseFilterNo');
+
+        if ($courseNo == -1) {
+            $courseWhere = "";
+        }
+        else {
+            $courseWhere = "a.courseNo = '$courseNo'";    
+        }
+        
+        $this->usefilter($courseWhere);
+        return $this->fetch('reportList');
+    }
+
+    //提交状态筛选
+    public function submitFilter() {
+        //0.测试
+        // dump($_POST);
+        Log::record('提交状态筛选', 'notice');
+
+        $submitStatus = input('post.submitStatus');
+
+        $submitWhere = "a.submitStatus = '$submitStatus'";
+
+        $this->usefilter($submitWhere);
+        return $this->fetch('reportList');
+
+    }
+
+    //批阅状态筛选
+    public function reviewFilter() {
+        //0.测试
+        // dump($_POST);
+        Log::record('批阅状态筛选', 'notice');
+
+        $reviewStatus = input('post.reviewStatus');
+
+        $reviewWhere = "a.reviewStatus = '$reviewStatus'";
+
+        $this->usefilter($reviewWhere);
+        return $this->fetch('reportList');
+
+    }
+
+    //筛选操作
+    public function usefilter($filterWhere="") {
+        //1.获取账号
+        $account = session('account');
+
+        //2.获取该账号教师学生的实验实验报告
+        // $teacherModel = new teacherModel();
+
+        $where = "a.teacherNo = '$account'";
+        $submitWhere = "a.submitStatus = 1";
+
+        $reportModel = new reportModel();
+        $courseModel = new courseModel();
+
+        $reportList = $reportModel  
+                                    ->where($where)
+                                    ->where($submitWhere)
+                                    ->where($filterWhere)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
+                                    ->join('task e', 'a.taskNo = e.taskNo')
+                                    ->paginate(15);
+
+
+
+        $reportNumber = $reportModel  
+                                    ->where($where)
+                                    ->where($submitWhere)
+                                    ->where($filterWhere)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
+                                    ->join('task e', 'a.taskNo = e.taskNo')
+                                     ->count();
+
+        $courseWhere = "teacherNo = '$account'";
+        $courseList = $courseModel  ->where($courseWhere)
+                                    ->select();
+
+        //3.页面渲染
+        $this->assign('reportList', $reportList);
+        $this->assign('reportNumber', $reportNumber);
+        $this->assign('courseList', $courseList);
+
+        // return $this->fetch('reportList');
+    }
+
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\ReportList.html";i:1550999432;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\ReportList.html";i:1551027792;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -160,14 +160,19 @@
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>实验指导列表</h2>
-				<div style="position: absolute; left: 150px; top: 33px;">
-					<select>
-						<option>--请选择实验课程--</option>
+
+				<div style="position: absolute; left: 150px; top: 35px;">
+					<select id="courseFilter">
+						<option value="-1">--请选择实验课程--</option>
 						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
-						<option><?php echo $course['courseName']; ?></option>
+						<option value="<?php echo $course['courseNo']; ?>"><a href="/teacher/report/courseFilter?$courseNo=<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></a></option>
 						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
+
+				<form action="/teacher/report/courseFilter" method="post" id="courseFilterForm" style="display: none;">
+					<input type="hidden" name="courseFilterNo" id="courseFilterNo">
+				</form>
 				
 				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验报告名称" name="search" />
@@ -194,16 +199,16 @@
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
+							<form action="/teacher/report/submitFilter" method="post" id="submitFilter">
 								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未提交</label>
+									<label><input name="submited" type="radio" value="0" />未提交</label>
 								</div>
 								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已提交</label>
+									<label><input name="submited" type="radio" value="1" />已提交</label>
 								</div>
 								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
+									<input type="submit" name="" class="submit" value="确定" form="submitFilter">
+									<input type="reset" name="" class="reset" value="重置" form="submitFilter">
 								</div>
 							</form>
 						</div>
@@ -231,6 +236,7 @@
 					<th style="width: 200px;">提交时间</th>
 					<th>操作</th>
 				</tr>
+				<tbody id="tbody">
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
 					<!-- <td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['reportNo']; ?>"/></td> -->
@@ -261,6 +267,7 @@
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
+				</tbody>
 			</table>
 			<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
@@ -304,7 +311,57 @@
 		$("#reviewedFilter").click(function(){
   			$("#reviewedFilterDiv").slideToggle();
 		});
+
+		//实验课程筛选
+		$("#courseFilter").change(function() {
+			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
+
+			$("#courseFilterNo").val(courseNo);//填写表单
+			$("#courseFilterForm").submit();//提交表单
+		});
 	});
+
+	function courseFilter() {
+		var formdata = new FormData();
+
+    	formdata.append("courseNo" , $("#courseFilter  option:selected").val());//$(obj)[0].files[0]为文件对象
+
+		$.ajax({
+    	type : 'post',
+    	url : '/teacher/report/courseFilter',
+    	data : formdata,
+    	cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+        	window.location.reload();
+
+        },
+        error : function(){ 
+        	
+        }
+    });
+	}
+
+	function courseFilter2() {
+		var courseNo = $("#courseFilter  option:selected").val();
+		alert(courseNo);
+		$.post("/teacher/report/courseFilter",
+	    {
+	      courseNo:courseNo
+	    },
+	    function(data,status){
+	      alert("数据：" + data + "\n状态：" + status);
+	    });
+	}
+
+	function autoSubmit() {
+		$(function(){
+			$("input[name=name]").val("somename");
+			$("input[name=email]").val("323@ds.com");
+			$('#aweberform').submit();
+		});
+	}
 </script>
 <!-- 筛选框结束 -->
 
@@ -317,3 +374,4 @@ function checkdel(){
 }
 
 </script>
+
