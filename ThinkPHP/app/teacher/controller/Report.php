@@ -199,15 +199,15 @@ class Report extends Common
         return $this->fetch('reportList');
     }
 
-    //提交状态筛选
+    //提交结果筛选
     public function submitFilter() {
         //0.测试
         // dump($_POST);
-        Log::record('提交状态筛选', 'notice');
+        Log::record('提交结果筛选', 'notice');
 
-        $submitStatus = input('post.submitStatus');
+        $submitResult = input('post.submitResult');
 
-        $submitWhere = "a.submitStatus = '$submitStatus'";
+        $submitWhere = "a.submitResult = '$submitResult'";
 
         $this->usefilter($submitWhere);
         return $this->fetch('reportList');

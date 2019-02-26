@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551029488;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551147406;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,17 +199,17 @@
 					<th style="width: 150px;">实验报告</th>
 					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
-						提交状态
+						提交结果
 						<span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
 							
 							<div class="submitedFilterRadio" style="margin-left: 5px;">	
-								<label><input name="submitStatus" type="radio" value="0" form="submitFilterForm"/>未提交</label>
+								<label><input name="submitResult" type="radio" value="0" form="submitFilterForm"/>正常提交</label>
 							</div>
 							<div class="submitedFilterRadio" style="margin-left: 5px;">
-								<label><input name="submitstatus" type="radio" value="1" form="submitFilterForm"/>已提交</label>
+								<label><input name="submitResult" type="radio" value="1" form="submitFilterForm"/>迟交</label>
 							</div>
 							<div>
 								<input type="submit" name="" class="submit" value="确定" form="submitFilterForm">
@@ -235,7 +235,6 @@
 								<input type="submit" name="" class="submit" value="确定" form="reviewFilterForm">
 								<input type="reset" name="" class="reset" value="重置" form="reviewFilterForm">
 							</div>
-							
 						</div>
 					</th>
 					<th style="width: 200px;">提交时间</th>
@@ -249,8 +248,11 @@
 					<td style="width: 150px;"><?php echo $vo['taskName']; ?></td>
 					<td style="width: 150px;"><?php echo $vo['reportName']; ?></td>
 					<td><?php echo $vo['studentName']; ?></td>
-					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitStatus']; ?></td>
-					<?php if($vo['reviewStatus'] == '未批阅'): ?>
+					<?php if($vo['submitResult'] == '正常提交'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitResult']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(220,20,60)"><?php echo $vo['submitResult']; ?></td>
+					<?php endif; if($vo['reviewStatus'] == '未批阅'): ?>
 					<td style="color: rgb(16, 142, 233)"><?php echo $vo['reviewStatus']; ?></td>
 					<?php else: ?>
 					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
