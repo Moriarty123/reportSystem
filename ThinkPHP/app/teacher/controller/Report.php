@@ -52,8 +52,8 @@ class Report extends Common
                                     ->where($submitWhere)
                                     ->alias('a')
                                     ->join('course b', 'a.courseNo = b.courseNo')
-                                    ->join('report c', 'a.teacherNo = c.teacherNo')
-                                    ->join('student d', 'c.studentNo = d.studentNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
                                     ->join('task e', 'a.taskNo = e.taskNo')
 			    				     ->count();
 
@@ -277,6 +277,73 @@ class Report extends Common
         $this->assign('courseList', $courseList);
 
         // return $this->fetch('reportList');
+    
+    }
+
+    //批阅实验报告页面
+    public function reviewPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("批阅实验报告页面", "notice");
+
+        $reportNo = input("get.reportNo");
+
+        $this->assign("reportNo", $reportNo);
+
+        return $this->fetch("reportReview");
+    }
+
+    //批阅页面
+    public function reportReviewPage() 
+    {
+        //0.测试
+        dump($_GET);
+
+        $reportNo = input("get.reportNo");
+
+        $this->assign("reportNo", $reportNo);
+        return $this->fetch("reportReviewPage");
+    }
+
+    //批阅实验报告
+    public function reportReview()
+    {
+        //0.测试
+        dump($_POST);
+        Log::record("批阅实验报告", "notice");
+
+        //1.获取数据
+        $reportNo = input("post.reportNo");
+        $reviewComment = input("post.reviewComment");
+        $score = input("post.score");
+
+        $data = [
+            'reportNo' => $reportNo,
+            'reviewComment' => $reviewComment,
+            'score' => $score,
+            'reviewStatus' => 1
+        ];
+
+        $reportWhere = "reportNo = '$reportNo'";
+
+        $reportModel = new reportModel();
+        $report = $reportModel->update($data, $reportWhere);
+
+        if (empty($report)) {
+            Log::record("批阅实验报告失败", "error");
+            $this->error("批阅实验报告失败！请稍后再试", "/teacher/report/reviewResult");
+        }
+
+        //2.后续操作
+        $this->success("批阅实验报告成功！", "/teacher/report/reviewResult");
+
+    }
+
+    //跳转页面
+    public function reviewResult()
+    {
+        return $this->fetch("reviewResult");
     }
 
 }

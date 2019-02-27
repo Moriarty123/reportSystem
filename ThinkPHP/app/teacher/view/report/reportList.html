@@ -138,7 +138,7 @@
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 						{eq name="$vo.reviewStatus" value="未批阅"}
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/report/reviewPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="批阅"></i>
 						</a>
 						{else}
@@ -152,8 +152,8 @@
 				</tbody>
 			</table>
 			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				<!-- <span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
 				共找到{$reportNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">

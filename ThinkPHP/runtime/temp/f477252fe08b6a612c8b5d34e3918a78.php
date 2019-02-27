@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551147406;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551252562;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -263,7 +263,7 @@
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 						<?php if($vo['reviewStatus'] == '未批阅'): ?>
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="批阅"></i>
 						</a>
 						<?php else: ?>
@@ -277,8 +277,8 @@
 				</tbody>
 			</table>
 			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				<!-- <span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
 				共找到<?php echo $reportNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
