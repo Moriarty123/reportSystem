@@ -294,6 +294,8 @@ class Guide extends Common
         $courseList = $courseModel->where($courseWhere)->select();
         $taskList = $taskModel->where($taskWhere)->select();
 
+        // dump($guide);
+
         //3.渲染页面
         $this->assign('courseList', $courseList);
         $this->assign('taskList', $taskList);

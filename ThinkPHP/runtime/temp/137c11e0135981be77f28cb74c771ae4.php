@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEdit.html";i:1550372086;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEdit.html";i:1551267062;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551255052;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,7 +157,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/chart/index" class="cks">学生成绩</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -269,18 +269,17 @@
 <script type="text/javascript">
     
     $(document).ready(function(){
-        $("#submitedFilter").click(function(){
-            $("#submitedFilterDiv").slideToggle();
-        });
 
         //加载guide数据
-        $("#guideName").val("<?php echo $guide['guideName']; ?>");
-        $("#guideNo").val("<?php echo $guide['guideNo']; ?>");
-        $("#testAim .w-e-text").html("<?php echo $guide['testAim']; ?>");
-        $("#testEnvironment .w-e-text").html("<?php echo $guide['testAim']; ?>");
-        $("#testRequire .w-e-text").html("<?php echo $guide['testEnvironment']; ?>");
-        $("#testTask .w-e-text").html("<?php echo $guide['testTask']; ?>");
-        $("#testContent .w-e-text").html("<?php echo $guide['testContent']; ?>");
+        $("#guideName").val('<?php echo $guide['guideName']; ?>');
+        $("#guideNo").val('<?php echo $guide['guideNo']; ?>');
+        $("#testAim .w-e-text").html('<?php echo $guide['testAim']; ?>');
+        $("#testEnvironment .w-e-text").html('<?php echo $guide['testEnvironment']; ?>');
+        $("#testRequire .w-e-text").html('<?php echo $guide['testRequire']; ?>');
+        $("#testTask .w-e-text").html('<?php echo $guide['testTask']; ?>');
+        $("#testContent .w-e-text").html('<?php echo $guide['testContent']; ?>');
+
+
     });
 </script>
 <!-- 筛选框结束 -->
@@ -293,7 +292,19 @@
     var testEnvironment = new E('#testEnvironment');
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
-    var testRequire = new E('#testRequire')
+    var testRequire = new E('#testRequire');
+
+    testAim.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testEnvironment.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testTask.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testAim.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testEnvironment.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testTask.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testRequire.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
 
     testAim.create();
     testEnvironment.create();

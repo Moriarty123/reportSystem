@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1550337339;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideAdd.html";i:1551265680;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551255052;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,7 +157,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/chart/index" class="cks">学生成绩</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -280,6 +280,28 @@
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
     var testRequire = new E('#testRequire')
+
+
+    //开启debug模式
+    testAim.customConfig.debug = true;
+    // 关闭粘贴内容中的样式
+    testAim.customConfig.pasteFilterStyle = false
+    // 忽略粘贴内容中的图片
+    testAim.customConfig.pasteIgnoreImg = true
+    // 使用 base64 保存图片
+    //editor.customConfig.uploadImgShowBase64 = true
+ 
+    testAim.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testEnvironment.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testTask.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testAim.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testEnvironment.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testTask.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testRequire.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
 
     testAim.create();
     testEnvironment.create();
