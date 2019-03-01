@@ -214,6 +214,7 @@ class Report extends Common
             '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
             '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
+        
         guidePdf($html);
         //2.跳转到实验指导列表
         $this->redirect('student/guide/guideList');
@@ -244,9 +245,11 @@ class Report extends Common
                                 ->field("a.*,b.teacherNo,b.teacherName, c.studentNo, c.studentName, d.courseNo,d.courseName, e.taskNo, e.taskName")
                                 ->find();
  
+        // dump($report);
 
         //2.页面渲染
         $this->assign("report", $report);
+    
 
         return $this->fetch('reportEdit');
     }
@@ -291,7 +294,8 @@ class Report extends Common
         // dump($data);
 
         //2.更新数据
-        $reportWhere = "reportNo = '$reportNo'";
+        $reportWhere = "reportNo = '{$reportNo}'";
+        // dump($reportWhere);
         $reportModel = new reportModel();
         $report = $reportModel->update($data, $reportWhere);
 
@@ -433,6 +437,7 @@ class Report extends Common
 
         //2.跳转到实验报告列表
         $this->redirect('student/report/reportList');
+        // $this->success('跳转到实验报告列表', '/student/report/reportList');
 
     }
 

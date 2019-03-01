@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550768053;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1551446925;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1551431520;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -245,6 +245,7 @@
 						<a href="/student/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
+						
 						<?php if($vo['reviewStatus'] == '已批阅'): ?>
 						<a href="" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>
