@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1550307241;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551450544;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\user\updatePwd.html";i:1549034056;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551599434;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +12,14 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/teacher/taskAdd.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/updatePwd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+    <link rel="stylesheet" href="/static/css/teacher/user.css" />
     <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
 <body>
@@ -55,7 +54,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; ">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -118,6 +117,12 @@
 				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--实验指导结束-->
 		<!--批阅报告开始-->
@@ -157,47 +162,34 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--添加用户开始-->
+	<!--main开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>添加新实验任务</h2>
+				<h2><strong>修改登录密码</strong></h2>
 			</div>
-			<form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
+			<form action="/teacher/user/updatePwd" method="post" class="add_form" onsubmit="return checkUser()">
+				<input type="hidden" name="id" value="<?php echo $user['user_id']; ?>" />
 				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>任务名称：</label>
-					<input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
+                    <label class="add_label"><span class="xing">*</span>原始密码：</label>
+                    <input type="password" name="bepwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Bepwd()" onblur="checkBepwd()" />
+                    <span class="tip" id="tip-bepwd">请输入原始密码,字母数字组合，6-16位字符</span>
+                </div>
+                <div class="add_list">
+					<label class="add_label"><span class="xing">*</span>新密码：</label>
+					<input type="password" name="pwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Pwd()" onblur="checkPwd()" />
+					<span class="tip" id="tip-pwd">请输入新密码,字母数字组合，6-16位字符</span>
 				</div>
-
 				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>所属课程：</label>
-					<select name="courseNo" class="add_input" id="courseNo">
-						<option value="-1">--请选择--</option>
-						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-						<option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
+					<label class="add_label"><span class="xing">*</span>确认密码：</label>
+					<input type="password" name="repwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Repwd()" onblur="checkRepwd()" />
+					<span class="tip" id="tip-repwd">确认密码必须一致</span>
 				</div>
-
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>开始时间：</label>
-					<input type="datetime-local" id="startTime" name="startTime" class="add_input"/>
-				</div>
-
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>截止时间：</label>
-					<input type="datetime-local" id="endTime" name="endTime" class="add_input"/>
-				</div>
-
-				<div class="add_list">
-					<label class="add_label"><span class="xing">*</span>任务描述：</label>
-					<textarea name="taskDescribe" class="add_textarea" id="taskDescribe"></textarea>
-				</div>
-				<input type="submit" value="提交" class="add_submit" />
+				<input type="submit" value="修改" class="add_submit" />
 			</form>
 		</div>
 	</div>
-	<!--添加用户结束-->
+	<!--main结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -216,16 +208,3 @@
 
 </body>
 </html>
-
-<!-- 筛选框开始-->
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
-
-

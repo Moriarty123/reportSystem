@@ -224,6 +224,85 @@ class Guide extends Common
         $this->success('添加实验指导成功', "teacher/guide/guideList");
     }
 
+    //导入实验指导页面
+    public function importPage()
+    {
+        Log::record('导入实验指导页面', 'notice');
+
+        $courseModel = new courseModel();
+        $taskModel = new taskModel();
+
+        $teacherNo = session('account');
+        $courseWhere = "teacherNo = '$teacherNo'";
+        $taskWhere = "teacherNo = '$teacherNo' and status = 0";
+
+        $courseList = $courseModel->where($courseWhere)->select();
+        $taskList = $taskModel->where($taskWhere)->select();
+
+        $this->assign('courseList', $courseList);
+        $this->assign('taskList', $taskList);
+
+        return $this->fetch('guideImport');
+    }
+
+    //导入实验指导
+    public function guideImport()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record('导入实验指导', 'notice');
+
+        //1.获取数据
+        $courseNo   = input("post.courseNo");
+        $taskNo     = input("post.taskNo");
+        $guideName  = input("post.guideName");
+        $filePath   = input("post.filePath");
+
+
+        $teacherNo = session('account');
+        $createTime = time();
+
+        if ($taskNo = -1) {
+            $taskNo = Null;
+        }
+
+        $data = [
+            'courseNo'  => $courseNo,
+            'taskNo'    => $taskNo,
+            'guideName' => $guideName,
+            'teacherNo' => $teacherNo,
+            'filePath'  => $filePath,
+            'createTime'=> $createTime
+        ];
+
+        // dump($data);
+
+        //2.保存数据库
+        $guideModel = new guideModel();
+
+        $guide = $guideModel->create($data);
+        $guideNo = $guide->guideNo;
+
+        if (empty($guide)) {
+            Log::record('添加实验指导失败！', 'error');
+            $this->error('添加实验指导失败！请稍后再试。', '/teacher/guide/guideList');
+        }
+        //3.生成文件
+
+
+        //4.后续操作
+        //4.1更新task表
+        if($taskNo != null) {
+            $taskModel = new taskModel();
+            $taskWhere = "taskNo = '$taskNo'";
+            $task['guideNo'] = $guideNo;
+            $taskModel->update($task,$taskWhere);
+        }
+        
+        
+        $this->success('添加实验指导成功', "teacher/guide/guideList");
+    }
+
     //显示实验指导
     public function guideShow() 
     {

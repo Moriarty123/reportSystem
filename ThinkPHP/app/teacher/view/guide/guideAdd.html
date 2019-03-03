@@ -53,7 +53,6 @@
                 <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
                     <div class="add-list">
                         <label>实验课程：</label>
-                        <br>
                         <select name="courseNo" id="courseNo">
                             <option value="null">--请选择实验课程--</option>
                             {volist name="courseList" id="vo"}
@@ -126,16 +125,7 @@
 </body>
 </html>
 
-<!-- 筛选框开始-->
-<script type="text/javascript">
-    
-    $(document).ready(function(){
-        $("#submitedFilter").click(function(){
-            $("#submitedFilterDiv").slideToggle();
-        });
-    });
-</script>
-<!-- 筛选框结束 -->
+
 
 <!-- 创建编辑器 -->
 <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
