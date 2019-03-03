@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1550941902;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html";i:1551597651;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551450544;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,7 +144,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/chart/index" class="cks">学生成绩</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -219,12 +219,12 @@
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
 						<?php if($vo['status'] == '已发布'): ?>
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/guide/guideExport?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;' target="_blank">
 							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
 						<?php else: ?>
 						<a href="/teacher/task/taskPublish?taskNo=<?php echo $vo['taskNo']; ?>" style='margin-left: 5px;' onclick="return checkPublish();">
-							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
+							<i class="fas fa-upload" title="发布实验任务"></i>
 						</a>
 						<?php endif; ?>
 					</td>
