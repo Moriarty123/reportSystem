@@ -33,7 +33,7 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
-				<h2>实验指导列表</h2>
+				<h2>实验报告列表</h2>
 
 				<div style="position: absolute; left: 150px; top: 35px;">
 					<select id="courseFilter">
@@ -112,6 +112,7 @@
 						</div>
 					</th>
 					<th style="width: 200px;">提交时间</th>
+					<th>实验成绩</th>
 					<th>操作</th>
 				</tr>
 				<tbody id="tbody">
@@ -133,13 +134,14 @@
 					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
 					{/eq}
 					<td style="width: 200px;">{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.score}</td>
 					<td>
 						<a href="/teacher/report/reportShow?reportNo={$vo.reportNo}" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 						{eq name="$vo.reviewStatus" value="未批阅"}
 						<a href="/teacher/report/reviewPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="批阅"></i>
+							<i class="fa fa-user-edit" title="批阅"></i>
 						</a>
 						{else}
 						<a href="" style='margin-left: 5px;'>
@@ -154,7 +156,7 @@
 			<p class="msg">
 				<!-- <span id="notdisplay" style="display: none;"></span>
 				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
-				共找到{$reportNumber}条课程信息，每页显示15条记录
+				共找到{$reportNumber}条信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
 			{$reportList->render()}

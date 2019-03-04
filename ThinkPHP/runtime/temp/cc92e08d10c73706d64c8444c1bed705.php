@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1551450545;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551599434;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1551686071;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551686147;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; ">
+<div class="container" style="margin-top:20px; height: 600px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -160,7 +160,8 @@
     <!-- 左边菜单结束-->
 
 	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; ">
+	<div style="position: absolute; left: 250px; top: 92px; height
+	600px;">
 	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
 		<tr>
 			<td colspan="2">

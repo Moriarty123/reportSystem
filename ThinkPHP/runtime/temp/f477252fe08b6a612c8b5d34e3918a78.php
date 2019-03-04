@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551450545;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551450544;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1551687105;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551686164;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -116,6 +116,12 @@
 				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--实验指导结束-->
 		<!--批阅报告开始-->
@@ -159,7 +165,7 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
-				<h2>实验指导列表</h2>
+				<h2>实验报告列表</h2>
 
 				<div style="position: absolute; left: 150px; top: 35px;">
 					<select id="courseFilter">
@@ -238,6 +244,7 @@
 						</div>
 					</th>
 					<th style="width: 200px;">提交时间</th>
+					<th>实验成绩</th>
 					<th>操作</th>
 				</tr>
 				<tbody id="tbody">
@@ -258,13 +265,14 @@
 					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
 					<?php endif; ?>
 					<td style="width: 200px;"><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<td><?php echo $vo['score']; ?></td>
 					<td>
 						<a href="/teacher/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 						<?php if($vo['reviewStatus'] == '未批阅'): ?>
 						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="批阅"></i>
+							<i class="fa fa-user-edit" title="批阅"></i>
 						</a>
 						<?php else: ?>
 						<a href="" style='margin-left: 5px;'>

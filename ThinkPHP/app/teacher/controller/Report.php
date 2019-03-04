@@ -298,7 +298,7 @@ class Report extends Common
     public function reportReviewPage() 
     {
         //0.测试
-        dump($_GET);
+        // dump($_GET);
 
         $reportNo = input("get.reportNo");
 
@@ -310,7 +310,7 @@ class Report extends Common
     public function reportReview()
     {
         //0.测试
-        dump($_POST);
+        // dump($_POST);
         Log::record("批阅实验报告", "notice");
 
         //1.获取数据
