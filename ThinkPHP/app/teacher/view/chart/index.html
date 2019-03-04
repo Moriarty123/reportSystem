@@ -9,7 +9,7 @@
 <body>
 
     <!-- 为ECharts准备一个具备大小（宽高）的DOM -->
-    <div id="main" style="width: 600px; height: 400px;"></div>
+    <div id="main" style="width: 400px; height: 400px;"></div>
     {volist name="info" id="i2"}
     {$i2.num},
     {/volist}
@@ -50,7 +50,7 @@
                 type:'category',    //坐标轴类型 类目(默认)，时间，数值
                 //data:["衬衫","羊毛衫","手套","裤子","高跟鞋","袜子"],
                 //数据可以从数据库提取
-                data:[{volist name="info" id="i1"}{$i1.name},{/volist}],
+                data:[{volist name="info" id="i1"}"{$i1.name}",{/volist}],
                 
                 name:'类别',        //坐标轴名称
                 nameTextStyle:{        //坐标轴名称的文字样式

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\chart\index.html";i:1551450544;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\chart\index.html";i:1551691496;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <body>
 
     <!-- 为ECharts准备一个具备大小（宽高）的DOM -->
-    <div id="main" style="width: 600px; height: 400px;"></div>
+    <div id="main" style="width: 400px; height: 400px;"></div>
     <?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$i2): $mod = ($i % 2 );++$i;?>
     <?php echo $i2['num']; ?>,
     <?php endforeach; endif; else: echo "" ;endif; if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$i1): $mod = ($i % 2 );++$i;?><?php echo $i1['name']; ?>,<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -49,7 +49,7 @@
                 type:'category',    //坐标轴类型 类目(默认)，时间，数值
                 //data:["衬衫","羊毛衫","手套","裤子","高跟鞋","袜子"],
                 //数据可以从数据库提取
-                data:[<?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$i1): $mod = ($i % 2 );++$i;?><?php echo $i1['name']; ?>,<?php endforeach; endif; else: echo "" ;endif; ?>],
+                data:[<?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$i1): $mod = ($i % 2 );++$i;?>"<?php echo $i1['name']; ?>",<?php endforeach; endif; else: echo "" ;endif; ?>],
                 
                 name:'类别',        //坐标轴名称
                 nameTextStyle:{        //坐标轴名称的文字样式
