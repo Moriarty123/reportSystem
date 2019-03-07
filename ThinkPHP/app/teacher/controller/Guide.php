@@ -221,8 +221,9 @@ class Guide extends Common
         }
         
         
-        $this->success('添加实验指导成功', "teacher/guide/guideList");
+        $this->success('添加实验指导成功', "/teacher/guide/guideList");
     }
+
 
     //导入实验指导页面
     public function importPage()
@@ -302,6 +303,7 @@ class Guide extends Common
         
         $this->success('添加实验指导成功', "teacher/guide/guideList");
     }
+
 
     //显示实验指导
     public function guideShow() 

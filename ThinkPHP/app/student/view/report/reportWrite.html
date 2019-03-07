@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/wangEditor/wangEditor.js"></script> 
+    <script type="text/javascript" src="__JS__/student/report.js"></script>  
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+
+    <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+    <link rel="stylesheet" href="__CSS__/student/report.css" />
+
+</head>
+<style type="text/css">
+    .reportAddDiv .test-text {
+        width: 500px;
+    }
+    .reportAddDiv select {
+        width: 500px;
+    }
+</style>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/student/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>撰写实验报告</h2>
+            </div>
+            <div class="reportAddDiv">
+                <form action="/student/report/reportWrite" method="post" onsubmit="return checkSubmit()">
+					<div class="add-list">
+						<label>实验任务：</label>
+						<select id="taskNo" name="taskNo">
+                            <option value="-1">--请选择实验任务--</option>
+                            {volist name="task" id="vo"}
+                            <option value="{$vo.taskNo}">{$vo.taskName}</option>
+                            {/volist}                  
+                        </select>
+					</div>
+					<div class="add-list">
+						<label>实验报告名称：</label>
+						<input type="text" id="reportName" name="reportName" class="test-text">
+					</div>
+					<div class="add-list">
+						<label>实验要求：</label>
+						<div id="testRequire" class="test-text">
+						</div>
+						<input type="hidden" id="require" name="testRequire">
+					</div>
+					<div class="add-list">
+						<label>实验分析：</label>
+						<div id="testAnalysis" class="test-text">
+						</div>
+						<input type="hidden" id="analysis" name="testAnalysis">
+					</div>
+					<div class="add-list">
+						<label>实验内容：</label>
+						<div id="testContent" class="test-text">
+						</div>
+						<input type="hidden" id="content" name="testContent">
+					</div>
+					<div class="add-list">
+						<label>实验截图：</label>
+						<div id="testScreen" class="test-text">
+						</div>
+						<input type="hidden" id="screen" name="testScreen">
+					</div>
+					<div class="add-list">
+						<label>实验代码：</label>
+						<div id="testCode" class="test-text">
+						</div>
+						<input type="hidden" id="code" name="testCode">
+					</div>
+					<div class="add-list">
+						<label>实验总结：</label>
+						<div id="testSummary" class="test-text">
+						</div>
+						<input type="hidden" id="summary" name="testSummary">
+					</div>
+					<div class="ButtonDiv submitDiv">
+                        <input type="submit" class="Button" name="save" value="保存" >
+                        <input type="submit" class="Button" name="submit" value="提交">
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $("#submitedFilter").click(function(){
+            $("#submitedFilterDiv").slideToggle();
+        });
+
+     });
+</script>
+<!-- 筛选框结束 -->
+
+<!-- 创建编辑器 -->
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<script type="text/javascript">
+    var E = window.wangEditor
+
+    var testRequire = new E('#testRequire');
+    var testAnalysis = new E('#testAnalysis');
+    var testContent = new E('#testContent');
+    var testScreen = new E('#testScreen');
+    var testCode = new E('#testCode');
+    var testSummary = new E('#testSummary');
+
+    testRequire.create();
+    testAnalysis.create();
+    testContent.create();
+    testScreen.create();
+    testCode.create();
+    testSummary.create();
+
+</script>

@@ -35,9 +35,11 @@
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>实验报告列表</h2>
 
+
 				<div style="position: absolute; left: 150px; top: 35px;">
 					<select id="courseFilter">
 						<option value="-1">--请选择实验课程--</option>
+
 						{volist name="courseList" id="course"}
 						<option value="{$course.courseNo}"><a href="/teacher/report/courseFilter?$courseNo={$course.courseNo}">{$course.courseName}</a></option>
 						{/volist}
