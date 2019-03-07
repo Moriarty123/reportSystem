@@ -25,10 +25,17 @@ class Score extends Common
     	// dump($_POST);
     	Log::record("显示学生成绩", "notice");
 
-        //1.获取课程列表、任务列表
+        //1.获取数据
+        //1.1获取评分方式
+        $scoreSystem = input("post.scoreSystem");
+        //1.2.获取courseNo
+        $courseNo = input("post.courseNo");
+        //1.3获取学生学号
+        $studentNo = session("account");
+
+        //2.1.获取课程列表、任务列表
     	$electiveModel = new electiveModel();
 
-    	$studentNo = session("account");
     	$studentWhere = "studentNo = '$studentNo'";
 
     	$courseList = $electiveModel->where($studentWhere)
@@ -45,8 +52,7 @@ class Score extends Common
 		// dump($courseList);
 		// dump($taskList);
 
-        //2.获取courseNo
-        $courseNo = input("post.courseNo");
+        //2.2获取分数
         $courseWhere = "courseNo = -1";
         if (!empty($courseNo)) {
             $courseWhere = "courseNo = '$courseNo'";
@@ -64,6 +70,13 @@ class Score extends Common
         $number = $taskModel->where($courseWhere)->count();
         // dump($reportList);
 
+        //评分方式
+        if ($scoreSystem == 1) {
+            foreach ($score as $key => $value) {
+                $score[$key] = toFivePoint($score[$key]);
+            }
+        }
+
         $this->assign("score", $score);
         $this->assign("number", $number);
 		$this->assign("courseList", $courseList);
@@ -71,5 +84,44 @@ class Score extends Common
 
 
     	return $this->fetch('scoreShow');
+    }
+
+    //百分制转五分制
+    public function toFivePoint($num)
+    {
+        if ($num >= 90) {
+            return "A";
+        }
+        else if ($num >= 80 && $num < 90) {
+            return "B";
+        }
+        else if ($num >= 70 && $num < 80) {
+            return "C";
+        }
+        else if ($num >= 60 && $num < 70) {
+            return "D";
+        }
+        else {
+            return "E";
+        }
+    }
+
+    //五分制转百分制
+    public function toPercentage($num) {
+        if ($num == "A") {
+            return 95;
+        }
+        else if ($num == "B") {
+            return 85;
+        }
+        else if ($num == "C") {
+            return 75;
+        }
+        else if ($num == "D") {
+            return 65;
+        }
+        else {
+            return 30;
+        }
     }
 }

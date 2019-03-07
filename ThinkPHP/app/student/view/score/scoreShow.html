@@ -31,7 +31,7 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-    {include file="../app/teacher/view/common/menu.html"}
+    {include file="../app/student/view/common/menu.html"}
     <!-- 左边菜单结束-->
 
     <!--课程列表开始-->
@@ -62,12 +62,12 @@
                         <option value="{$task.taskNo}">{$task.taskName}</option>
                         {/volist}
                     </select> -->
-                    <select class="taskSelect" name="taskNo" id="task">
+                    <!-- <select class="taskSelect" name="scoreSystem" id="task">
                         <option value="-1">--请选择评分方式--</option>
                         <option value="0">百分制</option>
                         <option value="1">五分制</option>
                         {/volist}
-                    </select>
+                    </select> -->
                     </div>
                     <div class="ButtonDiv" >
                         <input type="submit" name="submit" value="确定" class="submit Button" style="width: 60px; height: 30px;">    
