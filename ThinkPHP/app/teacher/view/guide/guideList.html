@@ -11,6 +11,7 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -45,9 +46,10 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/teacher/guide/guideDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
@@ -76,6 +78,7 @@
 				</tr>
 				{volist name="guideList" id="vo"}
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="guideNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.guideNo}"/></td>
 					<td>{$vo.courseName}</td>
 					<td>{$vo.taskNo}</td>
 					<td>{$vo.guideName}</td>
@@ -85,7 +88,7 @@
 						<td style="color: rgb(32, 163, 15)">已归属</td>	
 					{/eq}
 					
-					<td>{$vo.createTime|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.createTime|date="Y-m-d H:m:s",###}</td>
 					<td>
 						<a href="/teacher/guide/guideShow?guideNo={$vo.guideNo}" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
@@ -99,7 +102,9 @@
 				{/volist}
 			</table>
 			<p class="msg">
-				共找到{$guideNumber}条课程信息，每页显示15条记录
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				共找到{$guideNumber}条记录，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
 			{$guideList->render()}
@@ -131,7 +136,12 @@
 </script>
 <!-- 筛选框结束 -->
 
-<script>
-   	// var url = 'http://reportSystem/teacher/guide/guideList';
-   	// window.open(url);
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验指导吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验指导吗？");
+}
+
 </script>

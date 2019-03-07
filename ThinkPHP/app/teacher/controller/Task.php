@@ -234,4 +234,23 @@ class Task extends Common
         $this->success('发布实验指导成功！', '/teacher/task/taskList');
 
     }
+
+    //实验任务删除(软删除)
+    public function taskDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验课程删除");
+
+        $taskNo = input("post.taskNo/a");
+
+        //创建模型
+        $taskModel = new taskModel();
+
+        foreach ($taskNo as $key => $no) {
+           $res = $taskModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/teacher/task/taskList');
+    }
 }
