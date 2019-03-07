@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1549210303;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1553510244;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +23,15 @@
 </head>
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -53,7 +61,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -61,40 +69,32 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验课程开始-->
+		<!--实验任务开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--实验课程结束-->
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					实验任务
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
+				<a class="cks" href="/teacher/course/courseList">课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/teacher/task/addPage">发布任务</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
@@ -114,6 +114,12 @@
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
 				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -143,7 +149,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -159,52 +165,64 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
-				<h2>实验指导列表</h2>
-				<div style="position: absolute; left: 150px; top: 33px;">
-					<select>
-						<option>--请选择实验课程--</option>
+				<h2>实验报告列表</h2>
+
+				<div style="position: absolute; left: 150px; top: 35px;">
+					<select id="courseFilter">
+						<option value="-1">--请选择实验课程--</option>
 						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
-						<option><?php echo $course['courseName']; ?></option>
+						<option value="<?php echo $course['courseNo']; ?>"><a href="/teacher/report/courseFilter?$courseNo=<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></a></option>
 						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
+
+				<form action="/teacher/report/courseFilter" method="post" id="courseFilterForm" style="display: none;">
+					<input type="hidden" name="courseFilterNo" id="courseFilterNo">
+				</form>
 				
 				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="实验报告名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生成绩</option>
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<!-- 提交状态筛选表单 -->
+			<form action="/teacher/report/submitFilter" method="post" id="submitFilterForm"></form>
+			<!-- 批阅状态筛选表单 -->
+			<form action="/teacher/report/reviewFilter" method="post" id="reviewFilterForm"></form>
+
+			<form action="" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验报告</th>
+					<!-- <th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th> -->
+					<th style="width: 150px;">实验课程</th>
+					<th style="width: 150px;">实验任务</th>
+					<th style="width: 150px;">实验报告</th>
 					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
-						提交状态
+						提交结果
 						<span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
-								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未提交</label>
-								</div>
-								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已提交</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
+							
+							<div class="submitedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="submitResult" type="radio" value="0" form="submitFilterForm"/>正常提交</label>
+							</div>
+							<div class="submitedFilterRadio" style="margin-left: 5px;">
+								<label><input name="submitResult" type="radio" value="1" form="submitFilterForm"/>迟交</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="submitFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="submitFilterForm">
+							</div>
+							
 						</div>
 					</th>
 					<th style="position: relative; top:0px; left:0px;">
@@ -213,46 +231,61 @@
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
-							<form >
-								<div class="reviewedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="reviewed" type="radio"/>未批阅</label>
-								</div>
-								<div class="reviewedFilterRadio" style="margin-left: 5px;">
-									<label><input name="reviewed" type="radio"/>已批阅</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
+							
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="reviewStatus" type="radio" value="0" form="reviewFilterForm"/>未批阅</label>
+							</div>
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">
+								<label><input name="reviewStatus" type="radio" value="1" form="reviewFilterForm"/>已批阅</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="reviewFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="reviewFilterForm">
+							</div>
 						</div>
 					</th>
-					<th>提交时间</th>
+					<th style="width: 200px;">提交时间</th>
+					<th>实验成绩</th>
 					<th>操作</th>
 				</tr>
+				<tbody id="tbody">
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['taskName']; ?></td>
-					<td><?php echo $vo['reportName']; ?></td>
+					<!-- <td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['reportNo']; ?>"/></td> -->
+					<td style="width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['taskName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['reportName']; ?></td>
 					<td><?php echo $vo['studentName']; ?></td>
-					<td><?php echo $vo['submitStatus']; ?></td>
-					<td><?php echo $vo['reviewStatus']; ?></td>
-					<td><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<?php if($vo['submitResult'] == '正常提交'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitResult']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(220,20,60)"><?php echo $vo['submitResult']; ?></td>
+					<?php endif; if($vo['reviewStatus'] == '未批阅'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php endif; ?>
+					<td style="width: 200px;"><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<td><?php echo $vo['score']; ?></td>
 					<td>
-						<a href="">
+						<a href="/teacher/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-					
-						<a href="" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
+						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
+							<i class="fa fa-user-edit" title="批阅"></i>
+						</a>
+						<a href="/teacher/report/reportExport?repoortNo='<?php echo $vo['reportNo']; ?>'" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
+				</tbody>
 			</table>
 			<p class="msg">
-				共找到<?php echo $reportNumber; ?>条课程信息，每页显示15条记录
+				<!-- <span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
+				共找到<?php echo $reportNumber; ?>条信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
 			<?php echo $reportList->render(); ?>
@@ -291,6 +324,37 @@
 		$("#reviewedFilter").click(function(){
   			$("#reviewedFilterDiv").slideToggle();
 		});
+
+		//实验课程筛选
+		$("#courseFilter").change(function() {
+			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
+
+			$("#courseFilterNo").val(courseNo);//填写表单
+			$("#courseFilterForm").submit();//提交表单
+		});
+
+		//导出学生成绩
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/reportExcel');
+			}
+			
+		});
 	});
+
+	
 </script>
 <!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验报告吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验报告吗？");
+}
+
+</script>
+

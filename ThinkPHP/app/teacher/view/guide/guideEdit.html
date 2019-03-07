@@ -140,18 +140,17 @@
 <script type="text/javascript">
     
     $(document).ready(function(){
-        $("#submitedFilter").click(function(){
-            $("#submitedFilterDiv").slideToggle();
-        });
 
         //加载guide数据
-        $("#guideName").val("{$guide.guideName}");
-        $("#guideNo").val("{$guide.guideNo}");
-        $("#testAim .w-e-text").html("{$guide.testAim}");
-        $("#testEnvironment .w-e-text").html("{$guide.testAim}");
-        $("#testRequire .w-e-text").html("{$guide.testEnvironment}");
-        $("#testTask .w-e-text").html("{$guide.testTask}");
-        $("#testContent .w-e-text").html("{$guide.testContent}");
+        $("#guideName").val('{$guide.guideName}');
+        $("#guideNo").val('{$guide.guideNo}');
+        $("#testAim .w-e-text").html('{$guide.testAim}');
+        $("#testEnvironment .w-e-text").html('{$guide.testEnvironment}');
+        $("#testRequire .w-e-text").html('{$guide.testRequire}');
+        $("#testTask .w-e-text").html('{$guide.testTask}');
+        $("#testContent .w-e-text").html('{$guide.testContent}');
+
+
     });
 </script>
 <!-- 筛选框结束 -->
@@ -164,7 +163,19 @@
     var testEnvironment = new E('#testEnvironment');
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
-    var testRequire = new E('#testRequire')
+    var testRequire = new E('#testRequire');
+
+    testAim.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testEnvironment.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testTask.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testAim.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testEnvironment.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testTask.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testRequire.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
 
     testAim.create();
     testEnvironment.create();

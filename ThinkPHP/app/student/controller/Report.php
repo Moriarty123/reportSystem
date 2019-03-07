@@ -540,4 +540,43 @@ class Report extends Common
         // dump($_POST);
 
     }
+
+    //撰写实验报告页面
+    public function editorPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("撰写实验报告页面");
+
+        //1.获取guide
+        //1.1构建模型
+        $guideNo = input("get.guideNo");
+        $guideModel = new guideModel();
+        $guideWhere = "guideNo = '{$guideNo}'";
+
+        //1.2获取guide
+        $guide = $guideModel->where($guideWhere)->find();
+
+        //1.3获取文本
+        $txtPath = $guide['txtPath'];
+        // dump($txtPath);
+        //读取文本
+        if(file_exists($txtPath)){
+
+            $fp= fopen($txtPath,"r");
+            $txtContent = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $txtContent = "";
+        }
+
+        //2.渲染
+        $this->assign("guide", $guide);
+        $this->assign("txtContent", $txtContent);
+
+        //3.后续操作
+        return $this->fetch("reportEditor");
+
+    }
 }

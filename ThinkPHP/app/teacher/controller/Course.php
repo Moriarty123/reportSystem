@@ -8,6 +8,8 @@ use app\common\controller\Common;
 use app\teacher\model\Teacher as teacherModel;
 use app\teacher\model\Student as studentModel;
 use app\teacher\model\Elective as electiveModel;
+use app\teacher\model\Course as courseModel;
+use app\teacher\model\Task as taskModel;
 
 class Course extends Common
 {
@@ -45,6 +47,59 @@ class Course extends Common
 		$this->assign('courseNumber', $courseNumber);
 
 		return $this->fetch('courseList');
+    }
+
+    //课程列表（新）
+    public function courseMenu() 
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record('显示课程列表','notice');
+
+        //1.获取账号
+        $teacherNo = session('account');
+
+        //2.获取该账号教师的实验课程实验任务
+        $teacherWhere = "teacherNo = '$teacherNo'";
+
+        $courseModel = new courseModel();
+        $taskModel = new taskModel();
+
+        $courseList = $courseModel->where($teacherWhere)->select();
+        $taskList = $taskModel->where($teacherWhere)->select();
+
+        $this->assign("courseList", $courseList);
+        $this->assign("taskList", $taskList);
+
+        return $this->fetch("courseMenu");
+
+    }
+
+    //显示课程任务列表
+    public function showTask()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record('显示课程列表','notice');
+
+        //1.获取账号
+        $teacherNo = session('account');
+        $courseNo = input("get.courseNo");
+
+        //2.获取该账号教师的实验课程实验任务
+        $teacherWhere = "teacherNo = '$teacherNo'";
+        $courseWhere = "courseNo = '$courseNo'";
+
+        $courseModel = new courseModel();
+        $taskModel = new taskModel();
+
+        $courseList = $courseModel->where($teacherWhere)->select();
+        $taskList = $taskModel->where($teacherWhere)->where($courseWhere)->select();
+
+        $this->assign("courseList", $courseList);
+        $this->assign("taskList", $taskList);
+
+        return $this->fetch("courseMenu");
     }
 
     //模糊查找课程
@@ -128,10 +183,30 @@ class Course extends Common
                                         ->join('course d', 'a.courseNo = d.courseNo')
                                         ->count();
         //3.页面渲染
+        $this->assign('courseNo', $courseNo);
         $this->assign('studentList', $studentList);
         $this->assign('studentNumber',$studentNumber);
 
         return $this->fetch('studentList');
+    }
+
+    //实验课程删除(软删除)
+    public function courseDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验课程删除");
+
+        $courseNo = input("post.courseNo/a");
+
+        //创建模型
+        $courseModel = new courseModel();
+
+        foreach ($courseNo as $key => $no) {
+           $courseModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/teacher/course/courseList');
     }
 
 }

@@ -11,9 +11,11 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/buttons.css" />
     <link rel="stylesheet" href="__CSS__/common/footer.css" />
     <link rel="stylesheet" href="__CSS__/common/menu.css">
     <link rel="stylesheet" href="__CSS__/common/detail.css">
@@ -38,16 +40,23 @@
 					<input type="text" class="search" placeholder="课程名" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
+				<div style="width: 100px; float: right; margin-right: 20px;margin-top: 20px; ">
+					<div class="btn-group">
+						<button type="button" class="btn" style="background:#19a97b; color: #FFF;">其他</button>
+						<button type="button" id="regButton" class="btn dropdown-toggle" style="background:#19a97b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+							<span style="color: #FFF;" class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu" id="selectMenu">
+							<li><a href="#">同步数据</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/teacher/course/courseDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th style="width:100px;">课程编号</th>
 					<th>课程名称</th>
 					<th style="width: 80px;">任课老师</th>
@@ -79,6 +88,7 @@
 				</tr>
 				{volist name="courseList" id="vo"}
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="courseNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.courseNo}"/></td>
 					<td>{$vo.courseNo}</td>
 					<td>{$vo.courseName}</td>
 					<td>{$vo.teacherName}</td>
@@ -99,6 +109,8 @@
 				{/volist}
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到{$courseNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
@@ -129,3 +141,20 @@
 	});
 </script>
 <!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验课程吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验课程吗？");
+}
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#regButton").click(function(){
+			$("#selectMenu").toggle();
+		});
+	});
+</script>

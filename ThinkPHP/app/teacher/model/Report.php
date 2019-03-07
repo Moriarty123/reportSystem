@@ -12,6 +12,13 @@ class Report extends Model
         return $status[$value];
     }
 
+    //学生提交结果获取器
+    public function getSubmitResultAttr($value)
+    {
+        $status = [-1=>'未知',0=>'正常提交',1=>'迟交'];
+        return $status[$value];
+    }
+
     //教师批阅状态获取器
     public function getReviewStatusAttr($value)
     {

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算机学院实验报告在线撰写系统</title>
+	<link rel="shortcut icon" href="__IMG__/school.ico" />
+
+	<link rel="stylesheet" href="__FONTAWESOME__/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+	<link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+	<script type="text/javascript" src="__JS__/index/public.js"></script>
+
+	<link rel="stylesheet" href="__CSS__/index/index.css" />
+	<link rel="stylesheet" href="__CSS__/common/common.css" />
+	<link rel="stylesheet" href="__CSS__/common/footer.css" />
+	<link rel="stylesheet" href="__CSS__/common/menu.css">
+	<link rel="stylesheet" href="__CSS__/common/detail.css">
+	<link rel="stylesheet" href="__CSS__/teacher/report.css" />
+	<link rel="stylesheet" href="__CSS__/teacher/display.css" />
+
+	<link type="text/css" rel="Stylesheet" href="__XHEDITOR__/scp/scp.css"/>
+    <link type="text/css" rel="stylesheet" href="__XHEDITOR__/scp/skygqbox.css" />
+    <script type="text/javascript" src="__XHEDITOR__/scp/jquery-1.4.min.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/json2.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/xheditor-1.2.2/xheditor-1.2.2.min.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/skygqbox.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.edge.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="__XHEDITOR__/xheditor-1.2.2/xheditor_lang/zh-cn.js"></script>
+    <style type="text/css">
+        .scp{background: transparent url(__XHEDITOR__/scp/screencapture.gif) no-repeat; background-position:3px 2px;}
+    </style>
+
+</head>
+<body>
+	<!-- 头部开始-->
+	{include file="../app/common/view/html/header.html"}
+	<!-- 头部结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm" style="width: 1250px; margin-left: 50px; ">
+		<div class="form_boxA">
+			<div class="a" style="position: relative; left: 0px; top: 0px;">
+				<h2>撰写实验报告</h2>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
+				</div>
+			</div>
+
+		</div>
+		
+		<div style="float: left;">
+			<form action="/student/report/reportEditor" method="post">
+				<textarea id="reportContent" name="reportContent" id="reportContent" rows="12" cols="80" style="width:620px;height:665px;" ></textarea>
+				<div id="scpPanel"></div>
+				<input type="submit" name="save" class="Button" style="float: left; margin:5px;">
+				<input type="submit" name="submit" class="Button" style="float: left;margin: 5px; ">
+			</form>
+		</div>
+		<div style="float: right;">
+
+			<textarea id="txtContent" name="txtContent" id="txtContent" rows="12" cols="80" style="width:620px;height:665px;" ></textarea>
+				<div id="scpPanel"></div>
+		</div>
+	</div>
+	<!--课程列表结束-->
+
+	<!-- 清除浮动 -->
+	<div style="clear: both;"></div>
+
+	<!-- 底部开始-->
+	{include file="../app/common/view/html/footer.html"}
+	<!-- 底部结束-->
+
+</body>
+</html>
+
+<script type="text/javascript" language="javascript">
+		//1.xheditor设置
+        var editor;
+        var guideeditor;
+        $(pageInit);
+
+        function pageInit()
+        {
+            var allPlugin = {
+                scp: { c: 'scp', t: '截屏', e: function () { scpMgr.Capture(); } }
+            };
+            editor = $('#reportContent').xheditor(
+                {
+                    plugins: allPlugin, 
+                    tools: 'Cut,Copy,Paste,Pastetext,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Emot,Table,Source,Fullscreen,scp',
+                    upBtnText: '上传', 
+                    upLinkUrl:"upload.php",
+                    upLinkExt:"zip,rar,txt",
+                    upImgUrl:"http://reportsystem/upload.aspx",
+                    upImgExt:"jpg,jpeg,gif,png",
+                    upFlashUrl:"upload.php",
+                    upFlashExt:"swf",
+                    upMediaUrl:"upload.php",
+                    upMediaExt:"avi",
+                    html5Upload:false,
+            });  
+
+            guideeditor = $('#txtContent').xheditor(
+            {
+            	plugins:allPlugin,
+            	tools:'Copy'
+            });
+			guideeditor.setSource('{$txtContent}');
+
+        }
+
+        // alert('{$txtContent}');
+		
+        
+
+		//2.scp(截图)设置
+        var scpMgr = new CaptureManager();
+        scpMgr.Config["PostUrl"] = "http://reportsystem/upload.php";
+        scpMgr.event.postComplete = function (url) {
+            // url = str_replace("../../", "./", url);
+            // alert(url);
+            url = url.substring(1)
+            // alert(url);
+            var img = '<img src="' + url + '"/>';
+            editor.appendHTML(img);
+        };
+        scpMgr.loadAuto();
+</script>

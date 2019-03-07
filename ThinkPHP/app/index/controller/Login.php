@@ -89,6 +89,9 @@ class Login extends Controller
     	else if (strlen($account) == 12) {
     		$this->success('学生登录成功','/student/index/index');
     	}
+        else {
+            $this->redirect('index/index/login');
+        }
     }
 
     //退出登录

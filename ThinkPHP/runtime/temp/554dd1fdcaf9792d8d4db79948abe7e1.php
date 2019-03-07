@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1550335460;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1554022704;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/teacher/view/common/menu.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,7 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -23,7 +24,15 @@
 </head>
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -53,7 +62,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -61,40 +70,32 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验课程开始-->
+		<!--实验任务开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--实验课程结束-->
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					实验任务
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
+				<a class="cks" href="/teacher/course/courseList">课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/teacher/task/addPage">发布任务</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
@@ -113,7 +114,13 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -143,7 +150,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -171,9 +178,10 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/teacher/guide/guideDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
@@ -202,6 +210,7 @@
 				</tr>
 				<?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="guideNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['guideNo']; ?>"/></td>
 					<td><?php echo $vo['courseName']; ?></td>
 					<td><?php echo $vo['taskNo']; ?></td>
 					<td><?php echo $vo['guideName']; ?></td>
@@ -211,13 +220,13 @@
 						<td style="color: rgb(32, 163, 15)">已归属</td>	
 					<?php endif; ?>
 					
-					<td><?php echo date("Y-m-d h:m:s",$vo['createTime']); ?></td>
+					<td><?php echo date("Y-m-d H:m:s",$vo['createTime']); ?></td>
 					<td>
 						<a href="/teacher/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 					
-						<a href="/teacher/guide/editPage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
+						<a href="/teacher/guide/updatePage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
 					</td>
@@ -225,7 +234,9 @@
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 			<p class="msg">
-				共找到<?php echo $guideNumber; ?>条课程信息，每页显示15条记录
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				共找到<?php echo $guideNumber; ?>条记录，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
 			<?php echo $guideList->render(); ?>
@@ -265,7 +276,12 @@
 </script>
 <!-- 筛选框结束 -->
 
-<script>
-   	// var url = 'http://reportSystem/teacher/guide/guideList';
-   	// window.open(url);
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验指导吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验指导吗？");
+}
+
 </script>

@@ -53,7 +53,6 @@
                 <form action="/teacher/guide/guideAdd" method="post" onsubmit="return checkSubmit()">
                     <div class="add-list">
                         <label>实验课程：</label>
-                        <br>
                         <select name="courseNo" id="courseNo">
                             <option value="null">--请选择实验课程--</option>
                             {volist name="courseList" id="vo"}
@@ -126,16 +125,7 @@
 </body>
 </html>
 
-<!-- 筛选框开始-->
-<script type="text/javascript">
-    
-    $(document).ready(function(){
-        $("#submitedFilter").click(function(){
-            $("#submitedFilterDiv").slideToggle();
-        });
-    });
-</script>
-<!-- 筛选框结束 -->
+
 
 <!-- 创建编辑器 -->
 <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
@@ -146,6 +136,28 @@
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
     var testRequire = new E('#testRequire')
+
+
+    //开启debug模式
+    testAim.customConfig.debug = true;
+    // 关闭粘贴内容中的样式
+    testAim.customConfig.pasteFilterStyle = false
+    // 忽略粘贴内容中的图片
+    testAim.customConfig.pasteIgnoreImg = true
+    // 使用 base64 保存图片
+    //editor.customConfig.uploadImgShowBase64 = true
+ 
+    testAim.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testEnvironment.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testTask.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testAim.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testEnvironment.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testTask.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
+    testRequire.customConfig.uploadImgServer = "{:url('/teacher/editor/upload')}" ; // 上传图片到服务器
 
     testAim.create();
     testEnvironment.create();

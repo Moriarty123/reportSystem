@@ -65,3 +65,4 @@ function setBtnStyle(){
 		deleteCheck.removeAttribute("disabled");
 	}
 }
+

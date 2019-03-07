@@ -11,6 +11,7 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -45,9 +46,10 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
+			<form action="/teacher/task/taskDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
 					<th>实验课程</th>
 					<th>实验任务</th>
 					<th>实验指导</th>
@@ -78,6 +80,7 @@
 				</tr>
 				{volist name="taskList" id="vo"}
 				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="taskNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.taskNo}"/></td>
 					<td style="max-width: 150px;">{$vo.courseName}</td>
 					<td style="max-width: 150px;">{$vo.taskName}</td>
 					<td><a href="/teacher/guide/taskGuide?taskNo={$vo.taskNo}">查看实验指导</a></td>
@@ -90,12 +93,12 @@
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
 						{eq name="$vo.status" value="已发布"}
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/guide/guideExport?guideNo={$vo.guideNo}" style='margin-left: 5px;' target="_blank">
 							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
 						{else}
 						<a href="/teacher/task/taskPublish?taskNo={$vo.taskNo}" style='margin-left: 5px;' onclick="return checkPublish();">
-							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
+							<i class="fas fa-upload" title="发布实验任务"></i>
 						</a>
 						{/eq}
 					</td>
@@ -103,6 +106,8 @@
 				{/volist}
 			</table>
 			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到{$taskNumber}条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
@@ -138,4 +143,14 @@
 	{
 		return window.confirm("您确认要发布此实验任务吗？");
 	}
+</script>
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验任务吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验任务吗？");
+}
+
 </script>

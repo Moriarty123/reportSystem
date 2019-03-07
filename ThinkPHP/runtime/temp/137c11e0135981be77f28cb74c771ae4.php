@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEdit.html";i:1550372086;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEdit.html";i:1552205130;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="/static/js/index/public.js"></script>
     <script type="text/javascript" src="/static/js/teacher/guideAdd.js"></script>
     <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script>
-    <!-- <script type="text/javascript" src="/static/wangEditor-3.1.1/release/wangEditor.js"></script> -->
+    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
     
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
@@ -37,7 +37,15 @@
 </style>
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -67,7 +75,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -75,40 +83,32 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验课程开始-->
+		<!--实验任务开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--实验课程结束-->
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					实验任务
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
+				<a class="cks" href="/teacher/course/courseList">课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/teacher/task/addPage">发布任务</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
@@ -127,7 +127,13 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -157,7 +163,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -269,18 +275,17 @@
 <script type="text/javascript">
     
     $(document).ready(function(){
-        $("#submitedFilter").click(function(){
-            $("#submitedFilterDiv").slideToggle();
-        });
 
         //加载guide数据
-        $("#guideName").val("<?php echo $guide['guideName']; ?>");
-        $("#guideNo").val("<?php echo $guide['guideNo']; ?>");
-        $("#testAim .w-e-text").html("<?php echo $guide['testAim']; ?>");
-        $("#testEnvironment .w-e-text").html("<?php echo $guide['testAim']; ?>");
-        $("#testRequire .w-e-text").html("<?php echo $guide['testEnvironment']; ?>");
-        $("#testTask .w-e-text").html("<?php echo $guide['testTask']; ?>");
-        $("#testContent .w-e-text").html("<?php echo $guide['testContent']; ?>");
+        $("#guideName").val('<?php echo $guide['guideName']; ?>');
+        $("#guideNo").val('<?php echo $guide['guideNo']; ?>');
+        $("#testAim .w-e-text").html('<?php echo $guide['testAim']; ?>');
+        $("#testEnvironment .w-e-text").html('<?php echo $guide['testEnvironment']; ?>');
+        $("#testRequire .w-e-text").html('<?php echo $guide['testRequire']; ?>');
+        $("#testTask .w-e-text").html('<?php echo $guide['testTask']; ?>');
+        $("#testContent .w-e-text").html('<?php echo $guide['testContent']; ?>');
+
+
     });
 </script>
 <!-- 筛选框结束 -->
@@ -293,7 +298,19 @@
     var testEnvironment = new E('#testEnvironment');
     var testTask = new E('#testTask')
     var testContent = new E('#testContent');
-    var testRequire = new E('#testRequire')
+    var testRequire = new E('#testRequire');
+
+    testAim.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testEnvironment.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testTask.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testAim.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testEnvironment.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testTask.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
+    testRequire.customConfig.uploadImgServer = "<?php echo url('/teacher/editor/upload'); ?>" ; // 上传图片到服务器
 
     testAim.create();
     testEnvironment.create();

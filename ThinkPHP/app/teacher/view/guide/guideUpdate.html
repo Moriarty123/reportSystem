@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/teacher/guideEditor.js"></script>
+    <script type="text/javascript" src="__JS__/wangEditor/wangEditor.js"></script>
+    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
+    
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/guide.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/guideAdd.css" />
+
+
+    <link type="text/css" rel="Stylesheet" href="__XHEDITOR__/scp/scp.css"/>
+    <link type="text/css" rel="stylesheet" href="__XHEDITOR__/scp/skygqbox.css" />
+    <script type="text/javascript" src="__XHEDITOR__/scp/jquery-1.4.min.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/json2.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/xheditor-1.2.2/xheditor-1.2.2.min.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/skygqbox.js"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.edge.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XHEDITOR__/scp/scp.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="__XHEDITOR__/xheditor-1.2.2/xheditor_lang/zh-cn.js"></script>
+    <style type="text/css">
+        .scp{background: transparent url(__XHEDITOR__/scp/screencapture.gif) no-repeat; background-position:3px 2px;}
+    </style>
+
+
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>撰写实验指导</h2>
+            </div>
+            <form action="/teacher/guide/guideUpdate" method="post" onsubmit="return checkSubmit()">
+                <input type="hidden" name="guideNo" value="{$guide.guideNo}">
+                <div>
+                    <input type="text" name="guideName" id="guideName" style="width: 100%; margin-bottom: 5px; padding-left: 5px;" value="{$guide.guideName}"></div>
+                <div>
+                    <select name="courseNo" id="courseNo" style="width: 100%; margin-bottom: 5px;">
+                        <option value="null">--请选择实验课程--</option>
+                        {volist name="courseList" id="vo"}
+                            {eq name="$vo.courseNo" value="$guide.courseNo"}
+                                <option value="{$vo.courseNo}" selected = "selected">{$vo.courseName}</option>
+                            {else}
+                                <option value="{$vo.courseNo}">{$vo.courseName}</option>
+                            {/eq}
+                        
+                        {/volist}
+                    </select>
+                </div>
+                <div>
+                    <select name="taskNo" id="taskNo" style="width: 100%; margin-bottom: 5px;">
+                        <option value="-1">--请选择实验任务--</option>
+                        {volist name="taskList" id="vo"}
+                            {eq name="$vo.taskNo" value="$guide.taskNo"}
+                                <option value="{$vo.taskNo}" selected = "selected">{$vo.taskName}</option>
+                            {else}
+                                <option value="{$vo.taskNo}">{$vo.taskName}</option>
+                            {/eq}
+                        {/volist}
+                    </select>
+                </div>
+                <textarea id="txtContent" name="txtContent" id="txtContent" rows="12" cols="80" style="width:1065px;height:665px;" ></textarea>
+                <div id="scpPanel"></div>
+                <div class="ButtonDiv" style="width: 300px; margin-bottom: 20px; ">
+                    <input type="submit" name="" value="保存" class="Button" style="float: left; margin: 5px;">
+                    <input type="submit" name="" value="提交" class="Button" style="float: left; margin: 5px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;height: 100px;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 编辑器配置 -->
+<script type="text/javascript" language="javascript">
+        var editor;
+        $(pageInit);
+        function pageInit()
+        {
+            var allPlugin = {
+                scp: { c: 'scp', t: '截屏', e: function () { scpMgr.Capture(); } }
+            };
+            editor = $('#txtContent').xheditor(
+                { 
+                    plugins: allPlugin, 
+                    tools: 'Cut,Copy,Paste,Pastetext,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Flash,Media,Emot,Table,scp,Source,Fullscreen,About',
+                    upBtnText: '上传', 
+                    upLinkUrl:"upload.php",
+                    upLinkExt:"zip,rar,txt",
+                    upImgUrl:"/teacher/common/upload",
+                    upImgExt:"jpg,jpeg,gif,png",
+                    upFlashUrl:"upload.php",
+                    upFlashExt:"swf",
+                    upMediaUrl:"upload.php",
+                    upMediaExt:"avi"
+                });
+            // var str = {$txtContent};           
+            // if (str.indexOf("'") != -1) {
+            //     str = "";
+            // }
+            // // editor.setSource('{$txtContent}');
+            // editor.setSource(str);
+        }
+        // console.log("{$txtContent}");
+
+        var scpMgr = new CaptureManager();
+        scpMgr.Config["PostUrl"] = "/teacher/common/upload";
+        scpMgr.event.postComplete = function (url) {
+            var img = '<img src="' + url + "?t=" + new Date().getTime()+ '"/>';
+            editor.appendHTML(img);
+        };
+        scpMgr.loadAuto();
+
+        
+</script>
+
+
+
+

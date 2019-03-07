@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\score\scoreShow.html";i:1551971082;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1551971185;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\score\scoreShow.html";i:1554022597;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/student/view/common/menu.html";i:1554022597;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +28,15 @@
 
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
