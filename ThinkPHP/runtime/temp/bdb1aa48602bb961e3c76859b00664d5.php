@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\score\scoreShow.html";i:1551945083;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551939338;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\score\scoreShow.html";i:1551969497;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551947166;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
     <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
-    <script type="text/javascript" src="/static/js/Echarts/echarts.min.js"></script>
+
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -25,29 +25,7 @@
     <link rel="stylesheet" href="/static/css/student/score.css">
 </head>
 
-<style type="text/css">
-.title-right {
-    width: 100px; float: right; margin-right: 30px;margin-top: 20px;
-}
 
-.selectDiv {
-    height: 80px; position: relative; top: 0px; left: 0px;
-}
-
-.selectDiv .courseSelect {
-    position: absolute; left: 100px; top: 30px;
-}
-
-.selectDiv .taskSelect {
-    position: absolute; left: 350px; top: 30px;
-}
-
-.selectDiv .submit {
-    position: absolute; left: 650px; top: 30px;
-}
-
-
-</style>
 <body>
     <!-- 头部开始-->
     <!-- 头部 -->
@@ -196,29 +174,38 @@
                 </div>
             </div>
             <div class="selectDiv">
-                <form action="/teacher/score/scoreShow" method="post">
-                    <!-- <select class="courseSelect" name="courseNo" id="course">
+                <form action="/student/score/scoreShow" method="post">
+                    <select class="courseSelect" name="courseNo" id="course">
                         <option value="-1">--请选择实验课程--</option>
                         <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
                         <option value="<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></option>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
-                    </select> -->
+                    </select>
                     <div id="taskDiv">
-                    <select class="taskSelect" name="taskNo" id="task">
+                    <!-- <select class="taskSelect" name="taskNo" id="task">
                         <option value="-1">--请选择实验任务--</option>
                         <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
                         <option value="<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></option>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select> -->
+                    <select class="taskSelect" name="taskNo" id="task">
+                        <option value="-1">--请选择评分方式--</option>
+                        <option value="0">百分制</option>
+                        <option value="1">五分制</option>
+                        {/volist}
                     </select>
                     </div>
-                    <input type="submit" name="submit" value="确定" class="submit">
+                    <div class="ButtonDiv" >
+                        <input type="submit" name="submit" value="确定" class="submit Button" style="width: 60px; height: 30px;">    
+                    </div>
+                    
                 </form>
             </div>
 
             <div style="width: 100%; height: 600px; ">
-                <div style="width: 600px; height: 500px; margin:0 auto; " id="chart"></div>
+                <div style="width: 800px; height: 500px; margin:0 auto; " id="chart"></div>
             </div>
-             
+
         </div>
     </div>
     <!--课程列表结束-->
@@ -238,41 +225,75 @@
 <!-- 底部结束 -->
     <!-- 底部结束-->
 
+
 </body>
 </html>
 
 
 
+<script src="/static/js/Echarts/echarts.js" charset="utf-8" type="text/javascript"></script>
 
 <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('chart'));
 
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
+    // 指定图表的配置项和数据
+    var option = {
+        backgroundColor: '#FBFBFB',
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['分数']
+        },
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    </script>
+        calculable : true,
 
 
+        xAxis : [
+            {
+                axisLabel:{
+                    rotate: 30,
+                    interval:0
+                },
+                axisLine:{
+                  lineStyle :{
+                      color: '#CECECE'
+                  }
+                },
+                type : 'category',
+                boundaryGap : false,
+                data : function (){
+                    var list = [];
+                    for (var i = 1; i <= <?php echo $number; ?>; i++) {
+                        list.push("第"+i+"次实验");
+                    }
+                    return list;
+                }()
+            }
+        ],
+        yAxis : [
+            {
 
-
-
+                type : 'value',
+                axisLine:{
+                    lineStyle :{
+                        color: '#CECECE'
+                    }
+                }
+            }
+        ],
+        series : [
+            {
+                name:'分数',
+                type:'line',
+                symbol:'none',
+                smooth: 0.2,
+                color:['#66AEDE'],
+                data:[<?php if(is_array($score) || $score instanceof \think\Collection || $score instanceof \think\Paginator): $i = 0; $__LIST__ = $score;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$s): $mod = ($i % 2 );++$i;?><?php echo $s; ?>,<?php endforeach; endif; else: echo "" ;endif; ?>]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>

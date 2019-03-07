@@ -7,6 +7,8 @@ use think\Log;
 use app\common\controller\Common;
 
 use app\student\model\Elective as electiveModel;
+use app\student\model\Report as reportModel;
+use app\student\model\Task as taskModel;
 
 class Score extends Common
 {
@@ -23,6 +25,7 @@ class Score extends Common
     	// dump($_POST);
     	Log::record("显示学生成绩", "notice");
 
+        //1.获取课程列表、任务列表
     	$electiveModel = new electiveModel();
 
     	$studentNo = session("account");
@@ -42,6 +45,27 @@ class Score extends Common
 		// dump($courseList);
 		// dump($taskList);
 
+        //2.获取courseNo
+        $courseNo = input("post.courseNo");
+        $courseWhere = "courseNo = -1";
+        if (!empty($courseNo)) {
+            $courseWhere = "courseNo = '$courseNo'";
+        }
+        // dump($courseWhere);
+        $reviewWhere = "reviewStatus = 1";
+        $reportModel = new reportModel();
+        $score = $reportModel   ->where($courseWhere)
+                                ->where($studentWhere)
+                                ->where($reviewWhere)
+                                ->order("taskNo")
+                                ->column('score');
+
+        $taskModel = new taskModel();
+        $number = $taskModel->where($courseWhere)->count();
+        // dump($reportList);
+
+        $this->assign("score", $score);
+        $this->assign("number", $number);
 		$this->assign("courseList", $courseList);
 		$this->assign("taskList", $taskList);
 
