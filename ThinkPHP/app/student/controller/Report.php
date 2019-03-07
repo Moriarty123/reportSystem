@@ -214,6 +214,7 @@ class Report extends Common
             '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
             '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
+        
         guidePdf($html);
         //2.跳转到实验指导列表
         $this->redirect('student/guide/guideList');
@@ -244,9 +245,11 @@ class Report extends Common
                                 ->field("a.*,b.teacherNo,b.teacherName, c.studentNo, c.studentName, d.courseNo,d.courseName, e.taskNo, e.taskName")
                                 ->find();
  
+        // dump($report);
 
         //2.页面渲染
         $this->assign("report", $report);
+
 
         return $this->fetch('reportEdit');
     }
@@ -291,7 +294,8 @@ class Report extends Common
         // dump($data);
 
         //2.更新数据
-        $reportWhere = "reportNo = '$reportNo'";
+        $reportWhere = "reportNo = '{$reportNo}'";
+        // dump($reportWhere);
         $reportModel = new reportModel();
         $report = $reportModel->update($data, $reportWhere);
 
@@ -433,6 +437,7 @@ class Report extends Common
 
         //2.跳转到实验报告列表
         $this->redirect('student/report/reportList');
+        // $this->success('跳转到实验报告列表', '/student/report/reportList');
 
     }
 
@@ -473,14 +478,47 @@ class Report extends Common
         // dump($_GET);
         Log::record("提交实验报告", "notice");
 
-        //1.查询report
-        $reportModel = new reportModel();
+        //提交实验报告
         $reportNo = input("get.reportNo");
+        $taskNo = input("get.taskNo");
+        $studentNo = session("account");
+
+        //1.1查询是否已经有实验报告提交
+        $reportModel = new reportModel();
+        //1.2判断是否已有实验报告提交
+        $taskWhere = "taskNo = '$taskNo'";
+        $studentWhere = "studentNo = '$studentNo'";
+        $submitWhere = "submitStatus = 1";
+        $count = $reportModel->where($taskWhere)
+                                ->where($studentWhere)
+                                ->where($submitWhere)
+                                ->count();
+
+        if ($count > 0) {
+            Log::record("此实验任务已有报告提交,提交实验报告失败！", "error");
+            $this->error("此实验任务已有报告提交，提交实验报告失败！", "/student/report/reportList");
+        }
+
+        //1.3查询report
         $reportWhere = "reportNo = '$reportNo'";
 
+        $taskModel = new taskModel();
+        $task = $taskModel->where($taskWhere)->find();
+
+        //判断是否超过时间提交
+        $submitResult = 0;
+        $nowTime = time();
+
+        if($task['endTime'] < $nowTime) {
+            Log::record("超过时间提交", "notice");
+            $submitResult = 1;
+        }
+
+        //更新提交状态
         $update = [
             'submitStatus' => 1,
-            'submitTime'   => time()
+            'submitTime'   => $nowTime,
+            'submitResult' => $submitResult
         ];
 
         //2.更新操作

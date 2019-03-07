@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEdit.html";i:1550587147;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEdit.html";i:1551447456;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1551431520;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,7 +169,7 @@
             </div>
             <div class="reportAddDiv">
                 <form action="/student/report/reportEdit" method="post" onsubmit="return checkSubmit()">
-                    <input type="hidden" id="reportNo" name="reportNo">
+                    <input type="hidden" id="reportNo" name="reportNo" value="<?php echo $report['reportNo']; ?>">
                     <div class="add-list">
 						<label>实验课程：<?php echo $report['courseName']; ?></label>
 						<input type="hidden" id="courseName" name="courseNo" value="<?php echo $report['courseNo']; ?>">
@@ -288,6 +288,20 @@
     var testCode = new E('#testCode');
     var testSummary = new E('#testSummary');
 
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testAnalysis.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testScreen.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testCode.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testSummary.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testRequire.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testAnalysis.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testScreen.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testCode.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testSummary.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+
     testRequire.create();
     testAnalysis.create();
     testContent.create();
@@ -295,4 +309,7 @@
     testCode.create();
     testSummary.create();
 
+                                   
+
 </script>
+

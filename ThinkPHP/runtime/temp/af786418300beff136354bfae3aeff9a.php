@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1550768053;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1550734179;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1551450450;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/student/view/common/menu.html";i:1551431520;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -215,8 +215,9 @@
 							</form>
 						</div> -->
 					</th>
-					<th>最后编辑时间</th>
-					<th>提交时间</th>
+					<th style="max-width: 100px;">最后编辑时间</th>
+					<th style="max-width: 100px;">截止时间</th>
+					<th style="max-width: 100px;">提交时间</th>
 					<th>操作</th>
 				</tr>
 				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
@@ -234,17 +235,20 @@
 					<?php else: ?>
 					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
 					<?php endif; ?>
-					<td><?php echo date("Y-m-d H:m:s",$vo['testTime']); ?></td>
+					<td style="max-width: 100px;"><?php echo date("Y-m-d H:m:s",$vo['testTime']); ?></td>
+					<td style="max-width: 100px;"><?php echo date("Y-m-d H:m:s",$vo['endTime']); ?></td>
 					<?php if($vo['submitTime'] == ''): ?>
-					<td><a href="/student/report/reportSubmit?reportNo=<?php echo $vo['reportNo']; ?>" onclick="checkRealSubmit();">去提交</a></td>
+					<td><a href="/student/report/reportSubmit?reportNo=<?php echo $vo['reportNo']; ?>&taskNo=<?php echo $vo['taskNo']; ?>" onclick="checkRealSubmit();">去提交</a></td>
 					<?php else: ?>
-					<td><?php echo date("Y-m-d H:m:s",$vo['submitTime']); ?></td>
+					<td style="max-width: 100px;"><?php echo date("Y-m-d H:m:s",$vo['submitTime']); ?></td>
 					<?php endif; ?>
+					
 					
 					<td>
 						<a href="/student/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
+						
 						<?php if($vo['reviewStatus'] == '已批阅'): ?>
 						<a href="" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>

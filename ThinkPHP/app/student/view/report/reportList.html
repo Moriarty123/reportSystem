@@ -95,8 +95,9 @@
 							</form>
 						</div> -->
 					</th>
-					<th>最后编辑时间</th>
-					<th>提交时间</th>
+					<th style="max-width: 100px;">最后编辑时间</th>
+					<th style="max-width: 100px;">截止时间</th>
+					<th style="max-width: 100px;">提交时间</th>
 					<th>操作</th>
 				</tr>
 				{volist name="reportList" id="vo"}
@@ -115,17 +116,20 @@
 					{else}
 					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
 					{/eq}
-					<td>{$vo.testTime|date="Y-m-d H:m:s",###}</td>
+					<td style="max-width: 100px;">{$vo.testTime|date="Y-m-d H:m:s",###}</td>
+					<td style="max-width: 100px;">{$vo.endTime|date="Y-m-d H:m:s",###}</td>
 					{eq name="$vo.submitTime" value=""}
-					<td><a href="/student/report/reportSubmit?reportNo={$vo.reportNo}" onclick="checkRealSubmit();">去提交</a></td>
+					<td><a href="/student/report/reportSubmit?reportNo={$vo.reportNo}&taskNo={$vo.taskNo}" onclick="checkRealSubmit();">去提交</a></td>
 					{else}
-					<td>{$vo.submitTime|date="Y-m-d H:m:s",###}</td>
+					<td style="max-width: 100px;">{$vo.submitTime|date="Y-m-d H:m:s",###}</td>
 					{/eq}
+					
 					
 					<td>
 						<a href="/student/report/reportShow?reportNo={$vo.reportNo}" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
+						
 						{eq name="$vo.reviewStatus" value="已批阅"}
 						<a href="" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportPage.html";i:1550585106;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportPage.html";i:1551431757;}*/ ?>
 <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="/static/css/student/reportPage.css">
@@ -87,6 +87,20 @@
     var testScreen = new E('#testScreen');
     var testCode = new E('#testCode');
     var testSummary = new E('#testSummary');
+
+    testRequire.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testAnalysis.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testContent.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testScreen.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testCode.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+    testSummary.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+
+    testRequire.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testAnalysis.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testContent.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testScreen.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testCode.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
+    testSummary.customConfig.uploadImgServer = "<?php echo url('/student/editor/upload'); ?>" ; // 上传图片到服务器
 
     testRequire.create();
     testAnalysis.create();
