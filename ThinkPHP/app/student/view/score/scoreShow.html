@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
+    <script type="text/javascript" src="__JS__/Echarts/echarts.min.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+
+    <link rel="stylesheet" href="__CSS__/student/display.css" />
+    <link rel="stylesheet" href="__CSS__/student/score.css">
+</head>
+
+<style type="text/css">
+.title-right {
+    width: 100px; float: right; margin-right: 30px;margin-top: 20px;
+}
+
+.selectDiv {
+    height: 80px; position: relative; top: 0px; left: 0px;
+}
+
+.selectDiv .courseSelect {
+    position: absolute; left: 100px; top: 30px;
+}
+
+.selectDiv .taskSelect {
+    position: absolute; left: 350px; top: 30px;
+}
+
+.selectDiv .submit {
+    position: absolute; left: 650px; top: 30px;
+}
+
+
+</style>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>学生成绩分布</h2>
+                
+                <div class="title-right">
+                    <select onchange="window.location=this.value">
+                        <option value="-1">--其他操作--</option>
+                        <option>同步数据</option>
+                    </select>
+                </div>
+            </div>
+            <div class="selectDiv">
+                <form action="/teacher/score/scoreShow" method="post">
+                    <!-- <select class="courseSelect" name="courseNo" id="course">
+                        <option value="-1">--请选择实验课程--</option>
+                        {volist name="courseList" id="course"}
+                        <option value="{$course.courseNo}">{$course.courseName}</option>
+                        {/volist}
+                    </select> -->
+                    <div id="taskDiv">
+                    <select class="taskSelect" name="taskNo" id="task">
+                        <option value="-1">--请选择实验任务--</option>
+                        {volist name="taskList" id="task"}
+                        <option value="{$task.taskNo}">{$task.taskName}</option>
+                        {/volist}
+                    </select>
+                    </div>
+                    <input type="submit" name="submit" value="确定" class="submit">
+                </form>
+            </div>
+
+            <div style="width: 100%; height: 600px; ">
+                <div style="width: 600px; height: 500px; margin:0 auto; " id="chart"></div>
+            </div>
+             
+        </div>
+    </div>
+    <!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+
+
+
