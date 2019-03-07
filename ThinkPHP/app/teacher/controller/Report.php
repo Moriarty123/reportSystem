@@ -52,8 +52,8 @@ class Report extends Common
                                     ->where($submitWhere)
                                     ->alias('a')
                                     ->join('course b', 'a.courseNo = b.courseNo')
-                                    ->join('report c', 'a.teacherNo = c.teacherNo')
-                                    ->join('student d', 'c.studentNo = d.studentNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
                                     ->join('task e', 'a.taskNo = e.taskNo')
 			    				     ->count();
 
@@ -176,6 +176,174 @@ class Report extends Common
         reportPdf($html);
         //2.跳转到实验报告列表
         $this->redirect('teacher/report/reportList');
+    }
+
+    //实验课程筛选
+    public function courseFilter()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验课程筛选", "notice");
+
+        //获取courseNo
+        $courseNo = input('post.courseFilterNo');
+
+        if ($courseNo == -1) {
+            $courseWhere = "";
+        }
+        else {
+            $courseWhere = "a.courseNo = '$courseNo'";    
+        }
+        
+        $this->usefilter($courseWhere);
+        return $this->fetch('reportList');
+    }
+
+    //提交结果筛选
+    public function submitFilter() {
+        //0.测试
+        // dump($_POST);
+        Log::record('提交结果筛选', 'notice');
+
+        $submitResult = input('post.submitResult');
+
+        $submitWhere = "a.submitResult = '$submitResult'";
+
+        $this->usefilter($submitWhere);
+        return $this->fetch('reportList');
+
+    }
+
+    //批阅状态筛选
+    public function reviewFilter() {
+        //0.测试
+        // dump($_POST);
+        Log::record('批阅状态筛选', 'notice');
+
+        $reviewStatus = input('post.reviewStatus');
+
+        $reviewWhere = "a.reviewStatus = '$reviewStatus'";
+
+        $this->usefilter($reviewWhere);
+        return $this->fetch('reportList');
+
+    }
+
+    //筛选操作
+    public function usefilter($filterWhere="") {
+        //1.获取账号
+        $account = session('account');
+
+        //2.获取该账号教师学生的实验实验报告
+        // $teacherModel = new teacherModel();
+
+        $where = "a.teacherNo = '$account'";
+        $submitWhere = "a.submitStatus = 1";
+
+        $reportModel = new reportModel();
+        $courseModel = new courseModel();
+
+        $reportList = $reportModel  
+                                    ->where($where)
+                                    ->where($submitWhere)
+                                    ->where($filterWhere)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
+                                    ->join('task e', 'a.taskNo = e.taskNo')
+                                    ->paginate(15);
+
+
+
+        $reportNumber = $reportModel  
+                                    ->where($where)
+                                    ->where($submitWhere)
+                                    ->where($filterWhere)
+                                    ->alias('a')
+                                    ->join('course b', 'a.courseNo = b.courseNo')
+                                    ->join('teacher c', 'a.teacherNo = c.teacherNo')
+                                    ->join('student d', 'a.studentNo = d.studentNo')
+                                    ->join('task e', 'a.taskNo = e.taskNo')
+                                     ->count();
+
+        $courseWhere = "teacherNo = '$account'";
+        $courseList = $courseModel  ->where($courseWhere)
+                                    ->select();
+
+        //3.页面渲染
+        $this->assign('reportList', $reportList);
+        $this->assign('reportNumber', $reportNumber);
+        $this->assign('courseList', $courseList);
+
+        // return $this->fetch('reportList');
+    
+    }
+
+    //批阅实验报告页面
+    public function reviewPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("批阅实验报告页面", "notice");
+
+        $reportNo = input("get.reportNo");
+
+        $this->assign("reportNo", $reportNo);
+
+        return $this->fetch("reportReview");
+    }
+
+    //批阅页面
+    public function reportReviewPage() 
+    {
+        //0.测试
+        // dump($_GET);
+
+        $reportNo = input("get.reportNo");
+
+        $this->assign("reportNo", $reportNo);
+        return $this->fetch("reportReviewPage");
+    }
+
+    //批阅实验报告
+    public function reportReview()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("批阅实验报告", "notice");
+
+        //1.获取数据
+        $reportNo = input("post.reportNo");
+        $reviewComment = input("post.reviewComment");
+        $score = input("post.score");
+
+        $data = [
+            'reportNo' => $reportNo,
+            'reviewComment' => $reviewComment,
+            'score' => $score,
+            'reviewStatus' => 1
+        ];
+
+        $reportWhere = "reportNo = '$reportNo'";
+
+        $reportModel = new reportModel();
+        $report = $reportModel->update($data, $reportWhere);
+
+        if (empty($report)) {
+            Log::record("批阅实验报告失败", "error");
+            $this->error("批阅实验报告失败！请稍后再试", "/teacher/report/reviewResult");
+        }
+
+        //2.后续操作
+        $this->success("批阅实验报告成功！", "/teacher/report/reviewResult");
+
+    }
+
+    //跳转页面
+    public function reviewResult()
+    {
+        return $this->fetch("reviewResult");
     }
 
 }

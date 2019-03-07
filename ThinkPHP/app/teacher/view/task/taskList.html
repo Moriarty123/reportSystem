@@ -93,12 +93,12 @@
 							<i class="fa fa-eye" title="查看实验指导"></i>
 						</a>
 						{eq name="$vo.status" value="已发布"}
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/guide/guideExport?guideNo={$vo.guideNo}" style='margin-left: 5px;' target="_blank">
 							<i class="fa fa-file-export" title="导出实验指导"></i>
 						</a>
 						{else}
 						<a href="/teacher/task/taskPublish?taskNo={$vo.taskNo}" style='margin-left: 5px;' onclick="return checkPublish();">
-							<i class="fas fa-external-link-alt" title="发布实验任务"></i>
+							<i class="fas fa-upload" title="发布实验任务"></i>
 						</a>
 						{/eq}
 					</td>

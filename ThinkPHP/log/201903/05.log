@@ -1,0 +1,2227 @@
+---------------------------------------------------------------
+[ 2019-03-05T00:00:09+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.350547s][吞吐率：2.85req/s] [内存消耗：5,601.55kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002406s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002047s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002879s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002921s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003913s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.002012s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001395s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001122s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:325]
+---------------------------------------------------------------
+[ 2019-03-05T00:00:34+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.338895s][吞吐率：2.95req/s] [内存消耗：5,501.98kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002471s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002025s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002887s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001124s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002157s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001406s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001543s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001172s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001342s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:00:34+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.131754s][吞吐率：7.59req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:00:55+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.385869s][吞吐率：2.59req/s] [内存消耗：5,501.87kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002047s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002879s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002120s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002396s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001899s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001342s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001586s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:00:55+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.138193s][吞吐率：7.24req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:01:13+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.408846s][吞吐率：2.45req/s] [内存消耗：5,601.39kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003327s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003366s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.003698s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003699s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001104s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001327s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001085s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001448s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:325]
+---------------------------------------------------------------
+[ 2019-03-05T00:02:28+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.345552s][吞吐率：2.89req/s] [内存消耗：5,501.93kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002075s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002699s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002733s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002576s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003661s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001208s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.002316s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001373s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.000849s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:02:28+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.157253s][吞吐率：6.36req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:02:52+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.402058s][吞吐率：2.49req/s] [内存消耗：5,502.03kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '543',
+  'taskNo' => '-1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002866s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003317s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.003477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.003433s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003502s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001325s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001492s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001726s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '-1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001103s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:02:52+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.140465s][吞吐率：7.12req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:03:02+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.213594s][吞吐率：4.68req/s] [内存消耗：5,235.63kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002119s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002911s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001947s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001037s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000931s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001604s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:03:02+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.147409s][吞吐率：6.78req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:04:27+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.342053s][吞吐率：2.92req/s] [内存消耗：5,499.73kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002074s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002472s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002443s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001343s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002127s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001534s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001511s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001659s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001155s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001164s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:04:27+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.168634s][吞吐率：5.93req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:04:47+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.370089s][吞吐率：2.70req/s] [内存消耗：5,599.47kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002318s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002870s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.003174s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002899s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001125s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001223s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001990s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001047s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:325]
+---------------------------------------------------------------
+[ 2019-03-05T00:06:38+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.426253s][吞吐率：2.35req/s] [内存消耗：5,641.10kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002037s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002711s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001785s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001006s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003806s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000959s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001324s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001087s ]
+[ error ] [4]语法错误: unexpected ';'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:324]
+---------------------------------------------------------------
+[ 2019-03-05T00:07:28+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.336685s][吞吐率：2.97req/s] [内存消耗：5,641.27kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002021s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002670s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002296s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002030s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002170s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001326s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001600s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001421s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.000748s ]
+[ error ] [4]语法错误: unexpected 'html' (T_STRING)[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:326]
+---------------------------------------------------------------
+[ 2019-03-05T00:07:40+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.352475s][吞吐率：2.84req/s] [内存消耗：5,641.11kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002245s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002806s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001906s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002786s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001184s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001672s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001156s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001404s ]
+[ error ] [4]语法错误: unexpected 'html' (T_STRING)[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:326]
+---------------------------------------------------------------
+[ 2019-03-05T00:07:51+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.330647s][吞吐率：3.02req/s] [内存消耗：5,641.20kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002030s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002284s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002682s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001795s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001175s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001099s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001135s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.002436s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001017s ]
+[ error ] [4]语法错误: unexpected 'html' (T_STRING)[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:328]
+---------------------------------------------------------------
+[ 2019-03-05T00:08:37+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.330311s][吞吐率：3.03req/s] [内存消耗：5,599.49kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002032s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002456s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002081s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001962s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002117s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001241s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001880s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001029s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:325]
+---------------------------------------------------------------
+[ 2019-03-05T00:09:30+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.359467s][吞吐率：2.78req/s] [内存消耗：5,599.32kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002165s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003265s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001956s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001974s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002667s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.003493s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001317s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001327s ]
+[ error ] [8]未定义变量: ctask[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:215]
+---------------------------------------------------------------
+[ 2019-03-05T00:09:42+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.371842s][吞吐率：2.69req/s] [内存消耗：5,600.10kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002330s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002513s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002387s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001918s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003228s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001190s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001599s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001822s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001905s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:327]
+---------------------------------------------------------------
+[ 2019-03-05T00:10:06+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.366223s][吞吐率：2.73req/s] [内存消耗：5,642.79kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002660s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004794s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002682s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001868s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002306s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.002666s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001552s ]
+[ error ] [4]语法错误: unexpected '?>'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:327]
+---------------------------------------------------------------
+[ 2019-03-05T00:10:36+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.342006s][吞吐率：2.92req/s] [内存消耗：5,498.76kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003173s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002478s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002915s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.003513s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001337s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002557s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001164s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001242s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001396s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001036s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:10:37+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.108039s][吞吐率：9.26req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:11:17+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.375415s][吞吐率：2.66req/s] [内存消耗：5,642.85kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002433s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002566s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.003008s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002117s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003858s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001175s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001230s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.000827s ]
+[ error ] [4]语法错误: unexpected '?>'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:328]
+---------------------------------------------------------------
+[ 2019-03-05T00:11:42+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.365647s][吞吐率：2.73req/s] [内存消耗：5,600.04kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002239s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002143s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002777s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002090s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001686s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002734s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001453s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001042s ]
+[ error ] [8]Use of undefined constant courseNo - assumed 'courseNo'[F:\study\www\reportSystem\ThinkPHP\runtime\temp\a6f5830b846bf220573af2cff4c7e583.php:328]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:04+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.351773s][吞吐率：2.84req/s] [内存消耗：5,499.20kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002930s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002518s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002955s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002560s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002625s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001161s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001108s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:04+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.106603s][吞吐率：9.38req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:10+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.219564s][吞吐率：4.55req/s] [内存消耗：5,235.71kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '543',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001952s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002928s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.003710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.003576s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002667s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001259s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:11+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.110409s][吞吐率：9.06req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:13+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.224002s][吞吐率：4.46req/s] [内存消耗：5,235.71kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '543',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002245s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002128s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002936s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002569s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.002062s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003215s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001388s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001245s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001050s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:13+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.117561s][吞吐率：8.51req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:16+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.198502s][吞吐率：5.04req/s] [内存消耗：5,235.71kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '543',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002029s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003206s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001811s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002179s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.000753s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:16+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.094292s][吞吐率：10.61req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:19+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.218201s][吞吐率：4.58req/s] [内存消耗：5,235.71kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '543',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002092s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002241s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002331s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001201s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002518s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001014s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001076s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:19+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.113117s][吞吐率：8.84req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:43+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.365610s][吞吐率：2.74req/s] [内存消耗：5,499.42kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '543',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002536s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002322s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002736s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002435s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002382s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001077s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001310s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '543' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001973s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.098009s][吞吐率：10.20req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:46+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.215953s][吞吐率：4.63req/s] [内存消耗：5,235.66kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '46',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002615s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002795s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002591s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002266s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001575s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001038s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:47+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.106373s][吞吐率：9.40req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:50+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.216808s][吞吐率：4.61req/s] [内存消耗：5,235.66kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '46',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '3',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002123s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003824s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.002714s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002332s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '3' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.001059s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '3' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '3' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001355s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '3' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '3' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001292s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:50+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.111714s][吞吐率：8.95req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-05T00:12:53+08:00 ] 0.0.0.0 POST /teacher/score/scoreShow
+[ info ] reportsystem/teacher/score/scoreShow [运行时间：0.217319s][吞吐率：4.60req/s] [内存消耗：5,235.66kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'score',
+    2 => 'scoreShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '46',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '-1',
+  'taskNo' => '1',
+  'submit' => '确定',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Score->scoreShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Score.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html [ array (
+  0 => 'courseList',
+  1 => 'taskList',
+  2 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示学生成绩分布
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002350s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003466s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.001862s ]
+[ sql ] [ SQL ] SELECT * FROM `task` WHERE (  (  teacherNo = '2012032' ) ) AND `task`.`deleteTime` IS NULL [ RunTime:0.001582s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002890s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'A' ) LIMIT 1 [ RunTime:0.002045s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'B' ) LIMIT 1 [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'C' ) LIMIT 1 [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'D' ) LIMIT 1 [ RunTime:0.001232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` WHERE  (  taskNo = '1' )  AND (  score = 'E' ) LIMIT 1 [ RunTime:0.001505s ]
+---------------------------------------------------------------
+[ 2019-03-05T00:12:53+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.110735s][吞吐率：9.03req/s] [内存消耗：2,507.30kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/score/scoreShow',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=7ssbjc61142u6a4enojkdk26s1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
