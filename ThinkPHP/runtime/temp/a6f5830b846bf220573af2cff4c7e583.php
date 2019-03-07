@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html";i:1551715959;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551688190;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html";i:1551927738;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551688190;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -202,12 +202,12 @@
 			</div>
 			<div class="selectDiv">
 				<form action="/teacher/score/scoreShow" method="post">
-					<select class="courseSelect" name="courseNo" id="course">
+					<!-- <select class="courseSelect" name="courseNo" id="course">
 						<option value="-1">--请选择实验课程--</option>
 						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
 						<option value="<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></option>
 						<?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
+					</select> -->
 					<div id="taskDiv">
 					<select class="taskSelect" name="taskNo" id="task">
 						<option value="-1">--请选择实验任务--</option>
