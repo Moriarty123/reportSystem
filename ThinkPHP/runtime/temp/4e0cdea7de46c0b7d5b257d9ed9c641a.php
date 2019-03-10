@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1549113455;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1552205130;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1552229901;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1552205130;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,9 +171,10 @@
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生名单</option>
 					</select>
 				</div>
 			</div>
@@ -235,6 +236,15 @@
 	$(document).ready(function(){
   		$("#termFilter").click(function(){
   			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/studentExcel?courseNo=<?php echo $courseNo; ?>');
+			}
+			
 		});
 	});
 </script>

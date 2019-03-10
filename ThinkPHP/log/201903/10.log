@@ -3692,3 +3692,1872 @@
 [ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.002692s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002939s ]
 [ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002729s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:44:24+08:00 ] 0.0.0.0 GET /
+[ info ] reportsystem/ [运行时间：2.321670s][吞吐率：0.43req/s] [内存消耗：2,951.46kb] [文件加载：38]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\study\www\reportSystem\ThinkPHP\app\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:24+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.473160s][吞吐率：2.11req/s] [内存消耗：2,507.17kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:27+08:00 ] 0.0.0.0 GET /index/index/login
+[ info ] reportsystem/index/index/login [运行时间：0.218009s][吞吐率：4.59req/s] [内存消耗：2,952.84kb] [文件加载：38]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->login[ F:\study\www\reportSystem\ThinkPHP\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:27+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.112686s][吞吐率：8.87req/s] [内存消耗：2,507.44kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/index/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:35+08:00 ] 0.0.0.0 POST /index/login/login
+[ info ] reportsystem/index/login/login [运行时间：1.703598s][吞吐率：0.59req/s] [内存消耗：5,038.67kb] [文件加载：50]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'account' => '2012032',
+  'password' => 'tyttyt123',
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ F:\study\www\reportSystem\ThinkPHP\app\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 登录系统
+[ sql ] [ DB ] CONNECT:[ UseTime:0.316252s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.358131s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) LIMIT 1 [ RunTime:0.035509s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `count`=`count`+1  WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) [ RunTime:0.096650s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `lastTime`='1552229075'  WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) [ RunTime:0.064310s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:44:37+08:00 ] 0.0.0.0 GET /teacher/index/index
+[ info ] reportsystem/teacher/index/index [运行时间：0.265651s][吞吐率：3.76req/s] [内存消耗：2,943.28kb] [文件加载：37]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/login/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\teacher\controller\Index->index[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Index.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:37+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.099101s][吞吐率：10.09req/s] [内存消耗：2,507.27kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:42+08:00 ] 0.0.0.0 GET /teacher/course/courseList
+[ info ] reportsystem/teacher/course/courseList [运行时间：0.787477s][吞吐率：1.27req/s] [内存消耗：5,484.44kb] [文件加载：55]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示课程列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001882s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.005360s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002414s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.064027s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.003140s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002227s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:44:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.106711s][吞吐率：9.37req/s] [内存消耗：2,507.24kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:44:48+08:00 ] 0.0.0.0 GET /teacher/excel/courseExcel
+[ info ] reportsystem/teacher/excel/courseExcel [运行时间：3.424873s][吞吐率：0.29req/s] [内存消耗：11,906.65kb] [文件加载：115]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'courseExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->courseExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 实验课程导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001795s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.004456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003116s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL [ RunTime:0.002424s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:45:24+08:00 ] 0.0.0.0 GET /teacher/task/taskList
+[ info ] reportsystem/teacher/task/taskList [运行时间：0.456936s][吞吐率：2.19req/s] [内存消耗：5,511.84kb] [文件加载：55]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'task',
+    2 => 'taskList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Task->taskList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Task.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskList.html [ array (
+  0 => 'taskList',
+  1 => 'taskNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验任务列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002026s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `task` [ RunTime:0.007824s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.033963s ]
+[ sql ] [ SQL ] SELECT * FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002051s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `task` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001046s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:45:24+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.094212s][吞吐率：10.61req/s] [内存消耗：2,507.39kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:45:30+08:00 ] 0.0.0.0 GET /teacher/course/courseList
+[ info ] reportsystem/teacher/course/courseList [运行时间：0.205310s][吞吐率：4.87req/s] [内存消耗：5,484.43kb] [文件加载：55]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示课程列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001919s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.002914s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002708s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002056s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.003185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001699s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:45:31+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.086258s][吞吐率：11.59req/s] [内存消耗：2,507.24kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:45:32+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.295834s][吞吐率：3.38req/s] [内存消耗：5,253.09kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001883s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004305s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.039225s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.003707s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001482s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:45:33+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.087046s][吞吐率：11.49req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:55:48+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.595831s][吞吐率：1.68req/s] [内存消耗：5,512.04kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001783s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.016180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.007666s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002692s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001841s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:55:48+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.099909s][吞吐率：10.01req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:55:51+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel
+[ info ] reportsystem/teacher/excel/studentExcel [运行时间：0.336362s][吞吐率：2.97req/s] [内存消耗：2,634.24kb] [文件加载：33]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ')', expecting ']'[F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php:200]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:06+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.182106s][吞吐率：5.49req/s] [内存消耗：5,253.20kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001762s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.005789s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005141s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002962s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.002132s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:06+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.110119s][吞吐率：9.08req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:56:07+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.164507s][吞吐率：6.08req/s] [内存消耗：5,253.86kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002918s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.007228s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005797s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002706s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001871s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:07+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.105975s][吞吐率：9.44req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:56:09+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel
+[ info ] reportsystem/teacher/excel/studentExcel [运行时间：0.166248s][吞吐率：6.02req/s] [内存消耗：3,161.17kb] [文件加载：41]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ error ] [1]Class 'app\teacher\controller\electiveModel' not found[F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php:162]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:43+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.193439s][吞吐率：5.17req/s] [内存消耗：5,253.20kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002777s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.009710s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005536s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002639s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001557s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:44+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.112512s][吞吐率：8.89req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:56:45+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.173847s][吞吐率：5.75req/s] [内存消耗：5,253.86kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002100s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.007843s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005195s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.003640s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001310s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:56:45+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.100020s][吞吐率：10.00req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:56:48+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel
+[ info ] reportsystem/teacher/excel/studentExcel [运行时间：0.387217s][吞吐率：2.58req/s] [内存消耗：11,473.66kb] [文件加载：109]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001887s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.005251s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '' ) [ RunTime:0.007006s ]
+[ error ] [8]未定义变量: courseList[F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php:196]
+---------------------------------------------------------------
+[ 2019-03-10T22:57:18+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.163657s][吞吐率：6.11req/s] [内存消耗：5,253.20kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001828s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005389s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002543s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001893s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:57:18+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.111909s][吞吐率：8.94req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:57:20+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.160508s][吞吐率：6.23req/s] [内存消耗：5,253.86kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003537s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.005513s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.004629s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002860s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001297s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:57:20+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.109334s][吞吐率：9.15req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:57:22+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel
+[ info ] reportsystem/teacher/excel/studentExcel [运行时间：0.428085s][吞吐率：2.34req/s] [内存消耗：11,720.38kb] [文件加载：111]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002241s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004381s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '' ) [ RunTime:0.002563s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:58:26+08:00 ] 0.0.0.0 GET /teacher/course/courseList
+[ info ] reportsystem/teacher/course/courseList [运行时间：0.196034s][吞吐率：5.10req/s] [内存消耗：5,484.75kb] [文件加载：55]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示课程列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001707s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.005259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002993s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002080s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001286s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:58:26+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.117452s][吞吐率：8.51req/s] [内存消耗：2,507.24kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:58:28+08:00 ] 0.0.0.0 GET /teacher/course/courseList
+[ info ] reportsystem/teacher/course/courseList [运行时间：0.186260s][吞吐率：5.37req/s] [内存消耗：5,485.36kb] [文件加载：55]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/task/taskList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示课程列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002061s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.002645s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003852s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001468s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002774s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' ) ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001447s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:58:28+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.099498s][吞吐率：10.05req/s] [内存消耗：2,507.24kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:58:31+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.284601s][吞吐率：3.51req/s] [内存消耗：5,511.49kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002013s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.006088s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.005603s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.003226s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.002170s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:58:31+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.091666s][吞吐率：10.91req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:58:34+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel?courseNo=351
+[ info ] reportsystem/teacher/excel/studentExcel?courseNo=351 [运行时间：0.404408s][吞吐率：2.47req/s] [内存消耗：11,462.98kb] [文件加载：107]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002586s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.005278s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) [ RunTime:0.005621s ]
+[ error ] [0]类的属性不存在:app\teacher\model\Elective->majorclasses班[F:\study\www\reportSystem\ThinkPHP\thinkphp\library\think\Model.php:624]
+---------------------------------------------------------------
+[ 2019-03-10T22:59:52+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.176621s][吞吐率：5.66req/s] [内存消耗：5,253.27kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001758s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.003032s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001740s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002397s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001952s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:59:53+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.094795s][吞吐率：10.55req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:59:54+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.170228s][吞吐率：5.87req/s] [内存消耗：5,253.78kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001695s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.004817s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.004886s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002270s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.002548s ]
+---------------------------------------------------------------
+[ 2019-03-10T22:59:54+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.108493s][吞吐率：9.22req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T22:59:57+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel?courseNo=351
+[ info ] reportsystem/teacher/excel/studentExcel?courseNo=351 [运行时间：0.426182s][吞吐率：2.35req/s] [内存消耗：11,729.95kb] [文件加载：111]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011497s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.001961s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) [ RunTime:0.002684s ]
+---------------------------------------------------------------
+[ 2019-03-10T23:10:43+08:00 ] 0.0.0.0 GET /teacher/course/studentList?courseNo=351
+[ info ] reportsystem/teacher/course/studentList?courseNo=351 [运行时间：0.195777s][吞吐率：5.11req/s] [内存消耗：5,253.78kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->studentList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html [ array (
+  0 => 'courseNo',
+  1 => 'studentList',
+  2 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ log ] 查看该课程学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004369s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.003239s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001878s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 0,15 [ RunTime:0.002824s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) LIMIT 1 [ RunTime:0.001703s ]
+---------------------------------------------------------------
+[ 2019-03-10T23:10:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.120425s][吞吐率：8.30req/s] [内存消耗：2,507.70kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-10T23:10:45+08:00 ] 0.0.0.0 GET /teacher/excel/studentExcel?courseNo=351
+[ info ] reportsystem/teacher/excel/studentExcel?courseNo=351 [运行时间：0.455887s][吞吐率：2.19req/s] [内存消耗：11,729.90kb] [文件加载：111]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'excel',
+    2 => 'studentExcel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/studentList?courseNo=351',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=lrk5mv0r9n0dqhsd5i0dij7us0',
+)
+[ info ] [ PARAM ] array (
+  'courseNo' => '351',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Excel->studentExcel[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Excel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 学生名单导出
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003486s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `elective` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT * FROM `elective` `a` INNER JOIN `teacher` `b` ON `a`.`teacherNo`=`b`.`teacherNo` INNER JOIN `student` `c` ON `a`.`studentNo`=`c`.`studentNo` INNER JOIN `course` `d` ON `a`.`courseNo`=`d`.`courseNo` WHERE  (  a.courseNo = '351' ) [ RunTime:0.002417s ]

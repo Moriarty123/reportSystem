@@ -129,6 +129,7 @@ class Course extends Common
                                         ->join('course d', 'a.courseNo = d.courseNo')
                                         ->count();
         //3.页面渲染
+        $this->assign('courseNo', $courseNo);
         $this->assign('studentList', $studentList);
         $this->assign('studentNumber',$studentNumber);
 
