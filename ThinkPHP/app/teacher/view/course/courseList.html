@@ -40,9 +40,10 @@
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出实验课程</option>
 					</select>
 				</div>
 			</div>
@@ -130,6 +131,15 @@
 	$(document).ready(function(){
   		$("#termFilter").click(function(){
   			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/courseExcel');
+			}
+			
 		});
 	});
 </script>

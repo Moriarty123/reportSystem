@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1551450544;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551686164;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1552209363;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1552205130;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -150,7 +150,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/chart/index" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -172,9 +172,10 @@
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出实验课程</option>
 					</select>
 				</div>
 			</div>
@@ -270,6 +271,15 @@
 	$(document).ready(function(){
   		$("#termFilter").click(function(){
   			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/courseExcel');
+			}
+			
 		});
 	});
 </script>

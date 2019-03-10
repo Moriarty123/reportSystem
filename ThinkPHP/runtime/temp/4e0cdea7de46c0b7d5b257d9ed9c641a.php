@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1549113455;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1549943010;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1549113455;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1552205130;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
@@ -116,6 +116,12 @@
 				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--实验指导结束-->
 		<!--批阅报告开始-->
@@ -143,7 +149,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/order/orderList" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
