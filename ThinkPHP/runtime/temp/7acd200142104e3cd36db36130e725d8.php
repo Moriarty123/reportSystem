@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1549038650;s:35:"../app/common/view/html/header.html";i:1549160695;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1549038650;s:35:"../app/common/view/html/header.html";i:1552406203;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +39,7 @@
             <a href="/index/login/logout" >【安全退出】</a>
             <?php endif; ?>
             <a href="/index/index/toIndex">【首页】</a>
-            <a href="/index/index/index">【转到后台】</a>
+            <a href="/admin/login/index">【管理员登录】</a>
         </div>
     </div>
 </div>
