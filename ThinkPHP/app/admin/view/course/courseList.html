@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/common/checkBox.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/common/display.css">
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/admin/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>实验课程列表</h2>
+				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="课程名称" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+					</select>
+				</div>
+			</div>
+			<form action="/admin/course/courseDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
+					<th style="width: 50px;">课程编号</th>
+					<th style="width: 150px;">课程名称</th>
+					<th style="width: 80px;">任课老师</th>
+					<th style="width: 220px;">任课班级</th>
+					<th style="width: 100px;">任课时间</th>
+					<th style="width: 80px;">课程类型</th>
+					<th style="width: 80px;">实验课时</th>
+					<th style="width: 80px;">考查方式</th>
+					<th style="width: 80px;">操作</th>
+				</tr>
+				{volist name="courseList" id="vo"}
+				<tr>
+					<td style="width: 30px;"><input type="checkbox" name="courseNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.courseNo}"/></td>
+					<td>{$vo.courseNo}</td>
+					<td>{$vo.courseName}</td>
+					<td>{$vo.teacherName}</td>
+					<td>{$vo.courseGrade.'级'.$vo.courseMajor.$vo.courseClass}班</td>
+					<td>{$vo.openTime}</td>
+					<td>{$vo.courseNature}</td>
+					<td>{$vo.coursePeriod}</td>
+					<td>{$vo.examType}</td>
+					<td>
+						<a href="/teacher/task/courseTask?courseNo={$vo.courseNo}">
+							<i class="fa fa-eye" title="查看实验任务"></i>
+						</a>
+						<a href="/teacher/course/studentList?courseNo={$vo.courseNo}" style='margin-left: 5px;'>
+							<i class="fa fa-user-graduate" title="查看学生"></i>
+						</a>
+					</td>
+				</tr>
+				{/volist}
+			</table>
+			<p class="msg">
+				<span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				共找到{$courseNumber}条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			{$courseList->render()}
+			</div>
+			</form>
+		</div>
+	</div>
+	<!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#termFilter").click(function(){
+  			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/courseExcel');
+			}
+			
+		});
+	});
+</script>
+<!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验课程吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验课程吗？");
+}
+
+</script>
