@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -222,3 +223,220 @@ function checkdel(){
 
 </script>
 
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/report.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a" style="position: relative; left: 0px; top: 0px;">
+				<h2>实验报告列表</h2>
+
+
+				<div style="position: absolute; left: 150px; top: 35px;">
+					<select id="courseFilter">
+						<option value="-1">--请选择实验课程--</option>
+
+						{volist name="courseList" id="course"}
+						<option value="{$course.courseNo}"><a href="/teacher/report/courseFilter?$courseNo={$course.courseNo}">{$course.courseName}</a></option>
+						{/volist}
+					</select>
+				</div>
+
+				<form action="/teacher/report/courseFilter" method="post" id="courseFilterForm" style="display: none;">
+					<input type="hidden" name="courseFilterNo" id="courseFilterNo">
+				</form>
+				
+				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="实验报告名称" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
+				</div>
+			</div>
+			<!-- 提交状态筛选表单 -->
+			<form action="/teacher/report/submitFilter" method="post" id="submitFilterForm"></form>
+			<!-- 批阅状态筛选表单 -->
+			<form action="/teacher/report/reviewFilter" method="post" id="reviewFilterForm"></form>
+
+			<form action="" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<!-- <th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th> -->
+					<th style="width: 150px;">实验课程</th>
+					<th style="width: 150px;">实验任务</th>
+					<th style="width: 150px;">实验报告</th>
+					<th>提交学生</th>
+					<th style="position: relative; top:0px; left:0px;">
+						提交结果
+						<span id="submitedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="submitedFilterDiv" class="submitedFilterDiv" >
+							
+							<div class="submitedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="submitResult" type="radio" value="0" form="submitFilterForm"/>正常提交</label>
+							</div>
+							<div class="submitedFilterRadio" style="margin-left: 5px;">
+								<label><input name="submitResult" type="radio" value="1" form="submitFilterForm"/>迟交</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="submitFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="submitFilterForm">
+							</div>
+							
+						</div>
+					</th>
+					<th style="position: relative; top:0px; left:0px;">
+						批阅状态
+						<span id="reviewedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
+							
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="reviewStatus" type="radio" value="0" form="reviewFilterForm"/>未批阅</label>
+							</div>
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">
+								<label><input name="reviewStatus" type="radio" value="1" form="reviewFilterForm"/>已批阅</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="reviewFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="reviewFilterForm">
+							</div>
+						</div>
+					</th>
+					<th style="width: 200px;">提交时间</th>
+					<th>实验成绩</th>
+					<th>操作</th>
+				</tr>
+				<tbody id="tbody">
+				{volist name="reportList" id="vo"}
+				<tr>
+					<!-- <td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.reportNo}"/></td> -->
+					<td style="width: 150px;">{$vo.courseName}</td>
+					<td style="width: 150px;">{$vo.taskName}</td>
+					<td style="width: 150px;">{$vo.reportName}</td>
+					<td>{$vo.studentName}</td>
+					{eq name="$vo.submitResult" value="正常提交"}
+					<td style="color: rgb(16, 142, 233)">{$vo.submitResult}</td>
+					{else}
+					<td style="color: rgb(220,20,60)">{$vo.submitResult}</td>
+					{/eq}
+					{eq name="$vo.reviewStatus" value="未批阅"}
+					<td style="color: rgb(16, 142, 233)">{$vo.reviewStatus}</td>
+					{else}
+					<td style="color: rgb(32, 163, 15)">{$vo.reviewStatus}</td>
+					{/eq}
+					<td style="width: 200px;">{$vo.submitTime|date="Y-m-d h:m:s",###}</td>
+					<td>{$vo.score}</td>
+					<td>
+						<a href="/teacher/report/reportShow?reportNo={$vo.reportNo}" target="_blank">
+							<i class="fa fa-eye" title="查看"></i>
+						</a>
+						{eq name="$vo.reviewStatus" value="未批阅"}
+						<a href="/teacher/report/reviewPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
+							<i class="fa fa-user-edit" title="批阅"></i>
+						</a>
+						{else}
+						<a href="" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出"></i>
+						</a>
+						{/eq}
+					</td>
+				</tr>
+				{/volist}
+				</tbody>
+			</table>
+			<p class="msg">
+				<!-- <span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
+				共找到{$reportNumber}条信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			{$reportList->render()}
+			</div>
+			</form>
+		</div>
+	</div>
+	<!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#submitedFilter").click(function(){
+  			$("#submitedFilterDiv").slideToggle();
+		});
+
+		$("#reviewedFilter").click(function(){
+  			$("#reviewedFilterDiv").slideToggle();
+		});
+
+		//实验课程筛选
+		$("#courseFilter").change(function() {
+			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
+
+			$("#courseFilterNo").val(courseNo);//填写表单
+			$("#courseFilterForm").submit();//提交表单
+		});
+	});
+
+	
+</script>
+<!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验报告吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验报告吗？");
+}
+
+</script>
+
+>>>>>>> 7dfbce5bb6a3b3fd574a371315405bddc39076a8
