@@ -5,7 +5,7 @@ use think\Controller;
 
 use app\common\controller\Common;
 
-use app\admin\model\Student as StudentModel;
+use app\admin\model\Student as studentModel;
 
 class Student extends Common
 {

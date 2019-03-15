@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1552580929;s:35:"../app/common/view/html/header.html";i:1552491382;s:34:"../app/admin/view/common/menu.html";i:1552661538;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1552663752;s:35:"../app/common/view/html/header.html";i:1552491382;s:34:"../app/admin/view/common/menu.html";i:1552661538;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -147,11 +147,8 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>学生列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="学生姓名" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
+				<h2>角色列表</h2>
+				
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
 					<select id="operateSelect">
 						<option value="-1">--其他操作--</option>
@@ -159,46 +156,24 @@
 					</select>
 				</div>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
-					<th style="width: 100px;">学号</th>
-					<th style="width: 100px;">姓名</th>
-					<th style="width: 50px;">性别</th>
-					<th style="width: 100px;">年级</th>
-					<th style="width: 180px;">学院</th>
-					<th style="width: 150px;">专业班级</th>
-					<th style="width: 100px;">权限</th>
-					<th style="width: 100px;">操作</th>
-				</tr>
-				<?php if(is_array($studentList) || $studentList instanceof \think\Collection || $studentList instanceof \think\Paginator): $i = 0; $__LIST__ = $studentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="teacherNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['studentNo']; ?>"/></td>
-					<td><?php echo $vo['studentNo']; ?></td>
-					<td><?php echo $vo['studentName']; ?></td>
-					<td><?php echo $vo['sex']; ?></td>
-					<td><?php echo $vo['grade']; ?></td>
-					<td><?php echo $vo['insititutes']; ?></td>
-					<td><?php echo $vo['major']; ?><?php echo $vo['classes']; ?>班</td>
-					<td><?php echo $vo['roleNo']; ?></td>
-					<td>
-						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
-						</a>
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
-				共找到<?php echo $studentNumber; ?>条信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $studentList->render(); ?>
+			<div>
+				<table>
+					<tr>
+						<th style="width: 50px; ">角色号</th>
+						<th style="width: 100px; ">角色名称</th>
+						<th style="width: 200px; ">角色描述</th>
+						<th style="width: 100px; ">权限号</th>
+					</tr>
+					<?php if(is_array($roleList) || $roleList instanceof \think\Collection || $roleList instanceof \think\Paginator): $i = 0; $__LIST__ = $roleList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+					<tr>
+						<td><?php echo $vo['roleNo']; ?></td>
+						<td><?php echo $vo['roleName']; ?></td>
+						<td><?php echo $vo['roleDescribe']; ?></td>
+						<td><?php echo $vo['permission']; ?></td>
+					</tr>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+				</table>
 			</div>
-			</form>
 		</div>
 	</div>
 	<!--课程列表结束-->
