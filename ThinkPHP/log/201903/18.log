@@ -186,3 +186,273 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-18T22:32:42+08:00 ] 0.0.0.0 GET /teacher/index/index
+[ info ] reportsystem/teacher/index/index [运行时间：0.683027s][吞吐率：1.46req/s] [内存消耗：3,299.47kb] [文件加载：43]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/login/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\teacher\controller\Index->index[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Index.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: courseList[F:\study\www\reportSystem\ThinkPHP\runtime\temp\cc92e08d10c73706d64c8444c1bed705.php:69]
+---------------------------------------------------------------
+[ 2019-03-18T22:32:47+08:00 ] 0.0.0.0 GET /index/index/login
+[ info ] reportsystem/index/index/login [运行时间：0.105743s][吞吐率：9.46req/s] [内存消耗：2,953.86kb] [文件加载：38]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->login[ F:\study\www\reportSystem\ThinkPHP\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-18T22:32:47+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.125675s][吞吐率：7.96req/s] [内存消耗：2,507.44kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/index/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-18T22:32:49+08:00 ] 0.0.0.0 POST /index/login/login
+[ info ] reportsystem/index/login/login [运行时间：0.315620s][吞吐率：3.17req/s] [内存消耗：5,039.98kb] [文件加载：50]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+  'account' => '2012032',
+  'password' => 'tyttyt123',
+  'rememberMe' => 'on',
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ F:\study\www\reportSystem\ThinkPHP\app\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 登录系统
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003207s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005651s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) LIMIT 1 [ RunTime:0.001142s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `count`=`count`+1  WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) [ RunTime:0.071964s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `lastTime`='1552919569'  WHERE  (  account = '2012032' and password = '59b618b9fbe7f75cd16b45eb28e971b3' ) [ RunTime:0.088075s ]
+---------------------------------------------------------------
+[ 2019-03-18T22:32:51+08:00 ] 0.0.0.0 GET /teacher/index/index
+[ info ] reportsystem/teacher/index/index [运行时间：0.102530s][吞吐率：9.75req/s] [内存消耗：3,041.31kb] [文件加载：41]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/login/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\teacher\controller\Index->index[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Index.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: courseList[F:\study\www\reportSystem\ThinkPHP\runtime\temp\cc92e08d10c73706d64c8444c1bed705.php:69]
+---------------------------------------------------------------
+[ 2019-03-18T22:33:59+08:00 ] 0.0.0.0 GET /teacher/index/index
+[ info ] reportsystem/teacher/index/index [运行时间：0.183937s][吞吐率：5.44req/s] [内存消耗：3,200.48kb] [文件加载：39]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/index/login/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\teacher\controller\Index->index[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Index.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-18T22:33:59+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.100073s][吞吐率：9.99req/s] [内存消耗：2,507.27kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=jepv3h3jet2inab24qvq9p7t50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
