@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1552209363;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1552205130;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1552925551;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1552924895;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +22,50 @@
     <link rel="stylesheet" href="/static/css/teacher/course.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
+
+<style type="text/css">
+	.courseMenuDiv a {
+		text-decoration:none;
+		color: #666;
+	}
+
+	.courseMenuDiv a:active {
+		color: #FFF;
+	}
+
+	.courseMenuDiv a:visited {
+		color: #666;
+	}
+
+	.courseMenuDiv a:hover {
+		border-radius: 15px;
+		background: #08bf91;
+		color: #FFF;
+	}
+
+	.courseMenuDiv {
+		color: #666;
+		border-radius: 0px;
+	}
+
+	.courseMenuDiv .courseMenu{
+		margin-left: 10px;
+	}
+
+
+
+	.courseMenuDiv a{
+		list-style:none; /* 将默认的列表符号去掉 */
+        float: left; /* 往左浮动 */
+        display: inline-block;
+	    margin: -5px 15px 10px 0;
+	    padding: 4px 10px;
+	    font-size: 15px;
+	    cursor: pointer;
+	}
+
+	
+</style>
 <body>
     <!-- 头部开始-->
     <!-- 头部 -->
@@ -66,13 +110,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -163,85 +207,28 @@
     <!-- 左边菜单结束-->
 
 	<!--课程列表开始-->
+
+
 	<div id="MainForm">
 		<div class="form_boxA">
-			<div class="a">
-				<h2>实验课程列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="课程名" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select id="operateSelect">
-						<option value="-1">--其他操作--</option>
-						<option value="1">同步数据</option>
-						<option value="2">导出实验课程</option>
-					</select>
+			<div class="a courseMenuDiv">
+				<div id="courseMenu" style="height: 40px; margin-top: 10px;">
+					<label style="float: left; margin-right: 10px; margin-left: 20px;">实验课程：</label>
+					<a href="/teacher/course/courseMenu">全部</a>
+					<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
+					<a href="/teacher/course/showTask?courseNo=<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></a>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+				</div>
+				<div id="taskMenu" style="height: 40px;">
+					<label style="float: left; margin-right: 10px; margin-left: 20px;">实验任务：</label>
+					<a href="/teacher/course/courseMenu">全部</a>
+					<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
+					<a href="/teacher/course/showTaskDetail?taskNo=<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></a>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
 			<form action="/teacher/course/courseDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
-					<th style="width:100px;">课程编号</th>
-					<th>课程名称</th>
-					<th style="width: 80px;">任课老师</th>
-					<th style="width: 220px;">任课班级</th>
-					<th style="position: relative; top:0px; left:0px;">
-						任课时间
-						<span id="termFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="termFilterDiv" class="termFilterDiv" >
-							<form >
-								<div class="termFilterRadio" style="text-align: left;">	
-									<label><input name="term" type="radio"/>本学期</label>
-								</div>
-								<div class="termFilterRadio" style="text-align: left;">
-									<label><input name="term" type="radio"/>之前学期</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit">
-									<input type="reset" name="" class="reset">
-								</div>
-							</form>
-						</div>
-					</th>
-					<th style="width: 80px;">课程类型</th>
-					<th style="width: 80px;">实验课时</th>
-					<th style="width: 80px;">考查方式</th>
-					<th style="width: 80px;">操作</th>
-				</tr>
-				<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="courseNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['courseNo']; ?>"/></td>
-					<td><?php echo $vo['courseNo']; ?></td>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['teacherName']; ?></td>
-					<td><?php echo $vo['courseGrade'].'级'.$vo['courseMajor'].$vo['courseClass']; ?>班</td>
-					<td><?php echo $vo['openTime']; ?></td>
-					<td><?php echo $vo['courseNature']; ?></td>
-					<td><?php echo $vo['coursePeriod']; ?></td>
-					<td><?php echo $vo['examType']; ?></td>
-					<td>
-						<a href="/teacher/task/courseTask?courseNo=<?php echo $vo['courseNo']; ?>">
-							<i class="fa fa-eye" title="查看实验任务"></i>
-						</a>
-						<a href="/teacher/course/studentList?courseNo=<?php echo $vo['courseNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
-						</a>
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
-				共找到<?php echo $courseNumber; ?>条课程信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $courseList->render(); ?>
-			</div>
+			
 			</form>
 		</div>
 	</div>
