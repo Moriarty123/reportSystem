@@ -1,29 +1,32 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1552925551;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1552924895;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1553100704;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1552924895;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>计算机学院实验报告在线撰写系统</title>
-    <link rel="shortcut icon" href="/static/images/school.ico" />
-    
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>计算机学院实验报告在线撰写系统</title>
+	<link rel="shortcut icon" href="/static/images/school.ico" />
 
-    <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
+	<link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="/static/css/index/index.css" />
-    <link rel="stylesheet" href="/static/css/common/common.css" />
-    <link rel="stylesheet" href="/static/css/common/footer.css" />
-    <link rel="stylesheet" href="/static/css/common/menu.css">
-    <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/course.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+	<script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/index/public.js"></script>
+	<script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+
+	<link rel="stylesheet" href="/static/css/index/index.css" />
+	<link rel="stylesheet" href="/static/css/common/common.css" />
+	<link rel="stylesheet" href="/static/css/common/footer.css" />
+	<link rel="stylesheet" href="/static/css/common/menu.css">
+	<link rel="stylesheet" href="/static/css/common/detail.css">
+	<link rel="stylesheet" href="/static/css/teacher/course.css" />
+	<link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
 
 <style type="text/css">
+	a {
+		text-decoration: none;
+	}
 	.courseMenuDiv a {
 		text-decoration:none;
 		color: #666;
@@ -56,19 +59,19 @@
 
 	.courseMenuDiv a{
 		list-style:none; /* 将默认的列表符号去掉 */
-        float: left; /* 往左浮动 */
-        display: inline-block;
-	    margin: -5px 15px 10px 0;
-	    padding: 4px 10px;
-	    font-size: 15px;
-	    cursor: pointer;
+		float: left; /* 往左浮动 */
+		display: inline-block;
+		margin: -5px 15px 10px 0;
+		padding: 4px 10px;
+		font-size: 15px;
+		cursor: pointer;
 	}
 
 	
 </style>
 <body>
-    <!-- 头部开始-->
-    <!-- 头部 -->
+	<!-- 头部开始-->
+	<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -93,10 +96,10 @@
     </div>
 </div>
 <!-- 头部结束 -->
-    <!-- 头部结束-->
+	<!-- 头部结束-->
 
-    <!-- 左边菜单开始-->
-    
+	<!-- 左边菜单开始-->
+	
 
 <div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
@@ -204,7 +207,7 @@
 		
 	</div>
 </div>
-    <!-- 左边菜单结束-->
+	<!-- 左边菜单结束-->
 
 	<!--课程列表开始-->
 
@@ -227,18 +230,42 @@
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
 			
-			</form>
+		</div>
+		<div style="">
+			<div style="margin: 60px auto; width: 1000px; ">
+				<div style="width: 250px; height: 267px;position: relative; top: 0px; left: 0px; border:2px #66666626 solid;">
+					<img src="/static/images/task.jpg" style="width: 100%; ">
+					<div style="position: absolute; bottom: 0px; width: 100%; height: 80px; background: #FFF;">
+						<div style="width: 100%; height: 40px;">
+							<p style="font-weight: bold; text-align: center;padding-top:5px; ">实验三 IEEE1443读取标签数据实验</p>
+							</div>
+						<div style="width: 100%; height: 40px; position: relative; top: 0px; left: 0px;">
+							<div style="width: 80px; height: 100%; position: absolute; top: 0px; left: 0px;">
+								<a href="/teacher/course/studentList" style='margin-left: 5px;'>
+									<i class="fa fa-user-graduate" title="查看学生" style="padding: 6px;"></i>
+								</a>
+							</div>
+							<div style="width: 80px; height: 100%; position: absolute; top: 0px; right: 5px;">
+								<a href="/teacher/task/courseTask">
+									<!-- <i class="fa fa-eye" title="查看实验任务"> -->
+									<p style="border-radius: 5px; background: #ffae0f; color: #FFF; padding: 2px;   text-align: center;">实验指导</p>
+								</i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!--课程列表结束-->
 
-    <!-- 清除浮动 -->
-    <div style="clear: both;"></div>
+	<!-- 清除浮动 -->
+	<div style="clear: both;"></div>
 
-    <!-- 底部开始-->
-    <!-- 底部开始 -->
+	<!-- 底部开始-->
+	<!-- 底部开始 -->
 <footer>
     <div class="footer-body">
         <div class="footer">
@@ -247,7 +274,7 @@
     </div>
 </footer>
 <!-- 底部结束 -->
-    <!-- 底部结束-->
+	<!-- 底部结束-->
 
 </body>
 </html>
@@ -256,8 +283,8 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-  		$("#termFilter").click(function(){
-  			$("#termFilterDiv").slideToggle();
+		$("#termFilter").click(function(){
+			$("#termFilterDiv").slideToggle();
 		});
 
 		$("#operateSelect").change(function() {
@@ -273,11 +300,11 @@
 <!-- 筛选框结束 -->
 
 <script type="text/javascript">
-function del(){
-	return window.confirm("你确认要删除该实验课程吗？");
-}
-function checkdel(){
-	return window.confirm("你确认要删除选中的实验课程吗？");
-}
+	function del(){
+		return window.confirm("你确认要删除该实验课程吗？");
+	}
+	function checkdel(){
+		return window.confirm("你确认要删除选中的实验课程吗？");
+	}
 
 </script>
