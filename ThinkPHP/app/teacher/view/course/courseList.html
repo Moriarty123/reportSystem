@@ -66,7 +66,56 @@
 		cursor: pointer;
 	}
 
+	/*任务开始*/
+	.courseMenu {
+		height: 40px; margin-top: 10px;
+	}
+
+	.courseMenu .courseLabel {
+		float: left; margin-right: 10px; margin-left: 20px;
+	}
+
+	.taskMenu {
+		height: 40px; margin-left: 10px;
+	}
+
+	.taskMenu .taskLabel {
+		float: left; margin-right: 10px; margin-left: 20px;
+	}
+
 	
+	.showDiv {
+		margin: 60px auto; width: 1000px;margin-bottom: 30px;
+	}
+
+	.showDiv .taskDiv {
+		width: 220px; height: 267px;position: relative; top: 0px; left: 0px; border:2px #66666626 solid; float: left; margin-right: 20px; margin-bottom: 30px;
+	}
+
+	.taskDescribe {
+		position: absolute; bottom: 0px; width: 100%; height: 80px; background: #FFF;
+	}
+	.taskNameDiv {
+		width: 100%; height: 40px;
+	}
+	.taskNameDiv p {
+		font-weight: bold; text-align: center;padding-top:5px;
+	}
+
+
+	.footDiv {
+		width: 100%; height: 40px; position: relative; top: 0px; left: 0px;
+	}
+	.footDiv .leftDiv {
+		width: 80px; height: 100%; position: absolute; top: 0px; left: 0px;
+	}
+	.footDiv .rightDiv {
+		width: 80px; height: 100%; position: absolute; top: 0px; right: 5px;
+	}
+	.footDiv .rightDiv p {
+		border-radius: 5px; background: #ffae0f; color: #FFF; padding: 2px;   text-align: center;
+	}
+	/*任务结束*/
 </style>
 <body>
 	<!-- 头部开始-->
@@ -83,15 +132,15 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a courseMenuDiv">
-				<div id="courseMenu" style="height: 40px; margin-top: 10px;">
-					<label style="float: left; margin-right: 10px; margin-left: 20px;">实验课程：</label>
+				<div id="courseMenu" class="courseMenu">
+					<label class="courseLabel">实验课程：</label>
 					<a href="/teacher/course/courseMenu">全部</a>
 					{volist name="courseList" id="course"}
 					<a href="/teacher/course/showTask?courseNo={$course.courseNo}">{$course.courseName}</a>
 					{/volist}
 				</div>
-				<div id="taskMenu" style="height: 40px;">
-					<label style="float: left; margin-right: 10px; margin-left: 20px;">实验任务：</label>
+				<div id="taskMenu" class="taskMenu">
+					<label class="taskLabel">实验任务：</label>
 					<a href="/teacher/course/courseMenu">全部</a>
 					{volist name="taskList" id="task"}
 					<a href="/teacher/course/showTaskDetail?taskNo={$task.taskNo}">{$task.taskName}</a>
@@ -101,40 +150,42 @@
 			
 		</div>
 		<div style="">
-			<div style="margin: 60px auto; width: 1000px; ">
-				<div style="width: 250px; height: 267px;position: relative; top: 0px; left: 0px; border:2px #66666626 solid;">
+			<div class="showDiv">
+				{volist name="taskList" id="task"}
+				<div class="taskDiv">
 					<img src="__IMG__/task.jpg" style="width: 100%; ">
-					<div style="position: absolute; bottom: 0px; width: 100%; height: 80px; background: #FFF;">
-						<div style="width: 100%; height: 40px;">
-							<p style="font-weight: bold; text-align: center;padding-top:5px; ">实验三 IEEE1443读取标签数据实验</p>
-							</div>
-						<div style="width: 100%; height: 40px; position: relative; top: 0px; left: 0px;">
-							<div style="width: 80px; height: 100%; position: absolute; top: 0px; left: 0px;">
-								<a href="/teacher/course/studentList" style='margin-left: 5px;'>
+					<div class="taskDescribe">
+						<div class="taskNameDiv">
+							<p>{$task.taskName}</p>
+						</div>
+						<div class="footDiv">
+							<div class="leftDiv">
+								<a href="/teacher/course/studentList?courseNo={$task.courseNo}" style='margin-left: 5px;'>
 									<i class="fa fa-user-graduate" title="查看学生" style="padding: 6px;"></i>
 								</a>
 							</div>
-							<div style="width: 80px; height: 100%; position: absolute; top: 0px; right: 5px;">
+							<div class="rightDiv">
 								<a href="/teacher/task/courseTask">
-									<!-- <i class="fa fa-eye" title="查看实验任务"> -->
-									<p style="border-radius: 5px; background: #ffae0f; color: #FFF; padding: 2px;   text-align: center;">实验指导</p>
+									<p>实验指导</p>
 								</i>
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
+				{/volist}
 			</div>
 		</div>
 	</div>
-	<!--课程列表结束-->
+</div>
+<!--课程列表结束-->
 
-	<!-- 清除浮动 -->
-	<div style="clear: both;"></div>
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
 
-	<!-- 底部开始-->
-	{include file="../app/common/view/html/footer.html"}
-	<!-- 底部结束-->
+<!-- 底部开始-->
+{include file="../app/common/view/html/footer.html"}
+<!-- 底部结束-->
 
 </body>
 </html>
