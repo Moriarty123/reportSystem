@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算机学院实验报告在线撰写系统</title>
+	<link rel="shortcut icon" href="__IMG__/school.ico" />
+
+	<link rel="stylesheet" href="__FONTAWESOME__/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+	<link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+	<script type="text/javascript" src="__JS__/index/public.js"></script>
+	<script type="text/javascript" src="__JS__/common/checkBox.js"></script>
+
+	<link rel="stylesheet" href="__CSS__/index/index.css" />
+	<link rel="stylesheet" href="__CSS__/common/buttons.css" />
+	<link rel="stylesheet" href="__CSS__/common/common.css" />
+	<link rel="stylesheet" href="__CSS__/common/footer.css" />
+	<link rel="stylesheet" href="__CSS__/common/menu.css">
+	<link rel="stylesheet" href="__CSS__/common/detail.css">
+	<link rel="stylesheet" href="__CSS__/teacher/course.css" />
+	<link rel="stylesheet" href="__CSS__/teacher/display.css" />
+</head>
+
+<style type="text/css">
+	
+	a {
+		text-decoration: none;;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+</style>
+<body>
+	<!-- 头部开始-->
+	{include file="../app/common/view/html/header.html"}
+	<!-- 头部结束-->
+
+	<!-- 左边菜单开始-->
+	{include file="../app/teacher/view/common/menu.html"}
+	<!-- 左边菜单结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>查看实验指导</h2>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
+				</div>
+			</div>
+			<div style="width: 100%; height: 600px;text-align: center;">
+				<div style="width: 80%; margin: 50px auto; border-radius: 5px;">
+					<h3>未指定实验指导</h3>
+					<h4>请进行下面其他操作</h3>
+				</div>
+				<div style="position: relative; top: 0px; left: 0px; width: 400px; height: 400px; margin: 0 auto;">
+					<div style="position: absolute; left: 80px; top: 0px;">
+						<button class="button button-caution button-circle button-action button-jumbo" style="width: 100px; height: 100px; float: left;">
+						<a href="/teacher/guide/guideList"><p style="color: #FFF; text-align:center; padding:10px auto;">选择实验指导</p></a>
+						</button>
+					</div>
+					<div style="position: absolute; left: 220px; top: 0px;">
+						<button class="button button-glow button-circle button-action button-jumbo" style="width: 100px; height: 100px;">
+						<a href="/teacher/guide/importPage"><p style="color: #FFF; text-align:center; padding:10px auto;">导入实验指导</p></a>
+						</button>
+					</div>
+					<div style="position: absolute; left: 80px; top: 150px;">
+						<button class="button button-primary button-circle  button-jumbo" style="width: 100px; height: 100px; float: left;">
+						<a href="/teacher/guide/addPage"><p style="color: #FFF; text-align:center; padding:10px auto;">撰写实验指导</p></a>
+						</button>
+					</div>
+					<div style="position: absolute; left: 220px; top: 150px;">
+						<button class="button button-highlight button-circle button-action button-jumbo" style="width: 100px; height: 100px;">
+						<a href="/teacher/guide/guideList"><p style="color: #FFF; text-align:center; padding:10px auto;">编辑实验指导</p></a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--课程列表结束-->
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<!-- 底部开始-->
+{include file="../app/common/view/html/footer.html"}
+<!-- 底部结束-->
+
+</body>
+</html>
+

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1551606069;s:35:"../app/common/view/html/header.html";i:1549160695;s:36:"../app/teacher/view/common/menu.html";i:1551686164;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1552205130;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,40 +68,26 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验课程开始-->
+		<!--实验任务开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--实验课程结束-->
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					实验任务
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/taskList">实验任务列表</a>
+				<a class="cks" href="/teacher/course/courseList">课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">添加实验任务</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
@@ -156,7 +142,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/chart/index" class="cks">学生成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>

@@ -307,11 +307,17 @@ class Guide extends Common
     public function guideShow() 
     {
         //0.测试
-        //dump($_GET);
+        // dump($_GET);
         Log::record("显示实验指导", "notice");
 
         //1.获取该ID的实验指导
         $guideNo = input('get.guideNo');
+
+        // dump($guideNo);
+
+        if ($guideNo == "" || empty($guideNo)) {
+            return $this->fetch("guideEmpty");
+        }
 
         //1.1创建guideModel,获取实验指导
         $guideModel = new guideModel();
