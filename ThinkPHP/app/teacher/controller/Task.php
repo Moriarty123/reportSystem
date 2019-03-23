@@ -85,6 +85,30 @@ class Task extends Common
         return $this->fetch('taskList');
     }
 
+    //显示实验任务细节
+    public function taskDetail() 
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("显示实验任务细节", "notice");
+
+        //1.获取页面数据
+        $taskNo = input("get.taskNo");
+        $taskWhere = "taskNo = '{$taskNo}'";
+
+        //2.获取task
+        $taskModel = new taskModel();
+        $task = $taskModel->where($taskWhere)
+                            ->alias("a")
+                            ->join("course b", "a.courseNo = b.courseNo")
+                            ->find();
+
+        //3.页面渲染
+        $this->assign("task", $task);
+
+        return $this->fetch("taskDetail");
+    }
+
     //模糊查找实验任务
     public function taskSearch()
     {

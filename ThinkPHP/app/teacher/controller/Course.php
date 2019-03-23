@@ -71,7 +71,7 @@ class Course extends Common
         $this->assign("courseList", $courseList);
         $this->assign("taskList", $taskList);
 
-        return $this->fetch("courseList");
+        return $this->fetch("courseMenu");
 
     }
 
