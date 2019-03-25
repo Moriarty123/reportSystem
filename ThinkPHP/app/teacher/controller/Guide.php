@@ -221,8 +221,9 @@ class Guide extends Common
         }
         
         
-        $this->success('添加实验指导成功', "teacher/guide/guideList");
+        $this->success('添加实验指导成功', "/teacher/guide/guideList");
     }
+
 
     //导入实验指导页面
     public function importPage()
@@ -303,21 +304,16 @@ class Guide extends Common
         $this->success('添加实验指导成功', "teacher/guide/guideList");
     }
 
+
     //显示实验指导
     public function guideShow() 
     {
         //0.测试
-        // dump($_GET);
+        //dump($_GET);
         Log::record("显示实验指导", "notice");
 
         //1.获取该ID的实验指导
         $guideNo = input('get.guideNo');
-
-        // dump($guideNo);
-
-        if ($guideNo == "" || empty($guideNo)) {
-            return $this->fetch("guideEmpty");
-        }
 
         //1.1创建guideModel,获取实验指导
         $guideModel = new guideModel();
@@ -523,3 +519,4 @@ class Guide extends Common
         $this->success('删除成功！', '/teacher/guide/guideList');
     }
 }
+
