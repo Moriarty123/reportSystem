@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseMenu.html";i:1553489086;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseMenu.html";i:1553496484;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,6 +91,12 @@
 				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/teacher/task/addPage">发布任务</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 			
 		</dl>
 		<!--实验任务结束-->
@@ -175,7 +181,7 @@
 					<label class="taskLabel">实验任务：</label>
 					<a href="/teacher/course/courseMenu">全部</a>
 					<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
-					<a href="/teacher/task/taskDetail?taskNo=<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></a>
+					<a href="/teacher/task/detailPage?taskNo=<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></a>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
@@ -185,8 +191,8 @@
 			<div class="showDiv">
 				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
 				<div class="taskDiv">
-					<a href="/teacher/task/detailPage?taskNo=<?php echo $task['taskNo']; ?>">
-						<img src="<?php echo $task['taskImg']; ?>" style="width: 100%; ">
+					<a href="/teacher/task/detailPage?taskNo=<?php echo $task['taskNo']; ?>" style="overflow: hidden;">
+						<img src="<?php echo $task['taskImg']; ?>" style="width: 100%; overflow: hidden; ">
 					</a>
 					<div class="taskDescribe">
 						<div class="taskNameDiv" id="taskNameDiv">

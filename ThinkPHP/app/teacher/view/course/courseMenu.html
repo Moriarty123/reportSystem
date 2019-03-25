@@ -49,7 +49,7 @@
 					<label class="taskLabel">实验任务：</label>
 					<a href="/teacher/course/courseMenu">全部</a>
 					{volist name="taskList" id="task"}
-					<a href="/teacher/task/taskDetail?taskNo={$task.taskNo}">{$task.taskName}</a>
+					<a href="/teacher/task/detailPage?taskNo={$task.taskNo}">{$task.taskName}</a>
 					{/volist}
 				</div>
 			</div>
@@ -59,8 +59,8 @@
 			<div class="showDiv">
 				{volist name="taskList" id="task"}
 				<div class="taskDiv">
-					<a href="/teacher/task/detailPage?taskNo={$task.taskNo}">
-						<img src="{$task.taskImg}" style="width: 100%; ">
+					<a href="/teacher/task/detailPage?taskNo={$task.taskNo}" style="overflow: hidden;">
+						<img src="{$task.taskImg}" style="width: 100%; overflow: hidden; ">
 					</a>
 					<div class="taskDescribe">
 						<div class="taskNameDiv" id="taskNameDiv">

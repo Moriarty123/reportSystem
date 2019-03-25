@@ -170,10 +170,15 @@ class Task extends Common
         $courseModel = new courseModel();
 
         $teacherNo = session('account');
-        $where = "teacherNo = '$teacherNo'";
-        $courseList = $courseModel->where($where)->select();
+        $teacherWhere = "teacherNo = '$teacherNo'";
+        $courseList = $courseModel->where($teacherWhere)->select();
+
+        //4.获取guideList
+        $guideModel = new guideModel();
+        $guideList = $guideModel->where($teacherWhere)->select();
 
         $this->assign('courseList', $courseList);
+        $this->assign('guideList', $guideList);
 
         return $this->fetch('taskAdd');
     }
@@ -183,43 +188,62 @@ class Task extends Common
     {
         //0.测试
         // dump($_POST);
-        // $shijian=str_replace("T"," ",$_POST['startTime']);
-        // dump($shijian);
-        // dump(strtotime($shijian));
-        Log::record('添加实验任务', 'notice');
+        Log::record("编辑实验任务");
+
 
         //1.获取数据
+        //1.1获取页面数据
         $teacherNo  = session('account');
         $taskName   = input('post.taskName');
         $courseNo   = input('post.courseNo');
         $startTime   = input('post.startTime');
         $endTime  = input('post.endTime');
+        $taskImg = input('post.taskImg');
+        $guideNo = input('post.guideNo');
         $describe   = input('post.taskDescribe');
 
-        //格式转换
+        //1.2默认值
+        if ($taskImg == "" || empty($taskImg)) {
+            $taskImg = "/uploads/default/taskImg.jpg";
+        }
+
+        if ($guideNo == "" || empty($guideNo)) {
+            $guideNo = null;
+        }
+
+        //1.3格式转换
         $startTime = str_replace("T"," ",$startTime);
         $startTime = strtotime($startTime);
         $endTime = str_replace("T"," ",$endTime);
         $endTime = strtotime($endTime);
 
+        //2.设置修改数据
         $data = [
             'teacherNo'     => $teacherNo,
             'taskName'      => $taskName,
             'courseNo'      => $courseNo,
-            'startTime'      => $startTime,
-            'endTime'     => $endTime,
+            'startTime'     => $startTime,
+            'endTime'       => $endTime,
+            'taskImg'       => $taskImg,
+            'guideNo'       => $guideNo,
             'taskDescribe'  => $describe,
         ];
+
         // dump($data);
 
-        //2.保存到数据库
+        //3.添加任务
         $taskModel = new taskModel();
-        $taskModel->data($data);
-        $taskModel->save();
-        // dump($taskModel->taskNo);
+        $task = $taskModel->create($data);
 
-        //3.跳转到实验任务列表页面
-        $this->redirect('/teacher/task/taskList');
+
+        if (empty($task)) {
+            Log::record('添加实验任务失败！', 'error');
+            $this->error('添加实验任务失败！请稍后再试。', '/teacher/course/courseMenu');
+        }
+
+
+        //4.后续操作
+        return $this->success("添加实验任务成功！", "/teacher/course/courseMenu");
     }
 
     //发布实验任务
