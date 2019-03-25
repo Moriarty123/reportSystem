@@ -302,6 +302,15 @@ class Report extends Common
 
         $reportNo = input("get.reportNo");
 
+        $reportWhere = "reportNo = '{$reportNo}'";
+
+        $reportModel = new reportModel();
+        $report = $reportModel  ->where($reportWhere)
+                                ->alias("a")
+                                ->join("task b", "a.taskNo = b.taskNo")
+                                ->find();
+
+        $this->assign("report", $report);
         $this->assign("reportNo", $reportNo);
         return $this->fetch("reportReviewPage");
     }

@@ -34,8 +34,8 @@
 
 	<!--课程列表开始-->
 
-
-	<div id="MainForm">
+	<div id="MainForm"
+>
 		<div class="form_boxA">
 			<div class="a courseMenuDiv">
 				<div id="courseMenu" class="courseMenu">
@@ -51,6 +51,7 @@
 					{volist name="taskList" id="task"}
 					<a href="/teacher/task/detailPage?taskNo={$task.taskNo}">{$task.taskName}</a>
 					{/volist}
+					
 				</div>
 			</div>
 			

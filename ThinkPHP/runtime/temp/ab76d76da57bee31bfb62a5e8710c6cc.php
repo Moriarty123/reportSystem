@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReviewPage.html";i:1552205130;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReviewPage.html";i:1553516099;}*/ ?>
 <link rel="stylesheet" type="text/css" href="/static/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/static/css/common/detail.css">
 <link rel="stylesheet" type="text/css" href="/static/css/teacher/reportReview.css">
@@ -6,24 +6,35 @@
 <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
 <script type="text/javascript" src="/static/js/teacher/reportReview.js"></script>
 
-<div class="reviewDiv">
+<style type="text/css">
+	body {
+		background: #E2E2E2;
+	}
+</style>
+
+<div class="reviewDiv" style="">
 	<form action="/teacher/report/reportReview" method="post" onsubmit="return checkSubmit();">
 		<input type="hidden" name="reportNo" value="<?php echo $reportNo; ?>">
 		<div class="list">
 			<label>实验报告评价</label>
 			<textarea class="input" id="evaluation" style="height: 100px; " name="reviewComment"></textarea>
 		</div>
-		<div class="list">
-			<label style="font-size: 20px;">评分方式</label>
-			<select class="input" id="scoreSelect">
-				<option>百分制</option>
-				<option>五分制</option>
-			</select>
-		</div>
+	
 		<div class="list">
 			<label>分数</label>
 			<div style="width: 560px; margin-top: 10px; " id="scoreDiv">
+				
+				<?php if($report['reviewType'] == '1'): ?>
 				<input type="text" name="score" style="width: 560px;" id="score" onkeypress="keyPress(this);" onkeyup="keyUp(this);" onblur="onblur(this);">
+				<?php else: ?>
+				<select name="score" style="width: 560px;">
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="ButtonDiv" style="width: 560px;" class="list">
