@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskDetail.html";i:1553332839;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskDetail.html";i:1553490207;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
+    <link rel="stylesheet" href="/static/css/common/buttons.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
@@ -23,15 +24,17 @@
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
     <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
-
-<style type="text/css">
-	.add_list p {
-		padding-top: 7px;
-	}
-</style>
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -155,41 +158,73 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--添加用户开始-->
-	<div id="MainForm">
-		<div class="form_boxA">
-			<div class="a">
-				<h2>实验任务详情</h2>
-			</div>
-			<form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
-				<div class="add_list">
-					<label class="add_label">任务名称：</label>
-					<p><?php echo $task['taskName']; ?></p>
-				</div>
+    <!--添加用户开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>实验任务详情</h2>
+            </div>
+            <form action="/teacher/task/taskDetail" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
+                <input type="hidden" name="taskNo" value="<?php echo $task['taskNo']; ?>">
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>任务名称：</label>
+                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" disabled="disabled"/>
+                </div>
 
-				<div class="add_list">
-					<label class="add_label">所属课程：</label>
-					<p><?php echo $task['courseName']; ?></p>
-				</div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>所属课程：</label>
+                    <select name="courseNo" id="courseNo" class="add_input" disabled="disabled">
+                            <option value="null">--请选择实验课程--</option>
+                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['courseNo'] == $task['courseNo']): ?>
+                                    <option value="<?php echo $vo['courseNo']; ?>" selected = "selected"><?php echo $vo['courseName']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
+                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                </div>
+                <div><input type="hidden" name="courseNo" value="<?php echo $task['courseNo']; ?>"></div>
 
-				<div class="add_list">
-					<label class="add_label">开始时间：</label>
-					<p><?php echo date("Y-m-d H:m:s", $task['startTime']); ?></p>
-				</div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>开始时间：</label>
+                    <input type="datetime-local" id="startTime" name="startTime" class="add_input" value="<?=date('Y-m-d',$task->startTime).'T'.date('H:i:s',$task->startTime)?>" disabled="disabled"/>
+                </div>
 
-				<div class="add_list">
-					<label class="add_label">截止时间：</label>
-					<p><?php echo date("Y-m-d H:m:s", $task['endTime']); ?></p>
-				</div>
-				<div class="add_list">
-					<label class="add_label">任务描述：</label>
-					<p><?php echo $task['taskDescribe']; ?></p>
-				</div>
-				
-			</form>
-		</div>
-	</div>
-	<!--添加用户结束-->
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>截止时间：</label>
+                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" value="<?=date('Y-m-d',$task->endTime).'T'.date('H:i:s',$task->endTime)?>" disabled="disabled"/>
+                </div>
+
+                <div class="add_list">
+                    <label class="add_label">背景图片：</label>
+                    <input type="file" name="imgFile" onchange="uploadsimage(this);" disabled="disabled"/>
+                    <div id="imgBox"></div>
+                    <input type="hidden" name="taskImg" id="Img" value="">
+                </div>
+
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>实验指导：</label>
+                    <select name="guideNo" class="add_input" id="guideNo" disabled="disabled">
+                        <option value="null">--请选择实验指导--</option>
+                            <?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['guideNo'] == $task['guideNo']): ?>
+                                    <option value="<?php echo $vo['guideNo']; ?>" selected = "selected"><?php echo $vo['guideName']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
+                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                </div>
+
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>任务描述：</label>
+                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe" disabled="disabled"><?php echo $task['taskDescribe']; ?></textarea>
+                </div>
+                <div class="ButtonDiv submitDiv" style="text-align: center;width: 250px;margin: 0 auto;"> 
+                    <input type="submit" style="float: left;" class="Button" name="edit" value="修改">
+                    <input type="submit" style="float: left;" class="Button" name="delete" value="删除">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--添加用户结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -211,19 +246,41 @@
 
 <!-- 筛选框开始-->
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
-		});
-	});
+    
+    $(document).ready(function(){
+        $("#publishedFilter").click(function(){
+            $("#publishedFilterDiv").slideToggle();
+        });
 
-	function taskImg() {
-		var html = '<img src="'+<?php echo $task['taskImg']; ?>+'" style="width:120px">';
-  		console.log(html);
-  		alert(html);
-	}
+        $("#taskName").val('<?php echo $task['taskName']; ?>');
+        
+        $("#taskDescribe'").html('<?php echo $task['taskDescribe']; ?>');
+    });
 </script>
 <!-- 筛选框结束 -->
 
+
+<!-- 处理时间戳转datatime-local -->
+<script>
+ 
+    Date.prototype.Format = function(fmt)     
+{ //author: meizz  
+  var o = {     
+    "M+" : this.getMonth()+1,                 //月份  
+    "d+" : this.getDate(),                    //日  
+    "h+" : this.getHours(),                   //小时  
+    "m+" : this.getMinutes(),                 //分  
+    "s+" : this.getSeconds(),                 //秒  
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度  
+    "S"  : this.getMilliseconds()             //毫秒  
+  };     
+  if(/(y+)/.test(fmt))     
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));     
+  for(var k in o)     
+    if(new RegExp("("+ k +")").test(fmt))     
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));     
+  return fmt;     
+};  
+ 
+</script>
 

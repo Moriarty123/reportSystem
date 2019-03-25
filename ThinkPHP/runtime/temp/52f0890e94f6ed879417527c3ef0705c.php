@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1553350431;s:35:"../app/common/view/html/header.html";i:1552919072;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1553358396;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553350478;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
+    <link rel="stylesheet" href="/static/css/common/buttons.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
@@ -24,7 +25,15 @@
 </head>
 <body>
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -157,11 +166,17 @@
 					<input type="text" class="search" placeholder="课程名" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
+				<div style="width: 100px; float: right; margin-right: 20px;margin-top: 20px; ">
+					<div class="btn-group">
+						<button type="button" class="btn" style="background:#19a97b; color: #FFF;">其他</button>
+						<button type="button" id="regButton" class="btn dropdown-toggle" style="background:#19a97b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+							<span style="color: #FFF;" class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu" id="selectMenu">
+							<li><a href="#">同步数据</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<form action="/teacher/course/courseDelete" method="post">
@@ -268,4 +283,12 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验课程吗？");
 }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#regButton").click(function(){
+			$("#selectMenu").toggle();
+		});
+	});
 </script>

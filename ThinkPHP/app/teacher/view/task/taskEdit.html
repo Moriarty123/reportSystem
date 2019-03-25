@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
-    <link rel="stylesheet" href="__CSS__/common/buttons.css" />
     <link rel="stylesheet" href="__CSS__/common/footer.css" />
     <link rel="stylesheet" href="__CSS__/common/menu.css">
     <link rel="stylesheet" href="__CSS__/common/detail.css">
@@ -36,18 +35,18 @@
     <div id="MainForm">
         <div class="form_boxA">
             <div class="a">
-                <h2>实验任务详情</h2>
+                <h2>修改实验任务</h2>
             </div>
-            <form action="/teacher/task/taskDetail" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
+            <form action="/teacher/task/taskEdit" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
                 <input type="hidden" name="taskNo" value="{$task.taskNo}">
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>任务名称：</label>
-                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" disabled="disabled"/>
+                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
                 </div>
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>所属课程：</label>
-                    <select name="courseNo" id="courseNo" class="add_input" disabled="disabled">
+                    <select name="courseNo" id="courseNo" class="add_input">
                             <option value="null">--请选择实验课程--</option>
                             {volist name="courseList" id="vo"}
                                 {eq name="$vo.courseNo" value="$task.courseNo"}
@@ -63,24 +62,24 @@
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>开始时间：</label>
-                    <input type="datetime-local" id="startTime" name="startTime" class="add_input" value="<?=date('Y-m-d',$task->startTime).'T'.date('H:i:s',$task->startTime)?>" disabled="disabled"/>
+                    <input type="datetime-local" id="startTime" name="startTime" class="add_input" value="<?=date('Y-m-d',$task->startTime).'T'.date('H:i:s',$task->startTime)?>" />
                 </div>
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>截止时间：</label>
-                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" value="<?=date('Y-m-d',$task->endTime).'T'.date('H:i:s',$task->endTime)?>" disabled="disabled"/>
+                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" value="<?=date('Y-m-d',$task->endTime).'T'.date('H:i:s',$task->endTime)?>" />
                 </div>
 
                 <div class="add_list">
                     <label class="add_label">背景图片：</label>
-                    <input type="file" name="imgFile" onchange="uploadsimage(this);" disabled="disabled"/>
+                    <input type="file" name="imgFile" onchange="uploadsimage(this);" />
                     <div id="imgBox"></div>
                     <input type="hidden" name="taskImg" id="Img" value="">
                 </div>
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>实验指导：</label>
-                    <select name="guideNo" class="add_input" id="guideNo" disabled="disabled">
+                    <select name="guideNo" class="add_input" id="guideNo">
                         <option value="null">--请选择实验指导--</option>
                             {volist name="guideList" id="vo"}
                                 {eq name="$vo.guideNo" value="$task.guideNo"}
@@ -95,12 +94,9 @@
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>任务描述：</label>
-                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe" disabled="disabled">{$task.taskDescribe}</textarea>
+                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe">{$task.taskDescribe}</textarea>
                 </div>
-                <div class="ButtonDiv submitDiv" style="text-align: center;width: 250px;margin: 0 auto;"> 
-                    <input type="submit" style="float: left;" class="Button" name="edit" value="修改">
-                    <input type="submit" style="float: left;" class="Button" name="delete" value="删除">
-                </div>
+                <input type="submit" value="提交" class="add_submit" />
             </form>
         </div>
     </div>
@@ -156,3 +152,40 @@
  
 </script>
 
+<script type="text/javascript">
+//上传图片
+function uploadsimage(obj) {
+    if ( obj.value == "" ) return;
+
+    var formdata = new FormData();
+
+    formdata.append("image", $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+    formdata.append("path", 'sale');
+
+    console.log(formdata);
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/upload',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            var html = '<img src="'+ret+'" style="width:120px">';
+
+
+            console.log(html);
+            $('#imgBox').html(html);
+            
+            
+            console.log(ret);
+            // $('#headImg').val(ret);
+            $('#Img').attr('value', ret);
+        },
+        error : function(){ 
+            alert('图片上传失败');
+        }
+    });
+}
+</script>
