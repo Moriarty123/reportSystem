@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1553496250;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1553508652;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -209,6 +209,14 @@
                             <?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                 <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                </div>
+
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>评分方式：</label>
+                    <select class="add_input" name="reviewType">
+                        <option value="1">百分制</option>
+                        <option value="2">五分制</option>
                     </select>
                 </div>
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskEdit.html";i:1553488757;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskEdit.html";i:1553509172;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -215,6 +215,14 @@
                                 <?php else: ?>
                                     <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
                                 <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                </div>
+
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>评分方式：</label>
+                    <select class="add_input" name="reviewType">
+                        <option value="1">百分制</option>
+                        <option value="2">五分制</option>
                     </select>
                 </div>
 

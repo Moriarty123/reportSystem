@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskDetail.html";i:1553509335;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1552205130;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +12,22 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/teacher/taskAdd.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/guideImport.js"></script>
+    <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script>
+    <!-- <script type="text/javascript" src="/static/wangEditor-3.1.1/release/wangEditor.js"></script> -->
+    
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
-    <link rel="stylesheet" href="/static/css/common/buttons.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
+    <link rel="stylesheet" href="/static/css/teacher/guide.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
     <link rel="stylesheet" href="/static/css/teacher/add.css" />
+
 </head>
+
 <body>
     <!-- 头部开始-->
     <style type="text/css">
@@ -164,73 +168,49 @@
 </div>
     <!-- 左边菜单结束-->
 
-    <!--添加用户开始-->
+    <!--课程列表开始-->
     <div id="MainForm">
         <div class="form_boxA">
             <div class="a">
-                <h2>实验任务详情</h2>
+                <h2>导入实验指导</h2>
             </div>
-            <form action="/teacher/task/taskDetail" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
-                <input type="hidden" name="taskNo" value="<?php echo $task['taskNo']; ?>">
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>任务名称：</label>
-                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" disabled="disabled"/>
-                </div>
-
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>所属课程：</label>
-                    <select name="courseNo" id="courseNo" class="add_input" disabled="disabled">
-                            <option value="null">--请选择实验课程--</option>
-                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['courseNo'] == $task['courseNo']): ?>
-                                    <option value="<?php echo $vo['courseNo']; ?>" selected = "selected"><?php echo $vo['courseName']; ?></option>
-                                <?php else: ?>
-                                    <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
-                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            <div class="guideAddDiv" style="margin:0 auto;">
+                <form action="/teacher/guide/guideImport" enctype="multipart/form-data" method="post" class="add_form" onsubmit="return checkSubmit()">
+                
+                <div class="add_list" style="padding-top: 5px;">
+                    <label class="add_label"><span class="xing">*</span>实验课程：</label>
+                    <select name="courseNo" id="courseNo" style="padding-top: 5px; width: 250px; ">
+                            <option value="-1">--请选择实验课程--</option>
+                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
                         </select>
                 </div>
-                <div><input type="hidden" name="courseNo" value="<?php echo $task['courseNo']; ?>"></div>
-
                 <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>开始时间：</label>
-                    <input type="datetime-local" id="startTime" name="startTime" class="add_input" value="<?=date('Y-m-d',$task->startTime).'T'.date('H:i:s',$task->startTime)?>" disabled="disabled"/>
+                    <label class="add_label">实验任务：</label>
+                    <select name="taskNo" id="taskNo" style="padding-top: 5px; width: 250px;">
+                            <option value="-1">--请选择实验任务--</option>
+                            <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <option value="<?php echo $vo['taskNo']; ?>"><?php echo $vo['taskName']; ?></option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
                 </div>
-
                 <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>截止时间：</label>
-                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" value="<?=date('Y-m-d',$task->endTime).'T'.date('H:i:s',$task->endTime)?>" disabled="disabled"/>
+                    <label class="add_label"><span class="xing">*</span>指导名称：</label>
+                    <input type="text" id="guideName" name="guideName" class="add_input"  style="padding-top: 5px; width: 250px;">
                 </div>
-
-                <div class="add_list">
-                    <label class="add_label">背景图片：</label>
-                    <input type="file" name="imgFile" onchange="uploadsimage(this);" disabled="disabled"/>
-                    <div id="imgBox"></div>
-                    <input type="hidden" name="taskImg" id="Img" value="">
-                </div>
-
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>实验指导：</label>
-                    <select name="guideNo" class="add_input" id="guideNo" disabled="disabled">
-                        <option value="null">--请选择实验指导--</option>
-                            <?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['guideNo'] == $task['guideNo']): ?>
-                                    <option value="<?php echo $vo['guideNo']; ?>" selected = "selected"><?php echo $vo['guideName']; ?></option>
-                                <?php else: ?>
-                                    <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
-                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                    </select>
+                    <input type="file" name="file" id="file" accept=".pdf" onchange="uploadPdf(this);" style="width: 250px;" multiple>
+                    <input type="hidden" name="filePath" id="filePath">
                 </div>
-
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>任务描述：</label>
-                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe" disabled="disabled"><?php echo $task['taskDescribe']; ?></textarea>
-                </div>
-                <div class="ButtonDiv submitDiv" style="text-align: center;width: 250px;margin: 0 auto;"> 
-                    <input type="submit" style="float: left;" class="Button" name="edit" value="修改">
-                    <input type="submit" style="float: left;" class="Button" name="delete" value="删除">
-                </div>
+                <input type="submit" value="确定" class="add_submit" />
             </form>
+            </div>
+            
         </div>
     </div>
-    <!--添加用户结束-->
+    <!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -250,43 +230,36 @@
 </body>
 </html>
 
-<!-- 筛选框开始-->
 <script type="text/javascript">
-    
-    $(document).ready(function(){
-        $("#publishedFilter").click(function(){
-            $("#publishedFilterDiv").slideToggle();
-        });
+//上传pdf
+function uploadPdf(obj) {
+    if ( obj.value == "" ) return;
 
-        $("#taskName").val('<?php echo $task['taskName']; ?>');
-        
-        $("#taskDescribe'").html('<?php echo $task['taskDescribe']; ?>');
+    var formdata = new FormData();
+
+    formdata.append("pdf" , $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/uploadPdf',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            $filePath = "/uploads/"+ret;
+            $filePath = $filePath.replace("\\","/");
+
+            $("#filePath").val($filePath);
+            // alert($filePath);
+        },
+        error : function(){ 
+            alert('pdf上传失败');
+        }
     });
+}
 </script>
-<!-- 筛选框结束 -->
 
 
-<!-- 处理时间戳转datatime-local -->
-<script>
- 
-    Date.prototype.Format = function(fmt)     
-{ //author: meizz  
-  var o = {     
-    "M+" : this.getMonth()+1,                 //月份  
-    "d+" : this.getDate(),                    //日  
-    "h+" : this.getHours(),                   //小时  
-    "m+" : this.getMinutes(),                 //分  
-    "s+" : this.getSeconds(),                 //秒  
-    "q+" : Math.floor((this.getMonth()+3)/3), //季度  
-    "S"  : this.getMilliseconds()             //毫秒  
-  };     
-  if(/(y+)/.test(fmt))     
-    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));     
-  for(var k in o)     
-    if(new RegExp("("+ k +")").test(fmt))     
-  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));     
-  return fmt;     
-};  
- 
-</script>
+
 

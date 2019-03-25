@@ -196,10 +196,11 @@ class Task extends Common
         $teacherNo  = session('account');
         $taskName   = input('post.taskName');
         $courseNo   = input('post.courseNo');
-        $startTime   = input('post.startTime');
-        $endTime  = input('post.endTime');
-        $taskImg = input('post.taskImg');
-        $guideNo = input('post.guideNo');
+        $startTime  = input('post.startTime');
+        $endTime    = input('post.endTime');
+        $taskImg    = input('post.taskImg');
+        $guideNo    = input('post.guideNo');
+        $reviewType = input('post.reviewType');
         $describe   = input('post.taskDescribe');
 
         //1.2默认值
@@ -226,6 +227,7 @@ class Task extends Common
             'endTime'       => $endTime,
             'taskImg'       => $taskImg,
             'guideNo'       => $guideNo,
+            'reviewType'    => $reviewType,
             'taskDescribe'  => $describe,
         ];
 
@@ -437,13 +439,14 @@ class Task extends Common
         //1.获取数据
         //1.1获取页面数据
         $teacherNo  = session('account');
-        $taskNo = input('post.taskNo');
+        $taskNo     = input('post.taskNo');
         $taskName   = input('post.taskName');
         $courseNo   = input('post.courseNo');
-        $startTime   = input('post.startTime');
-        $endTime  = input('post.endTime');
-        $taskImg = input('post.taskImg');
-        $guideNo = input('post.guideNo');
+        $startTime  = input('post.startTime');
+        $endTime    = input('post.endTime');
+        $taskImg    = input('post.taskImg');
+        $guideNo    = input('post.guideNo');
+        $reviewType = input('post.reviewType');
         $describe   = input('post.taskDescribe');
 
         //1.2默认值
@@ -456,10 +459,10 @@ class Task extends Common
         }
 
         //1.3格式转换
-        $startTime = str_replace("T"," ",$startTime);
-        $startTime = strtotime($startTime);
-        $endTime = str_replace("T"," ",$endTime);
-        $endTime = strtotime($endTime);
+        $startTime  = str_replace("T"," ",$startTime);
+        $startTime  = strtotime($startTime);
+        $endTime    = str_replace("T"," ",$endTime);
+        $endTime    = strtotime($endTime);
 
         //2.设置修改数据
         $data = [
@@ -470,6 +473,7 @@ class Task extends Common
             'endTime'       => $endTime,
             'taskImg'       => $taskImg,
             'guideNo'       => $guideNo,
+            'reviewType'    => $reviewType,
             'taskDescribe'  => $describe,
         ];
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1552493826;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1553504201;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,20 +6,19 @@
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="/static/images/school.ico" />
     
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/guide.css" />
+    <link rel="stylesheet" href="/static/css/teacher/report.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
 <body>
@@ -165,81 +164,131 @@
 	<!--课程列表开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
-			<div class="a">
-				<h2>实验指导列表</h2>
-				<form action="/teacher/guide/guideSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验指导名称" name="search" />
+			<div class="a" style="position: relative; left: 0px; top: 0px;">
+				<h2>实验报告列表</h2>
+
+				<div style="position: absolute; left: 150px; top: 35px;">
+					<select id="courseFilter">
+						<option value="-1">--请选择实验课程--</option>
+						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
+						<option value="<?php echo $course['courseNo']; ?>"><a href="/teacher/report/courseFilter?$courseNo=<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></a></option>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</select>
+				</div>
+
+				<form action="/teacher/report/courseFilter" method="post" id="courseFilterForm" style="display: none;">
+					<input type="hidden" name="courseFilterNo" id="courseFilterNo">
+				</form>
+				
+				<form action="/teacher/report/reportSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="实验报告名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生成绩</option>
 					</select>
 				</div>
 			</div>
-			<form action="/teacher/guide/guideDelete" method="post">
+			<!-- 提交状态筛选表单 -->
+			<form action="/teacher/report/submitFilter" method="post" id="submitFilterForm"></form>
+			<!-- 批阅状态筛选表单 -->
+			<form action="/teacher/report/reviewFilter" method="post" id="reviewFilterForm"></form>
+
+			<form action="" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验指导</th>
+					<!-- <th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th> -->
+					<th style="width: 150px;">实验课程</th>
+					<th style="width: 150px;">实验任务</th>
+					<th style="width: 150px;">实验报告</th>
+					<th>提交学生</th>
 					<th style="position: relative; top:0px; left:0px;">
-						归属状态
+						提交结果
 						<span id="submitedFilter">
 							<i class="fa fa-filter" title="筛选"></i>
 						</span>
 						<div id="submitedFilterDiv" class="submitedFilterDiv" >
-							<form >
-								<div class="submitedFilterRadio" style="margin-left: 5px;">	
-									<label><input name="submited" type="radio"/>未归属</label>
-								</div>
-								<div class="submitedFilterRadio" style="margin-left: 5px;">
-									<label><input name="submited" type="radio"/>已归属</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit" value="确定">
-									<input type="reset" name="" class="reset" value="重置">
-								</div>
-							</form>
+							
+							<div class="submitedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="submitResult" type="radio" value="0" form="submitFilterForm"/>正常提交</label>
+							</div>
+							<div class="submitedFilterRadio" style="margin-left: 5px;">
+								<label><input name="submitResult" type="radio" value="1" form="submitFilterForm"/>迟交</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="submitFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="submitFilterForm">
+							</div>
+							
 						</div>
 					</th>
-					<th>创建时间</th>
+					<th style="position: relative; top:0px; left:0px;">
+						批阅状态
+						<span id="reviewedFilter">
+							<i class="fa fa-filter" title="筛选"></i>
+						</span>
+						<div id="reviewedFilterDiv" class="reviewedFilterDiv" >
+							
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">	
+								<label><input name="reviewStatus" type="radio" value="0" form="reviewFilterForm"/>未批阅</label>
+							</div>
+							<div class="reviewedFilterRadio" style="margin-left: 5px;">
+								<label><input name="reviewStatus" type="radio" value="1" form="reviewFilterForm"/>已批阅</label>
+							</div>
+							<div>
+								<input type="submit" name="" class="submit" value="确定" form="reviewFilterForm">
+								<input type="reset" name="" class="reset" value="重置" form="reviewFilterForm">
+							</div>
+						</div>
+					</th>
+					<th style="width: 200px;">提交时间</th>
+					<th>实验成绩</th>
 					<th>操作</th>
 				</tr>
-				<?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<tbody id="tbody">
+				<?php if(is_array($reportList) || $reportList instanceof \think\Collection || $reportList instanceof \think\Paginator): $i = 0; $__LIST__ = $reportList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="guideNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['guideNo']; ?>"/></td>
-					<td><?php echo $vo['courseName']; ?></td>
-					<td><?php echo $vo['taskNo']; ?></td>
-					<td><?php echo $vo['guideName']; ?></td>
-					<?php if($vo['taskNo'] == ''): ?>
-						<td style="color: rgb(16, 142, 233)">未归属</td>
+					<!-- <td style="width: 30px;"><input type="checkbox" name="reportNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['reportNo']; ?>"/></td> -->
+					<td style="width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['taskName']; ?></td>
+					<td style="width: 150px;"><?php echo $vo['reportName']; ?></td>
+					<td><?php echo $vo['studentName']; ?></td>
+					<?php if($vo['submitResult'] == '正常提交'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['submitResult']; ?></td>
 					<?php else: ?>
-						<td style="color: rgb(32, 163, 15)">已归属</td>	
+					<td style="color: rgb(220,20,60)"><?php echo $vo['submitResult']; ?></td>
+					<?php endif; if($vo['reviewStatus'] == '未批阅'): ?>
+					<td style="color: rgb(16, 142, 233)"><?php echo $vo['reviewStatus']; ?></td>
+					<?php else: ?>
+					<td style="color: rgb(32, 163, 15)"><?php echo $vo['reviewStatus']; ?></td>
 					<?php endif; ?>
-					
-					<td><?php echo date("Y-m-d H:m:s",$vo['createTime']); ?></td>
+					<td style="width: 200px;"><?php echo date("Y-m-d h:m:s",$vo['submitTime']); ?></td>
+					<td><?php echo $vo['score']; ?></td>
 					<td>
-						<a href="/teacher/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">
+						<a href="/teacher/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-					
-						<a href="/teacher/guide/editPage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-edit" title="编辑"></i>
+						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
+							<i class="fa fa-user-edit" title="批阅"></i>
+						</a>
+						<a href="/teacher/report/reportExport?repoortNo='<?php echo $vo['reportNo']; ?>'" style='margin-left: 5px;'>
+							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
+				</tbody>
 			</table>
 			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
-				共找到<?php echo $guideNumber; ?>条记录，每页显示15条记录
+				<!-- <span id="notdisplay" style="display: none;"></span>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/> -->
+				共找到<?php echo $reportNumber; ?>条信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $guideList->render(); ?>
+			<?php echo $reportList->render(); ?>
 			</div>
 			</form>
 		</div>
@@ -271,17 +320,41 @@
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
 		});
+
+		$("#reviewedFilter").click(function(){
+  			$("#reviewedFilterDiv").slideToggle();
+		});
+
+		//实验课程筛选
+		$("#courseFilter").change(function() {
+			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
+
+			$("#courseFilterNo").val(courseNo);//填写表单
+			$("#courseFilterForm").submit();//提交表单
+		});
+
+		//导出学生成绩
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/reportExcel');
+			}
+			
+		});
 	});
+
 	
 </script>
 <!-- 筛选框结束 -->
 
 <script type="text/javascript">
 function del(){
-	return window.confirm("你确认要删除该实验指导吗？");
+	return window.confirm("你确认要删除该实验报告吗？");
 }
 function checkdel(){
-	return window.confirm("你确认要删除选中的实验指导吗？");
+	return window.confirm("你确认要删除选中的实验报告吗？");
 }
 
 </script>
+
