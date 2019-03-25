@@ -519,3 +519,4 @@ class Guide extends Common
         $this->success('删除成功！', '/teacher/guide/guideList');
     }
 }
+

@@ -346,4 +346,15 @@ class Report extends Common
         return $this->fetch("reviewResult");
     }
 
+    //导出单个学生实验报告
+    public function reportExport()
+    {
+        //0.测试
+        dump($_GET);
+        Log::record("导出学生实验报告", "notice");
+
+        
+
+    }
+
 }

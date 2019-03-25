@@ -35,11 +35,9 @@
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>实验报告列表</h2>
 
-
 				<div style="position: absolute; left: 150px; top: 35px;">
 					<select id="courseFilter">
 						<option value="-1">--请选择实验课程--</option>
-
 						{volist name="courseList" id="course"}
 						<option value="{$course.courseNo}"><a href="/teacher/report/courseFilter?$courseNo={$course.courseNo}">{$course.courseName}</a></option>
 						{/volist}
@@ -55,9 +53,10 @@
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生成绩</option>
 					</select>
 				</div>
 			</div>
@@ -141,15 +140,12 @@
 						<a href="/teacher/report/reportShow?reportNo={$vo.reportNo}" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						{eq name="$vo.reviewStatus" value="未批阅"}
 						<a href="/teacher/report/reviewPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
 							<i class="fa fa-user-edit" title="批阅"></i>
 						</a>
-						{else}
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/report/reportExport?repoortNo='{$vo.reportNo}'" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>
 						</a>
-						{/eq}
 					</td>
 				</tr>
 				{/volist}
@@ -196,6 +192,16 @@
 
 			$("#courseFilterNo").val(courseNo);//填写表单
 			$("#courseFilterForm").submit();//提交表单
+		});
+
+		//导出学生成绩
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/reportExcel');
+			}
+			
 		});
 	});
 
