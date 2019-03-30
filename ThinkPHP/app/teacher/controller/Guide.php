@@ -26,32 +26,32 @@ class Guide extends Common
         Log::record('显示实验指导列表','notice');
 
     	//1.获取账号
-    	$account = session('account');
+        $account = session('account');
 
     	//2.获取该账号教师的实验实验指导
-    	$teacherModel = new teacherModel();
+        $teacherModel = new teacherModel();
 
-    	$where = "a.teacherNo = '$account'";
+        $where = "a.teacherNo = '$account'";
 
-    	$guideList = $teacherModel	->guide()
-                                    ->where($where)
-                                    ->alias('a')
-                                    ->join('course b', 'a.courseNo = b.courseNo')
+        $guideList = $teacherModel	->guide()
+        ->where($where)
+        ->alias('a')
+        ->join('course b', 'a.courseNo = b.courseNo')
                                     // ->join('task c', 'a.taskNo = c.taskNo')
-			    				    ->paginate(15);
+        ->paginate(15);
 
-		$guideNumber = $teacherModel    ->guide()
-                                        ->where($where)
-                                        ->alias('a')
-                                        ->join('course b', 'a.courseNo = b.courseNo')
+        $guideNumber = $teacherModel    ->guide()
+        ->where($where)
+        ->alias('a')
+        ->join('course b', 'a.courseNo = b.courseNo')
                                         // ->join('task c', 'a.taskNo = c.taskNo')
-			    				        ->count();
+        ->count();
 
     	//3.页面渲染
-		$this->assign('guideList', $guideList);
-		$this->assign('guideNumber', $guideNumber);
+        $this->assign('guideList', $guideList);
+        $this->assign('guideNumber', $guideNumber);
 
-		return $this->fetch('guideList');
+        return $this->fetch('guideList');
     }
 
     //模糊查找实验指导
@@ -83,14 +83,14 @@ class Guide extends Common
         $teacherNoWhere = "teacherNo = '$account'";
 
         $guideList = $teacherModel ->guide()
-                                    ->where($teacherNoWhere)
-                                    ->where($where)
-                                    ->paginate(15);
+        ->where($teacherNoWhere)
+        ->where($where)
+        ->paginate(15);
 
         $guideNumber = $teacherModel   ->guide()
-                                        ->where($teacherNoWhere)
-                                        ->where($where)
-                                        ->count();
+        ->where($teacherNoWhere)
+        ->where($where)
+        ->count();
 
         //3.页面渲染
         $this->assign('guideList', $guideList);
@@ -118,18 +118,18 @@ class Guide extends Common
         $where = "a.teacherNo = '$account' and taskNo = '$taskNo'";
 
         $guideList = $teacherModel  ->guide()
-                                    ->where($where)
-                                    ->alias('a')
-                                    ->join('course b', 'a.courseNo = b.courseNo')
+        ->where($where)
+        ->alias('a')
+        ->join('course b', 'a.courseNo = b.courseNo')
                                     // ->join('task c', 'a.taskNo = c.taskNo')
-                                    ->paginate(15);
+        ->paginate(15);
 
         $guideNumber = $teacherModel    ->guide()
-                                        ->where($where)
-                                        ->alias('a')
-                                        ->join('course b', 'a.courseNo = b.courseNo')
+        ->where($where)
+        ->alias('a')
+        ->join('course b', 'a.courseNo = b.courseNo')
                                         // ->join('task c', 'a.taskNo = c.taskNo')
-                                        ->count();
+        ->count();
 
         //3.页面渲染
         $this->assign('guideList', $guideList);
@@ -337,14 +337,14 @@ class Guide extends Common
 
         //生成pdf
         $html = 
-            '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
-            .$guideName.
-            '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
-            '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
-            '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
-            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
-            '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
-            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
+        '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
+        .$guideName.
+        '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
+        '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
+        '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
+        '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+        '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
+        '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
         guidePdf($html);
         //2.跳转到实验指导列表
@@ -384,14 +384,14 @@ class Guide extends Common
 
         //生成pdf
         $html = 
-            '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
-            .$guideName.
-            '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
-            '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
-            '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
-            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
-            '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
-            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
+        '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
+        .$guideName.
+        '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
+        '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
+        '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
+        '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+        '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
+        '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
         exportPdf($html);
         //2.跳转到实验指导列表
@@ -514,9 +514,105 @@ class Guide extends Common
 
         foreach ($guideNo as $key => $no) {
            $guideModel->destroy($no);
+       }
+
+       $this->success('删除成功！', '/teacher/guide/guideList');
+    }
+
+    //实验指导编辑器
+    public function editorPage() {
+
+        $teacherNo = session("account");
+        $teacherWhere = "teacherNo = '{$teacherNo}'";
+
+        //1.获取courseList
+        $courseModel = new courseModel();
+        $courseList = $courseModel->where($teacherWhere)->select();
+
+        //2.获取taskList
+        $taskModel = new taskModel();
+        $taskList = $taskModel->where($teacherWhere)->select();
+
+        //3.渲染
+        $this->assign('courseList', $courseList);
+        $this->assign('taskList', $taskList);
+
+        return $this->fetch("guideEditor");
+    }
+ 
+    //实验指导编辑器
+    public function guideEditor() {
+        //0.测试
+        // dump($_POST);
+        Log::record("实验指导编辑器", "notice");
+
+        //1.获取显示html
+        $html = input("post.txtContent");
+
+        // guidePdf($html);
+
+        //2.保存为txt文件
+        //2.1构建TXT路径
+        $time = time();
+        $txtName = $time.".txt";
+        $txtPath = "./uploads/file/guide/".$txtName;
+        // dump($txtPath);
+
+        //2.2保存TXT
+        $file_pointer = fopen($txtPath,"w");       
+        fwrite($file_pointer,$html);
+        fclose($file_pointer);
+
+        //3.创建新实验指导
+        //3.1构建数据
+        $teacherNo = session("account");
+        $guideName = input("post.guideName");
+        $courseNo  = input("post.courseNo");
+        $taskNo    = input("post.taskNo");
+
+        //数据合法性检测
+        if ($courseNo == -1) {
+            $courseNo = Null;
         }
 
-        $this->success('删除成功！', '/teacher/guide/guideList');
-    }
+        if ($taskNo == -1) {
+            $taskNo = Null;
+        }
+
+        $data = [
+            'teacherNo'     => $teacherNo,
+            'txtPath'       => $txtPath,
+            'guideName'     => $guideName,
+            'courseNo'      => $courseNo,
+            'taskNo'        => $taskNo,
+            'createTime'    => $time
+        ];
+
+        //3.2模型创建
+        $guideModel = new guideModel();
+        $guide = $guideModel->create($data);
+
+        if (empty($guide)) {
+            Log::record('添加实验指导失败！', 'error');
+            $this->error('添加实验指导失败！请稍后再试。', '/teacher/guide/guideList');
+        }
+
+        //4.后续操作
+        $this->success("添加实验指导成功！", "/teacher/guide/guideList");
+
+        // $file_pointer = fopen("./uploads/file/guide/aa.txt","w");       
+        // fwrite($file_pointer,$html);
+        // fclose($file_pointer);
+        // //读取文件
+        // $file_name="./uploads/file/guide/aa.txt";
+        // $fp = fopen("./uploads/file/guide/aa.txt",'r');//打开文件
+        //    if(file_exists("./uploads/file/guide/aa.txt")){//当文件存在时，才读取内容
+        //       while(!feof($fp)){//判断文件指针是否到达末尾
+        //          $line = fgets($fp);//返回一行文本，并将文件指针移动到下一行头部
+        //          echo $line."<br/>";//输出获取到的一行文本
+        //      }
+        //  }
+        //    fclose($fp);//关闭文件
+   }
 }
 
