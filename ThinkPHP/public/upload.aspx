@@ -31,7 +31,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 	// 初始化一大堆变量
 	string inputname = "filedata";//表单文件域name
-    string attachdir = "upload";     // 上传文件保存路径，结尾不要带/
+    string attachdir = "/uploads";     // 上传文件保存路径，结尾不要带/
     int dirtype = 1;                 // 1:按天存入目录 2:按月存入目录 3:按扩展名存目录  建议使用按天存
     int maxattachsize = 2097152;     // 最大上传大小，默认是2M
     string upext = "txt,rar,zip,jpg,jpeg,gif,png,swf,wmv,avi,wma,mp3,mid";    // 上传扩展名

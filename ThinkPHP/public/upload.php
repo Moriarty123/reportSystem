@@ -2,7 +2,7 @@
 ob_start();
 //201201/10
 $timeDir = date("Ymd");
-$uploadDir = '../../uploads/'.$timeDir;
+$uploadDir = './uploads/'.$timeDir;
 // echo $uploadDir;
 //自动创建目录。upload/2012-1-10
 if(!is_dir($uploadDir))

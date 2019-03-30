@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1553929602;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1553970861;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -241,32 +241,52 @@
 <script type="text/javascript" language="javascript">
         var editor;
         $(pageInit);
+
+        function test() {
+        alert("sda");
+        }
         function pageInit()
         {
             var allPlugin = {
                 scp: { c: 'scp', t: '截屏', e: function () { scpMgr.Capture(); } }
             };
             editor = $('#txtContent').xheditor(
-                { 
+                {
                     plugins: allPlugin, 
                     tools: 'Cut,Copy,Paste,Pastetext,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Flash,Media,Emot,Table,scp,Source,Fullscreen,About',
                     upBtnText: '上传', 
                     upLinkUrl:"upload.php",
                     upLinkExt:"zip,rar,txt",
-                    upImgUrl:"/static/xheditor/upload.php",
+                    upImgUrl:"http://reportsystem/upload.aspx",
                     upImgExt:"jpg,jpeg,gif,png",
                     upFlashUrl:"upload.php",
                     upFlashExt:"swf",
                     upMediaUrl:"upload.php",
-                    upMediaExt:"avi"
-                });           
+                    upMediaExt:"avi",
+                    html5Upload:false,
+                    onUpload:'text'
+                    });  
+                function show(msg) {
+                    alert(msg)
+                }
         }
 
+
+        
+
         var scpMgr = new CaptureManager();
-        scpMgr.Config["PostUrl"] = "http://localhost:81/ScreenCapturePro2/scp2xhEditor1x/upload.php";
+        scpMgr.Config["PostUrl"] = "http://reportsystem/upload.php";
         scpMgr.event.postComplete = function (url) {
-            var img = '<img src="' + url + "?t=" + new Date().getTime()+ '"/>';
+            // url = str_replace("../../", "./", url);
+            // alert(url);
+            url = url.substring(1)
+            // alert(url);
+            var img = '<img src="' + url + '"/>';
             editor.appendHTML(img);
         };
         scpMgr.loadAuto();
+</script>
+
+<script type="text/javascript">
+
 </script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1553950224;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1553954778;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -258,7 +258,7 @@
                     upBtnText: '上传', 
                     upLinkUrl:"upload.php",
                     upLinkExt:"zip,rar,txt",
-                    upImgUrl:"/static/xheditor/upload.php",
+                    upImgUrl:"/teacher/common/upload",
                     upImgExt:"jpg,jpeg,gif,png",
                     upFlashUrl:"upload.php",
                     upFlashExt:"swf",
@@ -269,7 +269,7 @@
         }
 
         var scpMgr = new CaptureManager();
-        scpMgr.Config["PostUrl"] = "http://localhost:81/ScreenCapturePro2/scp2xhEditor1x/upload.php";
+        scpMgr.Config["PostUrl"] = "/teacher/common/upload";
         scpMgr.event.postComplete = function (url) {
             var img = '<img src="' + url + "?t=" + new Date().getTime()+ '"/>';
             editor.appendHTML(img);
@@ -278,5 +278,7 @@
 
         
 </script>
+
+
 
 
