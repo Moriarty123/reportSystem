@@ -396,6 +396,51 @@ class Report extends Common
         $this->success("添加实验报告成功！", "/student/report/reportList");
     }
 
+    // //显示实验报告
+    // public function reportShow()
+    // {
+    //     //0.测试
+    //     // dump($_GET);
+    //     Log::record("显示实验报告", "notice");
+
+    //     //1.获取数据
+    //     //1.1获取reportNo
+    //     $reportNo = input("get.reportNo");
+
+    //     //1.2获取report数据
+    //     $reportModel = new reportModel();
+    //     $reportWhere = "reportNo = '$reportNo'";
+    //     $report = $reportModel->where($reportWhere)->find();
+
+    //     $reportName = $report['reportName'];
+    //     $testRequire = $report['testRequire'];
+    //     $testAnalysis = $report['testAnalysis'];
+    //     $testContent = $report['testContent'];
+    //     $testScreen = $report['testScreen'];
+    //     $testCode = $report['testCode'];
+    //     $testSummary = $report['testSummary'];
+
+    //     //1.3拼接HTML
+    //     $html = 
+    //         '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
+    //         .$reportName.
+    //         '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+    //         '<p style="font-size:24px;"><strong>实验分析</strong></p>'.$testAnalysis.
+    //         '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent.
+    //         '<p style="font-size:24px;"><strong>实验截图</strong></p>'.$testScreen.
+    //         '<p style="font-size:24px;"><strong>实验代码</strong></p>'.$testCode.
+    //         '<p style="font-size:24px;"><strong>实验总结</strong></p>'.$testSummary;
+
+    //     // dump($html);
+
+    //     reportPdf($html);
+
+    //     //2.跳转到实验报告列表
+    //     $this->redirect('student/report/reportList');
+    //     // $this->success('跳转到实验报告列表', '/student/report/reportList');
+
+    // }
+
     //显示实验报告
     public function reportShow()
     {
@@ -413,30 +458,24 @@ class Report extends Common
         $report = $reportModel->where($reportWhere)->find();
 
         $reportName = $report['reportName'];
-        $testRequire = $report['testRequire'];
-        $testAnalysis = $report['testAnalysis'];
-        $testContent = $report['testContent'];
-        $testScreen = $report['testScreen'];
-        $testCode = $report['testCode'];
-        $testSummary = $report['testSummary'];
+        $txtPath = $report['txtPath'];
 
-        //1.3拼接HTML
-        $html = 
-            '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
-            .$reportName.
-            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
-            '<p style="font-size:24px;"><strong>实验分析</strong></p>'.$testAnalysis.
-            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent.
-            '<p style="font-size:24px;"><strong>实验截图</strong></p>'.$testScreen.
-            '<p style="font-size:24px;"><strong>实验代码</strong></p>'.$testCode.
-            '<p style="font-size:24px;"><strong>实验总结</strong></p>'.$testSummary;
+        //2.2读取文件
+        if(file_exists($txtPath)){
 
-        // dump($html);
+            $fp= fopen($txtPath,"r");
+            $html = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $html = "";
+        }
+
 
         reportPdf($html);
 
         //2.跳转到实验报告列表
-        $this->redirect('student/report/reportList');
+        // $this->redirect('student/report/reportList');
         // $this->success('跳转到实验报告列表', '/student/report/reportList');
 
     }
@@ -557,7 +596,7 @@ class Report extends Common
         //1.2获取guide
         $guide = $guideModel->where($guideWhere)->find();
 
-        dump($guide);
+        // dump($guide);
         //1.3获取文本
         $txtPath = $guide['txtPath'];
         // dump($txtPath);
@@ -587,7 +626,63 @@ class Report extends Common
     public function reportEditor()
     {
         //0.测试
-        dump($_POST);
+        // dump($_POST);
         Log::record("撰写实验报告", "notice");
+
+        //1.获取数据
+        //1.1获取页面数据
+        $studentNo = session("account");
+        $teacherNo = input("post.teacherNo");
+        $courseNo = input("post.courseNo");
+        $taskNo = input("post.taskNo");
+        $reportName = input("post.reportName");
+        $reportContent = input("post.reportContent");
+
+        //2.保存为txt文件
+        //2.1构建TXT路径
+        $time = time();
+        $txtName = $time.".txt";
+        $tempPath = "./uploads/file/report/".$txtName;
+        // dump($txtPath);
+
+        //2.2保存TXT
+        $file_pointer = fopen($tempPath,"w");       
+        fwrite($file_pointer,$reportContent);
+        fclose($file_pointer);
+
+        //3.构建模型
+        $data = [
+            'courseNo'      => $courseNo,
+            'teacherNo'     => $teacherNo,
+            'studentNo'     => $studentNo,
+            'taskNo'        => $taskNo,
+            'reportName'    => $reportName
+        ];
+
+        // dump($data);
+
+        $reportModel = new reportModel();
+        $report = $reportModel->create($data);
+
+        if (empty($report)) {
+            Log::record("创建实验报告失败！", "error");
+            $this->error("创建实验报告失败！请稍后再试。", "/student/task/taskList");
+        }
+
+        //4.后续操作        
+        //保存文本文件，并删除临时文件
+        $reportNo = $report['reportNo'];//获取reportNo
+
+        $txtPath = "./uploads/file/report/".$reportNo.".txt";
+        copy($tempPath, $txtPath);//复制文件
+        unlink($tempPath);//删除临时文件
+
+        //更新数据库
+        $reportModel->save([
+            'txtPath'  => $txtPath
+        ],['reportNo' => $reportNo]);
+
+        $this->success("创建实验报告成功！", "/student/report/reportList");
+
     }
 }

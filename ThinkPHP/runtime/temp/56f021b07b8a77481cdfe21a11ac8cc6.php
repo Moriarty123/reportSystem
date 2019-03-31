@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1554036317;s:35:"../app/common/view/html/header.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1554044646;s:35:"../app/common/view/html/header.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,6 +87,7 @@
 			<form action="/student/report/reportEditor" method="post">
                 <input type="hidden" name="courseNo" value="<?php echo $guide['courseNo']; ?>">
                 <input type="hidden" name="taskNo" value="<?php echo $guide['taskNo']; ?>">
+                <input type="hidden" name="teacherNo" value="<?php echo $guide['teacherNo']; ?>">
 				<textarea id="reportContent" name="reportContent" id="reportContent" rows="12" cols="80" style="width:620px;height:665px;" ></textarea>
 				<div id="scpPanel"></div>
                 <!-- <input type="text" name="reportName" style="width: 100%; float: left; margin: 5px 0px;" placeholder="请输入实验报告名称"> -->
