@@ -129,9 +129,12 @@
                     upFlashExt:"swf",
                     upMediaUrl:"upload.php",
                     upMediaExt:"avi"
-                });           
+                });
+            
             editor.setSource('{$txtContent}');
+
         }
+        // console.log("{$txtContent}");
 
         var scpMgr = new CaptureManager();
         scpMgr.Config["PostUrl"] = "/teacher/common/upload";

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1554023664;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/student/view/common/menu.html";i:1554022597;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\score\scoreShow.html";i:1554022597;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/student/view/common/menu.html";i:1554022597;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +12,20 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+
+    <link rel="stylesheet" href="/static/css/student/display.css" />
+    <link rel="stylesheet" href="/static/css/student/score.css">
 </head>
+
+
 <body>
     <!-- 头部开始-->
     <style type="text/css">
@@ -157,62 +162,55 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--课程列表开始-->
-	<div id="MainForm">
-		<div class="form_boxA">
-			<div class="a">
-				<h2>实验任务列表</h2>
-				<form action="/student/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验任务名称" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
-				</div>
-			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验指导</th>
-					<th>开始时间</th>
-					<th>截止时间</th>
-					<th>任务描述</th>
-					<th>操作</th>
-				</tr>
-				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
-					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
-					<td><a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">查看实验指导</a></td>
-					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
-					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
-					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
-					<td>
-						<a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank"> 
-							<i class="fa fa-eye" title="查看实验指导"></i>
-						</a>
-						<a href="/student/report/editorPage?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank" style="margin-left: 5px;"> 
-							<i class="fa fa-edit" title="撰写实验报告"></i>
-						</a>
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				共找到<?php echo $taskNumber; ?>条课程信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $taskList->render(); ?>
-			</div>
-			</form>
-		</div>
-	</div>
-	<!--课程列表结束-->
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>学生成绩分布</h2>
+                
+                <div class="title-right">
+                    <select onchange="window.location=this.value">
+                        <option value="-1">--其他操作--</option>
+                        <option>同步数据</option>
+                    </select>
+                </div>
+            </div>
+            <div class="selectDiv">
+                <form action="/student/score/scoreShow" method="post">
+                    <select class="courseSelect" name="courseNo" id="course">
+                        <option value="-1">--请选择实验课程--</option>
+                        <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
+                        <option value="<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></option>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                    <div id="taskDiv">
+                    <!-- <select class="taskSelect" name="taskNo" id="task">
+                        <option value="-1">--请选择实验任务--</option>
+                        <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
+                        <option value="<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></option>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select> -->
+                    <!-- <select class="taskSelect" name="scoreSystem" id="task">
+                        <option value="-1">--请选择评分方式--</option>
+                        <option value="0">百分制</option>
+                        <option value="1">五分制</option>
+                        {/volist}
+                    </select> -->
+                    </div>
+                    <div class="ButtonDiv" >
+                        <input type="submit" name="submit" value="确定" class="submit Button" style="width: 60px; height: 30px;">    
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div style="width: 100%; height: 600px; ">
+                <div style="width: 800px; height: 500px; margin:0 auto; " id="chart"></div>
+            </div>
+
+        </div>
+    </div>
+    <!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -229,22 +227,75 @@
 <!-- 底部结束 -->
     <!-- 底部结束-->
 
+
 </body>
 </html>
 
-<!-- 筛选框开始-->
+
+
+<script src="/static/js/Echarts/echarts.js" charset="utf-8" type="text/javascript"></script>
+
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
-<script type="text/javascript">
-	function checkPublish()
-	{
-		return window.confirm("您确认要发布此实验任务吗？");
-	}
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('chart'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        backgroundColor: '#FBFBFB',
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['分数']
+        },
+
+        calculable : true,
+
+
+        xAxis : [
+            {
+                axisLabel:{
+                    rotate: 30,
+                    interval:0
+                },
+                axisLine:{
+                  lineStyle :{
+                      color: '#CECECE'
+                  }
+                },
+                type : 'category',
+                boundaryGap : false,
+                data : function (){
+                    var list = [];
+                    for (var i = 1; i <= <?php echo $number; ?>; i++) {
+                        list.push("第"+i+"次实验");
+                    }
+                    return list;
+                }()
+            }
+        ],
+        yAxis : [
+            {
+
+                type : 'value',
+                axisLine:{
+                    lineStyle :{
+                        color: '#CECECE'
+                    }
+                }
+            }
+        ],
+        series : [
+            {
+                name:'分数',
+                type:'line',
+                symbol:'none',
+                smooth: 0.2,
+                color:['#66AEDE'],
+                data:[<?php if(is_array($score) || $score instanceof \think\Collection || $score instanceof \think\Paginator): $i = 0; $__LIST__ = $score;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$s): $mod = ($i % 2 );++$i;?><?php echo $s; ?>,<?php endforeach; endif; else: echo "" ;endif; ?>]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
 </script>

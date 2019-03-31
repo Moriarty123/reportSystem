@@ -646,6 +646,8 @@ class Guide extends Common
         else {
             $txtContent = "";
         }
+
+        $txtContent = str_replace("'", "\'", $txtContent);
         // dump($txtContent);
 
         //3.渲染
