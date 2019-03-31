@@ -557,6 +557,7 @@ class Report extends Common
         //1.2获取guide
         $guide = $guideModel->where($guideWhere)->find();
 
+        dump($guide);
         //1.3获取文本
         $txtPath = $guide['txtPath'];
         // dump($txtPath);
@@ -571,6 +572,8 @@ class Report extends Common
             $txtContent = "";
         }
 
+        $txtContent = str_replace("'", "\'", $txtContent);
+
         //2.渲染
         $this->assign("guide", $guide);
         $this->assign("txtContent", $txtContent);
@@ -578,5 +581,13 @@ class Report extends Common
         //3.后续操作
         return $this->fetch("reportEditor");
 
+    }
+
+    //撰写实验报告
+    public function reportEditor()
+    {
+        //0.测试
+        dump($_POST);
+        Log::record("撰写实验报告", "notice");
     }
 }

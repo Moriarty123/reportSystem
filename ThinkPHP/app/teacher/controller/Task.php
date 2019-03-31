@@ -240,20 +240,35 @@ class Task extends Common
 
 
         if (empty($task)) {
-            Log::record('添加实验任务失败！', 'error');
-            $this->error('添加实验任务失败！请稍后再试。', '/teacher/course/courseMenu');
+            Log::record('发布实验任务失败！', 'error');
+            $this->error('发布实验任务失败！请稍后再试。', '/teacher/course/courseMenu');
         }
 
 
         //4.后续操作
-        return $this->success("添加实验任务成功！", "/teacher/course/courseMenu");
+        //4.1修改对应的guide
+        $guideNo = $task['guideNo'];
+        $taskNo = $task['taskNo'];
+
+        if ($guideNo != "" && !empty($guideNo)) {
+            $guideModel = new guideModel();
+
+            $data = [
+                'guideNo' => $guideNo,
+                'taskNo'  => $taskNo
+            ];
+            $guideModel->update($data);
+
+        }
+
+        return $this->success("发布实验任务成功！", "/teacher/course/courseMenu");
     }
 
     //发布实验任务
     public function taskPublish()
     {
         //0.测试
-        dump($_GET);
+        // dump($_GET);
         Log::record('发布实验任务', 'notice');
 
         //获取taskNo
@@ -318,7 +333,7 @@ class Task extends Common
         //创建模型
         $taskModel = new taskModel();
 
-        $res = $taskModel->destroy($taskNo);
+        $res = $taskModel->destroy($taskNo, true);
     
 
         $this->success('删除成功！', '/teacher/course/courseMenu');

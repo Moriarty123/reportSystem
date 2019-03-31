@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskEdit.html";i:1553509172;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskEdit.html";i:1554022704;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/teacher/view/common/menu.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,7 +115,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
