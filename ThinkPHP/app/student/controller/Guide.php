@@ -55,53 +55,90 @@ class Guide extends Common
         return $this->fetch('guideList');
     }
 
+    // //显示实验指导
+    // public function guideShow() 
+    // {
+    //     //0.测试
+    //     // dump($_GET);
+
+    //     //1.获取该ID的实验指导
+    //     $guideNo = input('get.guideNo');
+
+    //     //1.1创建guideModel,获取实验指导
+    //     $guideModel = new guideModel();
+    //     $where = "guideNo = '$guideNo'";
+    //     $guide = $guideModel->where($where)->find();
+    //     // dump($where);
+    //     // dump($guide);
+    //     //获取实验指导数据
+    //     $guideName = $guide['guideName'];
+    //     $testAim = $guide['testAim'];
+    //     $testEnvironment = $guide['testEnvironment'];
+    //     $testRequire = $guide['testRequire'];
+    //     $testTask = $guide['testTask'];
+    //     $testContent = $guide['testContent'];
+    //     $courseNo = $guide['courseNo'];
+
+    //     //1.2创建courseModel,获取课程名称
+    //     $where = "courseNo = '$courseNo'";
+    //     $courseModel = new courseModel();
+    //     $course = $courseModel->where($where)->find();
+    //     $courseName = $course['courseName'];
+
+    //     //生成pdf
+    //     $html = 
+    //         '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
+    //         .$guideName.
+    //         '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
+    //         '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
+    //         '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
+    //         '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+    //         '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
+    //         '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
+
+    //     // dump($html);
+    //     guidePdf($html);
+    //     //2.跳转到实验指导列表
+    //     // $this->redirect('teacher/guide/guideList');
+
+    // }
+
     //显示实验指导
     public function guideShow() 
     {
         //0.测试
-        // dump($_GET);
+        //dump($_GET);
+        Log::record("显示实验指导", "notice");
 
         //1.获取该ID的实验指导
         $guideNo = input('get.guideNo');
 
         //1.1创建guideModel,获取实验指导
         $guideModel = new guideModel();
-        $where = "guideNo = '$guideNo'";
+        $where = "guideNo = $guideNo";
         $guide = $guideModel->where($where)->find();
-        // dump($where);
-        // dump($guide);
-        //获取实验指导数据
-        $guideName = $guide['guideName'];
-        $testAim = $guide['testAim'];
-        $testEnvironment = $guide['testEnvironment'];
-        $testRequire = $guide['testRequire'];
-        $testTask = $guide['testTask'];
-        $testContent = $guide['testContent'];
-        $courseNo = $guide['courseNo'];
 
-        //1.2创建courseModel,获取课程名称
-        $where = "courseNo = '$courseNo'";
-        $courseModel = new courseModel();
-        $course = $courseModel->where($where)->find();
-        $courseName = $course['courseName'];
+        //2.获取实验指导文本
+        //2.1获取文本路径
+        $txtPath = $guide['txtPath'];
 
-        //生成pdf
-        $html = 
-            '<p style="font-size:24px;"><strong>实验指导名称</strong></p>'
-            .$guideName.
-            '<p style="font-size:24px;"><strong>实验课程</strong></p>'.$courseName.
-            '<p style="font-size:24px;"><strong>实验目的</strong></p>'.$testAim.
-            '<p style="font-size:24px;"><strong>实验环境</strong></p>'.$testEnvironment.
-            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
-            '<p style="font-size:24px;"><strong>实验任务</strong></p>'.$testTask.
-            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent;
 
-        // dump($html);
+        //2.2读取文件
+        if(file_exists($txtPath)){
+
+            $fp= fopen($txtPath,"r");
+            $html = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $html = "";
+        }
+
+        //3.PDF显示
         guidePdf($html);
+
         //2.跳转到实验指导列表
         // $this->redirect('teacher/guide/guideList');
 
     }
-
-    
 }
