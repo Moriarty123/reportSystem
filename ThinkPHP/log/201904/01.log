@@ -2042,3 +2042,180 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:43:01+08:00 ] 0.0.0.0 POST /teacher/guide/guideUpdate
+[ info ] reportsystem/teacher/guide/guideUpdate [运行时间：1.519440s][吞吐率：0.66req/s] [内存消耗：5,271.83kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideUpdate',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '14357',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/updatePage?guideNo=24',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=h8eq9mkdrdc7dj9r1cnvvn6lo0',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '24',
+  'guideName' => '实验七 PHP面向对象编程实例操作',
+  'courseNo' => '351',
+  'taskNo' => '-1',
+  'txtContent' => '<p style="text-align:center;"><span style="font-size:15.0pt;font-family:黑体;">实验七 PHP面向对象编程实例操作</span></p><p><strong><span style="font-size:14.0pt;font-family:黑体;">&nbsp;</span></strong></p><p><strong><span style="font-size:14.0pt;font-family:黑体;">一、实验目的</span></strong></p><p><span style="font-family:宋体;">1. </span><span style="font-family:宋体;">掌握类的定义，成员化方法及类的实例化操作</span></p><p><span style="font-family:宋体;">2. </span><span style="font-family:宋体;">掌握继承和多态的实现，以及虚拟类的使用</span></p><p><span style="font-family:宋体;">&nbsp;</span></p><p><strong><span style="font-size:14.0pt;font-family:黑体;">二、实验环境</span></strong></p><p><span style="font-size:12.0pt;font-family:宋体;">操作系统：</span><span style="font-size:12.0pt;">Windows</span></p><p><span style="font-size:12.0pt;font-family:宋体;">软件：</span><span style="font-size:12.0pt;">WAMP </span><span style="font-size:12.0pt;font-family:宋体;">＋</span><span style="font-size:12.0pt;"> Notepad</span><span style="font-size:12.0pt;">++</span></p><p><span style="font-size:12.0pt;">&nbsp;</span></p><p><strong><span style="font-size:14.0pt;font-family:黑体;">三、实验任务 </span></strong></p><p style="text-align:left;"><span style="font-size:12.0pt;font-family:\'Times\',serif;">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:12.0pt;font-family:宋体;">参考</span><a href="http://phpenthusiast.com/object-oriented-php-tutorials/abstract-classes-and-methods"><span style="font-size:12.0pt;font-family:\'Times\',serif;">http://phpenthusiast.com/object-oriented-php-tutorials/abstract-classes-and-methods</span></a><span style="font-size:12.0pt;font-family:宋体;">实现一个虚拟类</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Car</span><span style="font-size:12.0pt;font-family:宋体;">，和两个继承类</span><span style="font-size:12.0pt;font-family:\'Times\',serif;"> Honda</span><span style="font-size:12.0pt;font-family:宋体;">与</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Toyota</span><span style="font-size:12.0pt;font-family:宋体;">，在原有代码的基础上增加一个</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">protected</span><span style="font-size:12.0pt;font-family:宋体;">的成员变量</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:black;background:white;">$model</span><span style="font-size:12.0pt;font-family:宋体;">和</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">setModel</span><span style="font-size:12.0pt;font-family:宋体;">和</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">getModel</span><span style="font-size:12.0pt;font-family:宋体;">方法，为继承类</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Honda</span><span style="font-size:12.0pt;font-family:宋体;">与</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Toyota</span><span style="font-size:12.0pt;font-family:宋体;">添加构造函数和析构函数，然后实例化两个对象，调用</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">setModel</span><span style="font-size:12.0pt;font-family:宋体;">方法设置</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">model</span><span style="font-size:12.0pt;font-family:宋体;">属性，并调用</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">getModel</span><span style="font-size:12.0pt;font-family:宋体;">方法将结果输出到页面。</span><span style="font-size:12.0pt;font-family:宋体;">（代码及执行结果截图）</span></p><p style="text-align:left;"><span style="font-size:12.0pt;font-family:\'Times\',serif;">&nbsp;</span></p><p style="text-align:left;"><span style="font-size:12.0pt;font-family:\'Times\',serif;">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:12.0pt;font-family:宋体;">参考</span><a href="http://phpenthusiast.com/object-oriented-php-tutorials/type-hinting-for-interfaces"><span style="font-size:12.0pt;font-family:\'Times\',serif;">http://phpenthusiast.com/object-oriented-php-tutorials/type-hinting-for-interfaces</span></a><span style="font-size:12.0pt;font-family:宋体;">实现类虚拟类</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Car</span><span style="font-size:12.0pt;font-family:宋体;">，和两个继承类</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Bmw</span><span style="font-size:12.0pt;font-family:宋体;">与</span><span style="font-size:12.0pt;font-family:\'Times\',serif;">Mercedes</span><span style="font-size:12.0pt;font-family:宋体;">，实现函数</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:#2A6ED7;background:white;">function</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:black;background:white;"> calcTankPrice(</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:#26478B;background:white;">Car</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:black;background:white;"> $car, $pricePerGalon)</span><span style="font-size:12.0pt;font-family:宋体;color:black;background:white;">用于计算</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:black;background:white;">Car</span><span style="font-size:12.0pt;font-family:宋体;color:black;background:white;">类中加满一箱油所需油费，注意观察函数中的强制类型提示以及多态性在函数</span><span style="font-size:12.0pt;font-family:\'Lucida Console\';color:black;background:white;">calcTankPrice</span><span style="font-size:12.0pt;font-family:宋体;color:black;background:white;">中的体现。（代码及执行结果截图）</span></p><p style="text-align:left;"><span style="font-size:12.0pt;font-family:\'Times\',serif;">&nbsp;</span></p><p><strong><span style="font-size:14.0pt;font-family:黑体;">四、实验要求</span></strong></p><ol> <li><span style="font-size:12.0pt;">WAMP</span><span style="font-size:12.0pt;font-family:宋体;">可从</span><a href="ftp://172.28.89.9/"><span style="font-size:12.0pt;">ftp://172.28.89.9</span></a><span style="font-size:12.0pt;font-family:宋体;">下载，目录：／资源共享／</span><span style="font-size:12.0pt;">PHP</span><span style="font-size:12.0pt;font-family:宋体;">编程／</span><span style="font-size:12.0pt;">Software</span><span style="font-size:12.0pt;font-family:宋体;">，提前将安装软件下载到</span><span style="font-size:12.0pt;">U</span><span style="font-size:12.0pt;font-family:宋体;">盘带到实验室</span></li> <li><span style="font-size:12.0pt;">PHP</span><span style="font-size:12.0pt;font-family:宋体;">代码及结果需要截图</span><span style="font-size:12.0pt;">, </span><span style="font-size:12.0pt;font-family:宋体;">写出实验报告。<span style="color:red;">（要求见《</span></span><span style="font-size:12.0pt;color:red;">PHP</span><span style="font-size:12.0pt;font-family:宋体;color:red;">程》实验报告要求</span><span style="font-size:12.0pt;color:red;"> .doc</span><span style="font-size:12.0pt;font-family:宋体;color:red;">）</span></li> <li><span style="font-size:12.0pt;font-family:宋体;">上报实验报告到</span><span style="font-size:12.0pt;">ftp://172.28.89.9</span><span style="font-size:12.0pt;font-family:宋体;">，目录：／学生作业／</span><span style="font-size:12.0pt;">PHP</span><span style="font-size:12.0pt;font-family:宋体;">编程／实验一，登录名为</span><span style="font-size:12.0pt;">liuwenguos</span><span style="font-size:12.0pt;font-family:宋体;">，上传的文件名以完整学号</span><span style="font-size:12.0pt;">+</span><span style="font-size:12.0pt;font-family:宋体;">姓名</span><span style="font-size:12.0pt;">+</span><span style="font-size:12.0pt;font-family:宋体;">实验</span><span style="font-size:12.0pt;">X</span><span style="font-size:12.0pt;font-family:宋体;">组成。</span></li></ol><p><span style="font-size:12.0pt;">&nbsp;</span></p><br />',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideUpdate[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 实验指导修改
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003641s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002886s ]
+[ sql ] [ SQL ] UPDATE `guide`  SET `teacherNo`=2012032,`txtPath`='./uploads/file/guide/24.txt',`guideName`='实验七 PHP面向对象编程实例操作',`courseNo`=351,`taskNo`=NULL,`updateTime`=1554050581  WHERE  (  guideNo = '24' ) [ RunTime:0.061367s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:43:03+08:00 ] 0.0.0.0 GET /teacher/guide/guideList
+[ info ] reportsystem/teacher/guide/guideList [运行时间：0.606214s][吞吐率：1.65req/s] [内存消耗：5,892.41kb] [文件加载：58]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideUpdate',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=h8eq9mkdrdc7dj9r1cnvvn6lo0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideList[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html [ array (
+  0 => 'guideList',
+  1 => 'guideNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验指导列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002410s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003040s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.003535s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `guide` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `guide` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` WHERE (  (  a.teacherNo = '2012032' ) ) AND `a`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001210s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:43:04+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.361370s][吞吐率：2.77req/s] [内存消耗：2,507.72kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/guide/guideList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=h8eq9mkdrdc7dj9r1cnvvn6lo0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:43:17+08:00 ] 0.0.0.0 GET /teacher/guide/guideShow?guideNo=24
+[ info ] reportsystem/teacher/guide/guideShow?guideNo=24 [运行时间：11.125486s][吞吐率：0.09req/s] [内存消耗：17,301.85kb] [文件加载：59]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'guide',
+    2 => 'guideShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/guide/guideList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=h8eq9mkdrdc7dj9r1cnvvn6lo0',
+  'if-modified-since' => 'Sun, 31 Mar 2019 16:22:48 GMT',
+)
+[ info ] [ PARAM ] array (
+  'guideNo' => '24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Guide->guideShow[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Guide.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验指导
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002544s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.004057s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE (  (  guideNo = 24 ) ) AND `guide`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001775s ]
