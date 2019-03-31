@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1552205130;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1554050835;s:35:"../app/common/view/html/header.html";i:1554050834;s:36:"../app/teacher/view/common/menu.html";i:1554050835;s:35:"../app/common/view/html/footer.html";i:1554050834;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="/static/js/index/public.js"></script>
     <script type="text/javascript" src="/static/js/teacher/guideImport.js"></script>
     <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script>
-    <!-- <script type="text/javascript" src="/static/wangEditor-3.1.1/release/wangEditor.js"></script> -->
+    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
     
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
@@ -120,7 +120,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>

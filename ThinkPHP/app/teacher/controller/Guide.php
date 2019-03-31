@@ -322,6 +322,16 @@ class Guide extends Common
         $where = "guideNo = $guideNo";
         $guide = $guideModel->where($where)->find();
 
+
+        //1.2如果是导入方式添加
+        $filePath = $guide['filePath'];
+        if (!empty($filePath)) {
+            $this->redirect($filePath);
+        }
+
+
+
+
         //2.获取实验指导文本
         //2.1获取文本路径
         $txtPath = $guide['txtPath'];
