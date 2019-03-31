@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1552493826;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553495316;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1553948199;s:35:"../app/common/view/html/header.html";i:1553414474;s:36:"../app/teacher/view/common/menu.html";i:1553927619;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,7 +114,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/addPage" class="cks">撰写实验指导</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
@@ -226,7 +226,7 @@
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 					
-						<a href="/teacher/guide/editPage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
+						<a href="/teacher/guide/updatePage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
 					</td>

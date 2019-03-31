@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReview.html";i:1552205130;s:35:"../app/common/view/html/header.html";i:1553414474;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReview.html";i:1553518658;s:35:"../app/common/view/html/header.html";i:1553414474;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,8 +74,8 @@
 
 			</div>
 			<div>
-				<iframe src="/teacher/report/reportShow?reportNo=<?php echo $reportNo; ?>" style="width: 600px; height: 600px; float: left; margin-left: 25px; margin-top: 10px;"></iframe>
-				<iframe src="/teacher/report/reportReviewPage?reportNo=<?php echo $reportNo; ?>" style="width: 600px; height: 600px; float: left; margin-top: 10px;"></iframe>
+				<iframe src="/teacher/report/reportReviewPage?reportNo=<?php echo $reportNo; ?>" style="width: 600px; height: 800px; float: left; background: #FFF;" frameborder="0"></iframe>
+				<iframe src="/teacher/report/reportShow?reportNo=<?php echo $reportNo; ?>" style="width: 650px; height: 800px; float: left; " frameborder="0"></iframe>
 			</div>
 		</div>
 	</div>
