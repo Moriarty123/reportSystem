@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/course.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/display.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>课程列表</h2>
+				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="课程名" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生名单</option>
+					</select>
+				</div>
+			</div>
+			<form action="/admin/user/checkedUserDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th>课程编号</th>
+					<th>课程名</th>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年级</th>
+					<th>专业班级</th>
+				</tr>
+				{volist name="studentList" id="vo"}
+				<tr>
+					<td>{$vo.courseNo}</td>
+					<td>{$vo.courseName}</td>
+					<td>{$vo.studentNo}</td>
+					<td>{$vo.studentName}</td>
+					<td>{$vo.sex}</td>
+					<td>{$vo.grade}</td>
+					<td>{$vo.major.$vo.classes}班</td>
+				</tr>
+				{/volist}
+			</table>
+			<p class="msg">
+				共找到{$studentNumber}条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			{$studentList->render()}
+			</div>
+			</form>
+		</div>
+	</div>
+	<!--课程列表结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#termFilter").click(function(){
+  			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/studentExcel?courseNo={$courseNo}');
+			}
+			
+		});
+	});
+</script>
+<!-- 筛选框结束 -->
