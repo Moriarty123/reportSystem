@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1554033713;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/teacher/view/common/menu.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1554034034;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/teacher/view/common/menu.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -265,12 +265,9 @@
                     upMediaUrl:"upload.php",
                     upMediaExt:"avi"
                 });
-            // var str = <?php echo $txtContent; ?>;           
-            // if (str.indexOf("'") != -1) {
-            //     str = "";
-            // }
-            // // editor.setSource('<?php echo $txtContent; ?>');
-            // editor.setSource(str);
+            
+            editor.setSource('<?php echo $txtContent; ?>');
+
         }
         // console.log("<?php echo $txtContent; ?>");
 

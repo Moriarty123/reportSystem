@@ -229,6 +229,7 @@ class Task extends Common
             'guideNo'       => $guideNo,
             'reviewType'    => $reviewType,
             'taskDescribe'  => $describe,
+            'status'        => 1
         ];
 
         // dump($data);
@@ -252,7 +253,7 @@ class Task extends Common
     public function taskPublish()
     {
         //0.测试
-        // dump($_GET);
+        dump($_GET);
         Log::record('发布实验任务', 'notice');
 
         //获取taskNo

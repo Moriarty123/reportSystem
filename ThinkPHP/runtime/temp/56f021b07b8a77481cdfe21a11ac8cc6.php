@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1554027855;s:35:"../app/common/view/html/header.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1554034069;s:35:"../app/common/view/html/header.html";i:1554022704;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,12 +78,7 @@
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>撰写实验报告</h2>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
-				</div>
+				
 			</div>
 
 		</div>
