@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1553510244;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/student/view/common/menu.html";i:1554022597;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html";i:1554046617;s:35:"../app/common/view/html/header.html";i:1554022704;s:36:"../app/student/view/common/menu.html";i:1554022597;s:35:"../app/common/view/html/footer.html";i:1548946076;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -262,7 +262,7 @@
 							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 						<?php else: if($vo['submitStatus'] == '未提交'): ?>
-							<a href="/student/report/editPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
+							<a href="/student/report/updatePage?reportNo=<?php echo $vo['reportNo']; ?>&guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
 								<i class="fa fa-edit" title="编辑"></i>
 							</a>
 							<?php endif; endif; ?>

@@ -1,0 +1,820 @@
+---------------------------------------------------------------
+[ 2019-04-01T00:00:00+08:00 ] 0.0.0.0 GET /student/report/updatePage?reportNo=1&guideNo=24
+[ info ] reportsystem/student/report/updatePage?reportNo=1&guideNo=24 [运行时间：0.294566s][吞吐率：3.39req/s] [内存消耗：5,530.12kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'updatePage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'guideNo' => '24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->updatePage[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportUpdate.html [ array (
+  0 => 'report',
+  1 => 'guide',
+  2 => 'reportContent',
+  3 => 'guideContent',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 编辑实验报告页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002730s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.005105s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.002378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.003177s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '24' ) LIMIT 1 [ RunTime:0.001786s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:00:01+08:00 ] 0.0.0.0 GET /scp/SL_Uploading.gif
+[ info ] reportsystem/scp/SL_Uploading.gif [运行时间：0.135039s][吞吐率：7.41req/s] [内存消耗：2,508.13kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'scp',
+    1 => 'SL_Uploading.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:00:01+08:00 ] 0.0.0.0 GET /ScreenCapture/process.gif
+[ info ] reportsystem/ScreenCapture/process.gif [运行时间：0.154549s][吞吐率：6.47req/s] [内存消耗：2,507.95kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'ScreenCapture',
+    1 => 'process.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:03:24+08:00 ] 0.0.0.0 GET /student/report/updatePage?reportNo=1&guideNo=24
+[ info ] reportsystem/student/report/updatePage?reportNo=1&guideNo=24 [运行时间：0.252715s][吞吐率：3.96req/s] [内存消耗：5,531.36kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'updatePage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'guideNo' => '24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->updatePage[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportUpdate.html [ array (
+  0 => 'report',
+  1 => 'guide',
+  2 => 'reportContent',
+  3 => 'guideContent',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 编辑实验报告页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012674s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003006s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.003073s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002704s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '24' ) LIMIT 1 [ RunTime:0.002004s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:03:24+08:00 ] 0.0.0.0 GET /scp/SL_Uploading.gif
+[ info ] reportsystem/scp/SL_Uploading.gif [运行时间：0.124288s][吞吐率：8.05req/s] [内存消耗：2,508.13kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'scp',
+    1 => 'SL_Uploading.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:03:24+08:00 ] 0.0.0.0 GET /ScreenCapture/process.gif
+[ info ] reportsystem/ScreenCapture/process.gif [运行时间：0.134793s][吞吐率：7.42req/s] [内存消耗：2,507.95kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'ScreenCapture',
+    1 => 'process.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:03:47+08:00 ] 0.0.0.0 POST /student/report/reportUpdate
+[ info ] reportsystem/student/report/reportUpdate [运行时间：0.098188s][吞吐率：10.18req/s] [内存消耗：3,190.54kb] [文件加载：39]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportUpdate',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '113',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'reportContent' => '<p>sdsadsd</p><p>sadsa sad<br /></p>',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportUpdate[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:09:53+08:00 ] 0.0.0.0 POST /student/report/reportUpdate
+[ info ] reportsystem/student/report/reportUpdate [运行时间：0.138546s][吞吐率：7.22req/s] [内存消耗：3,293.67kb] [文件加载：43]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportUpdate',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '113',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'reportContent' => '<p>sdsadsd</p><p>sadsa sad<br /></p>',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportUpdate[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ LOG ] INIT File
+[ notice ] 实验报告编辑
+[ error ] [8]未定义变量: html[F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php:772]
+---------------------------------------------------------------
+[ 2019-04-01T00:10:24+08:00 ] 0.0.0.0 POST /student/report/reportUpdate
+[ info ] reportsystem/student/report/reportUpdate [运行时间：0.165964s][吞吐率：6.03req/s] [内存消耗：3,153.58kb] [文件加载：40]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportUpdate',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '113',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'reportContent' => '<p>sdsadsd</p><p>sadsa sad<br /></p>',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportUpdate[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 实验报告编辑
+---------------------------------------------------------------
+[ 2019-04-01T00:10:28+08:00 ] 0.0.0.0 GET /student/report/reportList
+[ info ] reportsystem/student/report/reportList [运行时间：0.237792s][吞吐率：4.21req/s] [内存消耗：5,469.98kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportUpdate',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html [ array (
+  0 => 'reportList',
+  1 => 'reportNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验报告列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003123s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002719s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001990s ]
+[ sql ] [ SQL ] SELECT * FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.004159s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.002172s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:10:39+08:00 ] 0.0.0.0 GET /student/report/reportShow?reportNo=1
+[ info ] reportsystem/student/report/reportShow?reportNo=1 [运行时间：5.785303s][吞吐率：0.17req/s] [内存消耗：17,017.81kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'if-modified-since' => 'Sun, 31 Mar 2019 15:24:53 GMT',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportShow[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验报告
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002414s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.005138s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.001646s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:10:46+08:00 ] 0.0.0.0 GET /student/report/updatePage?reportNo=1&guideNo=24
+[ info ] reportsystem/student/report/updatePage?reportNo=1&guideNo=24 [运行时间：0.187349s][吞吐率：5.34req/s] [内存消耗：5,276.18kb] [文件加载：50]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'updatePage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'guideNo' => '24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->updatePage[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportUpdate.html [ array (
+  0 => 'report',
+  1 => 'guide',
+  2 => 'reportContent',
+  3 => 'guideContent',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 编辑实验报告页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002707s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.002314s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.001987s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '24' ) LIMIT 1 [ RunTime:0.001461s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:10:47+08:00 ] 0.0.0.0 GET /ScreenCapture/process.gif
+[ info ] reportsystem/ScreenCapture/process.gif [运行时间：0.148643s][吞吐率：6.73req/s] [内存消耗：2,507.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'ScreenCapture',
+    1 => 'process.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:10:47+08:00 ] 0.0.0.0 GET /scp/SL_Uploading.gif
+[ info ] reportsystem/scp/SL_Uploading.gif [运行时间：0.152898s][吞吐率：6.54req/s] [内存消耗：2,507.89kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'scp',
+    1 => 'SL_Uploading.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:10:54+08:00 ] 0.0.0.0 GET /scp/SL_Uploading.gif
+[ info ] reportsystem/scp/SL_Uploading.gif [运行时间：0.262477s][吞吐率：3.81req/s] [内存消耗：2,507.89kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'scp',
+    1 => 'SL_Uploading.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:10:56+08:00 ] 0.0.0.0 POST /student/report/reportUpdate
+[ info ] reportsystem/student/report/reportUpdate [运行时间：0.172176s][吞吐率：5.81req/s] [内存消耗：3,153.32kb] [文件加载：40]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportUpdate',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '190',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'reportContent' => '<p>sdsadsd</p><p>sadsa sad<br /></p><img src="/uploads/20190331/1610537855.jpg" alt="" />',
+  'submit' => '提交',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportUpdate[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 实验报告编辑
+---------------------------------------------------------------
+[ 2019-04-01T00:10:58+08:00 ] 0.0.0.0 GET /student/report/reportList
+[ info ] reportsystem/student/report/reportList [运行时间：0.220493s][吞吐率：4.54req/s] [内存消耗：5,469.98kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportUpdate',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportList[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportList.html [ array (
+  0 => 'reportList',
+  1 => 'reportNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验报告列表
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002731s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.004094s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001712s ]
+[ sql ] [ SQL ] SELECT * FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 0,15 [ RunTime:0.004616s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `report` `a` INNER JOIN `course` `b` ON `a`.`courseNo`=`b`.`courseNo` INNER JOIN `teacher` `c` ON `a`.`teacherNo`=`c`.`teacherNo` INNER JOIN `student` `d` ON `a`.`studentNo`=`d`.`studentNo` INNER JOIN `task` `e` ON `a`.`taskNo`=`e`.`taskNo` WHERE  (  a.studentNo = '201541402313' ) LIMIT 1 [ RunTime:0.001805s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:11:06+08:00 ] 0.0.0.0 GET /student/report/reportShow?reportNo=1
+[ info ] reportsystem/student/report/reportShow?reportNo=1 [运行时间：5.423854s][吞吐率：0.18req/s] [内存消耗：17,161.44kb] [文件加载：57]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'reportShow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+  'if-modified-since' => 'Sun, 31 Mar 2019 16:10:39 GMT',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->reportShow[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 显示实验报告
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002143s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.003924s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.001839s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:11:09+08:00 ] 0.0.0.0 GET /student/report/updatePage?reportNo=1&guideNo=24
+[ info ] reportsystem/student/report/updatePage?reportNo=1&guideNo=24 [运行时间：0.245863s][吞吐率：4.07req/s] [内存消耗：5,276.34kb] [文件加载：50]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'student',
+    1 => 'report',
+    2 => 'updatePage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/reportList',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'reportNo' => '1',
+  'guideNo' => '24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\student\controller\Report->updatePage[ F:\study\www\reportSystem\ThinkPHP\app\student\controller\Report.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportUpdate.html [ array (
+  0 => 'report',
+  1 => 'guide',
+  2 => 'reportContent',
+  3 => 'guideContent',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 编辑实验报告页面
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002776s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `report` [ RunTime:0.007722s ]
+[ sql ] [ SQL ] SELECT * FROM `report` WHERE  (  reportNo = '1' ) LIMIT 1 [ RunTime:0.002059s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guide` [ RunTime:0.004603s ]
+[ sql ] [ SQL ] SELECT * FROM `guide` WHERE  (  guideNo = '24' ) LIMIT 1 [ RunTime:0.001501s ]
+---------------------------------------------------------------
+[ 2019-04-01T00:11:10+08:00 ] 0.0.0.0 GET /scp/SL_Uploading.gif
+[ info ] reportsystem/scp/SL_Uploading.gif [运行时间：0.140699s][吞吐率：7.11req/s] [内存消耗：2,507.89kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'scp',
+    1 => 'SL_Uploading.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-01T00:11:10+08:00 ] 0.0.0.0 GET /ScreenCapture/process.gif
+[ info ] reportsystem/ScreenCapture/process.gif [运行时间：0.144101s][吞吐率：6.94req/s] [内存消耗：2,507.91kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'ScreenCapture',
+    1 => 'process.gif',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+  'accept' => 'image/webp,*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://reportsystem/student/report/updatePage?reportNo=1&guideNo=24',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=vnnu2m7sd52sdn0mbkaibhnoh5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

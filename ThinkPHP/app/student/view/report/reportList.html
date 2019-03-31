@@ -136,7 +136,7 @@
 						</a>
 						{else}
 							{eq name="$vo.submitStatus" value="未提交"}
-							<a href="/student/report/editPage?reportNo={$vo.reportNo}" style='margin-left: 5px;'>
+							<a href="/student/report/updatePage?reportNo={$vo.reportNo}&guideNo={$vo.guideNo}" style='margin-left: 5px;'>
 								<i class="fa fa-edit" title="编辑"></i>
 							</a>
 							{/eq}
