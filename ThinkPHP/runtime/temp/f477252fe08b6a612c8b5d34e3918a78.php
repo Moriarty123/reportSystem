@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554052431;s:35:"../app/common/view/html/header.html";i:1554052431;s:36:"../app/teacher/view/common/menu.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554117780;s:35:"../app/common/view/html/header.html";i:1554052431;s:36:"../app/teacher/view/common/menu.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -274,7 +274,7 @@
 						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-user-edit" title="批阅"></i>
 						</a>
-						<a href="/teacher/report/reportExport?repoortNo='<?php echo $vo['reportNo']; ?>'" style='margin-left: 5px;'>
+						<a href="/teacher/report/reportExport?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>
 						</a>
 					</td>

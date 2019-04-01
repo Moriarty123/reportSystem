@@ -64,7 +64,7 @@
 						<input type="hidden" name="reportNo" value="{$reportNo}">
 						<div class="list" style="padding: 15px;">
 							<label style="font-size:20px">教师评语：</label>
-							<textarea class="input" id="evaluation" style="width:600px; height: 100px; " name="reviewComment"></textarea>
+							<textarea class="input" id="evaluation" style="width:590px; height: 100px; " name="reviewComment"></textarea>
 						</div>
 
 						<div class="list" style="padding: 15px;">
@@ -72,7 +72,7 @@
 							<div style="width: 600px; margin-top: 10px; " id="scoreDiv">
 
 								{eq name="$report.reviewType" value="1"}
-								<input type="text" name="score" style="width: 600px;" id="score" onkeypress="keyPress(this);" onkeyup="keyUp(this);" onblur="onblur(this);">
+								<input type="text" name="score" style="width: 590px;" id="score" onkeypress="keyPress(this);" onkeyup="keyUp(this);" onblur="onblur(this);">
 								{else}
 								<select name="score" style="width: 560px;">
 									<option value="A">A</option>

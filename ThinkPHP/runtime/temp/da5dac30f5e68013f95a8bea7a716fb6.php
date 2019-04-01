@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReview.html";i:1554107674;s:35:"../app/common/view/html/header.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportReview.html";i:1554113726;s:35:"../app/common/view/html/header.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +97,7 @@
 						<input type="hidden" name="reportNo" value="<?php echo $reportNo; ?>">
 						<div class="list" style="padding: 15px;">
 							<label style="font-size:20px">教师评语：</label>
-							<textarea class="input" id="evaluation" style="width:600px; height: 100px; " name="reviewComment"></textarea>
+							<textarea class="input" id="evaluation" style="width:590px; height: 100px; " name="reviewComment"></textarea>
 						</div>
 
 						<div class="list" style="padding: 15px;">
@@ -105,7 +105,7 @@
 							<div style="width: 600px; margin-top: 10px; " id="scoreDiv">
 
 								<?php if($report['reviewType'] == '1'): ?>
-								<input type="text" name="score" style="width: 600px;" id="score" onkeypress="keyPress(this);" onkeyup="keyUp(this);" onblur="onblur(this);">
+								<input type="text" name="score" style="width: 590px;" id="score" onkeypress="keyPress(this);" onkeyup="keyUp(this);" onblur="onblur(this);">
 								<?php else: ?>
 								<select name="score" style="width: 560px;">
 									<option value="A">A</option>
