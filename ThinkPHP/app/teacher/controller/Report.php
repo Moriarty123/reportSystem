@@ -132,7 +132,53 @@ class Report extends Common
 
     }
 
-    //显示学生实验报告
+    // //显示学生实验报告
+    // public function reportShow()
+    // {
+    //     //0.测试
+    //     // dump($_GET);
+    //     Log::record("显示学生实验报告", "notice");
+    //     //1.获取数据
+    //     //1.1获取reportNo
+    //     $reportNo = input("get.reportNo");
+    //     //1.2获取report数据
+    //     $reportModel = new reportModel();
+    //     $reportWhere = "reportNo = '$reportNo'";
+    //     $report = $reportModel->where($reportWhere)->find();
+    //     $reportName = $report['reportName'];
+    //     $testRequire = $report['testRequire'];
+    //     $testAnalysis = $report['testAnalysis'];
+    //     $testContent = $report['testContent'];
+    //     $testScreen = $report['testScreen'];
+    //     $testCode = $report['testCode'];
+    //     $testSummary = $report['testSummary'];
+
+    //     //获取student
+    //     $studentNo = $report['studentNo'];
+    //     $studentModel = new studentModel();
+    //     $studentWhere = "studentNo = '$studentNo'";
+    //     $student = $studentModel->where($studentWhere)->find();
+    //     $studentName = $student['studentName'];
+
+    //     //1.3拼接HTML
+    //     $html = 
+    //         '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
+    //         .$reportName.
+    //         '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
+    //         .$studentName.
+    //         '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
+    //         '<p style="font-size:24px;"><strong>实验分析</strong></p>'.$testAnalysis.
+    //         '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent.
+    //         '<p style="font-size:24px;"><strong>实验截图</strong></p>'.$testScreen.
+    //         '<p style="font-size:24px;"><strong>实验代码</strong></p>'.$testCode.
+    //         '<p style="font-size:24px;"><strong>实验总结</strong></p>'.$testSummary;
+    //     // dump($html);
+    //     reportPdf($html);
+    //     //2.跳转到实验报告列表
+    //     $this->redirect('teacher/report/reportList');
+    // }
+
+        //显示学生实验报告
     public function reportShow()
     {
         //0.测试
@@ -141,41 +187,49 @@ class Report extends Common
         //1.获取数据
         //1.1获取reportNo
         $reportNo = input("get.reportNo");
-        //1.2获取report数据
+        
+        //2.读取文本
+        //2.1获取文本路径
         $reportModel = new reportModel();
-        $reportWhere = "reportNo = '$reportNo'";
+        $reportWhere = "reportNo = '{$reportNo}'";
         $report = $reportModel->where($reportWhere)->find();
-        $reportName = $report['reportName'];
-        $testRequire = $report['testRequire'];
-        $testAnalysis = $report['testAnalysis'];
-        $testContent = $report['testContent'];
-        $testScreen = $report['testScreen'];
-        $testCode = $report['testCode'];
-        $testSummary = $report['testSummary'];
 
-        //获取student
-        $studentNo = $report['studentNo'];
-        $studentModel = new studentModel();
-        $studentWhere = "studentNo = '$studentNo'";
-        $student = $studentModel->where($studentWhere)->find();
-        $studentName = $student['studentName'];
+        if (empty($report)) {
+            Log::record("找不到该实验报告", "error");
+            $this->error("找不到实验报告！", "/teacher/report/reportList");
+        }
 
-        //1.3拼接HTML
-        $html = 
-            '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
-            .$reportName.
-            '<p style="font-size:24px;"><strong>实验报告名称</strong></p>'
-            .$studentName.
-            '<p style="font-size:24px;"><strong>实验要求</strong></p>'.$testRequire.
-            '<p style="font-size:24px;"><strong>实验分析</strong></p>'.$testAnalysis.
-            '<p style="font-size:24px;"><strong>实验内容</strong></p>'.$testContent.
-            '<p style="font-size:24px;"><strong>实验截图</strong></p>'.$testScreen.
-            '<p style="font-size:24px;"><strong>实验代码</strong></p>'.$testCode.
-            '<p style="font-size:24px;"><strong>实验总结</strong></p>'.$testSummary;
+        $txtPath = $report['txtPath'];
+
+        //2.2读取文本
+        if(file_exists($txtPath)){
+
+            $fp= fopen($txtPath,"r");
+            $txtContent = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $txtContent = "";
+        }
+
+        $reviewComment = $report['reviewComment'];
+        $score = $report['score'];
+
+        if (!empty($reviewComment) && !empty($score)) {
+            $reviewComment = "<br><p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
+            $score = "<p style='font-size:20px; font-weight: bold;'>分数：".$score."</p><br/>";
+            $txtContent .= $reviewComment;
+            $txtContent .= $score;
+        }
+        // dump($score);
+        // dump($txtContent);die();
+
+        $txtContent = str_replace("'", "\'", $txtContent);
+
         // dump($html);
-        reportPdf($html);
+        reportPdf($txtContent);
         //2.跳转到实验报告列表
-        $this->redirect('teacher/report/reportList');
+        // $this->redirect('teacher/report/reportList');
     }
 
     //实验课程筛选
@@ -315,6 +369,18 @@ class Report extends Common
             $txtContent = "";
         }
 
+        //获取教师评语及分数
+        $reviewComment = $report['reviewComment'];
+        $score = $report['score'];
+
+        if (!empty($reviewComment) && !empty($score)) {
+            $reviewComment = "<br><p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
+            $score = "<p style='font-size:20px; font-weight: bold;'>分数：".$score."</p><br/>";
+            $txtContent .= $reviewComment;
+            $txtContent .= $score;
+        }
+        
+
         $txtContent = str_replace("'", "\'", $txtContent);
 
         //3.渲染
@@ -373,25 +439,25 @@ class Report extends Common
         $report = $reportModel->update($data, $reportWhere);
         
         //2.修改文本
-        $report = $reportModel->where($reportWhere)->find();
-        if (empty($report)) {
-            Log::record("批阅实验报告失败", "error");
-            $this->error("批阅实验报告失败！请稍后再试", "/teacher/report/reviewResult");
-        }
+        // $report = $reportModel->where($reportWhere)->find();
+        // if (empty($report)) {
+        //     Log::record("批阅实验报告失败", "error");
+        //     $this->error("批阅实验报告失败！请稍后再试", "/teacher/report/reviewResult");
+        // }
 
 
-        $txtPath = $report['txtPath'];
+        // $txtPath = $report['txtPath'];
 
-        $fp = fopen($txtPath, "w+");
+        // $fp = fopen($txtPath, "w+");
         
-        $reviewComment = "<p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
-        $score = "<p style='font-size:20px; font-weight: bold;'>分数：</p><p style='font-size:16px;'>".$score."</p><br/>";
+        // $reviewComment = "<br><p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
+        // $score = "<p style='font-size:20px; font-weight: bold;'>分数：".$score."</p><br/>";
 
-        fwrite($fp, $reportContent);
-        fwrite($fp, $reviewComment);
-        fwrite($fp, $score);
+        // fwrite($fp, $reportContent);
+        // fwrite($fp, $reviewComment);
+        // fwrite($fp, $score);
 
-        fclose($fp);
+        // fclose($fp);
 
         //2.后续操作
         $this->success("批阅实验报告成功！", "/teacher/report/reviewResult");
