@@ -287,8 +287,39 @@ class Report extends Common
         // dump($_GET);
         Log::record("批阅实验报告页面", "notice");
 
+        //1.获取report
         $reportNo = input("get.reportNo");
 
+        $reportModel = new reportModel();
+        $reportWhere = "reportNo = '{$reportNo}'";
+        $report = $reportModel  ->where($reportWhere)
+                                ->alias("a")
+                                ->join("task b", "a.taskNo = b.taskNo")
+                                ->find();
+
+        if (empty($report)) {
+            Log::record("实验报告不存在", "error");
+            $this->error("实验报告不存在", "/teacher/report/reportList");
+        }
+
+        //2.获取文本内容
+        $txtPath = $report['txtPath'];
+        //2.1读取文本
+        if(file_exists($txtPath)){
+
+            $fp= fopen($txtPath,"r");
+            $txtContent = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $txtContent = "";
+        }
+
+        $txtContent = str_replace("'", "\'", $txtContent);
+
+        //3.渲染
+        $this->assign("txtContent", $txtContent);
+        $this->assign("report", $report);
         $this->assign("reportNo", $reportNo);
 
         return $this->fetch("reportReview");
@@ -326,6 +357,7 @@ class Report extends Common
         $reportNo = input("post.reportNo");
         $reviewComment = input("post.reviewComment");
         $score = input("post.score");
+        $reportContent = input("post.reportContent");
 
         $data = [
             'reportNo' => $reportNo,
@@ -334,15 +366,32 @@ class Report extends Common
             'reviewStatus' => 1
         ];
 
+        //1.2修改状态
         $reportWhere = "reportNo = '$reportNo'";
 
         $reportModel = new reportModel();
         $report = $reportModel->update($data, $reportWhere);
-
+        
+        //2.修改文本
+        $report = $reportModel->where($reportWhere)->find();
         if (empty($report)) {
             Log::record("批阅实验报告失败", "error");
             $this->error("批阅实验报告失败！请稍后再试", "/teacher/report/reviewResult");
         }
+
+
+        $txtPath = $report['txtPath'];
+
+        $fp = fopen($txtPath, "w+");
+        
+        $reviewComment = "<p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
+        $score = "<p style='font-size:20px; font-weight: bold;'>分数：</p><p style='font-size:16px;'>".$score."</p><br/>";
+
+        fwrite($fp, $reportContent);
+        fwrite($fp, $reviewComment);
+        fwrite($fp, $score);
+
+        fclose($fp);
 
         //2.后续操作
         $this->success("批阅实验报告成功！", "/teacher/report/reviewResult");

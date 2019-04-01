@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\index.html";i:1554050834;s:35:"../app/common/view/html/header.html";i:1554050834;s:35:"../app/common/view/html/footer.html";i:1554050834;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\index.html";i:1554053545;s:35:"../app/common/view/html/header.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@
     <script type="text/javascript" src="/static/js/index/public.js"></script>
 </head>
 <body>
+
     <!-- 头部开始-->
     <style type="text/css">
     
@@ -51,6 +52,7 @@
 </div>
 <!-- 头部结束 -->
     <!-- 头部结束-->
+
 
     <!-- 主体开始 -->
     <div class="container" style="margin-top: 50px; height: 500px; margin-left:80px;">

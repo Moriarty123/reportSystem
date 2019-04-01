@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1554050834;s:35:"../app/common/view/html/header.html";i:1554050834;s:35:"../app/common/view/html/footer.html";i:1554050834;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1554053545;s:35:"../app/common/view/html/header.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,7 @@
     <script type="text/javascript" src="/static/js/index/public.js"></script>
 </head>
 <body>
+
     <!-- 头部开始-->
     <style type="text/css">
     
@@ -54,9 +55,11 @@
 <!-- 头部结束 -->
     <!-- 头部结束-->
 
+
     <!-- 主体开始 -->
     <div class="loginContainer">
         <div class="loginDiv">
+
             <form class="loginForm" action="/index/login/login" method="post">
                 <div class="sectionDiv">
                     <label class="sectionLabel">账号：</label>
@@ -65,10 +68,12 @@
                     <?php else: ?>
                     <input type="text" name="account" class="form-control sectionInput" value="<?php echo \think\Session::get('reaccount'); ?>">
                     <?php endif; ?>
+
                 </div>
                 <br>
                 <div class="sectionDiv">
                     <label class="sectionLabel">密码：</label>
+
                     <?php if(\think\Session::get('isRemember') == 'false'): ?>
                     <input type="password" name="password" class="form-control sectionInput">
                     <?php else: ?>
@@ -82,6 +87,7 @@
                     <?php else: ?>
                     <input type="checkbox" name="rememberMe" checked="true">
                     <?php endif; ?>
+
                     <label style="font-size: 16px;">记住我</label>
                 </div>
 
@@ -96,6 +102,7 @@
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
 
+
     <!-- 底部开始-->
     <!-- 底部开始 -->
 <footer>
@@ -107,6 +114,7 @@
 </footer>
 <!-- 底部结束 -->
     <!-- 底部结束-->
+
 
 </body>
 </html>
