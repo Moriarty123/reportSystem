@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/buttons.css" />
     <link rel="stylesheet" href="__CSS__/common/footer.css" />
     <link rel="stylesheet" href="__CSS__/common/menu.css">
     <link rel="stylesheet" href="__CSS__/common/detail.css">
@@ -39,12 +40,17 @@
 					<input type="text" class="search" placeholder="课程名" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select id="operateSelect">
-						<option value="-1">--其他操作--</option>
-						<option value="1">同步数据</option>
-						<option value="2">导出实验课程</option>
-					</select>
+				<div style="width: 100px; float: right; margin-right: 20px;margin-top: 20px; ">
+					<div class="btn-group">
+						<button type="button" class="btn" style="background:#19a97b; color: #FFF;">其他</button>
+						<button type="button" id="regButton" class="btn dropdown-toggle" style="background:#19a97b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+							<span style="color: #FFF;" class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu" id="selectMenu">
+							<li><a href="#">同步数据</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<form action="/teacher/course/courseDelete" method="post">
@@ -132,15 +138,6 @@
   		$("#termFilter").click(function(){
   			$("#termFilterDiv").slideToggle();
 		});
-
-		$("#operateSelect").change(function() {
-			var value = $("#operateSelect").val();
-
-			if (value == 2) {
-				$(window).attr('location','/teacher/excel/courseExcel');
-			}
-			
-		});
 	});
 </script>
 <!-- 筛选框结束 -->
@@ -152,5 +149,12 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验课程吗？");
 }
+</script>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#regButton").click(function(){
+			$("#selectMenu").toggle();
+		});
+	});
 </script>

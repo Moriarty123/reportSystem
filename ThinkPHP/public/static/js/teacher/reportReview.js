@@ -51,7 +51,19 @@
 		}
 	}
 
+	function checkScoreData() {
+		var score = $('#score').val();
+
+		var r = /^100|([1-9]?\d)(\.\d+)?$/;　　//0-100的正整数  
+		if(!r.test(score)){
+			alert('填写的分数必须0-100的正整数 ');
+			return false;
+		}
+
+		return true;
+	}
+
 	//提交校验
 	function checkSubmit() {
-		return checkEvaluation() && checkScore();
-	} 
+		return checkScoreData() && checkEvaluation() && checkScore();
+	}

@@ -14,6 +14,7 @@ class Index extends Controller
     // 登录页面
     public function login() 
     {
+
         //判断是否记住我
         $isRemember = session('rememberMe');
         if (!empty($isRemember)) {
@@ -45,4 +46,5 @@ class Index extends Controller
             $this->redirect('/index/index/index');
         }
     }
+
 }
