@@ -474,10 +474,51 @@ class Report extends Common
     public function reportExport()
     {
         //0.测试
-        dump($_GET);
+        // dump($_GET);
         Log::record("导出学生实验报告", "notice");
 
+        //1.获取report
+        //1.1获取reportNo
+        $reportNo = input("get.reportNo");
+
+        //1.2构建模型
+        $reportModel = new reportModel();
+        $reportWhere = "reportNo = '{$reportNo}'";
+        $report = $reportModel->where($reportWhere)->find();
         
+        if (empty($report)) {
+            Log::record("找不到该实验报告", "error");
+            $this->error("找不到实验报告！", "/teacher/report/reportList");
+        }
+        //2读取文本
+        $txtPath = $report['txtPath'];
+
+        //2.2读取文本
+        if(file_exists($txtPath)){
+
+            $fp= fopen($txtPath,"r");
+            $txtContent = fread($fp,filesize($txtPath));//指定读取大小，这里把整个文件内容读取出来
+            fclose($fp);
+        }
+        else {
+            $txtContent = "";
+        }
+
+        $reviewComment = $report['reviewComment'];
+        $score = $report['score'];
+
+        if (!empty($reviewComment) && !empty($score)) {
+            $reviewComment = "<br><p style='font-size:20px; font-weight: bold;'>教师评语：</p><p style='font-size:16px;'>".$reviewComment."</p><br/>";
+            $score = "<p style='font-size:20px; font-weight: bold;'>分数：".$score."</p><br/>";
+            $txtContent .= $reviewComment;
+            $txtContent .= $score;
+        }
+        // dump($score);
+        // dump($txtContent);die();
+
+        $txtContent = str_replace("'", "\'", $txtContent);
+        //3.生成PDF导出
+        exportPdf($txtContent);
 
     }
 
