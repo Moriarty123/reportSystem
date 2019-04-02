@@ -39,4 +39,27 @@ class Teacher extends Model
 
         return $roleList[0];
     }
+
+    //性别获取器
+    public function getSexAttr($value) 
+    {
+        $sex = [
+            0 => '未知',
+            1 => '男',
+            2 => '女'
+        ];
+
+        if (empty($value)) {
+            return $sex[1];
+        }
+        return $value;
+    }
+
+    //头像获取器
+    public function getHeadImgAttr($value)
+    {
+        if (empty($value) || ($value == NULL)) {
+            return "/uploads/default/headImg.jpg";
+        }
+    }
 }

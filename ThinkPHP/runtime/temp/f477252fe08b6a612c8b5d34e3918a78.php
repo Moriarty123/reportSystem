@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554119748;s:35:"../app/common/view/html/header.html";i:1554119548;s:36:"../app/teacher/view/common/menu.html";i:1554119543;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554120200;s:35:"../app/common/view/html/header.html";i:1554120095;s:36:"../app/teacher/view/common/menu.html";i:1554119543;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,6 +166,7 @@
 		<div class="form_boxA">
 			<div class="a" style="position: relative; left: 0px; top: 0px;">
 				<h2>实验报告列表</h2>
+
 				<div style="position: absolute; left: 150px; top: 35px;">
 					<select id="courseFilter">
 						<option value="-1">--请选择实验课程--</option>
@@ -184,7 +185,6 @@
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-
 					<select id="operateSelect">
 						<option value="-1">--其他操作--</option>
 						<option value="1">同步数据</option>
@@ -271,15 +271,12 @@
 						<a href="/teacher/report/reportShow?reportNo=<?php echo $vo['reportNo']; ?>" target="_blank">
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<?php if($vo['reviewStatus'] == '未批阅'): ?>
 						<a href="/teacher/report/reviewPage?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-user-edit" title="批阅"></i>
 						</a>
-						<?php else: ?>
-						<a href="" style='margin-left: 5px;'>
+						<a href="/teacher/report/reportExport?reportNo=<?php echo $vo['reportNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-file-export" title="导出"></i>
 						</a>
-						<?php endif; ?>
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -323,30 +320,24 @@
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
 		});
-
 		$("#reviewedFilter").click(function(){
   			$("#reviewedFilterDiv").slideToggle();
 		});
-
 		//实验课程筛选
 		$("#courseFilter").change(function() {
 			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
-
 			$("#courseFilterNo").val(courseNo);//填写表单
 			$("#courseFilterForm").submit();//提交表单
 		});
-
 		//导出学生成绩
 		$("#operateSelect").change(function() {
 			var value = $("#operateSelect").val();
-
 			if (value == 2) {
 				$(window).attr('location','/teacher/excel/reportExcel');
 			}
 			
 		});
 	});
-
 	
 </script>
 <!-- 筛选框结束 -->
@@ -358,5 +349,4 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验报告吗？");
 }
-
 </script>
