@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,6 +78,12 @@
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
 				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554397036;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:83:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherAdd.html";i:1554392646;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,15 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+    <script type="text/javascript" src="/static/js/admin/teacherAdd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/common/display.css">
+    <link rel="stylesheet" href="/static/css/teacher/user.css" />
+    <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -157,73 +158,59 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--课程列表开始-->
+	<!--main开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>教师列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="职工名" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select id="operateSelect">
-						<option value="-1">--其他操作--</option>
-						<option value="1">同步数据</option>
-					</select>
-				</div>
+				<h2><strong>修改教师信息</strong></h2>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
-					<th style="width: 100px;">教工号</th>
-					<th style="width: 100px;">姓名</th>
-					<th style="width: 100px;">性别</th>
-					<th style="width: 100px;">职称</th>
-					<th style="width: 100px;">学位</th>
-					<th style="width: 150px;">电子邮箱</th>
-					<th style="width: 150px;">联系电话</th>
-					<th style="width: 100px;">权限</th>
-					<th style="width: 100px;">操作</th>
-				</tr>
-				<?php if(is_array($teacherList) || $teacherList instanceof \think\Collection || $teacherList instanceof \think\Paginator): $i = 0; $__LIST__ = $teacherList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="teacherNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['teacherNo']; ?>"/></td>
-					<td><?php echo $vo['teacherNo']; ?></td>
-					<td><?php echo $vo['teacherName']; ?></td>
-					<td><?php echo $vo['sex']; ?></td>
-					<td><?php echo $vo['title']; ?></td>
-					<td><?php echo $vo['degree']; ?></td>
-					<td><?php echo $vo['email']; ?></td>
-					<td><?php echo $vo['phoneNum']; ?></td>
-					<td><?php echo $vo['roleNo']; ?></td>
-					<td>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
-							<i class="fa fa-eye" title="查看"></i>
-						</a>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
-							<i class="fa fa-edit" title="编辑"></i>
-						</a>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
-							<i class="fa fa-trash-alt" title="删除"></i>
-						</a>
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
-				共找到<?php echo $teacherNumber; ?>条信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $teacherList->render(); ?>
-			</div>
+            <div style="position: relative; left: 0px; top: 0px;">
+			<form action="/admin/teacher/teacherAdd" method="post" class="add_form" style="margin-left: 220px;" onsubmit="return checkSubmit();">
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>职工号：</label>
+                    <input type="text" id="teacherNo" name="teacherNo" class="add_input"/>
+                </div>
+				<div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>姓名：</label>
+                    <input type="text" id="teacherName" name="teacherName" class="add_input"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>职称：</label>
+                    <input type="text" name="title" class="add_input"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>学位：</label>
+                    <input type="text" name="degree" class="add_input"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>邮箱：</label>
+                    <input type="text" id="email" name="email" class="add_input"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>手机：</label>
+                    <input type="text" id="phoneNum" name="phoneNum" class="add_input"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>性别：</label>
+                    <select style="width: 270px;" name="sex">
+                        <option value="男">男</option>   
+                        <option value="女">女</option> 
+                    </select>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">头像：</label>
+                    <input type="file" name="file" onchange="uploadsimage(this);" >
+                </div>
+                <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
+                    <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
+                </div>
+                <input type="hidden" name="headImg" id="headImg">
+				<input type="submit" value="提交" class="add_submit" />
 			</form>
+            </div>
 		</div>
 	</div>
-	<!--课程列表结束-->
+	<!--main结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -243,32 +230,40 @@
 </body>
 </html>
 
-<!-- 筛选框开始-->
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#termFilter").click(function(){
-  			$("#termFilterDiv").slideToggle();
-		});
+//上传图片
+function uploadsimage(obj) {
+    if ( obj.value == "" ) return;
 
-		$("#operateSelect").change(function() {
-			var value = $("#operateSelect").val();
+    var formdata = new FormData();
 
-			if (value == 2) {
-				$(window).attr('location','/teacher/excel/courseExcel');
-			}
-			
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
+    formdata.append("image", $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+    formdata.append("path", 'sale');
 
-<script type="text/javascript">
-function del(){
-	return window.confirm("你确认要删除该实验课程吗？");
+    console.log(formdata);
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/upload',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            var html = '<img src="'+ret+'" style="width:100%; border-radius: 50%;">';
+
+
+            console.log(html);
+            $('#imgBox').html(html);
+            
+            
+            console.log(ret);
+            // $('#headImg').val(ret);
+            $('#headImg').attr('value', ret);
+        },
+        error : function(){ 
+            alert('图片上传失败');
+        }
+    });
 }
-function checkdel(){
-	return window.confirm("你确认要删除选中的实验课程吗？");
-}
-
 </script>
