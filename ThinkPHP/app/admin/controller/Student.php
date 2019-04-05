@@ -69,4 +69,27 @@ class Student extends Common
 
         return $this->fetch('studentList');
     }
+
+    //删除学生信息
+    public function studentDelete()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("删除学生信息", "notice");
+
+        //1.获取teacherNo
+        $studentNo = input("get.studentNo");
+        $studentWhere = "studentNo = '{$studentNo}'";
+        $studentModel = new studentModel();
+        $student = $studentModel->where($studentWhere)->find();
+
+        if (empty($student) || $student == null) {
+            Log::record("该学生不存在！", "error");
+            $this->error("该学生不存在！", "/admin/student/studentList");
+        }
+
+        $studentModel->where($studentWhere)->delete();
+
+        $this->success("删除学生信息成功", "/admin/student/studentList");
+    }
 }
