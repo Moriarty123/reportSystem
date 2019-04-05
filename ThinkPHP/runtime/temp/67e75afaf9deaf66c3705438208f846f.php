@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554466083;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,6 +82,12 @@
 				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--教师管理结束-->
 		<!--学生管理开始-->
@@ -156,8 +162,8 @@
 		<div class="form_boxA">
 			<div class="a">
 				<h2>学生列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="学生姓名" name="search" />
+				<form action="/admin/student/studentSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="搜索" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
 				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
@@ -167,7 +173,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
+			<form action="/admin/student/studentDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
@@ -192,7 +198,13 @@
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
 						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
+							<i class="fa fa-eye" title="查看"></i>
+						</a>
+						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
+						</a>
+						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
+							<i class="fa fa-trash-alt" title="删除"></i>
 						</a>
 					</td>
 				</tr>

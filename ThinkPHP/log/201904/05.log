@@ -11472,3 +11472,2316 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T17:21:30+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.591112s][吞吐率：1.69req/s] [内存消耗：5,639.66kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/teacher/teacherList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011835s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.005400s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002637s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.022953s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002992s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.003037s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001045s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001168s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001125s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001259s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001102s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001236s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001158s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001703s ]
+---------------------------------------------------------------
+[ 2019-04-05T17:21:31+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.140549s][吞吐率：7.11req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T17:23:03+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.431658s][吞吐率：2.32req/s] [内存消耗：5,644.84kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/teacher/teacherList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002596s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.006638s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003665s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001963s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002416s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.001230s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001203s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001256s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002496s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001863s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001560s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001152s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002452s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001071s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001087s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001276s ]
+---------------------------------------------------------------
+[ 2019-04-05T17:23:03+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.128497s][吞吐率：7.78req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:01:32+08:00 ] 0.0.0.0 GET /admin/student/editPage?studentNo=201241402101
+[ info ] reportsystem/admin/student/editPage?studentNo=201241402101 [运行时间：1.379821s][吞吐率：0.72req/s] [内存消耗：3,061.61kb] [文件加载：40]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'editPage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'studentNo' => '201241402101',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:01:36+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：1.176038s][吞吐率：0.85req/s] [内存消耗：5,654.06kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/teacher/teacherList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005035s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.011177s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003396s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001970s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002754s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.005807s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.001939s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002993s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001449s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.003314s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.003070s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002054s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001830s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001680s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001741s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001366s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001091s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:01:36+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.127422s][吞吐率：7.85req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:07:03+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.266267s][吞吐率：3.76req/s] [内存消耗：5,380.89kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/teacher/teacherList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002304s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.005553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003849s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.002386s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002558s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002116s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.000988s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002112s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001233s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001150s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001063s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000993s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001465s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002063s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000933s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001010s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001032s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:07:03+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.132212s][吞吐率：7.56req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:07:09+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.528677s][吞吐率：1.89req/s] [内存消耗：5,490.17kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001790s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003062s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004990s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.016300s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001607s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:07:09+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.136665s][吞吐率：7.32req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:08:07+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.192008s][吞吐率：5.21req/s] [内存消耗：5,489.98kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001670s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.002003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002550s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001618s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002284s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001864s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:08:07+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.094351s][吞吐率：10.60req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:08:11+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.340393s][吞吐率：2.94req/s] [内存消耗：5,653.74kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/teacher/teacherList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011222s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004934s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003274s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001498s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001980s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001035s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001346s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000864s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:08:12+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.111208s][吞吐率：8.99req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:08:15+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.243788s][吞吐率：4.10req/s] [内存消耗：5,380.91kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001731s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.005373s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003129s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001400s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002732s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002544s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.002047s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001151s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000842s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001483s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000901s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001088s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001878s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000903s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:08:15+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.098964s][吞吐率：10.10req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:08:18+08:00 ] 0.0.0.0 POST /admin/student/studentSearch
+[ info ] reportsystem/admin/student/studentSearch [运行时间：0.241299s][吞吐率：4.14req/s] [内存消耗：3,079.87kb] [文件加载：41]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [1]Class 'app\admin\controller\Log' not found[F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php:39]
+---------------------------------------------------------------
+[ 2019-04-05T20:08:43+08:00 ] 0.0.0.0 POST /admin/student/studentSearch
+[ info ] reportsystem/admin/student/studentSearch [运行时间：0.305629s][吞吐率：3.27req/s] [内存消耗：5,304.15kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001725s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.005063s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%涂%' OR `studentNo` LIKE '%涂%' OR `sex` LIKE '%涂%' OR `insititutes` LIKE '%涂%' OR `major` LIKE '%涂%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.063574s ]
+[ sql ] [ SQL ] SELECT * FROM `student` WHERE  ( `studentName` LIKE '%涂%' OR `studentNo` LIKE '%涂%' OR `sex` LIKE '%涂%' OR `insititutes` LIKE '%涂%' OR `major` LIKE '%涂%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 0,15 [ RunTime:0.010322s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%涂%' OR `studentNo` LIKE '%涂%' OR `sex` LIKE '%涂%' OR `insititutes` LIKE '%涂%' OR `major` LIKE '%涂%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.010274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002272s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001380s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000898s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:08:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.132596s][吞吐率：7.54req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:02+08:00 ] 0.0.0.0 POST /admin/student/studentSearch
+[ info ] reportsystem/admin/student/studentSearch [运行时间：0.261366s][吞吐率：3.83req/s] [内存消耗：5,387.20kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001694s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002542s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009197s ]
+[ sql ] [ SQL ] SELECT * FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 0,15 [ RunTime:0.006130s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001817s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.002008s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000895s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000795s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000948s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:02+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.088974s][吞吐率：11.24req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:22+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.228057s][吞吐率：4.38req/s] [内存消耗：5,381.02kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001627s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004527s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002425s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001926s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.000988s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001179s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000828s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001300s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000661s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:22+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.093230s][吞吐率：10.73req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:25+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=2
+[ info ] reportsystem/admin/student/studentList?page=2 [运行时间：0.227287s][吞吐率：4.40req/s] [内存消耗：5,381.52kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001709s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002516s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 15,15 [ RunTime:0.001150s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002048s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000952s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001838s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001037s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001272s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000922s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:25+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.095167s][吞吐率：10.51req/s] [内存消耗：2,507.63kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:28+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=3
+[ info ] reportsystem/admin/student/studentList?page=3 [运行时间：0.253707s][吞吐率：3.94req/s] [内存消耗：5,381.52kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001705s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002871s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002453s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 30,15 [ RunTime:0.001828s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002267s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000842s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001380s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000970s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001920s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001142s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001470s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001010s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:28+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.104197s][吞吐率：9.60req/s] [内存消耗：2,507.63kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:30+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=4
+[ info ] reportsystem/admin/student/studentList?page=4 [运行时间：0.219357s][吞吐率：4.56req/s] [内存消耗：5,381.44kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001640s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002276s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 45,15 [ RunTime:0.001682s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001853s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000839s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001208s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000651s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:30+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.105738s][吞吐率：9.46req/s] [内存消耗：2,507.63kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:33+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=172
+[ info ] reportsystem/admin/student/studentList?page=172 [运行时间：0.237788s][吞吐率：4.21req/s] [内存消耗：5,381.41kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '172',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001696s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.003380s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002314s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2565,15 [ RunTime:0.005387s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002280s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001233s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001259s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000886s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:33+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.107685s][吞吐率：9.29req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=172',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:39+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=165
+[ info ] reportsystem/admin/student/studentList?page=165 [运行时间：0.226713s][吞吐率：4.41req/s] [内存消耗：5,381.32kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=172',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '165',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002034s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.001824s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002006s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2460,15 [ RunTime:0.004974s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001934s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001320s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001290s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000808s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000704s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:40+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.093465s][吞吐率：10.70req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=165',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:43+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=162
+[ info ] reportsystem/admin/student/studentList?page=162 [运行时间：0.230953s][吞吐率：4.33req/s] [内存消耗：5,381.32kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=165',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '162',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001718s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004356s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002235s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2415,15 [ RunTime:0.005180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002154s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002011s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001241s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001120s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001297s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000880s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.085306s][吞吐率：11.72req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=162',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:45+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=159
+[ info ] reportsystem/admin/student/studentList?page=159 [运行时间：0.232674s][吞吐率：4.30req/s] [内存消耗：5,381.52kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=162',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '159',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001635s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004382s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002456s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2370,15 [ RunTime:0.004936s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002591s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001016s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001071s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001016s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000934s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000946s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000661s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:45+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.099150s][吞吐率：10.09req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=159',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:47+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=156
+[ info ] reportsystem/admin/student/studentList?page=156 [运行时间：0.245374s][吞吐率：4.08req/s] [内存消耗：5,381.41kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=159',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '156',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011356s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004918s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002472s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2325,15 [ RunTime:0.005303s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002864s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000962s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000828s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001007s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001041s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000895s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001233s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000934s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:47+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.096082s][吞吐率：10.41req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=156',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:50+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=153
+[ info ] reportsystem/admin/student/studentList?page=153 [运行时间：0.262097s][吞吐率：3.82req/s] [内存消耗：5,381.44kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=156',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '153',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002083s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002778s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.003088s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2280,15 [ RunTime:0.004835s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002752s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001399s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001009s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000847s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001624s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001165s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001615s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000931s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000906s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:50+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.092524s][吞吐率：10.81req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=153',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:52+08:00 ] 0.0.0.0 GET /admin/student/studentList?page=150
+[ info ] reportsystem/admin/student/studentList?page=150 [运行时间：0.245177s][吞吐率：4.08req/s] [内存消耗：5,381.32kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=153',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '150',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001801s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.004667s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002221s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 2235,15 [ RunTime:0.004937s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002332s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001771s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000839s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000862s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001521s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000647s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:52+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.090845s][吞吐率：11.01req/s] [内存消耗：2,507.65kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=150',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:09:57+08:00 ] 0.0.0.0 POST /admin/student/studentSearch
+[ info ] reportsystem/admin/student/studentSearch [运行时间：0.259150s][吞吐率：3.86req/s] [内存消耗：5,387.32kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentList?page=150',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001678s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.003296s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009202s ]
+[ sql ] [ SQL ] SELECT * FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 0,15 [ RunTime:0.006186s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009246s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002086s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001166s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001159s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001022s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001006s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000782s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000741s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:09:57+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.091532s][吞吐率：10.93req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:10:08+08:00 ] 0.0.0.0 GET /admin/student/studentSearch?page=3
+[ info ] reportsystem/admin/student/studentSearch?page=3 [运行时间：0.270436s][吞吐率：3.70req/s] [内存消耗：5,388.71kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001869s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002105s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.008783s ]
+[ sql ] [ SQL ] SELECT * FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 30,15 [ RunTime:0.006942s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015%' OR `studentNo` LIKE '%2015%' OR `sex` LIKE '%2015%' OR `insititutes` LIKE '%2015%' OR `major` LIKE '%2015%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009777s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001844s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001089s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000923s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:10:08+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.085459s][吞吐率：11.70req/s] [内存消耗：2,507.63kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentSearch?page=3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:10:18+08:00 ] 0.0.0.0 POST /admin/student/studentSearch
+[ info ] reportsystem/admin/student/studentSearch [运行时间：0.260318s][吞吐率：3.84req/s] [内存消耗：5,387.51kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '17',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentSearch?page=3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015414023',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找学生
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001716s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.002010s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015414023%' OR `studentNo` LIKE '%2015414023%' OR `sex` LIKE '%2015414023%' OR `insititutes` LIKE '%2015414023%' OR `major` LIKE '%2015414023%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009624s ]
+[ sql ] [ SQL ] SELECT * FROM `student` WHERE  ( `studentName` LIKE '%2015414023%' OR `studentNo` LIKE '%2015414023%' OR `sex` LIKE '%2015414023%' OR `insititutes` LIKE '%2015414023%' OR `major` LIKE '%2015414023%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 0,15 [ RunTime:0.007030s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` WHERE  ( `studentName` LIKE '%2015414023%' OR `studentNo` LIKE '%2015414023%' OR `sex` LIKE '%2015414023%' OR `insititutes` LIKE '%2015414023%' OR `major` LIKE '%2015414023%' OR `grade` LIKE 0 OR `classes` LIKE 0 OR `roleNo` LIKE 0 ) LIMIT 1 [ RunTime:0.009676s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002157s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001224s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001720s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001377s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001087s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:10:18+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.090117s][吞吐率：11.10req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-05T20:11:40+08:00 ] 0.0.0.0 GET /admin/student/studentList
+[ info ] reportsystem/admin/student/studentList [运行时间：0.238411s][吞吐率：4.19req/s] [内存消耗：5,380.93kb] [文件加载：52]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'student',
+    2 => 'studentList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/student/studentSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Student->studentList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Student.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html [ array (
+  0 => 'studentList',
+  1 => 'studentNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001885s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `student` [ RunTime:0.001957s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002241s ]
+[ sql ] [ SQL ] SELECT * FROM `student` LIMIT 0,15 [ RunTime:0.001494s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1 [ RunTime:0.002610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.001748s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 8 ) [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000970s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001370s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SELECT `roleName` FROM `role` WHERE  (  roleNo = 2 ) [ RunTime:0.000891s ]
+---------------------------------------------------------------
+[ 2019-04-05T20:11:40+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.091564s][吞吐率：10.92req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/student/studentList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=955c8iti32u6kv0gmjnmd4lsm4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
