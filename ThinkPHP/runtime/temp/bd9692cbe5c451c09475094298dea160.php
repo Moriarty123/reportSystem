@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554453906;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554455681;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,13 +199,13 @@
 					<td><?php echo $vo['phoneNum']; ?></td>
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
+						<a href="/admin/teacher/detailPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 10px;float: left;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
+						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
-						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;' onclick="return  del();">
+						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;' onclick="return  del();">
 							<i class="fa fa-trash-alt" title="删除"></i>
 						</a>
 					</td>

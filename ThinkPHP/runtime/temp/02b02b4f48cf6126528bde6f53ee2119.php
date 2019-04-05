@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherEdit.html";i:1554223263;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherDetail.html";i:1554455642;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -162,7 +162,7 @@
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2><strong>修改教师信息</strong></h2>
+				<h2><strong>教师信息</strong></h2>
 			</div>
             <div style="position: relative; left: 0px; top: 0px;">
 			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="" style="margin-left: 220px;">
@@ -173,25 +173,29 @@
                 </div>
 				<div class="add_list">
                     <label class="add_label">姓名：</label>
-                    <input type="text" name="teacherName" class="add_input" value="<?php echo $teacher['teacherName']; ?>" />
+                    <input type="text" name="teacherName" class="add_input" value="<?php echo $teacher['teacherName']; ?>" disabled="disabled"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">职称：</label>
-                    <input type="text" name="title" class="add_input" value="<?php echo $teacher['title']; ?>"/>
+                    <input type="text" name="title" class="add_input" value="<?php echo $teacher['title']; ?>" disabled="disabled"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">学位：</label>
-                    <input type="text" name="degree" class="add_input" value="<?php echo $teacher['degree']; ?>"/>
+                    <input type="text" name="degree" class="add_input" value="<?php echo $teacher['degree']; ?>" disabled="disabled"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">邮件：</label>
-                    <input type="text" name="email" class="add_input" value="<?php echo $teacher['email']; ?>"/>
+                    <input type="text" name="email" class="add_input" value="<?php echo $teacher['email']; ?>" disabled="disabled"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">手机：</label>
-                    <input type="text" name="phoneNum" class="add_input" value="<?php echo $teacher['phoneNum']; ?>"/>
+                    <input type="text" name="phoneNum" class="add_input" value="<?php echo $teacher['phoneNum']; ?>" disabled="disabled"/>
                 </div>
                 <div class="add_list">
+                    <label class="add_label">性别：</label>
+                    <input type="text" name="sex" class="add_input" value="<?php echo $teacher['sex']; ?>" disabled="disabled">
+                </div>
+<!--                 <div class="add_list">
                     <label class="add_label">性别：</label>
                     <select style="width: 270px;" name="sex">
                         <?php if($teacher['sex'] == '男'): ?>
@@ -202,11 +206,11 @@
                             <option value="女" selected="selected">女</option> 
                         <?php endif; ?>
                     </select>
-                </div>
-                <div class="add_list">
+                </div> -->
+                <!-- <div class="add_list">
                     <label class="add_label">头像：</label>
                     <input type="file" name="file" onchange="uploadsimage(this);" >
-                </div>
+                </div> -->
                 <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
                     <?php if($teacher['headImg'] == ''): ?>
                     <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
@@ -215,7 +219,9 @@
                     <?php endif; ?>
                 </div>
                 <input type="hidden" name="headImg" id="headImg">
-				<input type="submit" value="修改" class="add_submit" />
+                <a href="/admin/teacher/teacherList" style="float: left; ">
+                    <input type="button" value="返回" class="add_submit" />
+                </a>
 			</form>
             </div>
 		</div>

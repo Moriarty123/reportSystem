@@ -71,13 +71,13 @@
 					<td>{$vo.phoneNum}</td>
 					<td>{$vo.roleNo}</td>
 					<td>
-						<a href="/admin/teacher/editPage?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;'>
+						<a href="/admin/teacher/detailPage?teacherNo={$vo.teacherNo}" style='margin-left: 10px;float: left;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/admin/teacher/editPage?teacherNo={$vo.teacherNo}" style='margin-left: 5px;float: left;'>
+						<a href="/admin/teacher/editPage?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
-						<a href="/admin/teacher/teacherDelete?teacherNo={$vo.teacherNo}" style='margin-left: 5px;float: left;' onclick="return  del();">
+						<a href="/admin/teacher/teacherDelete?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;' onclick="return  del();">
 							<i class="fa fa-trash-alt" title="删除"></i>
 						</a>
 					</td>
