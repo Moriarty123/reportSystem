@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherEdit.html";i:1554481065;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentEdit.html";i:1554481834;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,7 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/admin/teacherAdd.js"></script>
+    <script type="text/javascript" src="/static/js/admin/studentAdd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
@@ -158,75 +158,95 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
-	<div id="MainForm">
-		<div class="form_boxA">
-			<div class="a">
-				<h2><strong>修改教师信息</strong></h2>
-			</div>
-            <div style="position: relative; left: 0px; top: 0px;">
-			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="return checkSubmit();" style="margin-left: 220px;">
-				<input type="hidden" name="teacherNo" value="<?php echo $teacher['teacherNo']; ?>" />
-                <div class="add_list">
-                    <label class="add_label">职工号：</label>
-                    <input type="text" id="teacherNo" name="teacherNo" class="add_input" value="<?php echo $teacher['teacherNo']; ?>" disabled="disabled" />
-                </div>
-				<div class="add_list">
-                    <label class="add_label">姓名：</label>
-                    <input type="text" id="teacherName" name="teacherName" class="add_input" value="<?php echo $teacher['teacherName']; ?>" />
-                </div>
-                <div class="add_list">
-                    <label class="add_label">职称：</label>
-                    <input type="text" id="title" name="title" class="add_input" value="<?php echo $teacher['title']; ?>"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">学位：</label>
-                    <input type="text" id="degree" name="degree" class="add_input" value="<?php echo $teacher['degree']; ?>"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">邮件：</label>
-                    <input type="text" id="email" name="email" class="add_input" value="<?php echo $teacher['email']; ?>"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">手机：</label>
-                    <input type="text" id="phoneNum" name="phoneNum" class="add_input" value="<?php echo $teacher['phoneNum']; ?>"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">性别：</label>
-                    <select style="width: 270px;" name="sex">
-                        <?php if($teacher['sex'] == '男'): ?>
-                            <option value="男" selected="selected">男</option>   
-                            <option value="女">女</option> 
-                        <?php else: ?>
-                            <option value="男">男</option>   
-                            <option value="女" selected="selected">女</option> 
-                        <?php endif; ?>
-                    </select>
-                </div>
-                <div class="add_list">
+    <!--main开始-->
+    <div id="MainForm">
+      <div class="form_boxA">
+         <div class="a">
+            <h2><strong>修改学生信息</strong></h2>
+        </div>
+        <div style="position: relative; left: 0px; top: 0px;">
+         <form action="/admin/student/studentEdit" method="post" class="add_form" onsubmit="return checkSubmit();" style="margin-left: 220px;">
+            <input type="hidden" name="studentNo" value="<?php echo $student['studentNo']; ?>" />
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>学号：</label>
+                <input type="text" id="studentNo" name="studentNo" class="add_input" value="<?php echo $student['studentNo']; ?>" disabled="disabled" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>姓名：</label>
+                <input type="text" id="studentName" name="studentName" class="add_input" value="<?php echo $student['studentName']; ?>" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>学院：</label>
+                <select id="institute" style="width: 270px; margin-top:5px;" name="institute">
+                    <option value="-1">--请选择学院--</option>
+                    <?php if(is_array($institute) || $institute instanceof \think\Collection || $institute instanceof \think\Paginator): $i = 0; $__LIST__ = $institute;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo $vo['instituteNo']; ?>" <?php if($student['institute'] == $vo['instituteName']) {echo "selected";} ?>><?php echo $vo['instituteName']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>专业：</label>
+                <select id="major" style="width: 270px; margin-top:5px;" name="major">
+                    <option value="-1">--请选择专业--</option>
+                    <?php if(is_array($major) || $major instanceof \think\Collection || $major instanceof \think\Paginator): $i = 0; $__LIST__ = $major;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo $vo['majorNo']; ?>" <?php if($student['major'] == $vo['majorName']) {echo "selected";} ?>><?php echo $vo['majorName']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>年级：</label>
+                <select style="width: 270px; margin-top:5px;" id="grade" name="grade">
+                    <option value="-1">--请选择年级--</option>
+                    <?php if(is_array($grade) || $grade instanceof \think\Collection || $grade instanceof \think\Paginator): $i = 0; $__LIST__ = $grade;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo $vo['grade']; ?>" <?php if($student['grade'] == $vo['grade']) {echo "selected";} ?> ><?php echo $vo['grade']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>班级：</label>
+                <select style="width: 270px; margin-top:5px;" id="classes" name="classes">
+                    <option value="-1">--请选择班级--</option>
+                    <?php if(is_array($classes) || $classes instanceof \think\Collection || $classes instanceof \think\Paginator): $i = 0; $__LIST__ = $classes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo $vo['className']; ?>" <?php if($student['classes'] == $vo['className']) {echo "selected";} ?> ><?php echo $vo['className']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>年级：</label>
+                <select style="width: 270px;" name="sex">
+                    <?php if($student['sex'] == '男'): ?>
+                        <option value="男" selected="selected">男</option>   
+                        <option value="女">女</option> 
+                    <?php else: ?>
+                        <option value="男">男</option>   
+                        <option value="女" selected="selected">女</option> 
+                    <?php endif; ?>
+                </select>
+            </div>
+            <div class="add_list">
                     <label class="add_label">头像：</label>
                     <input type="file" name="file" onchange="uploadsimage(this);" >
                 </div>
                 <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
-                    <?php if($teacher['headImg'] == ''): ?>
+                    <?php if($student['headImg'] == ''): ?>
                     <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
                     <?php else: ?>
-                    <img src="<?php echo $teacher['headImg']; ?>" style="width: 100%;" >
+                    <img src="<?php echo $student['headImg']; ?>" style="width: 100%;" >
                     <?php endif; ?>
                 </div>
-                <input type="hidden" name="headImg" id="headImg">
-				<input type="submit" value="修改" class="add_submit" />
-			</form>
-            </div>
-		</div>
-	</div>
-	<!--main结束-->
+            <input type="hidden" name="headImg" id="headImg">
+            <input type="submit" value="修改" class="add_submit" />
+        </form>
+    </div>
+</div>
+</div>
+<!--main结束-->
 
-    <!-- 清除浮动 -->
-    <div style="clear: both;"></div>
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
 
-    <!-- 底部开始-->
-    <!-- 底部开始 -->
+<!-- 底部开始-->
+<!-- 底部开始 -->
 <footer>
     <div class="footer-body">
         <div class="footer">
@@ -235,7 +255,7 @@
     </div>
 </footer>
 <!-- 底部结束 -->
-    <!-- 底部结束-->
+<!-- 底部结束-->
 
 </body>
 </html>
@@ -276,4 +296,36 @@ function uploadsimage(obj) {
         }
     });
 }
+
+//二级联动下拉框
+function changeMajor() {
+    $instituteNo = $("#institute").val();
+
+    $.ajax({
+        url:"/admin/student/getMajor",//这里指向的就不再是页面了，而是一个方法。
+        data:{'instituteNo':$instituteNo},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data){
+
+            $("#major").empty();
+            var count = data.length;
+            //alert(data[1].NAME);
+            var i = 0;
+            var html ='<option value="-1">--请选择专业--</option>';
+            for(i;i<count;i++){
+                html += '<option value="'+data[i].majorName+'">'+data[i].majorName+'</option>'
+            }
+            $('#major').html(html);
+
+        }
+    })
+}
+
+$(document).ready(function(){
+  $("#institute").change(function(){
+    changeMajor();
+  });
+});
 </script>
+
