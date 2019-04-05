@@ -11,7 +11,7 @@
 
     <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="__JS__/index/public.js"></script>
-    <script type="text/javascript" src="__JS__/teacher/updatePwd.js"></script>
+    <script type="text/javascript" src="__JS__/admin/teacherAdd.js"></script>
 
     <link rel="stylesheet" href="__CSS__/index/index.css" />
     <link rel="stylesheet" href="__CSS__/common/common.css" />
@@ -37,31 +37,31 @@
 				<h2><strong>修改教师信息</strong></h2>
 			</div>
             <div style="position: relative; left: 0px; top: 0px;">
-			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="" style="margin-left: 220px;">
+			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="return checkSubmit();" style="margin-left: 220px;">
 				<input type="hidden" name="teacherNo" value="{$teacher.teacherNo}" />
                 <div class="add_list">
                     <label class="add_label">职工号：</label>
-                    <input type="text" name="teacherNo" class="add_input" value="{$teacher.teacherNo}" disabled="disabled" />
+                    <input type="text" id="teacherNo" name="teacherNo" class="add_input" value="{$teacher.teacherNo}" disabled="disabled" />
                 </div>
 				<div class="add_list">
                     <label class="add_label">姓名：</label>
-                    <input type="text" name="teacherName" class="add_input" value="{$teacher.teacherName}" />
+                    <input type="text" id="teacherName" name="teacherName" class="add_input" value="{$teacher.teacherName}" />
                 </div>
                 <div class="add_list">
                     <label class="add_label">职称：</label>
-                    <input type="text" name="title" class="add_input" value="{$teacher.title}"/>
+                    <input type="text" id="title" name="title" class="add_input" value="{$teacher.title}"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">学位：</label>
-                    <input type="text" name="degree" class="add_input" value="{$teacher.degree}"/>
+                    <input type="text" id="degree" name="degree" class="add_input" value="{$teacher.degree}"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">邮件：</label>
-                    <input type="text" name="email" class="add_input" value="{$teacher.email}"/>
+                    <input type="text" id="email" name="email" class="add_input" value="{$teacher.email}"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">手机：</label>
-                    <input type="text" name="phoneNum" class="add_input" value="{$teacher.phoneNum}"/>
+                    <input type="text" id="phoneNum" name="phoneNum" class="add_input" value="{$teacher.phoneNum}"/>
                 </div>
                 <div class="add_list">
                     <label class="add_label">性别：</label>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554467502;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554479850;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,7 +193,7 @@
 					<td><?php echo $vo['studentName']; ?></td>
 					<td><?php echo $vo['sex']; ?></td>
 					<td><?php echo $vo['grade']; ?></td>
-					<td><?php echo $vo['insititutes']; ?></td>
+					<td><?php echo $vo['institute']; ?></td>
 					<td><?php echo $vo['major']; ?><?php echo $vo['classes']; ?>班</td>
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
