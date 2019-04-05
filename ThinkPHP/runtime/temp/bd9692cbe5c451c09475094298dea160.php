@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554453249;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554453906;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -173,7 +173,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
+			<form action="/admin/teacher/checkedDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>

@@ -223,7 +223,7 @@ class Teacher extends Common
     public function teacherDelete()
     {
         //0.测试
-        dump($_GET);
+        // dump($_GET);
         Log::record("删除教师", "notice");
 
         //1.获取teacherNo
@@ -240,5 +240,27 @@ class Teacher extends Common
         $teacherModel->where($teacherWhere)->delete();
 
         $this->success("删除教师信息成功", "/admin/teacher/teacherList");
+    }
+
+    //批量删除
+    public function checkedDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("批量删除教师信息", "notice");
+
+        //1.获取teacherNo数组
+        $teacherNos = input("teacherNo/a");
+
+        // dump($teacherNos);
+
+        //创建模型
+        $teacherModel = new teacherModel();
+
+        foreach ($teacherNos as $key => $no) {
+           $teacherModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/admin/teacher/teacherList');
     }
 }
