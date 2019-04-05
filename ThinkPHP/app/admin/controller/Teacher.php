@@ -218,4 +218,27 @@ class Teacher extends Common
 
         return $this->fetch('teacherList');
     }
+
+    //删除教师
+    public function teacherDelete()
+    {
+        //0.测试
+        dump($_GET);
+        Log::record("删除教师", "notice");
+
+        //1.获取teacherNo
+        $teacherNo = input("get.teacherNo");
+        $teacherWhere = "teacherNo = '{$teacherNo}'";
+        $teacherModel = new teacherModel();
+        $teacher = $teacherModel->where($teacherWhere)->find();
+
+        if (empty($teacher) || $teacher == null) {
+            Log::record("该教师不存在！", "error");
+            $this->error("该教师不存在！", "/admin/teacher/teacherList");
+        }
+
+        $teacherModel->where($teacherWhere)->delete();
+
+        $this->success("删除教师信息成功", "/admin/teacher/teacherList");
+    }
 }
