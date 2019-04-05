@@ -174,4 +174,48 @@ class Teacher extends Common
         $this->success("添加教师成功！", "/admin/teacher/teacherList");
 
     }
+
+    //模糊查找教师
+    public function teacherSearch()
+    {
+        //0.测试
+        // dump($_POST); 
+        Log::record('模糊查找教师','notice');
+
+        //1.获取数据
+        $search = input('post.search');
+        $account = session('account');
+
+        //2.获取该账号教师的实验课程
+        //2.1构造搜索条件
+        if(!empty($search)) {
+            
+            // if (is_numeric($search)) {
+            //     # code...
+            // }
+            session('teacherSearch', $search);
+            $where['teacherName|teacherNo|sex|title|email|degree|phoneNum'] = array('like','%'.$search.'%');//封装模糊查询 赋值到数组  
+        }
+        else 
+        {
+            $search = session('teacherSearch');
+            $where['teacherName|teacherNo|sex|title|email|degree|phoneNum'] = array('like','%'.$search.'%');    
+        }
+
+        //2.2获取符合条件的课程
+        $teacherModel = new teacherModel();
+
+        $teacherList = $teacherModel ->where($where)
+                                     ->paginate(15);
+
+        $teacherNumber = $teacherModel   ->where($where)
+                                        ->count();
+
+        //3.页面渲染
+        $this->assign('teacherList', $teacherList);
+        $this->assign('teacherNumber', $teacherNumber);
+
+
+        return $this->fetch('teacherList');
+    }
 }
