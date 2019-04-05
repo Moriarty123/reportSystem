@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554117780;s:35:"../app/common/view/html/header.html";i:1554052431;s:36:"../app/teacher/view/common/menu.html";i:1554052431;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\report\reportList.html";i:1554120200;s:35:"../app/common/view/html/header.html";i:1554120095;s:36:"../app/teacher/view/common/menu.html";i:1554119543;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
             <a href="/index/login/logout" >【安全退出】</a>
             <?php endif; ?>
             <a href="/index/index/toIndex">【首页】</a>
-            <a href="/index/index/index">【转到后台】</a>
+            <!-- <a href="/admin/login/index">【管理员登录】</a> -->
         </div>
     </div>
 </div>
@@ -320,30 +320,24 @@
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
 		});
-
 		$("#reviewedFilter").click(function(){
   			$("#reviewedFilterDiv").slideToggle();
 		});
-
 		//实验课程筛选
 		$("#courseFilter").change(function() {
 			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
-
 			$("#courseFilterNo").val(courseNo);//填写表单
 			$("#courseFilterForm").submit();//提交表单
 		});
-
 		//导出学生成绩
 		$("#operateSelect").change(function() {
 			var value = $("#operateSelect").val();
-
 			if (value == 2) {
 				$(window).attr('location','/teacher/excel/reportExcel');
 			}
 			
 		});
 	});
-
 	
 </script>
 <!-- 筛选框结束 -->
@@ -355,6 +349,4 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验报告吗？");
 }
-
 </script>
-

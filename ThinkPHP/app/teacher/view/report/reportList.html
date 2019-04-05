@@ -181,30 +181,24 @@
   		$("#submitedFilter").click(function(){
   			$("#submitedFilterDiv").slideToggle();
 		});
-
 		$("#reviewedFilter").click(function(){
   			$("#reviewedFilterDiv").slideToggle();
 		});
-
 		//实验课程筛选
 		$("#courseFilter").change(function() {
 			var courseNo = $("#courseFilter  option:selected").val();//获取实验课程No
-
 			$("#courseFilterNo").val(courseNo);//填写表单
 			$("#courseFilterForm").submit();//提交表单
 		});
-
 		//导出学生成绩
 		$("#operateSelect").change(function() {
 			var value = $("#operateSelect").val();
-
 			if (value == 2) {
 				$(window).attr('location','/teacher/excel/reportExcel');
 			}
 			
 		});
 	});
-
 	
 </script>
 <!-- 筛选框结束 -->
@@ -216,6 +210,4 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验报告吗？");
 }
-
 </script>
-

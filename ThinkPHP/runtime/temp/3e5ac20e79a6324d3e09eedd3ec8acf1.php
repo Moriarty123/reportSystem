@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1554052431;s:35:"../app/common/view/html/header.html";i:1554120095;s:36:"../app/teacher/view/common/menu.html";i:1554119543;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +12,14 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/common/display.css">
 </head>
 <body>
     <!-- 头部开始-->
@@ -67,91 +69,81 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验任务开始-->
+		<!--教师管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验任务
+					教师管理
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">课程列表</a>
+				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">发布任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			
 		</dl>
-		<!--实验任务结束-->
-		<!--实验指导开始-->
+		<!--教师管理结束-->
+		<!--学生管理开始-->
+		<dl class="system_log">
+			<dt>
+				<i class="fas fa-book-open a"></i>
+					学生管理
+				<i class="fas fa-angle-down b"></i>
+			</dt>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/studentList">学生列表</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+		</dl>
+		<!--学生管理结束-->
+		<!--课程管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					课程管理
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--实验指导结束-->
-		<!--批阅报告开始-->
+		<!--课程管理结束-->
+		<!--专业班级开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					批阅报告
+					专业班级
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/admin/major/majorList" class="cks">专业列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--批阅报告结束-->
-		<!--统计资料开始-->
+		<!--专业班级结束-->
+		<!--角色权限开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-file-invoice-dollar a"></i>
-					统计资料
+					角色权限
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
+				<a href="/admin/role/roleList" class="cks">权限列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--统计资料结束-->
+		<!--角色权限结束-->
 		
 
 		
@@ -159,49 +151,40 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; height
-	600px;">
-	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
-		<tr>
-			<td colspan="2">
-				<span class="time" style="color: black;">
-
-					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
-					<?php else: ?>
-					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
-					<div class="top">
-						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
-					</div>
-					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
-					<?php endif; ?>
-				</span>
-
-			</td>
-		</tr>
-		<tr>
-			<td align="left" valign="top" colspan="2">
-				<div class="main-tit">服务器信息</div>
-				<div class="main-con">
-					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
-					PHP版本：5.6.31<br/>
-					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>角色列表</h2>
+				
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+					</select>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left" valign="top">
-				<div class="main-corpy">系统提示</div>
-				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您使用IE7以上版本或其他的浏览器
-				</div>
-			</td>
-		</tr>
-	</table>
+			</div>
+			<div>
+				<table>
+					<tr>
+						<th style="width: 50px; ">角色号</th>
+						<th style="width: 100px; ">角色名称</th>
+						<th style="width: 200px; ">角色描述</th>
+						<th style="width: 100px; ">权限号</th>
+					</tr>
+					<?php if(is_array($roleList) || $roleList instanceof \think\Collection || $roleList instanceof \think\Paginator): $i = 0; $__LIST__ = $roleList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+					<tr>
+						<td><?php echo $vo['roleNo']; ?></td>
+						<td><?php echo $vo['roleName']; ?></td>
+						<td><?php echo $vo['roleDescribe']; ?></td>
+						<td><?php echo $vo['permission']; ?></td>
+					</tr>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+				</table>
+			</div>
+		</div>
 	</div>
-	<!--main结束-->
+	<!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -220,3 +203,33 @@
 
 </body>
 </html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#termFilter").click(function(){
+  			$("#termFilterDiv").slideToggle();
+		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/courseExcel');
+			}
+			
+		});
+	});
+</script>
+<!-- 筛选框结束 -->
+
+<script type="text/javascript">
+function del(){
+	return window.confirm("你确认要删除该实验课程吗？");
+}
+function checkdel(){
+	return window.confirm("你确认要删除选中的实验课程吗？");
+}
+
+</script>

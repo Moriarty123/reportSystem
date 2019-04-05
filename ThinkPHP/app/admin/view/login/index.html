@@ -17,17 +17,15 @@
     <script type="text/javascript" src="__JS__/index/public.js"></script>
 </head>
 <body>
-
     <!-- 头部开始-->
-    {include file="../app/index/view/common/header.html"}
+    {include file="../app/common/view/html/header.html"}
     <!-- 头部结束-->
-
 
     <!-- 主体开始 -->
     <div class="loginContainer">
         <div class="loginDiv">
-
-            <form class="loginForm" action="/index/login/login" method="post">
+            <h2 style="margin: 0 auto; position: absolute; left: 180px; top:0px;">管理员登录</h2>
+            <form class="loginForm" action="/admin/login/login" method="post">
                 <div class="sectionDiv">
                     <label class="sectionLabel">账号：</label>
                     {eq name="Think.session.isRemember" value="false"}
@@ -35,12 +33,10 @@
                     {else}
                     <input type="text" name="account" class="form-control sectionInput" value="{$Think.session.reaccount}">
                     {/eq}
-
                 </div>
                 <br>
                 <div class="sectionDiv">
                     <label class="sectionLabel">密码：</label>
-
                     {eq name="Think.session.isRemember" value="false"}
                     <input type="password" name="password" class="form-control sectionInput">
                     {else}
@@ -54,7 +50,6 @@
                     {else}
                     <input type="checkbox" name="rememberMe" checked="true">
                     {/eq}
-
                     <label style="font-size: 16px;">记住我</label>
                 </div>
 
@@ -69,11 +64,9 @@
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
 
-
     <!-- 底部开始-->
     {include file="../app/common/view/html/footer.html"}
     <!-- 底部结束-->
-
 
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/teacher/updatePwd.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/user.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/admin/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--main开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2><strong>修改教师信息</strong></h2>
+			</div>
+            <div style="position: relative; left: 0px; top: 0px;">
+			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="" style="margin-left: 220px;">
+				<input type="hidden" name="teacherNo" value="{$teacher.teacherNo}" />
+                <div class="add_list">
+                    <label class="add_label">职工号：</label>
+                    <input type="text" name="teacherNo" class="add_input" value="{$teacher.teacherNo}" disabled="disabled" />
+                </div>
+				<div class="add_list">
+                    <label class="add_label">姓名：</label>
+                    <input type="text" name="teacherName" class="add_input" value="{$teacher.teacherName}" />
+                </div>
+                <div class="add_list">
+                    <label class="add_label">职称：</label>
+                    <input type="text" name="title" class="add_input" value="{$teacher.title}"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">学位：</label>
+                    <input type="text" name="degree" class="add_input" value="{$teacher.degree}"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">邮件：</label>
+                    <input type="text" name="email" class="add_input" value="{$teacher.email}"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">手机：</label>
+                    <input type="text" name="phoneNum" class="add_input" value="{$teacher.phoneNum}"/>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">性别：</label>
+                    <select style="width: 270px;" name="sex">
+                        {eq name="$teacher.sex" value="男"}
+                            <option value="男" selected="selected">男</option>   
+                            <option value="女">女</option> 
+                        {else}
+                            <option value="男">男</option>   
+                            <option value="女" selected="selected">女</option> 
+                        {/eq}
+                    </select>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">头像：</label>
+                    <input type="file" name="file" onchange="uploadsimage(this);" >
+                </div>
+                <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
+                    {eq name="$teacher.headImg" value=""}
+                    <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
+                    {else}
+                    <img src="{$teacher.headImg}" style="width: 100%;" >
+                    {/eq}
+                </div>
+                <input type="hidden" name="headImg" id="headImg">
+				<input type="submit" value="修改" class="add_submit" />
+			</form>
+            </div>
+		</div>
+	</div>
+	<!--main结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<script type="text/javascript">
+//上传图片
+function uploadsimage(obj) {
+    if ( obj.value == "" ) return;
+
+    var formdata = new FormData();
+
+    formdata.append("image", $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+    formdata.append("path", 'sale');
+
+    console.log(formdata);
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/upload',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            var html = '<img src="'+ret+'" style="width:100%; border-radius: 50%;">';
+
+
+            console.log(html);
+            $('#imgBox').html(html);
+            
+            
+            console.log(ret);
+            // $('#headImg').val(ret);
+            $('#headImg').attr('value', ret);
+        },
+        error : function(){ 
+            alert('图片上传失败');
+        }
+    });
+}
+</script>

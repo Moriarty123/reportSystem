@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1554120095;s:36:"../app/index/view/common/header.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +18,16 @@
     <script type="text/javascript" src="/static/js/index/public.js"></script>
 </head>
 <body>
-
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
@@ -40,19 +47,18 @@
             <a href="/index/login/logout" >【安全退出】</a>
             <?php endif; ?>
             <a href="/index/index/toIndex">【首页】</a>
-            <a href="/admin/login/index">【管理员登录】</a>
+            <!-- <a href="/admin/login/index">【管理员登录】</a> -->
         </div>
     </div>
 </div>
 <!-- 头部结束 -->
     <!-- 头部结束-->
 
-
     <!-- 主体开始 -->
     <div class="loginContainer">
         <div class="loginDiv">
-
-            <form class="loginForm" action="/index/login/login" method="post">
+            <h2 style="margin: 0 auto; position: absolute; left: 180px; top:0px;">管理员登录</h2>
+            <form class="loginForm" action="/admin/login/login" method="post">
                 <div class="sectionDiv">
                     <label class="sectionLabel">账号：</label>
                     <?php if(\think\Session::get('isRemember') == 'false'): ?>
@@ -60,12 +66,10 @@
                     <?php else: ?>
                     <input type="text" name="account" class="form-control sectionInput" value="<?php echo \think\Session::get('reaccount'); ?>">
                     <?php endif; ?>
-
                 </div>
                 <br>
                 <div class="sectionDiv">
                     <label class="sectionLabel">密码：</label>
-
                     <?php if(\think\Session::get('isRemember') == 'false'): ?>
                     <input type="password" name="password" class="form-control sectionInput">
                     <?php else: ?>
@@ -79,7 +83,6 @@
                     <?php else: ?>
                     <input type="checkbox" name="rememberMe" checked="true">
                     <?php endif; ?>
-
                     <label style="font-size: 16px;">记住我</label>
                 </div>
 
@@ -94,7 +97,6 @@
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
 
-
     <!-- 底部开始-->
     <!-- 底部开始 -->
 <footer>
@@ -106,7 +108,6 @@
 </footer>
 <!-- 底部结束 -->
     <!-- 底部结束-->
-
 
 </body>
 </html>

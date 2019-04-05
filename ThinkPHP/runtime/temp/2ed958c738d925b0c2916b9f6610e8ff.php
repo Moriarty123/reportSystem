@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html";i:1554119543;s:35:"../app/common/view/html/header.html";i:1554120095;s:36:"../app/teacher/view/common/menu.html";i:1554119543;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +16,10 @@
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
-    <link rel="stylesheet" href="/static/css/common/buttons.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/course.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+    <link rel="stylesheet" href="/static/css/common/display.css">
 </head>
 <body>
     <!-- 头部开始-->
@@ -71,91 +69,81 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验任务开始-->
+		<!--教师管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验任务
+					教师管理
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">课程列表</a>
+				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">发布任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			
 		</dl>
-		<!--实验任务结束-->
-		<!--实验指导开始-->
+		<!--教师管理结束-->
+		<!--学生管理开始-->
+		<dl class="system_log">
+			<dt>
+				<i class="fas fa-book-open a"></i>
+					学生管理
+				<i class="fas fa-angle-down b"></i>
+			</dt>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/studentList">学生列表</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+		</dl>
+		<!--学生管理结束-->
+		<!--课程管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					课程管理
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--实验指导结束-->
-		<!--批阅报告开始-->
+		<!--课程管理结束-->
+		<!--专业班级开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					批阅报告
+					专业班级
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/admin/major/majorList" class="cks">专业列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--批阅报告结束-->
-		<!--统计资料开始-->
+		<!--专业班级结束-->
+		<!--角色权限开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-file-invoice-dollar a"></i>
-					统计资料
+					角色权限
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
+				<a href="/admin/role/roleList" class="cks">权限列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--统计资料结束-->
+		<!--角色权限结束-->
 		
 
 		
@@ -169,50 +157,25 @@
 			<div class="a">
 				<h2>实验课程列表</h2>
 				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="课程名" name="search" />
+					<input type="text" class="search" placeholder="课程名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
-				<div style="width: 100px; float: right; margin-right: 20px;margin-top: 20px; ">
-					<div class="btn-group">
-						<button type="button" class="btn" style="background:#19a97b; color: #FFF;">其他</button>
-						<button type="button" id="regButton" class="btn dropdown-toggle" style="background:#19a97b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-							<span style="color: #FFF;" class="caret"></span>
-							<span class="sr-only">Toggle Dropdown</span>
-						</button>
-						<ul class="dropdown-menu" id="selectMenu">
-							<li><a href="#">同步数据</a></li>
-						</ul>
-					</div>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+					</select>
 				</div>
 			</div>
-			<form action="/teacher/course/courseDelete" method="post">
+			<form action="/admin/course/courseDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
-					<th style="width:100px;">课程编号</th>
-					<th>课程名称</th>
+					<th style="width: 50px;">课程编号</th>
+					<th style="width: 150px;">课程名称</th>
 					<th style="width: 80px;">任课老师</th>
 					<th style="width: 220px;">任课班级</th>
-					<th style="position: relative; top:0px; left:0px;">
-						任课时间
-						<span id="termFilter">
-							<i class="fa fa-filter" title="筛选"></i>
-						</span>
-						<div id="termFilterDiv" class="termFilterDiv" >
-							<form >
-								<div class="termFilterRadio" style="text-align: left;">	
-									<label><input name="term" type="radio"/>本学期</label>
-								</div>
-								<div class="termFilterRadio" style="text-align: left;">
-									<label><input name="term" type="radio"/>之前学期</label>
-								</div>
-								<div>
-									<input type="submit" name="" class="submit">
-									<input type="reset" name="" class="reset">
-								</div>
-							</form>
-						</div>
-					</th>
+					<th style="width: 100px;">任课时间</th>
 					<th style="width: 80px;">课程类型</th>
 					<th style="width: 80px;">实验课时</th>
 					<th style="width: 80px;">考查方式</th>
@@ -233,9 +196,7 @@
 						<a href="/teacher/task/courseTask?courseNo=<?php echo $vo['courseNo']; ?>">
 							<i class="fa fa-eye" title="查看实验任务"></i>
 						</a>
-						<a href="/teacher/course/studentList?courseNo=<?php echo $vo['courseNo']; ?>" style='margin-left: 5px;'>
-							<i class="fa fa-user-graduate" title="查看学生"></i>
-						</a>
+
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -278,6 +239,15 @@
   		$("#termFilter").click(function(){
   			$("#termFilterDiv").slideToggle();
 		});
+
+		$("#operateSelect").change(function() {
+			var value = $("#operateSelect").val();
+
+			if (value == 2) {
+				$(window).attr('location','/teacher/excel/courseExcel');
+			}
+			
+		});
 	});
 </script>
 <!-- 筛选框结束 -->
@@ -289,12 +259,5 @@ function del(){
 function checkdel(){
 	return window.confirm("你确认要删除选中的实验课程吗？");
 }
-</script>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#regButton").click(function(){
-			$("#selectMenu").toggle();
-		});
-	});
 </script>
