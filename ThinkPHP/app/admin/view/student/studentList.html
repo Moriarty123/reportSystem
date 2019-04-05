@@ -45,7 +45,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/student/studentDelete" method="post">
+			<form action="/admin/student/checkedDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
@@ -60,7 +60,7 @@
 				</tr>
 				{volist name="studentList" id="vo"}
 				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="teacherNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.studentNo}"/></td>
+					<td style="width: 30px;"><input type="checkbox" name="studentNo[]/a" onclick="eachChecked()" class="eachChoose" value="{$vo.studentNo}"/></td>
 					<td>{$vo.studentNo}</td>
 					<td>{$vo.studentName}</td>
 					<td>{$vo.sex}</td>
@@ -127,10 +127,10 @@
 
 <script type="text/javascript">
 function del(){
-	return window.confirm("你确认要删除该实验课程吗？");
+	return window.confirm("你确认要删除该学生信息吗？");
 }
 function checkdel(){
-	return window.confirm("你确认要删除选中的实验课程吗？");
+	return window.confirm("你确认要删除选中的学生信息吗？");
 }
 
 </script>

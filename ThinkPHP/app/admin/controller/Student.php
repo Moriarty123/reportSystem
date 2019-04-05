@@ -92,4 +92,26 @@ class Student extends Common
 
         $this->success("删除学生信息成功", "/admin/student/studentList");
     }
+
+    //批量删除
+    public function checkedDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("批量删除学生信息", "notice");
+
+        //1.获取teacherNo数组
+        $studentNos = input("studentNo/a");
+
+        // dump($teacherNos);
+
+        //创建模型
+        $studentModel = new studentModel();
+
+        foreach ($studentNos as $key => $no) {
+           $studentModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/admin/student/studentList');
+    }
 }

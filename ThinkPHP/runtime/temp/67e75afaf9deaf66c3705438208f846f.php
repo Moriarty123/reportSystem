@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554467141;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554467502;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -173,7 +173,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/student/studentDelete" method="post">
+			<form action="/admin/student/checkedDelete" method="post">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
@@ -188,7 +188,7 @@
 				</tr>
 				<?php if(is_array($studentList) || $studentList instanceof \think\Collection || $studentList instanceof \think\Paginator): $i = 0; $__LIST__ = $studentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
-					<td style="width: 30px;"><input type="checkbox" name="teacherNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['studentNo']; ?>"/></td>
+					<td style="width: 30px;"><input type="checkbox" name="studentNo[]/a" onclick="eachChecked()" class="eachChoose" value="<?php echo $vo['studentNo']; ?>"/></td>
 					<td><?php echo $vo['studentNo']; ?></td>
 					<td><?php echo $vo['studentName']; ?></td>
 					<td><?php echo $vo['sex']; ?></td>
@@ -263,10 +263,10 @@
 
 <script type="text/javascript">
 function del(){
-	return window.confirm("你确认要删除该实验课程吗？");
+	return window.confirm("你确认要删除该学生信息吗？");
 }
 function checkdel(){
-	return window.confirm("你确认要删除选中的实验课程吗？");
+	return window.confirm("你确认要删除选中的学生信息吗？");
 }
 
 </script>
