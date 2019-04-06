@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/admin/studentAdd.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/user.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/admin/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--main开始-->
+    <div id="MainForm">
+      <div class="form_boxA">
+         <div class="a">
+            <h2><strong>添加学生信息</strong></h2>
+        </div>
+        <div style="position: relative; left: 0px; top: 0px;">
+         <form action="/admin/student/studentAdd" method="post" class="add_form" onsubmit="return checkSubmit();" style="margin-left: 220px;">
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>学号：</label>
+                <input type="text" id="studentNo" name="studentNo" class="add_input"/>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>姓名：</label>
+                <input type="text" id="studentName" name="studentName" class="add_input"/>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>学院：</label>
+                <select id="institute" style="width: 270px; margin-top:5px;" name="institute">
+                    <option value="-1">--请选择学院--</option>
+                    {volist name="institute" id="vo"}
+                    <option value="{$vo.instituteNo}">{$vo.instituteName}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>专业：</label>
+                <select id="major" style="width: 270px; margin-top:5px;" name="major">
+                    <option value="-1">--请选择专业--</option>
+                    {volist name="major" id="vo"}
+                    <option value="{$vo.majorNo}">{$vo.majorName}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>年级：</label>
+                <select style="width: 270px; margin-top:5px;" id="grade" name="grade">
+                    <option value="-1">--请选择年级--</option>
+                    {volist name="grade" id="vo"}
+                    <option value="{$vo.grade}">{$vo.grade}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>班级：</label>
+                <select style="width: 270px; margin-top:5px;" id="classes" name="classes">
+                    <option value="-1">--请选择班级--</option>
+                    {volist name="classes" id="vo"}
+                    <option value="{$vo.className}">{$vo.className}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>年级：</label>
+                <select style="width: 270px;" name="sex">
+                        <option value="男">男</option>   
+                        <option value="女">女</option> 
+                </select>
+            </div>
+            <div class="add_list">
+                    <label class="add_label">头像：</label>
+                    <input type="file" name="file" onchange="uploadsimage(this);" >
+                </div>
+                <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
+                    <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
+                </div>
+            <input type="hidden" name="headImg" id="headImg">
+            <input type="submit" value="修改" class="add_submit" />
+        </form>
+    </div>
+</div>
+</div>
+<!--main结束-->
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<!-- 底部开始-->
+{include file="../app/common/view/html/footer.html"}
+<!-- 底部结束-->
+
+</body>
+</html>
+
+<script type="text/javascript">
+//上传图片
+function uploadsimage(obj) {
+    if ( obj.value == "" ) return;
+
+    var formdata = new FormData();
+
+    formdata.append("image", $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+    formdata.append("path", 'sale');
+
+    console.log(formdata);
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/upload',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            var html = '<img src="'+ret+'" style="width:100%; border-radius: 50%;">';
+
+
+            console.log(html);
+            $('#imgBox').html(html);
+            
+            
+            console.log(ret);
+            // $('#headImg').val(ret);
+            $('#headImg').attr('value', ret);
+        },
+        error : function(){ 
+            alert('图片上传失败');
+        }
+    });
+}
+
+//二级联动下拉框
+function changeMajor() {
+    $instituteNo = $("#institute").val();
+
+    $.ajax({
+        url:"/admin/student/getMajor",//这里指向的就不再是页面了，而是一个方法。
+        data:{'instituteNo':$instituteNo},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data){
+
+            $("#major").empty();
+            var count = data.length;
+            //alert(data[1].NAME);
+            var i = 0;
+            var html ='<option value="-1">--请选择专业--</option>';
+            for(i;i<count;i++){
+                html += '<option value="'+data[i].majorName+'">'+data[i].majorName+'</option>'
+            }
+            $('#major').html(html);
+
+        }
+    })
+}
+
+$(document).ready(function(){
+  $("#institute").change(function(){
+    changeMajor();
+  });
+});
+</script>
+
