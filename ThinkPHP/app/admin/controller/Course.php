@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 
 use think\Controller;
+use think\Log;
 
 use app\common\controller\Common;
 
@@ -30,5 +31,28 @@ class Course extends Common
         $this->assign("courseNumber", $courseNumber);
 
         return $this->fetch("courseList");
+    }
+
+    //删除实验课程
+    public function courseDelete()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("删除实验课程", "notice");
+
+        //1.获取courseNo
+        $courseNo = input("get.courseNo");
+        $courseWhere = "courseNo = '{$courseNo}'";
+        $courseModel = new courseModel();
+        $course = $courseModel->where($courseWhere)->find();
+
+        if (empty($course) || $course == null) {
+            Log::record("实验课程不存在！", "error");
+            $this->error("实验课程不存在！", "/admin/course/courseList");
+        }
+
+        $courseModel->where($courseWhere)->delete();
+
+        $this->success("删除课程信息成功", "/admin/course/courseList");
     }
 }

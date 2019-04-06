@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554531092;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554540265;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554531092;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,7 +179,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/course/courseDelete" method="post">
+			<form action="/admin/course/courseDelete" method="post" onsubmit="checkdel();">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
@@ -205,17 +205,22 @@
 					<td><?php echo $vo['coursePeriod']; ?></td>
 					<td><?php echo $vo['examType']; ?></td>
 					<td>
-						<a href="/teacher/task/courseTask?courseNo=<?php echo $vo['courseNo']; ?>">
-							<i class="fa fa-eye" title="查看实验任务"></i>
+						<a href="/admin/course/detailPage?courseNo=<?php echo $vo['courseNo']; ?>">
+							<i class="fa fa-eye" title="查看课程"></i>
 						</a>
-
+						<a href="/admin/course/editPage?courseNo=<?php echo $vo['courseNo']; ?>">
+							<i class="fa fa-edit" title="编辑课程"></i>
+						</a>
+						<a href="/admin/course/courseDelete?courseNo=<?php echo $vo['courseNo']; ?>" onclick="checkdel();">
+							<i class="fa fa-trash-alt" title="删除课程"></i>
+						</a>
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 			<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return del();'/>
 				共找到<?php echo $courseNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
