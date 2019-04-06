@@ -10,6 +10,7 @@ use app\admin\model\Teacher as teacherModel;
 
 class Teacher extends Common
 {
+    
 	// 首页
     public function index()
     {
