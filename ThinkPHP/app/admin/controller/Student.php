@@ -275,6 +275,101 @@ class Student extends Common
         $this->assign("classes", $classes);
 
         //3.后续操作
-        return $this->fetch("studentdetail");
+        return $this->fetch("studentDetail");
+    }
+
+    //添加学生信息界面
+    public function addPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("添加学生信息页面", "notice");
+
+        //1.获取instutite major grade classes
+        $instituteModel = new instituteModel();
+        $gradeModel = new gradeModel();
+        $majorModel = new majorModel();
+        $classesModel = new classesModel();
+
+        $institute = $instituteModel->select();
+        $grade = $gradeModel->select();
+        $major = $majorModel->select();
+        $classes = $classesModel->select();
+
+        //2.渲染
+        $this->assign("institute", $institute);
+        $this->assign("grade", $grade);
+        $this->assign("major", $major);
+        $this->assign("classes", $classes);
+
+        //3.后续操作
+        return $this->fetch("studentAdd");
+    }
+
+    //添加学生信息
+    public function studentAdd()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("添加学生信息", "notice");
+
+        //1.获取数据
+        $studentNo = input("post.studentNo");
+
+        //1.1判断学生身份存在
+        $studentWhere = "studentNo = '{$studentNo}'";
+        $studentModel = new studentModel();
+        $student = $studentModel->where($studentWhere)->find();
+
+
+        if (!empty($student || $student != null)) {
+            Log::record("该学生已存在！", "notice");
+            $this->error("该学生已存在！", "/admin/student/addPage");
+        }
+
+        //1.2获取数据
+        $studentName = input("post.studentName");
+        $instituteNo = input("post.institute");
+        $major = input("post.major");
+        $grade = input("post.grade");
+        $classes = input("post.classes");
+        $sex = input("post.sex");
+        $headImg = input("post.headImg");
+
+        //2.创建数据
+        $instituteModel = new instituteModel();
+        $instituteWhere = "instituteNo = '{$instituteNo}'";
+        $institute = $instituteModel->where($instituteWhere)->find();
+        $instituteName = $institute->instituteName;    
+
+        if ($headImg == "") {
+            $headImg = "/uploads/default/headImg.jpg";
+        }
+
+        //data
+        $data = [
+            'studentNo' => $studentNo,
+            'studentName' => $studentName,
+            'password' => md5("dgut".$studentNo),
+            'institute' => $instituteName,
+            'major' => $major,
+            'grade' => $grade,
+            'classes' => $classes,
+            'sex' => $sex,
+            'headImg' => $headImg,
+            'roleNo' => 2
+        ];
+
+        //3.存入数据库
+        
+        $student = $studentModel->create($data);
+
+        if (empty($student) || $student == null) {
+            Log::record("添加学生信息失败！", "error");
+            $this->error("添加学生信息失败！请稍后再试。", "/admin/student/studentList");
+        }
+
+        //4.后续操作
+        $this->success("添加学生信息成功！", "/admin/student/studentList");
     }
 }

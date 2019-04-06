@@ -1,5 +1,23 @@
 function checkSubmit() {
-	return checkName() && checkInstitute() && checkMajor() && checkGrade() && checkClasses();
+	return checkNo() && checkName() && checkInstitute() && checkMajor() && checkGrade() && checkClasses();
+}
+
+function checkNo() {
+	var studentNo = $("#studentNo").val();
+
+	if (studentNo == "") {
+		alert("学生学号不能为空！");
+		return false;
+	}
+	
+	var reg = /^[0-9]*$/;
+	if (!reg.test($("#studentNo").val())) {
+		alert("请输入正确的学号");
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 function checkName() {
