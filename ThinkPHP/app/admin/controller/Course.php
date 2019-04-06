@@ -55,4 +55,24 @@ class Course extends Common
 
         $this->success("删除课程信息成功", "/admin/course/courseList");
     }
+
+    //批量删除
+    public function checkedDelete()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("批量删除课程信息", "notice");
+
+        //1.获取courseNo数组
+        $courseNos = input("courseNo/a");
+
+        //创建模型
+        $courseModel = new courseModel();
+
+        foreach ($courseNos as $key => $no) {
+           $courseModel->destroy($no);
+        }
+
+        $this->success('删除成功！', '/admin/course/courseList');
+    }
 }

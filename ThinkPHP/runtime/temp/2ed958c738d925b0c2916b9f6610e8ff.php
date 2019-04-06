@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554540265;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554531092;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554540864;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,7 +179,7 @@
 					</select>
 				</div>
 			</div>
-			<form action="/admin/course/courseDelete" method="post" onsubmit="checkdel();">
+			<form action="/admin/course/checkedDelete" method="post" onsubmit="checkdel();">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th style="width: 30px;"><input type="checkbox" name="fullChoose" onclick="fullChecked(this)" /></th>
@@ -211,7 +211,7 @@
 						<a href="/admin/course/editPage?courseNo=<?php echo $vo['courseNo']; ?>">
 							<i class="fa fa-edit" title="编辑课程"></i>
 						</a>
-						<a href="/admin/course/courseDelete?courseNo=<?php echo $vo['courseNo']; ?>" onclick="checkdel();">
+						<a href="/admin/course/courseDelete?courseNo=<?php echo $vo['courseNo']; ?>" onclick="del();">
 							<i class="fa fa-trash-alt" title="删除课程"></i>
 						</a>
 					</td>
@@ -220,7 +220,7 @@
 			</table>
 			<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
-				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return del();'/>
+				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" />
 				共找到<?php echo $courseNumber; ?>条课程信息，每页显示15条记录
 			</p>
 			<div class="" style="text-align: center;margin-bottom:20px; ">
