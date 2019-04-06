@@ -75,4 +75,44 @@ class Course extends Common
 
         $this->success('删除成功！', '/admin/course/courseList');
     }
+
+    //模糊查找实验课程
+    public function courseSearch()
+    {
+        //0.测试
+        // dump($_POST); 
+        Log::record('模糊查找实验课程','notice');
+
+        //1.获取数据
+        $search = input('post.search');
+        $account = session('account');
+
+        //2.获取实验课程
+        //2.1构造搜索条件
+        if(!empty($search)) {
+            session('courseSearch', $search);
+            $where['courseName|courseNo|teacherName|courseGrade|courseMajor|courseType|courseNature|coursePeriod|openTime|examType'] = array('like','%'.$search.'%');//封装模糊查询 赋值到数组  
+        }
+        else 
+        {
+            $search = session('teacherSearch');
+            $where['courseName|courseNo|teacherName|courseGrade|courseMajor|courseType|courseNature|coursePeriod|openTime|examType'] = array('like','%'.$search.'%');    
+        }
+
+        //2.2获取符合条件的课程
+        $courseModel = new courseModel();
+
+        $courseList = $courseModel  ->where($where)
+                                    ->paginate(15);
+
+        $courseNumber = $courseModel   ->where($where)
+                                        ->count();
+
+        //3.页面渲染
+        $this->assign('courseList', $courseList);
+        $this->assign('courseNumber', $courseNumber);
+
+
+        return $this->fetch('courseList');
+    }
 }

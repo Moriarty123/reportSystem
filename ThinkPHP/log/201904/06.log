@@ -10807,3 +10807,3079 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T16:58:32+08:00 ] 0.0.0.0 GET /admin/course/courseList
+[ info ] reportsystem/admin/course/courseList [运行时间：0.376120s][吞吐率：2.66req/s] [内存消耗：5,615.55kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/checkedDelete',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002055s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003438s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.001983s ]
+[ sql ] [ SQL ] SELECT * FROM `course` LIMIT 0,15 [ RunTime:0.002237s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.001740s ]
+---------------------------------------------------------------
+[ 2019-04-06T16:58:32+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.157342s][吞吐率：6.36req/s] [内存消耗：2,507.72kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:03+08:00 ] 0.0.0.0 GET /admin/course/courseList
+[ info ] reportsystem/admin/course/courseList [运行时间：0.288751s][吞吐率：3.46req/s] [内存消耗：5,351.52kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/checkedDelete',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002292s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004853s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.002035s ]
+[ sql ] [ SQL ] SELECT * FROM `course` LIMIT 0,15 [ RunTime:0.003361s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.002408s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:03+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.147468s][吞吐率：6.78req/s] [内存消耗：2,507.72kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:07+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.470918s][吞吐率：2.12req/s] [内存消耗：5,752.35kb] [文件加载：58]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001934s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.007864s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003148s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.018224s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002978s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001885s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:07+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.201231s][吞吐率：4.97req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:11+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.236063s][吞吐率：4.24req/s] [内存消耗：5,497.56kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '无线',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002867s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.005242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003523s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%无线%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002018s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%无线%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.004477s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%无线%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002072s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:11+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.162092s][吞吐率：6.17req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:15+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.236514s][吞吐率：4.23req/s] [内存消耗：5,489.62kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '面向对象',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001870s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.005386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003643s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%面向对象%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001577s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%面向对象%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.003870s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%面向对象%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001851s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:15+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.173245s][吞吐率：5.77req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:19+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.238125s][吞吐率：4.20req/s] [内存消耗：5,489.56kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002709s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.007171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003857s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002771s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%涂%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002171s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:19+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.164331s][吞吐率：6.09req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:22+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.242297s][吞吐率：4.13req/s] [内存消耗：5,489.80kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001914s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.006464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003668s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%2015%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002659s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%2015%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.004021s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%2015%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002033s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:22+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.187265s][吞吐率：5.34req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:26+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.235550s][吞吐率：4.25req/s] [内存消耗：5,489.73kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002057s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.005409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.005114s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001894s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.003530s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001765s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:26+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.161848s][吞吐率：6.18req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:34+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.237953s][吞吐率：4.20req/s] [内存消耗：5,489.67kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '李',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002180s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.006140s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002647s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%李%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002357s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%李%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002805s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%李%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002456s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:34+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.135265s][吞吐率：7.39req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:07:43+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.239136s][吞吐率：4.18req/s] [内存消耗：5,489.62kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002131s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.006398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.005281s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002465s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002973s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%程序设计%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001741s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:07:43+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.141801s][吞吐率：7.05req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:08:28+08:00 ] 0.0.0.0 POST /teacher/course/courseSearch
+[ info ] reportsystem/teacher/course/courseSearch [运行时间：0.296458s][吞吐率：3.37req/s] [内存消耗：5,489.96kb] [文件加载：56]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'teacher',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\teacher\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\teacher\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003095s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.007669s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003424s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.002597s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 0,15 [ RunTime:0.002916s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE (  (  teacherNo = '2012032' )  AND `courseName` LIKE '%实验%' ) AND `course`.`deleteTime` IS NULL LIMIT 1 [ RunTime:0.001855s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:08:28+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.183181s][吞吐率：5.46req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/teacher/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:08:46+08:00 ] 0.0.0.0 GET /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.336478s][吞吐率：2.97req/s] [内存消耗：5,258.38kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002903s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.008340s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'courserNo' in 'where clause'[F:\study\www\reportSystem\ThinkPHP\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2019-04-06T17:08:57+08:00 ] 0.0.0.0 GET /admin/course/courseList
+[ info ] reportsystem/admin/course/courseList [运行时间：0.343442s][吞吐率：2.91req/s] [内存消耗：5,624.37kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001942s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003126s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.002018s ]
+[ sql ] [ SQL ] SELECT * FROM `course` LIMIT 0,15 [ RunTime:0.003224s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.001505s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:08:57+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.195850s][吞吐率：5.11req/s] [内存消耗：2,507.72kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:09:02+08:00 ] 0.0.0.0 GET /admin/course/courseList
+[ info ] reportsystem/admin/course/courseList [运行时间：0.221349s][吞吐率：4.52req/s] [内存消耗：5,350.95kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseList[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001819s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002570s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.001548s ]
+[ sql ] [ SQL ] SELECT * FROM `course` LIMIT 0,15 [ RunTime:0.002328s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1 [ RunTime:0.001625s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:09:02+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.143680s][吞吐率：6.96req/s] [内存消耗：2,507.72kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:09:05+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.222837s][吞吐率：4.49req/s] [内存消耗：5,258.28kb] [文件加载：54]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002371s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002947s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'courserNo' in 'where clause'[F:\study\www\reportSystem\ThinkPHP\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2019-04-06T17:10:47+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.295826s][吞吐率：3.38req/s] [内存消耗：5,366.37kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseList',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '程序设计',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002325s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003213s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%程序设计%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%程序设计%' OR `courseMajor` LIKE '%程序设计%' OR `courseType` LIKE '%程序设计%' OR `courseNature` LIKE '%程序设计%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%程序设计%' OR `examType` LIKE '%程序设计%' ) LIMIT 1 [ RunTime:0.023232s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%程序设计%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%程序设计%' OR `courseMajor` LIKE '%程序设计%' OR `courseType` LIKE '%程序设计%' OR `courseNature` LIKE '%程序设计%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%程序设计%' OR `examType` LIKE '%程序设计%' ) LIMIT 0,15 [ RunTime:0.003197s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%程序设计%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%程序设计%' OR `courseMajor` LIKE '%程序设计%' OR `courseType` LIKE '%程序设计%' OR `courseNature` LIKE '%程序设计%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%程序设计%' OR `examType` LIKE '%程序设计%' ) LIMIT 1 [ RunTime:0.002757s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:10:47+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.165608s][吞吐率：6.04req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:10:53+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.239356s][吞吐率：4.18req/s] [内存消耗：5,256.52kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '无线',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002465s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%无线%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%无线%' OR `courseMajor` LIKE '%无线%' OR `courseType` LIKE '%无线%' OR `courseNature` LIKE '%无线%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%无线%' OR `examType` LIKE '%无线%' ) LIMIT 1 [ RunTime:0.003166s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%无线%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%无线%' OR `courseMajor` LIKE '%无线%' OR `courseType` LIKE '%无线%' OR `courseNature` LIKE '%无线%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%无线%' OR `examType` LIKE '%无线%' ) LIMIT 0,15 [ RunTime:0.006248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%无线%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%无线%' OR `courseMajor` LIKE '%无线%' OR `courseType` LIKE '%无线%' OR `courseNature` LIKE '%无线%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%无线%' OR `examType` LIKE '%无线%' ) LIMIT 1 [ RunTime:0.005732s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:10:53+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.163221s][吞吐率：6.13req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:10:56+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.254781s][吞吐率：3.92req/s] [内存消耗：5,276.39kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '面向对象',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001798s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003530s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%面向对象%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%面向对象%' OR `courseMajor` LIKE '%面向对象%' OR `courseType` LIKE '%面向对象%' OR `courseNature` LIKE '%面向对象%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%面向对象%' OR `examType` LIKE '%面向对象%' ) LIMIT 1 [ RunTime:0.002696s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%面向对象%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%面向对象%' OR `courseMajor` LIKE '%面向对象%' OR `courseType` LIKE '%面向对象%' OR `courseNature` LIKE '%面向对象%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%面向对象%' OR `examType` LIKE '%面向对象%' ) LIMIT 0,15 [ RunTime:0.004827s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%面向对象%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%面向对象%' OR `courseMajor` LIKE '%面向对象%' OR `courseType` LIKE '%面向对象%' OR `courseNature` LIKE '%面向对象%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%面向对象%' OR `examType` LIKE '%面向对象%' ) LIMIT 1 [ RunTime:0.003975s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:10:57+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.168140s][吞吐率：5.95req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:02+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.243696s][吞吐率：4.10req/s] [内存消耗：5,248.30kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '涂',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002127s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002619s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%涂%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%涂%' OR `courseMajor` LIKE '%涂%' OR `courseType` LIKE '%涂%' OR `courseNature` LIKE '%涂%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%涂%' OR `examType` LIKE '%涂%' ) LIMIT 1 [ RunTime:0.003317s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%涂%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%涂%' OR `courseMajor` LIKE '%涂%' OR `courseType` LIKE '%涂%' OR `courseNature` LIKE '%涂%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%涂%' OR `examType` LIKE '%涂%' ) LIMIT 0,15 [ RunTime:0.003904s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%涂%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%涂%' OR `courseMajor` LIKE '%涂%' OR `courseType` LIKE '%涂%' OR `courseNature` LIKE '%涂%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%涂%' OR `examType` LIKE '%涂%' ) LIMIT 1 [ RunTime:0.002826s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:03+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.158829s][吞吐率：6.30req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:06+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.213825s][吞吐率：4.68req/s] [内存消耗：5,248.34kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001924s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.003831s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 0,15 [ RunTime:0.004047s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.002891s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:06+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.117214s][吞吐率：8.53req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:07+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.240817s][吞吐率：4.15req/s] [内存消耗：5,365.63kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '7',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001924s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003413s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%%' OR `courseMajor` LIKE '%%' OR `courseType` LIKE '%%' OR `courseNature` LIKE '%%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%%' OR `examType` LIKE '%%' ) LIMIT 1 [ RunTime:0.002068s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%%' OR `courseMajor` LIKE '%%' OR `courseType` LIKE '%%' OR `courseNature` LIKE '%%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%%' OR `examType` LIKE '%%' ) LIMIT 0,15 [ RunTime:0.002872s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%%' OR `courseMajor` LIKE '%%' OR `courseType` LIKE '%%' OR `courseNature` LIKE '%%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%%' OR `examType` LIKE '%%' ) LIMIT 1 [ RunTime:0.002005s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:08+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.104738s][吞吐率：9.55req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:14+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.238532s][吞吐率：4.19req/s] [内存消耗：5,248.34kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001864s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003366s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.002668s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 0,15 [ RunTime:0.003786s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.003245s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:14+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.149287s][吞吐率：6.70req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:19+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.273374s][吞吐率：3.66req/s] [内存消耗：5,365.82kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2018',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003911s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002778s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2018%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2018%' OR `courseMajor` LIKE '%2018%' OR `courseType` LIKE '%2018%' OR `courseNature` LIKE '%2018%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2018%' OR `examType` LIKE '%2018%' ) LIMIT 1 [ RunTime:0.002552s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2018%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2018%' OR `courseMajor` LIKE '%2018%' OR `courseType` LIKE '%2018%' OR `courseNature` LIKE '%2018%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2018%' OR `examType` LIKE '%2018%' ) LIMIT 0,15 [ RunTime:0.003399s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2018%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2018%' OR `courseMajor` LIKE '%2018%' OR `courseType` LIKE '%2018%' OR `courseNature` LIKE '%2018%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2018%' OR `examType` LIKE '%2018%' ) LIMIT 1 [ RunTime:0.003056s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:20+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.153220s][吞吐率：6.53req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:29+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.247551s][吞吐率：4.04req/s] [内存消耗：5,255.95kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '10',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '314',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002744s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003143s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%314%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%314%' OR `courseMajor` LIKE '%314%' OR `courseType` LIKE '%314%' OR `courseNature` LIKE '%314%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%314%' OR `examType` LIKE '%314%' ) LIMIT 1 [ RunTime:0.003620s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%314%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%314%' OR `courseMajor` LIKE '%314%' OR `courseType` LIKE '%314%' OR `courseNature` LIKE '%314%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%314%' OR `examType` LIKE '%314%' ) LIMIT 0,15 [ RunTime:0.004171s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%314%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%314%' OR `courseMajor` LIKE '%314%' OR `courseType` LIKE '%314%' OR `courseNature` LIKE '%314%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%314%' OR `examType` LIKE '%314%' ) LIMIT 1 [ RunTime:0.002625s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:29+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.157849s][吞吐率：6.34req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:33+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.263193s][吞吐率：3.80req/s] [内存消耗：5,365.71kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '8',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006283s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003967s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%3%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%3%' OR `courseMajor` LIKE '%3%' OR `courseType` LIKE '%3%' OR `courseNature` LIKE '%3%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%3%' OR `examType` LIKE '%3%' ) LIMIT 1 [ RunTime:0.005170s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%3%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%3%' OR `courseMajor` LIKE '%3%' OR `courseType` LIKE '%3%' OR `courseNature` LIKE '%3%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%3%' OR `examType` LIKE '%3%' ) LIMIT 0,15 [ RunTime:0.003912s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%3%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%3%' OR `courseMajor` LIKE '%3%' OR `courseType` LIKE '%3%' OR `courseNature` LIKE '%3%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%3%' OR `examType` LIKE '%3%' ) LIMIT 1 [ RunTime:0.002834s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:34+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.154330s][吞吐率：6.48req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:11:51+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.235120s][吞吐率：4.25req/s] [内存消耗：5,263.26kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '卢安',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002697s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003230s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%卢安%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%卢安%' OR `courseMajor` LIKE '%卢安%' OR `courseType` LIKE '%卢安%' OR `courseNature` LIKE '%卢安%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%卢安%' OR `examType` LIKE '%卢安%' ) LIMIT 1 [ RunTime:0.003231s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%卢安%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%卢安%' OR `courseMajor` LIKE '%卢安%' OR `courseType` LIKE '%卢安%' OR `courseNature` LIKE '%卢安%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%卢安%' OR `examType` LIKE '%卢安%' ) LIMIT 0,15 [ RunTime:0.003558s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%卢安%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%卢安%' OR `courseMajor` LIKE '%卢安%' OR `courseType` LIKE '%卢安%' OR `courseNature` LIKE '%卢安%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%卢安%' OR `examType` LIKE '%卢安%' ) LIMIT 1 [ RunTime:0.003463s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:11:52+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.117645s][吞吐率：8.50req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:12:03+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.193673s][吞吐率：5.16req/s] [内存消耗：5,248.34kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001734s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002324s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 0,15 [ RunTime:0.003822s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.003024s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:12:04+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.121763s][吞吐率：8.21req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:12:41+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.344323s][吞吐率：2.90req/s] [内存消耗：5,367.12kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002045s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003863s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.003105s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 0,15 [ RunTime:0.003791s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.004096s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:12:41+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.164152s][吞吐率：6.09req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:12:59+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.276154s][吞吐率：3.62req/s] [内存消耗：5,257.48kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '12',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => 'Photo',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001691s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002749s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%Photo%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%Photo%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%Photo%' OR `courseType` LIKE '%Photo%' OR `courseNature` LIKE '%Photo%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%Photo%' OR `examType` LIKE '%Photo%' ) LIMIT 1 [ RunTime:0.003036s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%Photo%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%Photo%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%Photo%' OR `courseType` LIKE '%Photo%' OR `courseNature` LIKE '%Photo%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%Photo%' OR `examType` LIKE '%Photo%' ) LIMIT 0,15 [ RunTime:0.005243s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%Photo%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%Photo%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%Photo%' OR `courseType` LIKE '%Photo%' OR `courseNature` LIKE '%Photo%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%Photo%' OR `examType` LIKE '%Photo%' ) LIMIT 1 [ RunTime:0.004452s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:13:00+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.107698s][吞吐率：9.29req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:13:05+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.247347s][吞吐率：4.04req/s] [内存消耗：5,367.26kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '2015',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001922s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002436s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.004819s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 0,15 [ RunTime:0.003837s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%2015%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%2015%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%2015%' OR `courseType` LIKE '%2015%' OR `courseNature` LIKE '%2015%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%2015%' OR `examType` LIKE '%2015%' ) LIMIT 1 [ RunTime:0.004858s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:13:05+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.153011s][吞吐率：6.54req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:13:13+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.294943s][吞吐率：3.39req/s] [内存消耗：5,367.37kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '计算机',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003272s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.005500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.004135s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 0,15 [ RunTime:0.003369s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.003279s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:13:13+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.114096s][吞吐率：8.76req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:13:39+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.253862s][吞吐率：3.94req/s] [内存消耗：5,367.37kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '计算机',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002235s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003222s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.003095s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 0,15 [ RunTime:0.002359s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.002466s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:13:39+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.113338s][吞吐率：8.82req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:16:42+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.408698s][吞吐率：2.45req/s] [内存消耗：5,641.99kb] [文件加载：53]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'origin' => 'http://reportsystem',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '计算机',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002372s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003784s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.002912s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 0,15 [ RunTime:0.003073s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%计算机%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%计算机%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%计算机%' OR `courseType` LIKE '%计算机%' OR `courseNature` LIKE '%计算机%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%计算机%' OR `examType` LIKE '%计算机%' ) LIMIT 1 [ RunTime:0.002892s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:16:42+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.155470s][吞吐率：6.43req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:17:18+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.231064s][吞吐率：4.33req/s] [内存消耗：5,271.11kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '实验',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002222s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.002582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%实验%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%实验%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%实验%' OR `courseType` LIKE '%实验%' OR `courseNature` LIKE '%实验%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%实验%' OR `examType` LIKE '%实验%' ) LIMIT 1 [ RunTime:0.003991s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%实验%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%实验%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%实验%' OR `courseType` LIKE '%实验%' OR `courseNature` LIKE '%实验%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%实验%' OR `examType` LIKE '%实验%' ) LIMIT 0,15 [ RunTime:0.004296s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%实验%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%实验%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%实验%' OR `courseType` LIKE '%实验%' OR `courseNature` LIKE '%实验%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%实验%' OR `examType` LIKE '%实验%' ) LIMIT 1 [ RunTime:0.004321s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:17:19+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.098173s][吞吐率：10.19req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:17:30+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.266487s][吞吐率：3.75req/s] [内存消耗：5,367.23kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '16',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '春',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001983s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003567s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%春%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%春%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%春%' OR `courseType` LIKE '%春%' OR `courseNature` LIKE '%春%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%春%' OR `examType` LIKE '%春%' ) LIMIT 1 [ RunTime:0.003048s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%春%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%春%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%春%' OR `courseType` LIKE '%春%' OR `courseNature` LIKE '%春%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%春%' OR `examType` LIKE '%春%' ) LIMIT 0,15 [ RunTime:0.003870s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%春%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%春%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%春%' OR `courseType` LIKE '%春%' OR `courseNature` LIKE '%春%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%春%' OR `examType` LIKE '%春%' ) LIMIT 1 [ RunTime:0.003101s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:17:31+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.106714s][吞吐率：9.37req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:17:38+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.268360s][吞吐率：3.73req/s] [内存消耗：5,367.38kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '专业课',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003198s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.004998s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%专业课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%专业课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%专业课%' OR `courseType` LIKE '%专业课%' OR `courseNature` LIKE '%专业课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%专业课%' OR `examType` LIKE '%专业课%' ) LIMIT 1 [ RunTime:0.004844s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%专业课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%专业课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%专业课%' OR `courseType` LIKE '%专业课%' OR `courseNature` LIKE '%专业课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%专业课%' OR `examType` LIKE '%专业课%' ) LIMIT 0,15 [ RunTime:0.002747s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%专业课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%专业课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%专业课%' OR `courseType` LIKE '%专业课%' OR `courseNature` LIKE '%专业课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%专业课%' OR `examType` LIKE '%专业课%' ) LIMIT 1 [ RunTime:0.002402s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:17:38+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.108333s][吞吐率：9.23req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:17:46+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.252477s][吞吐率：3.96req/s] [内存消耗：5,367.38kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '必修课',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002135s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%必修课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%必修课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%必修课%' OR `courseType` LIKE '%必修课%' OR `courseNature` LIKE '%必修课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%必修课%' OR `examType` LIKE '%必修课%' ) LIMIT 1 [ RunTime:0.003045s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%必修课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%必修课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%必修课%' OR `courseType` LIKE '%必修课%' OR `courseNature` LIKE '%必修课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%必修课%' OR `examType` LIKE '%必修课%' ) LIMIT 0,15 [ RunTime:0.002887s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%必修课%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%必修课%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%必修课%' OR `courseType` LIKE '%必修课%' OR `courseNature` LIKE '%必修课%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%必修课%' OR `examType` LIKE '%必修课%' ) LIMIT 1 [ RunTime:0.002392s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:17:46+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.156701s][吞吐率：6.38req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:17:55+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.261653s][吞吐率：3.82req/s] [内存消耗：5,367.10kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '9',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '48',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002245s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003113s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%48%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%48%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%48%' OR `courseType` LIKE '%48%' OR `courseNature` LIKE '%48%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%48%' OR `examType` LIKE '%48%' ) LIMIT 1 [ RunTime:0.003713s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%48%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%48%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%48%' OR `courseType` LIKE '%48%' OR `courseNature` LIKE '%48%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%48%' OR `examType` LIKE '%48%' ) LIMIT 0,15 [ RunTime:0.002683s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%48%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%48%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%48%' OR `courseType` LIKE '%48%' OR `courseNature` LIKE '%48%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%48%' OR `examType` LIKE '%48%' ) LIMIT 1 [ RunTime:0.002481s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:17:56+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.110487s][吞吐率：9.05req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:18:09+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.270421s][吞吐率：3.70req/s] [内存消耗：5,367.55kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '考查',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002778s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.005061s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%考查%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考查%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考查%' OR `courseType` LIKE '%考查%' OR `courseNature` LIKE '%考查%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考查%' OR `examType` LIKE '%考查%' ) LIMIT 1 [ RunTime:0.005347s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%考查%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考查%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考查%' OR `courseType` LIKE '%考查%' OR `courseNature` LIKE '%考查%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考查%' OR `examType` LIKE '%考查%' ) LIMIT 0,15 [ RunTime:0.003015s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%考查%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考查%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考查%' OR `courseType` LIKE '%考查%' OR `courseNature` LIKE '%考查%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考查%' OR `examType` LIKE '%考查%' ) LIMIT 1 [ RunTime:0.003425s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:18:09+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.136853s][吞吐率：7.31req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-06T17:18:15+08:00 ] 0.0.0.0 POST /admin/course/courseSearch
+[ info ] reportsystem/admin/course/courseSearch [运行时间：0.276752s][吞吐率：3.61req/s] [内存消耗：5,367.52kb] [文件加载：51]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'courseSearch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://reportsystem',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+  'search' => '考试',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ RUN ] app\admin\controller\Course->courseSearch[ F:\study\www\reportSystem\ThinkPHP\app\admin\controller\Course.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html [ array (
+  0 => 'courseList',
+  1 => 'courseNumber',
+) ]
+[ info ] [ LOG ] INIT File
+[ notice ] 模糊查找实验课程
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002641s ] mysql:host=127.0.0.1;port=3306;dbname=report_system;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `course` [ RunTime:0.003910s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%考试%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考试%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考试%' OR `courseType` LIKE '%考试%' OR `courseNature` LIKE '%考试%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考试%' OR `examType` LIKE '%考试%' ) LIMIT 1 [ RunTime:0.003521s ]
+[ sql ] [ SQL ] SELECT * FROM `course` WHERE  ( `courseName` LIKE '%考试%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考试%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考试%' OR `courseType` LIKE '%考试%' OR `courseNature` LIKE '%考试%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考试%' OR `examType` LIKE '%考试%' ) LIMIT 0,15 [ RunTime:0.003185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `course` WHERE  ( `courseName` LIKE '%考试%' OR `courseNo` LIKE 0 OR `teacherName` LIKE '%考试%' OR `courseGrade` LIKE 0 OR `courseMajor` LIKE '%考试%' OR `courseType` LIKE '%考试%' OR `courseNature` LIKE '%考试%' OR `coursePeriod` LIKE 0 OR `openTime` LIKE '%考试%' OR `examType` LIKE '%考试%' ) LIMIT 1 [ RunTime:0.004235s ]
+---------------------------------------------------------------
+[ 2019-04-06T17:18:15+08:00 ] 0.0.0.0 GET /static/fontawesome-5.5.0/css/font-awesome.min.css
+[ info ] reportsystem/static/fontawesome-5.5.0/css/font-awesome.min.css [运行时间：0.123885s][吞吐率：8.07req/s] [内存消耗：2,507.48kb] [文件加载：32]
+[ info ] [ LANG ] F:\study\www\reportSystem\ThinkPHP\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'fontawesome-5.5.0',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'reportsystem',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://reportsystem/admin/course/courseSearch',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=3972531200; PHPSESSID=cb9j1gi1crg2i2drh5q5ah8ah2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

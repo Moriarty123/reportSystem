@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554540864;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseList.html";i:1554542198;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -168,7 +168,7 @@
 		<div class="form_boxA">
 			<div class="a">
 				<h2>实验课程列表</h2>
-				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+				<form action="/admin/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
 					<input type="text" class="search" placeholder="课程名称" name="search" />
 					<input type="submit" class="search_button" value="搜索" />
 				</form>
@@ -189,6 +189,7 @@
 					<th style="width: 220px;">任课班级</th>
 					<th style="width: 100px;">任课时间</th>
 					<th style="width: 80px;">课程类型</th>
+					<th style="width: 80px;">课程性质</th>
 					<th style="width: 80px;">实验课时</th>
 					<th style="width: 80px;">考查方式</th>
 					<th style="width: 80px;">操作</th>
@@ -201,17 +202,18 @@
 					<td><?php echo $vo['teacherName']; ?></td>
 					<td><?php echo $vo['courseGrade'].'级'.$vo['courseMajor'].$vo['courseClass']; ?>班</td>
 					<td><?php echo $vo['openTime']; ?></td>
+					<td><?php echo $vo['courseType']; ?></td>
 					<td><?php echo $vo['courseNature']; ?></td>
 					<td><?php echo $vo['coursePeriod']; ?></td>
 					<td><?php echo $vo['examType']; ?></td>
 					<td>
-						<a href="/admin/course/detailPage?courseNo=<?php echo $vo['courseNo']; ?>">
+						<a href="/admin/course/detailPage?courseNo=<?php echo $vo['courseNo']; ?>" style="margin-left: 5px;">
 							<i class="fa fa-eye" title="查看课程"></i>
 						</a>
-						<a href="/admin/course/editPage?courseNo=<?php echo $vo['courseNo']; ?>">
+						<a href="/admin/course/editPage?courseNo=<?php echo $vo['courseNo']; ?>" style="margin-left: 5px;">
 							<i class="fa fa-edit" title="编辑课程"></i>
 						</a>
-						<a href="/admin/course/courseDelete?courseNo=<?php echo $vo['courseNo']; ?>" onclick="del();">
+						<a href="/admin/course/courseDelete?courseNo=<?php echo $vo['courseNo']; ?>" onclick="del();" style="margin-left: 5px;">
 							<i class="fa fa-trash-alt" title="删除课程"></i>
 						</a>
 					</td>
