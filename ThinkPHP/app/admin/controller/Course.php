@@ -7,6 +7,10 @@ use think\Log;
 use app\common\controller\Common;
 
 use app\admin\model\Course as courseModel;
+use app\admin\model\Teacher as teacherModel;
+use app\admin\model\Grade as gradeModel;
+use app\admin\model\Major as majorModel;
+use app\admin\model\Classes as classModel;
 
 class Course extends Common
 {
@@ -115,4 +119,124 @@ class Course extends Common
 
         return $this->fetch('courseList');
     }
+
+    //修改实验课程页面
+    public function editPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("修改实验课程页面", "notice");
+
+        //1.获取学生信息
+        $courseNo = input("get.courseNo");
+        $courseWhere = "courseNo = '{$courseNo}'";
+        $courseModel = new courseModel();
+
+        $course = $courseModel->where($courseWhere)->find();
+
+        if (empty($course)) {
+            Log::record("不存在该课程！", "error");
+            $this->error("不存在该课程！", "/admin/course/courseList");
+        }
+
+        //2.获取teacherList
+        $teacherModel = new teacherModel();
+        $gradeModel = new gradeModel();
+        $majorModel = new majorModel();
+        $classModel = new classModel();
+
+        $teacherList = $teacherModel->select();
+        $gradeList = $gradeModel->select();
+        $majorList = $majorModel->select();
+        $classList = $classModel->select();
+
+        //3.渲染页面
+        $this->assign("course", $course);
+        $this->assign("teacherList", $teacherList);
+        $this->assign("gradeList", $gradeList);
+        $this->assign("majorList", $majorList);
+        $this->assign("classList", $classList);
+
+        return $this->fetch("courseEdit");
+    }
+
+    //修改课程信息
+    public function courseEdit()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("修改实验课程", "notice");
+
+        //1.获取数据
+        $courseNo = input("post.courseNo");
+        $courseNum = input("post.courseNum");
+        $courseName = input("post.courseName");
+        $teacherNo = input("post.teacherNo");
+        $teacherName = input("post.teacherName");
+        $grade = input("post.grade");
+        $major = input("post.major");
+        $courseType = input("post.courseType");
+        $courseNature = input("post.courseNature");
+        $coursePeriod = input("post.coursePeriod");
+        $testPeriod = input("post.testPeriod");
+        $openTime = input("post.openTime");
+        $credit = input("post.credit");
+        $examType = input("post.examType");
+        $classesArr = input("post.classes/a");
+
+
+        if ($classesArr != null) {
+            // dump($classesArr);
+            $classes = "";
+
+            foreach ($classesArr as $key => $value) {
+                $classes .= $value;
+                $classes .= ",";
+            }
+
+            $classes = substr($classes,0,strlen($classes)-1); 
+        }
+        
+
+        //2.构建数据
+        $data = [
+            'courseNo' => $courseNo,
+            'courseNum' => $courseNum,
+            'courseName' => $courseName,
+            'teacherNo' => $teacherNo,
+            'teacherName' => $teacherName,
+            'courseGrade' => $grade,
+            'courseMajor' => $major,
+            'courseType' => $courseType,
+            'courseNature' => $courseNature,
+            'coursePeriod' => $coursePeriod,
+            'testPeriod' => $testPeriod,
+            'openTime' => $openTime,
+            'credit' => $credit,
+            'examType' => $examType,
+            'courseClass' => $classes,
+            'updateTime' => time()
+        ];
+
+
+        // dump($data);
+
+        //3.更新数据库
+        $courseModel = new courseModel();
+        $courseWhere = "courseWhere = '{$courseNo}'";
+
+        $course = $courseModel->update($data, $courseWhere);
+
+        if (empty($course) || $course == null) {
+            Log::record("修改实验课程失败！", "error");
+            $this->error("修改实验课程失败！请稍后再试。", "/admin/course/courseList");
+        }
+
+        //4.后续操作
+        $this->success("修改实验课程成功！", "/admin/course/courseList");
+
+
+    }
+
+
 }
