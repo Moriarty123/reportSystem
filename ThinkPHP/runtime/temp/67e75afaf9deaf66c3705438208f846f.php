@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554479850;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\student\studentList.html";i:1554529978;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -197,7 +197,7 @@
 					<td><?php echo $vo['major']; ?><?php echo $vo['classes']; ?>班</td>
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
-						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
+						<a href="/admin/student/detailPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
 						<a href="/admin/student/editPage?studentNo=<?php echo $vo['studentNo']; ?>" style='margin-left: 5px;'>

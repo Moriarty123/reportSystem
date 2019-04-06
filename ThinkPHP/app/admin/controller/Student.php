@@ -237,4 +237,44 @@ class Student extends Common
         return json($major);
         // $this->ajaxReturn($major);
     }
+
+    //查看学生信息
+    public function detailPage() {
+        //0.测试
+        // dump($_GET);
+        Log::record("查看学生信息", "notice");
+
+        //1.获取学生信息
+        $studentNo = input("get.studentNo");
+        $studentWhere = "studentNo = '{$studentNo}'";
+        $studentModel = new studentModel();
+
+        $student = $studentModel->where($studentWhere)->find();
+
+        if (empty($student)) {
+            Log::record("不存在该学生！", "notice");
+            $this->error("不存在该学生！", "/admin/student/studentList");
+        }
+
+        //2.获取insititue grade major classes
+        $instituteModel = new instituteModel();
+        $gradeModel = new gradeModel();
+        $majorModel = new majorModel();
+        $classesModel = new classesModel();
+
+        $institute = $instituteModel->select();
+        $grade = $gradeModel->select();
+        $major = $majorModel->select();
+        $classes = $classesModel->select();
+
+        //2.渲染
+        $this->assign("student", $student);
+        $this->assign("institute", $institute);
+        $this->assign("grade", $grade);
+        $this->assign("major", $major);
+        $this->assign("classes", $classes);
+
+        //3.后续操作
+        return $this->fetch("studentdetail");
+    }
 }
