@@ -134,7 +134,7 @@ class Student extends Common
         $student = $studentModel->where($studentWhere)->find();
 
         if (empty($student)) {
-            Log::record("不存在该学生！", "notice");
+            Log::record("不存在该学生！", "error");
             $this->error("不存在该学生！", "/admin/student/studentList");
         }
 

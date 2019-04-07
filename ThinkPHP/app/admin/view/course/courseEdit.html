@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/admin/courseAdd.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/user.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/admin/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--main开始-->
+    <div id="MainForm">
+      <div class="form_boxA">
+         <div class="a">
+            <h2><strong>修改课程信息</strong></h2>
+        </div>
+        <div style="position: relative; left: 0px; top: 0px;">
+        <form action="/admin/course/courseEdit" method="post" class="add_form" onsubmit="return checkSubmit();">
+            <input type="hidden" name="courseNo" value="{$course.courseNo}">
+            <input type="hidden" name="courseNum" value="{$course.courseNum}">
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>课程号：</label>
+                <input type="text" id="courseNum" name="courseNum" class="add_input" value="{$course.courseNum}" disabled="disabled" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>课程名称：</label>
+                <input type="text" id="courseName" name="courseName" class="add_input" value="{$course.courseName}" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>任课教师：</label>
+                <select id="teacherNo" style="width: 270px; margin-top:5px;" name="teacherNo">
+                    <option value="-1">--请选择教师--</option>
+                    {volist name="teacherList" id="teacher"}
+                    <option value="{$teacher.teacherNo}" <?php if($course['teacherNo'] == $teacher['teacherNo']) {echo "selected";} ?>>{$teacher.teacherName}</option>
+                    {/volist}
+                </select>
+                <input type="hidden" name="teacherName" id="teacherName" value="{$course.teacherName}">
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>任课年级：</label>
+                <select id="grade" style="width: 270px; margin-top:5px;" name="grade">
+                    <option value="-1">--请选择年级--</option>
+                    {volist name="gradeList" id="vo"}
+                    <option value="{$vo.grade}" <?php if($course['courseGrade'] == $vo['grade']) {echo "selected";} ?>>{$vo.grade}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>任课专业：</label>
+                <select id="major" style="width: 270px; margin-top:5px;" name="major">
+                    <option value="-1">--请选择专业--</option>
+                    {volist name="majorList" id="vo"}
+                    <option value="{$vo.majorName}" <?php if($course['courseMajor'] == $vo['majorName']) {echo "selected";} ?>>{$vo.majorName}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>任课班级：</label>
+                <div>
+                {volist name="classList" id="vo"}
+                <span><input type="checkbox" name="classes[]/a" value="{$vo.className}" style="margin-top: 10px;" class="checkBox">{$vo.className}</span>
+                {/volist}
+                </div>  
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>课程类型：</label>
+                <select id="courseType" style="width: 270px; margin-top:5px;" name="courseType">
+                    <option value="专业课" <?php if($course['courseType'] == '专业课') {echo "selected";} ?> >专业课</option>
+                    <option value="公共数学" <?php if($course['courseType'] == '公共数学') {echo "selected";} ?> >公共数学</option>
+                    <option value="公共计算机" <?php if($course['courseType'] == '公共计算机') {echo "selected";} ?> >公共计算机</option>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>课程性质：</label>
+                <select id="courseNature" style="width: 270px; margin-top:5px;" name="courseNature">
+                    <option value="必修课" <?php if($course['courseNature'] == '必修课') {echo "selected";} ?> >必修课</option>
+                    <option value="选修课"<?php if($course['courseNature'] == '选修课') {echo "selected";} ?> >选修课</option>
+                </select>
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>理论课时：</label>
+                <input type="text" id="coursePeriod" name="coursePeriod" class="add_input" value="{$course.coursePeriod}" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>实验课时：</label>
+                <input type="text" id="testPeriod" name="testPeriod" class="add_input" value="{$course.testPeriod}" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>开课时间：</label>
+                <input type="text" id="openTime" name="openTime" class="add_input" value="{$course.openTime}" placeholder="例：2018年春季学期" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>学分：</label>
+                <input type="text" id="credit" name="credit" class="add_input" value="{$course.credit}" />
+            </div>
+            <div class="add_list">
+                <label class="add_label"><span class="xing">*</span>考查方式：</label>
+                <select id="examType" style="width: 270px; margin-top:5px;" name="examType">
+                    <option value="考查" <?php if($course['examType'] == '考查') {echo "selected";} ?> >考查</option>
+                    <option value="考试" <?php if($course['examType'] == '考试') {echo "selected";} ?> >考试</option>
+                </select>
+            </div>
+            <input type="submit" value="修改" class="add_submit" />
+        </form>
+    </div>
+</div>
+</div>
+<!--main结束-->
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<!-- 底部开始-->
+{include file="../app/common/view/html/footer.html"}
+<!-- 底部结束-->
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#teacherNo").change(function() {
+            var teacherName = $("#teacherNo option:selected").text();
+            $("#teacherName").val(teacherName);
+        });
+    });
+</script>
+
+
+
