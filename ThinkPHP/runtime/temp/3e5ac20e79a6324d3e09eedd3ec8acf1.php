@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1554120095;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554120095;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,6 +82,12 @@
 				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--教师管理结束-->
 		<!--学生管理开始-->
@@ -95,6 +101,12 @@
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
 				<a class="cks" href="/admin/student/studentList">学生列表</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/addPage">添加学生</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -112,19 +124,25 @@
 				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/admin/course/addPage" class="cks">添加课程信息</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--课程管理结束-->
 		<!--专业班级开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					专业班级
+					学院专业
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/major/majorList" class="cks">专业列表</a>
+				<a href="/admin/institute/index" class="cks">学院专业</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
