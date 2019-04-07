@@ -11,14 +11,32 @@ function checkSubmit() {
 
 	// alert(f1&&f5);
 
-	return checkCourseName() && checkTeacherNo() &&checkGrade() &&checkMajor() && checkClasses() && checkCoursePeriod() && checkTestPeriod() && checkOpenTime() && checkCredit();
+	return checkCourseNum() && checkCourseName() && checkTeacherNo() &&checkGrade() &&checkMajor() && checkClasses() && checkCoursePeriod() && checkTestPeriod() && checkOpenTime() && checkCredit();
+}
+
+function checkCourseNum() {
+	var courseNum = $("#courseNum").val();
+
+	if (courseNum == "") {
+		alert("课程号不能为空！");
+		return false;
+	}
+
+	var reg = /^[0-9]*$/;
+	if (!reg.test($("#courseNum").val())) {
+		alert("课程号应该为数字");
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 function checkCourseName() {
 	var courseName = $("#courseName").val();
 
 	if (courseName == "") {
-		alert("实验课程名称不能为空！'");
+		alert("实验课程名称不能为空！");
 		return false;
 	}
 
@@ -29,7 +47,7 @@ function checkTeacherNo() {
 	var teacherNo = $("#teacherNo").val();
 	// alert(teacherNo);
 	if (teacherNo == "-1") {
-		alert("未选择任课老师'");
+		alert("未选择任课老师");
 		return false;
 	}
 
@@ -40,7 +58,7 @@ function checkGrade() {
 	var grade = $("#grade").val();
 
 	if (grade == "-1") {
-		alert("未选择任课年级'");
+		alert("未选择任课年级");
 		return false;
 	}
 
@@ -51,7 +69,7 @@ function checkMajor() {
 	var major = $("#major").val();
 
 	if (major == "-1") {
-		alert("未选择任课专业'");
+		alert("未选择任课专业");
 		return false;
 	}
 

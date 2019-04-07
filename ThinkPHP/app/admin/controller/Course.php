@@ -278,5 +278,118 @@ class Course extends Common
         return $this->fetch("courseDetail");
     }
 
+    //添加课程信息页面
+    public function addPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("添加课程信息页面", "notice");
+
+        //2.获取teacherList
+        $teacherModel = new teacherModel();
+        $gradeModel = new gradeModel();
+        $majorModel = new majorModel();
+        $classModel = new classModel();
+
+        $teacherList = $teacherModel->select();
+        $gradeList = $gradeModel->select();
+        $majorList = $majorModel->select();
+        $classList = $classModel->select();
+
+        //3.渲染页面
+        $this->assign("teacherList", $teacherList);
+        $this->assign("gradeList", $gradeList);
+        $this->assign("majorList", $majorList);
+        $this->assign("classList", $classList);
+
+        return $this->fetch("courseAdd");
+    }
+
+    //添加课程信息
+    public function courseAdd()
+    {
+        //0.测试
+        dump($_POST);
+        Log::record("添加课程信息", "notice");
+
+        //1.获取数据
+        $courseNum = input("post.courseNum");
+
+        $courseWhere = "courseNum = '{$courseNum}'";
+        $courseModel = new courseModel();
+
+        $course = $courseModel->where($courseWhere)->find();
+
+        if (!empty($course) || $course != null) {
+            Log::record("已存在该课程！", "error");
+            $this->error("已存在该课程！", "/admin/course/courseList");
+        }
+
+        $courseName = input("post.courseName");
+        $teacherNo = input("post.teacherNo");
+        $teacherName = input("post.teacherName");
+        $grade = input("post.grade");
+        $major = input("post.major");
+        $courseType = input("post.courseType");
+        $courseNature = input("post.courseNature");
+        $coursePeriod = input("post.coursePeriod");
+        $testPeriod = input("post.testPeriod");
+        $openTime = input("post.openTime");
+        $credit = input("post.credit");
+        $examType = input("post.examType");
+        $classesArr = input("post.classes/a");
+
+
+        if ($classesArr != null) {
+            // dump($classesArr);
+            $classes = "";
+
+            foreach ($classesArr as $key => $value) {
+                $classes .= $value;
+                $classes .= ",";
+            }
+
+            $classes = substr($classes,0,strlen($classes)-1); 
+        }
+        
+
+        //2.构建数据
+        $data = [
+            'courseNum' => $courseNum,
+            'courseName' => $courseName,
+            'teacherNo' => $teacherNo,
+            'teacherName' => $teacherName,
+            'courseGrade' => $grade,
+            'courseMajor' => $major,
+            'courseType' => $courseType,
+            'courseNature' => $courseNature,
+            'coursePeriod' => $coursePeriod,
+            'testPeriod' => $testPeriod,
+            'openTime' => $openTime,
+            'credit' => $credit,
+            'examType' => $examType,
+            'courseClass' => $classes,
+            'updateTime' => time(),
+            'createTime' => time()
+        ];
+
+
+        dump($data);
+
+        //3.更新数据库
+        $courseModel = new courseModel();
+        
+
+        $course = $courseModel->create($data);
+
+        if (empty($course) || $course == null) {
+            Log::record("添加实验课程信息失败！", "error");
+            $this->error("添加实验课程信息失败！请稍后再试。", "/admin/course/courseList");
+        }
+
+        //4.后续操作
+        $this->success("添加实验课程成功！", "/admin/course/courseList");
+    }
+
 
 }
