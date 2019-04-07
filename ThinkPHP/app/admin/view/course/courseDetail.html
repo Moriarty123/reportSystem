@@ -34,7 +34,7 @@
     <div id="MainForm">
       <div class="form_boxA">
          <div class="a">
-            <h2><strong>修改课程信息</strong></h2>
+            <h2><strong>查看课程信息</strong></h2>
         </div>
         <div style="position: relative; left: 0px; top: 0px;">
         <form action="/admin/course/courseEdit" method="post" class="add_form" onsubmit="return checkSubmit();">
@@ -46,11 +46,11 @@
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>课程名称：</label>
-                <input type="text" id="courseName" name="courseName" class="add_input" value="{$course.courseName}" />
+                <input type="text" id="courseName" name="courseName" class="add_input" value="{$course.courseName}" disabled="disabled" />
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>任课教师：</label>
-                <select id="teacherNo" style="width: 270px; margin-top:5px;" name="teacherNo">
+                <select id="teacherNo" style="width: 270px; margin-top:5px;" name="teacherNo" disabled="disabled" >
                     <option value="-1">--请选择教师--</option>
                     {volist name="teacherList" id="teacher"}
                     <option value="{$teacher.teacherNo}" <?php if($course['teacherNo'] == $teacher['teacherNo']) {echo "selected";} ?>>{$teacher.teacherName}</option>
@@ -60,7 +60,7 @@
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>任课年级：</label>
-                <select id="grade" style="width: 270px; margin-top:5px;" name="grade">
+                <select id="grade" style="width: 270px; margin-top:5px;" name="grade" disabled="disabled">
                     <option value="-1">--请选择年级--</option>
                     {volist name="gradeList" id="vo"}
                     <option value="{$vo.grade}" <?php if($course['courseGrade'] == $vo['grade']) {echo "selected";} ?>>{$vo.grade}</option>
@@ -69,7 +69,7 @@
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>任课专业：</label>
-                <select id="major" style="width: 270px; margin-top:5px;" name="major">
+                <select id="major" style="width: 270px; margin-top:5px;" name="major" disabled="disabled">
                     <option value="-1">--请选择专业--</option>
                     {volist name="majorList" id="vo"}
                     <option value="{$vo.majorName}" <?php if($course['courseMajor'] == $vo['majorName']) {echo "selected";} ?>>{$vo.majorName}</option>
@@ -86,7 +86,7 @@
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>课程类型：</label>
-                <select id="courseType" style="width: 270px; margin-top:5px;" name="courseType">
+                <select id="courseType" style="width: 270px; margin-top:5px;" name="courseType" disabled="disabled">
                     <option value="专业课" <?php if($course['courseType'] == '专业课') {echo "selected";} ?> >专业课</option>
                     <option value="公共数学" <?php if($course['courseType'] == '公共数学') {echo "selected";} ?> >公共数学</option>
                     <option value="公共计算机" <?php if($course['courseType'] == '公共计算机') {echo "selected";} ?> >公共计算机</option>
@@ -94,35 +94,37 @@
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>课程性质：</label>
-                <select id="courseNature" style="width: 270px; margin-top:5px;" name="courseNature">
+                <select id="courseNature" style="width: 270px; margin-top:5px;" name="courseNature" disabled="disabled">
                     <option value="必修课" <?php if($course['courseNature'] == '必修课') {echo "selected";} ?> >必修课</option>
                     <option value="选修课"<?php if($course['courseNature'] == '选修课') {echo "selected";} ?> >选修课</option>
                 </select>
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>理论课时：</label>
-                <input type="text" id="coursePeriod" name="coursePeriod" class="add_input" value="{$course.coursePeriod}" />
+                <input type="text" id="coursePeriod" name="coursePeriod" class="add_input" value="{$course.coursePeriod}" disabled="disabled"/>
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>实验课时：</label>
-                <input type="text" id="testPeriod" name="testPeriod" class="add_input" value="{$course.testPeriod}" />
+                <input type="text" id="testPeriod" name="testPeriod" class="add_input" value="{$course.testPeriod}" disabled="disabled"/>
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>开课时间：</label>
-                <input type="text" id="openTime" name="openTime" class="add_input" value="{$course.openTime}" placeholder="例：2018年春季学期" />
+                <input type="text" id="openTime" name="openTime" class="add_input" value="{$course.openTime}" disabled="disabled" />
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>学分：</label>
-                <input type="text" id="credit" name="credit" class="add_input" value="{$course.credit}" />
+                <input type="text" id="credit" name="credit" class="add_input" value="{$course.credit}" disabled="disabled"/>
             </div>
             <div class="add_list">
                 <label class="add_label"><span class="xing">*</span>考查方式：</label>
-                <select id="examType" style="width: 270px; margin-top:5px;" name="examType">
+                <select id="examType" style="width: 270px; margin-top:5px;" name="examType" disabled="disabled">
                     <option value="考查" <?php if($course['examType'] == '考查') {echo "selected";} ?> >考查</option>
                     <option value="考试" <?php if($course['examType'] == '考试') {echo "selected";} ?> >考试</option>
                 </select>
             </div>
-            <input type="submit" value="修改" class="add_submit" />
+            <a href="/admin/course/courseList" style="float: left; ">
+                <input type="button" value="返回" class="add_submit" />
+            </a>
         </form>
     </div>
 </div>

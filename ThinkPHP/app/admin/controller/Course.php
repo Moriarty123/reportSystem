@@ -238,5 +238,45 @@ class Course extends Common
 
     }
 
+    //实验课程详细信息页面
+    public function detailPage()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("实验课程详细信息页面", "notice");
+
+        //1.获取学生信息
+        $courseNo = input("get.courseNo");
+        $courseWhere = "courseNo = '{$courseNo}'";
+        $courseModel = new courseModel();
+
+        $course = $courseModel->where($courseWhere)->find();
+
+        if (empty($course)) {
+            Log::record("不存在该课程！", "error");
+            $this->error("不存在该课程！", "/admin/course/courseList");
+        }
+
+        //2.获取teacherList
+        $teacherModel = new teacherModel();
+        $gradeModel = new gradeModel();
+        $majorModel = new majorModel();
+        $classModel = new classModel();
+
+        $teacherList = $teacherModel->select();
+        $gradeList = $gradeModel->select();
+        $majorList = $majorModel->select();
+        $classList = $classModel->select();
+
+        //3.渲染页面
+        $this->assign("course", $course);
+        $this->assign("teacherList", $teacherList);
+        $this->assign("gradeList", $gradeList);
+        $this->assign("majorList", $majorList);
+        $this->assign("classList", $classList);
+
+        return $this->fetch("courseDetail");
+    }
+
 
 }
