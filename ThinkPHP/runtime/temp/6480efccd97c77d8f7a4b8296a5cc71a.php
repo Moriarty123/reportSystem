@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +12,22 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/guideImport.js"></script>
+    <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script>
+    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
+    
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/teacher/guide.css" />
+    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+    <link rel="stylesheet" href="/static/css/teacher/add.css" />
+
 </head>
+
 <body>
     <!-- 头部开始-->
     <style type="text/css">
@@ -159,49 +168,49 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; height
-	600px;">
-	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
-		<tr>
-			<td colspan="2">
-				<span class="time" style="color: black;">
-
-					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
-					<?php else: ?>
-					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
-					<div class="top">
-						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
-					</div>
-					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
-					<?php endif; ?>
-				</span>
-
-			</td>
-		</tr>
-		<tr>
-			<td align="left" valign="top" colspan="2">
-				<div class="main-tit">服务器信息</div>
-				<div class="main-con">
-					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
-					PHP版本：5.6.31<br/>
-					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left" valign="top">
-				<div class="main-corpy">系统提示</div>
-				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您使用IE7以上版本或其他的浏览器
-				</div>
-			</td>
-		</tr>
-	</table>
-	</div>
-	<!--main结束-->
+    <!--课程列表开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+            <div class="a">
+                <h2>导入实验指导</h2>
+            </div>
+            <div class="guideAddDiv" style="margin:0 auto;">
+                <form action="/teacher/guide/guideImport" enctype="multipart/form-data" method="post" class="add_form" onsubmit="return checkSubmit()">
+                
+                <div class="add_list" style="padding-top: 5px;">
+                    <label class="add_label"><span class="xing">*</span>实验课程：</label>
+                    <select name="courseNo" id="courseNo" style="padding-top: 5px; width: 250px; ">
+                            <option value="-1">--请选择实验课程--</option>
+                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                </div>
+                <div class="add_list">
+                    <label class="add_label">实验任务：</label>
+                    <select name="taskNo" id="taskNo" style="padding-top: 5px; width: 250px;">
+                            <option value="-1">--请选择实验任务--</option>
+                            <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <option value="<?php echo $vo['taskNo']; ?>"><?php echo $vo['taskName']; ?></option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>指导名称：</label>
+                    <input type="text" id="guideName" name="guideName" class="add_input"  style="padding-top: 5px; width: 250px;">
+                </div>
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>实验指导：</label>
+                    <input type="file" name="file" id="file" accept=".pdf" onchange="uploadPdf(this);" style="width: 250px;" multiple>
+                    <input type="hidden" name="filePath" id="filePath">
+                </div>
+                <input type="submit" value="确定" class="add_submit" />
+            </form>
+            </div>
+            
+        </div>
+    </div>
+    <!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -220,3 +229,37 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+//上传pdf
+function uploadPdf(obj) {
+    if ( obj.value == "" ) return;
+
+    var formdata = new FormData();
+
+    formdata.append("pdf" , $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+
+    $.ajax({
+        type : 'post',
+        url : '/teacher/common/uploadPdf',
+        data : formdata,
+        cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            $filePath = "/uploads/"+ret;
+            $filePath = $filePath.replace("\\","/");
+
+            $("#filePath").val($filePath);
+            // alert($filePath);
+        },
+        error : function(){ 
+            alert('pdf上传失败');
+        }
+    });
+}
+</script>
+
+
+
+

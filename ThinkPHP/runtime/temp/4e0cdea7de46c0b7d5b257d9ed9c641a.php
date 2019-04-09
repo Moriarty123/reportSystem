@@ -1,32 +1,29 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\courseMenu.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>计算机学院实验报告在线撰写系统</title>
-	<link rel="shortcut icon" href="/static/images/school.ico" />
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="/static/images/school.ico" />
+    
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
-	<link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/index/public.js"></script>
 
-	<script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
-	<script type="text/javascript" src="/static/js/index/public.js"></script>
-	<script type="text/javascript" src="/static/js/common/checkBox.js"></script>
-
-	<link rel="stylesheet" href="/static/css/index/index.css" />
-	<link rel="stylesheet" href="/static/css/common/common.css" />
-	<link rel="stylesheet" href="/static/css/common/footer.css" />
-	<link rel="stylesheet" href="/static/css/common/menu.css">
-	<link rel="stylesheet" href="/static/css/common/detail.css">
-	<link rel="stylesheet" href="/static/css/teacher/course.css" />
-	<link rel="stylesheet" href="/static/css/teacher/display.css" />
-	<link rel="stylesheet" href="/static/css/teacher/courseMenu.css">
+    <link rel="stylesheet" href="/static/css/index/index.css" />
+    <link rel="stylesheet" href="/static/css/common/common.css" />
+    <link rel="stylesheet" href="/static/css/common/footer.css" />
+    <link rel="stylesheet" href="/static/css/common/menu.css">
+    <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/teacher/course.css" />
+    <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
-
 <body>
-	<!-- 头部开始-->
-	<style type="text/css">
+    <!-- 头部开始-->
+    <style type="text/css">
     
     a:hover {
         text-decoration: none;
@@ -59,10 +56,10 @@
     </div>
 </div>
 <!-- 头部结束 -->
-	<!-- 头部结束-->
+    <!-- 头部结束-->
 
-	<!-- 左边菜单开始-->
-	
+    <!-- 左边菜单开始-->
+    
 
 <div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
@@ -162,73 +159,64 @@
 		
 	</div>
 </div>
-	<!-- 左边菜单结束-->
+    <!-- 左边菜单结束-->
 
 	<!--课程列表开始-->
-
-	<div id="MainForm"
->
+	<div id="MainForm">
 		<div class="form_boxA">
-			<div class="a courseMenuDiv">
-				<div id="courseMenu" class="courseMenu">
-					<label class="courseLabel">实验课程：</label>
-					<a href="/teacher/course/courseMenu">全部</a>
-					<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
-					<a href="/teacher/course/showTask?courseNo=<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></a>
-					<?php endforeach; endif; else: echo "" ;endif; ?>
-				</div>
-				<div id="taskMenu" class="taskMenu">
-					<label class="taskLabel">实验任务：</label>
-					<a href="/teacher/course/courseMenu">全部</a>
-					<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
-					<a href="/teacher/task/detailPage?taskNo=<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></a>
-					<?php endforeach; endif; else: echo "" ;endif; ?>
-					
+			<div class="a">
+				<h2>课程列表</h2>
+				<form action="/teacher/course/courseSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="课程名" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select id="operateSelect">
+						<option value="-1">--其他操作--</option>
+						<option value="1">同步数据</option>
+						<option value="2">导出学生名单</option>
+					</select>
 				</div>
 			</div>
-			
-		</div>
-		<div style="">
-			<div class="showDiv">
-				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
-				<div class="taskDiv">
-					<a href="/teacher/task/detailPage?taskNo=<?php echo $task['taskNo']; ?>" style="overflow: hidden;">
-						<img src="<?php echo $task['taskImg']; ?>" style="width: 100%; overflow: hidden; ">
-					</a>
-					<div class="taskDescribe">
-						<div class="taskNameDiv" id="taskNameDiv">
-							<p><?php echo $task['taskName']; ?></p>
-							<!-- <div style="text-align:center; overflow: hidden; display: none;" class="taskDescribe">
-								<?php echo $task['taskDescribe']; ?>
-							</div> -->
-						</div>
-						<div class="footDiv">
-							<div class="leftDiv">
-								<a href="/teacher/course/studentList?courseNo=<?php echo $task['courseNo']; ?>" style='margin-left: 5px;'>
-									<i class="fa fa-user-graduate" title="查看学生" style="padding: 6px;"></i>
-								</a>
-							</div>
-							<div class="rightDiv">
-								<a href="/teacher/guide/guideShow?guideNo=<?php echo $task['guideNo']; ?>" target="_blant">
-									<p>实验指导</p>
-								</i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+			<form action="/admin/user/checkedUserDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th>课程编号</th>
+					<th>课程名</th>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年级</th>
+					<th>专业班级</th>
+				</tr>
+				<?php if(is_array($studentList) || $studentList instanceof \think\Collection || $studentList instanceof \think\Paginator): $i = 0; $__LIST__ = $studentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<tr>
+					<td><?php echo $vo['courseNo']; ?></td>
+					<td><?php echo $vo['courseName']; ?></td>
+					<td><?php echo $vo['studentNo']; ?></td>
+					<td><?php echo $vo['studentName']; ?></td>
+					<td><?php echo $vo['sex']; ?></td>
+					<td><?php echo $vo['grade']; ?></td>
+					<td><?php echo $vo['major'].$vo['classes']; ?>班</td>
+				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</table>
+			<p class="msg">
+				共找到<?php echo $studentNumber; ?>条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			<?php echo $studentList->render(); ?>
 			</div>
+			</form>
 		</div>
 	</div>
-</div>
-<!--课程列表结束-->
+	<!--课程列表结束-->
 
-<!-- 清除浮动 -->
-<div style="clear: both;"></div>
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
 
-<!-- 底部开始-->
-<!-- 底部开始 -->
+    <!-- 底部开始-->
+    <!-- 底部开始 -->
 <footer>
     <div class="footer-body">
         <div class="footer">
@@ -237,7 +225,7 @@
     </div>
 </footer>
 <!-- 底部结束 -->
-<!-- 底部结束-->
+    <!-- 底部结束-->
 
 </body>
 </html>
@@ -246,35 +234,18 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		$("#termFilter").click(function(){
-			$("#termFilterDiv").slideToggle();
+  		$("#termFilter").click(function(){
+  			$("#termFilterDiv").slideToggle();
 		});
 
 		$("#operateSelect").change(function() {
 			var value = $("#operateSelect").val();
 
 			if (value == 2) {
-				$(window).attr('location','/teacher/excel/courseExcel');
+				$(window).attr('location','/teacher/excel/studentExcel?courseNo=<?php echo $courseNo; ?>');
 			}
 			
 		});
-
-		// $(".taskNameDiv").mouseenter(function () {
-		//     $(".taskNameDiv").slideUp();
-		// });
-		// $(".taskNameDiv").mouseover(function () {
-		//     $(".taskNameDiv").slideDown(); 
-		// });
 	});
 </script>
 <!-- 筛选框结束 -->
-
-<script type="text/javascript">
-	function del(){
-		return window.confirm("你确认要删除该实验课程吗？");
-	}
-	function checkdel(){
-		return window.confirm("你确认要删除选中的实验课程吗？");
-	}
-
-</script>

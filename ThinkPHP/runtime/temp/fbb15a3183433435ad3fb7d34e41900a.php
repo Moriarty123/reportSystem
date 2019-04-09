@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/student/view/common/menu.html";i:1554737906;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\user\updatePwd.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,15 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/updatePwd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/task.css" />
-    <link rel="stylesheet" href="/static/css/teacher/display.css" />
+    <link rel="stylesheet" href="/static/css/teacher/user.css" />
+    <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -61,61 +62,65 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 400px;">
+<div class="container" style="margin-top:20px; height: 500px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-home a"></i>
-					<a href="/student/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验课程开始-->
+		<!--实验任务开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					我的课程
+					实验任务
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/student/course/courseList">实验课程列表</a>
+				<a class="cks" href="/teacher/course/courseList">课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
-		</dl>
-		<!--实验课程结束-->
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					我的任务
-				<i class="fas fa-angle-down b"></i>
-			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/student/task/taskList">实验任务列表</a>
+				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/teacher/task/addPage">发布任务</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					我的报告
+					 实验指导
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/report/reportList" class="cks">实验报告列表</a>
+				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/report/writePage" class="cks">撰写实验报告</a>
+				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -124,13 +129,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					我的成绩
+					学生报告
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/score/scoreShow" class="cks">实验课程成绩</a>
+				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -145,7 +150,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/score/scoreShow" class="cks">实验课程成绩</a>
+				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -157,62 +162,34 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--课程列表开始-->
+	<!--main开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2>实验任务列表</h2>
-				<form action="/student/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
-					<input type="text" class="search" placeholder="实验任务名称" name="search" />
-					<input type="submit" class="search_button" value="搜索" />
-				</form>
-				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
-					<select onchange="window.location=this.value">
-						<option>--其他操作--</option>
-						<option>同步数据</option>
-					</select>
+				<h2><strong>修改登录密码</strong></h2>
+			</div>
+			<form action="/teacher/user/updatePwd" method="post" class="add_form" onsubmit="return checkUser()">
+				<input type="hidden" name="id" value="<?php echo $user['user_id']; ?>" />
+				<div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>原始密码：</label>
+                    <input type="password" name="bepwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Bepwd()" onblur="checkBepwd()" />
+                    <span class="tip" id="tip-bepwd">请输入原始密码,字母数字组合，6-16位字符</span>
+                </div>
+                <div class="add_list">
+					<label class="add_label"><span class="xing">*</span>新密码：</label>
+					<input type="password" name="pwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Pwd()" onblur="checkPwd()" />
+					<span class="tip" id="tip-pwd">请输入新密码,字母数字组合，6-16位字符</span>
 				</div>
-			</div>
-			<form action="/admin/user/checkedUserDelete" method="post">
-			<table cellpadding="0" cellspacing="0">
-				<tr>
-					<th>实验课程</th>
-					<th>实验任务</th>
-					<th>实验指导</th>
-					<th>开始时间</th>
-					<th>截止时间</th>
-					<th>任务描述</th>
-					<th>操作</th>
-				</tr>
-				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-				<tr>
-					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
-					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
-					<td><a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">查看实验指导</a></td>
-					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
-					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
-					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
-					<td>
-						<a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank"> 
-							<i class="fa fa-eye" title="查看实验指导"></i>
-						</a>
-						<a href="/student/report/editorPage?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank" style="margin-left: 5px;"> 
-							<i class="fa fa-edit" title="撰写实验报告"></i>
-						</a>
-					</td>
-				</tr>
-				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
-				共找到<?php echo $taskNumber; ?>条课程信息，每页显示15条记录
-			</p>
-			<div class="" style="text-align: center;margin-bottom:20px; ">
-			<?php echo $taskList->render(); ?>
-			</div>
+				<div class="add_list">
+					<label class="add_label"><span class="xing">*</span>确认密码：</label>
+					<input type="password" name="repwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Repwd()" onblur="checkRepwd()" />
+					<span class="tip" id="tip-repwd">确认密码必须一致</span>
+				</div>
+				<input type="submit" value="修改" class="add_submit" />
 			</form>
 		</div>
 	</div>
-	<!--课程列表结束-->
+	<!--main结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -231,20 +208,3 @@
 
 </body>
 </html>
-
-<!-- 筛选框开始-->
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#publishedFilter").click(function(){
-  			$("#publishedFilterDiv").slideToggle();
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
-<script type="text/javascript">
-	function checkPublish()
-	{
-		return window.confirm("您确认要发布此实验任务吗？");
-	}
-</script>
