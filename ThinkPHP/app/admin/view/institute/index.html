@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/admin/institute.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/user.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
+    <link rel="stylesheet" href="__CSS__/common/buttons.css">
+</head>
+
+<style type="text/css">
+    .instituteMenu a {
+        border: #666;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/admin/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+    <!--main开始-->
+    <div id="MainForm">
+        <div class="form_boxA">
+<!--             <div class="a">
+                <h2><strong>学院、年级、专业、班级</strong></h2>
+            </div> -->
+            <div style="position: relative; left: 0px; top: 0px;">
+
+                <!-- 导航栏开始 -->
+                <div style="position: fixed; left: 310px; top: 160px;" id="instituteMenu" class="instituteMenu">
+                    <div class="" style="width: 120px;">
+                        <a href="#institutePage" class="button button-glow button-border button-rounded button-primary">学院</a>
+                        <a href="#gradePage" class="button button-glow button-border button-rounded button-primary">年级</a>
+                        <a href="#majorPage" class="button button-glow button-border button-rounded button-primary">专业</a>
+                        <a href="#classPage" class="button button-glow button-border button-rounded button-primary">班级</a>
+                    </div>
+                </div>
+                <!-- 导航栏结束 -->
+
+
+
+                <div style="height: 100px;" id="institutePage"></div>
+                <!-- 学院开始 -->
+                <div style="width: 500px; margin: 0 auto;">
+                    <h3>现有学院：</h3>
+                    <table style="width: 500px; text-align: left;">
+                        <thead>
+                            <tr>
+                                <th style="width:150px;">学院</th>
+                                <th style="width: 150px;">操作</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            {volist name="instituteList" id="institute"}
+                            <tr>
+                                <th>{$institute.instituteName}</th>
+                                <th><a href="/admin/institute/instituteDelete?instituteNo={$institute.instituteNo}" onclick="return del();">删除</a></th>
+                            </tr>
+                            {/volist}
+                        </tbody>
+                        
+                    </table>
+                    <div style="margin: 20px 0px;">
+                        <form action="/admin/institute/instituteAdd" method="post" class="searchform" style="margin-left: 0px;" onsubmit="return checkInstituteName();">
+                            <input type="text" id="instituteName" class="search" placeholder="请输入学院名称,如，计算机科学与技术学院" name="instituteName" style="width: 500px;" />
+                            <input type="submit" class="search_button" value="添加学院" style="margin-left:400px; width: 100px" />
+                        </form>
+                    </div>
+                </div>
+                <!-- 学院结束 -->
+
+                <div style="height: 100px;" id="gradePage"></div>
+
+                <!-- 年级开始 -->
+                <div style="width: 500px; margin: 0 auto;">
+                    <h3>现有年级：</h3>
+                    <table style="width: 500px; margin: 0 auto; text-align: center;">
+                        <thead>
+                            <tr>
+                                <th style="width:150px;">年级</th>
+                                <th style="width: 150px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="gradeList" id="grade"}
+                            <tr>
+                                <th>{$grade.grade}</th>
+                                <th><a href="/admin/institute/gradeDelete?grade={$grade.grade}" onclick="return del();">删除</a></th>
+                            </tr>
+                            {/volist}
+                        </tbody>
+                        
+                    </table>
+                    <div style="margin: 20px 0px;">
+                        <form action="/admin/institute/gradeAdd" method="post" onsubmit="return checkSearch()" class="searchform" style="margin-left: 0px;" onsubmit="return checkGradeName();">
+                            <input type="text" class="search" placeholder="请输入年级,如，2015" name="grade" style="width: 500px;" />
+                            <input type="submit" class="search_button" value="添加年级" style="margin-left:400px; width: 100px" />
+                        </form>
+                    </div>
+                </div>
+                <!-- 年级结束 -->
+
+                <div style="height: 100px;" id="majorPage"></div>
+
+                <!-- 专业开始 -->
+                <div style="width: 500px; margin: 0 auto;">
+                    <h3>现有专业：</h3>
+                    <table style="width: 500px; margin: 0 auto; text-align: center;">
+                        <thead>
+                            <tr>
+                                <th style="width:150px;">专业</th>
+                                <th style="width: 150px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="majorList" id="major"}
+                            <tr>
+                                <th>{$major.majorName}</th>
+                                <th><a href="/admin/institute/majorDelete?majorNo={$major.majorNo}" onclick="return del();">删除</a></th>
+                            </tr>
+                            {/volist}
+                        </tbody>
+                    </table>
+                    <div style="margin: 20px 0px;">
+                        <form action="/admin/institute/majorAdd" method="post" onsubmit="return checkMajor()" class="searchform" style="margin-left: 0px;">
+                            <input type="text" class="search" placeholder="请输入专业名称,如，计算机科学与技术" name="majorName" style="width: 500px;" />
+                            <input type="submit" class="search_button" value="添加专业" style="margin-left:400px; width: 100px" />
+                        </form>
+                    </div>
+                </div>
+                <!-- 专业结束 -->
+
+                <div style="height: 100px;" id="classPage"></div>
+
+
+                <!-- 班级开始 -->
+                <div style="width: 500px; margin: 0 auto;">
+                    <h3>现有班级：</h3>
+                    <table style="width: 500px; margin: 0 auto; text-align: center;">
+                        <thead>
+                            <tr>
+                                <th style="width:150px;">班级</th>
+                                <th style="width: 150px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="classList" id="classes"}
+                            <tr>
+                                <th>{$classes.className}</th>
+                                <th><a href="/admin/institute/classDelete?classNo={$classes.classNo}" onclick="return del();">删除</a></th>
+                            </tr>
+                            {/volist}
+                        </tbody>
+                    </table>
+                    <div style="margin: 20px 0px;">
+                        <form action="/admin/institute/classAdd" method="post" onsubmit="return checkClass()" class="searchform" style="margin-left: 0px;">
+                            <input type="text" class="search" placeholder="请输入班级,如，3" name="className" style="width: 500px;" />
+                            <input type="submit" class="search_button" value="添加班级" style="margin-left:400px; width: 100px" />
+                        </form>
+                    </div>
+                </div>
+                <!-- 班级结束 -->
+
+                <div style="height: 100px;"></div>
+
+            </div>
+        </div>
+    </div>
+    <!--main结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#teacherNo").change(function() {
+            var teacherName = $("#teacherNo option:selected").text();
+            $("#teacherName").val(teacherName);
+        });
+    });
+
+
+    $(document).ready(function(){
+        $('#instituteNav').zlightMenu();
+    });
+
+</script>
+
+<script>
+  window.onscroll=function(){ 
+  var sT=document.documentElement.scrollTop||document.body.scrollTop; 
+  if(sT>=160){    
+       $("#instituteMenu").css('position','fixed');
+       $("#instituteMenu").css('top','310');
+       $("#instituteMenu").css('left','160');      
+       $("#instituteMenu").css('background','#fff');
+  }else{
+//        $("#instituteMenu").css('position','static');
+        $("#instituteMenu").css('top','310');
+       $("#instituteMenu").css('left','160');      
+          
+  }
+}
+</script>
+
+<script type="text/javascript">
+function del(){
+    return window.confirm("确认删除吗？");
+}
+
+</script>

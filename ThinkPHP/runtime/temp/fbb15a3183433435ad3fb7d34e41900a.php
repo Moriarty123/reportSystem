@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\user\updatePwd.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +12,15 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
+    <script type="text/javascript" src="/static/js/teacher/updatePwd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/teacher/user.css" />
+    <link rel="stylesheet" href="/static/css/teacher/add.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -160,46 +163,31 @@
     <!-- 左边菜单结束-->
 
 	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; height
-	600px;">
-	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
-		<tr>
-			<td colspan="2">
-				<span class="time" style="color: black;">
-
-					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
-					<?php else: ?>
-					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
-					<div class="top">
-						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
-					</div>
-					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
-					<?php endif; ?>
-				</span>
-
-			</td>
-		</tr>
-		<tr>
-			<td align="left" valign="top" colspan="2">
-				<div class="main-tit">服务器信息</div>
-				<div class="main-con">
-					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
-					PHP版本：5.6.31<br/>
-					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2><strong>修改登录密码</strong></h2>
+			</div>
+			<form action="/teacher/user/updatePwd" method="post" class="add_form" onsubmit="return checkUser()">
+				<input type="hidden" name="id" value="<?php echo $user['user_id']; ?>" />
+				<div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>原始密码：</label>
+                    <input type="password" name="bepwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Bepwd()" onblur="checkBepwd()" />
+                    <span class="tip" id="tip-bepwd">请输入原始密码,字母数字组合，6-16位字符</span>
+                </div>
+                <div class="add_list">
+					<label class="add_label"><span class="xing">*</span>新密码：</label>
+					<input type="password" name="pwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Pwd()" onblur="checkPwd()" />
+					<span class="tip" id="tip-pwd">请输入新密码,字母数字组合，6-16位字符</span>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left" valign="top">
-				<div class="main-corpy">系统提示</div>
-				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您使用IE7以上版本或其他的浏览器
+				<div class="add_list">
+					<label class="add_label"><span class="xing">*</span>确认密码：</label>
+					<input type="password" name="repwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Repwd()" onblur="checkRepwd()" />
+					<span class="tip" id="tip-repwd">确认密码必须一致</span>
 				</div>
-			</td>
-		</tr>
-	</table>
+				<input type="submit" value="修改" class="add_submit" />
+			</form>
+		</div>
 	</div>
 	<!--main结束-->
 

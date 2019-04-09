@@ -80,7 +80,7 @@ class Course extends Common
     {
         //0.测试
         // dump($_POST);
-        Log::record('显示课程列表','notice');
+        Log::record('显示课程任务列表','notice');
 
         //1.获取账号
         $teacherNo = session('account');

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\task\taskList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/student/view/common/menu.html";i:1554737906;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
+    <link rel="stylesheet" href="/static/css/teacher/task.css" />
+    <link rel="stylesheet" href="/static/css/teacher/display.css" />
 </head>
 <body>
     <!-- 头部开始-->
@@ -59,65 +61,61 @@
     <!-- 左边菜单开始-->
     
 
-<div class="container" style="margin-top:20px; height: 500px;">
+<div class="container" style="margin-top:20px; height: 400px;">
 	<div class="leftsidebar_box">
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-home a"></i>
-					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					<a href="/student/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验任务开始-->
+		<!--实验课程开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验任务
+					我的课程
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">课程列表</a>
+				<a class="cks" href="/student/course/courseList">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+		</dl>
+		<!--实验课程结束-->
+		<!--实验任务开始-->
+		<dl class="system_log">
+			<dt>
+				<i class="fas fa-book-open a"></i>
+					我的任务
+				<i class="fas fa-angle-down b"></i>
+			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
+				<a class="cks" href="/student/task/taskList">实验任务列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">发布任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			
 		</dl>
 		<!--实验任务结束-->
 		<!--实验指导开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					我的报告
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
+				<a href="/student/report/reportList" class="cks">实验报告列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<a href="/student/report/writePage" class="cks">撰写实验报告</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -126,13 +124,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					学生报告
+					我的成绩
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/student/score/scoreShow" class="cks">实验课程成绩</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -147,7 +145,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
+				<a href="/student/score/scoreShow" class="cks">实验课程成绩</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -159,49 +157,62 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
-	<div style="position: absolute; left: 250px; top: 92px; height
-	600px;">
-	<table width="99%" border="0" cellspacing="0" cellpadding="0" id="main" style="width: 1050px;">
-		<tr>
-			<td colspan="2">
-				<span class="time" style="color: black;">
-
-					<?php if(\think\Session::get('user_id') == ''): ?>
-					<a href="/index/index/login" class=""><i class="fa fa-plus-circle"></i> 登录</a>
-					<?php else: ?>
-					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
-					<div class="top">
-						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
-					</div>
-					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
-					<?php endif; ?>
-				</span>
-
-			</td>
-		</tr>
-		<tr>
-			<td align="left" valign="top" colspan="2">
-				<div class="main-tit">服务器信息</div>
-				<div class="main-con">
-					服务器软件：Apache/2.4.27(Win64) PHP/5.6.31<br/>
-					PHP版本：5.6.31<br/>
-					MYSQL版本： 5.7.19, for Win64 (x86)<br/>
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>实验任务列表</h2>
+				<form action="/student/task/taskSearch" method="post" onsubmit="return checkSearch()" class="searchform">
+					<input type="text" class="search" placeholder="实验任务名称" name="search" />
+					<input type="submit" class="search_button" value="搜索" />
+				</form>
+				<div style="width: 100px; float: right; margin-right: 30px;margin-top: 20px; ">
+					<select onchange="window.location=this.value">
+						<option>--其他操作--</option>
+						<option>同步数据</option>
+					</select>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left" valign="top">
-				<div class="main-corpy">系统提示</div>
-				<div class="main-order">1=>欢迎使用计算机学院实验报告在线撰写系统<br/>
-					2=>强烈建议您使用IE7以上版本或其他的浏览器
-				</div>
-			</td>
-		</tr>
-	</table>
+			</div>
+			<form action="/admin/user/checkedUserDelete" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th>实验课程</th>
+					<th>实验任务</th>
+					<th>实验指导</th>
+					<th>开始时间</th>
+					<th>截止时间</th>
+					<th>任务描述</th>
+					<th>操作</th>
+				</tr>
+				<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<tr>
+					<td style="max-width: 150px;"><?php echo $vo['courseName']; ?></td>
+					<td style="max-width: 150px;"><?php echo $vo['taskName']; ?></td>
+					<td><a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank">查看实验指导</a></td>
+					<td><?php echo date("Y-m-d h:m",$vo['startTime']); ?></td>
+					<td><?php echo date("Y-m-d h:m",$vo['endTime']); ?></td>
+					<td style="width: 150px;"><?php echo $vo['taskDescribe']; ?></td>
+					<td>
+						<a href="/student/guide/guideShow?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank"> 
+							<i class="fa fa-eye" title="查看实验指导"></i>
+						</a>
+						<a href="/student/report/editorPage?guideNo=<?php echo $vo['guideNo']; ?>" target="_blank" style="margin-left: 5px;"> 
+							<i class="fa fa-edit" title="撰写实验报告"></i>
+						</a>
+					</td>
+				</tr>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</table>
+			<p class="msg">
+				共找到<?php echo $taskNumber; ?>条课程信息，每页显示15条记录
+			</p>
+			<div class="" style="text-align: center;margin-bottom:20px; ">
+			<?php echo $taskList->render(); ?>
+			</div>
+			</form>
+		</div>
 	</div>
-	<!--main结束-->
+	<!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -220,3 +231,20 @@
 
 </body>
 </html>
+
+<!-- 筛选框开始-->
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  		$("#publishedFilter").click(function(){
+  			$("#publishedFilterDiv").slideToggle();
+		});
+	});
+</script>
+<!-- 筛选框结束 -->
+<script type="text/javascript">
+	function checkPublish()
+	{
+		return window.confirm("您确认要发布此实验任务吗？");
+	}
+</script>

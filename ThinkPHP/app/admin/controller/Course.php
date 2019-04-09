@@ -309,7 +309,7 @@ class Course extends Common
     public function courseAdd()
     {
         //0.测试
-        dump($_POST);
+        // dump($_POST);
         Log::record("添加课程信息", "notice");
 
         //1.获取数据
@@ -384,11 +384,11 @@ class Course extends Common
 
         if (empty($course) || $course == null) {
             Log::record("添加实验课程信息失败！", "error");
-            $this->error("添加实验课程信息失败！请稍后再试。", "/admin/course/courseList");
+            $this->error("添加实验课程信息失败！请稍后再试。", "/admin/course/addPage");
         }
 
         //4.后续操作
-        $this->success("添加实验课程成功！", "/admin/course/courseList");
+        $this->success("添加实验课程成功！", "/admin/course/addPage");
     }
 
 

@@ -105,4 +105,5 @@ class Course extends Common
         return $this->fetch('courseList');
     }
 
+
 }
