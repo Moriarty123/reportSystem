@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1554540536;s:36:"../app/index/view/common/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1555325053;s:36:"../app/index/view/common/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,6 +71,11 @@
                     <?php else: ?>
                     <input type="password" name="password" class="form-control sectionInput" value="<?php echo \think\Session::get('repassword'); ?>">
                     <?php endif; ?>
+                </div>
+                <div style="width: 300px;height: 100px;margin-top:40px;">
+                    <label class="sectionLabel" style="margin-top: 20px;">角色：</label>
+                    <input type="radio" name="role" value="教师" style="margin-left: 10px; margin-top: 40px;">教师
+                    <input type="radio" name="role" value="学生" style="margin-left: 10px; margin-top: 40px; ">学生
                 </div>
                 <div style="clear: both;"></div>
                 <div class="sectionCheckBoxDiv">
