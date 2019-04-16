@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554623086;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1555434187;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,13 +134,13 @@
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					专业班级
+					学院专业
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/major/majorList" class="cks">专业列表</a>
+				<a href="/admin/institute/index" class="cks">学院专业</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1555432800;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1555433678;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +63,7 @@
                     <span class="fa fa-eercast"></span>
                 </div>
                 <div class="header-left-bottom">
-                    <form action="/index/login/login" method="post">
+                    <form action="/admin/login/login" method="post">
                         <div class="icon1">
                             <span class="fa fa-user"></span>
                             <input type="text" name="account" placeholder="账号" required="" value="<?php echo \think\Session::get('reaccount'); ?>"/>
