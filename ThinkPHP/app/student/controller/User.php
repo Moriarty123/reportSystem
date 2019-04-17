@@ -56,6 +56,7 @@ class User extends Common
     	//2.验证原始密码
     	//2.1查询账号是否存在
 		$password = md5($bepwd);
+        $password = md5($bepwd);
 		$account = session('account');
 		$where = "account = '$account' and password = '$password'";
 		$login = $userModel	->where($where)
@@ -67,10 +68,12 @@ class User extends Common
     		$this->error('原始密码错误！');
     	}
 
-    	//2.修改数据库
-    	$data = [
-    		'password' => md5($pwd)
-    	];
+        //2.修改数据库
+        $pwd = md5($pwd);
+        $pwd = md5($pwd);
+        $data = [
+            'password' => $pwd
+        ];
 
     	$user_id = session('user_id');
 

@@ -59,7 +59,7 @@ class Login extends Controller
     	//3.1创建模型
 		$userModel = new userModel();
 
-		//3.2查询账号是否存在
+		//3.2查询账号是否存在，密码使用双层MD5加密
 		$password = md5($password);
         $password = md5($password);
 		$where = "account = '$account' and password = '$password'";
