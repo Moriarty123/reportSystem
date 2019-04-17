@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\user\updatePwd.html";i:1555516303;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\user\updatePwd.html";i:1555517025;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,91 +70,99 @@
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
 			</dt>
 		</dl>
-		<!--实验任务开始-->
+		<!--教师管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-users  a"></i>
-					实验任务
+					教师管理
 				<i class="fas fa-angle-down   b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">课程列表</a>
+				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
+				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">发布任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			
 		</dl>
-		<!--实验任务结束-->
-		<!--实验指导开始-->
+		<!--教师管理结束-->
+		<!--学生管理开始-->
+		<dl class="system_log">
+			<dt>
+				<i class="fas fa-book-open a"></i>
+					学生管理
+				<i class="fas fa-angle-down b"></i>
+			</dt>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/studentList">学生列表</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/addPage">添加学生</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
+		</dl>
+		<!--学生管理结束-->
+		<!--课程管理开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-comments a"></i>
-					 实验指导
+					课程管理
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
+				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
+				<a href="/admin/course/addPage" class="cks">添加课程信息</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--实验指导结束-->
-		<!--批阅报告开始-->
+		<!--课程管理结束-->
+		<!--专业班级开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					学生报告
+					学院专业
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
+				<a href="/admin/institute/index" class="cks">学院专业</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--批阅报告结束-->
-		<!--统计资料开始-->
+		<!--专业班级结束-->
+		<!--角色权限开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-file-invoice-dollar a"></i>
-					统计资料
+					角色权限
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
+				<a href="/admin/role/roleList" class="cks">权限列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
-		<!--统计资料结束-->
+		<!--角色权限结束-->
 		
 
 		

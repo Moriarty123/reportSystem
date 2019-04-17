@@ -97,11 +97,14 @@
 						<a href="/teacher/guide/updatePage?guideNo={$vo.guideNo}" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
+
+						<a href="/teacher/guide/guideExport?guideNo={$vo.guideNo}" style='margin-left: 5px;' target="_blank">
+							<i class="fa fa-file-export" title="导出"></i>
+						</a>
 					</td>
 				</tr>
 				{/volist}
-			</table>
-			<p class="msg">
+			</table>	<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
 				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到{$guideNumber}条记录，每页显示15条记录

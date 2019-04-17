@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideList.html";i:1555518642;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -229,11 +229,14 @@
 						<a href="/teacher/guide/updatePage?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
+
+						<a href="/teacher/guide/guideExport?guideNo=<?php echo $vo['guideNo']; ?>" style='margin-left: 5px;' target="_blank">
+							<i class="fa fa-file-export" title="导出"></i>
+						</a>
 					</td>
 				</tr>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<p class="msg">
+			</table>	<p class="msg">
 				<span id="notdisplay" style="display: none;"></span>
 				<input type="submit" value="删除选中" class="delBtn" id="delBtn" disabled="disabled" onclick='return checkdel();'/>
 				共找到<?php echo $guideNumber; ?>条记录，每页显示15条记录
