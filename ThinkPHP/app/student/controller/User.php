@@ -56,7 +56,7 @@ class User extends Common
     	//2.验证原始密码
     	//2.1查询账号是否存在
 		$password = md5($bepwd);
-        $password = md5($bepwd);
+        $password = md5($password);
 		$account = session('account');
 		$where = "account = '$account' and password = '$password'";
 		$login = $userModel	->where($where)

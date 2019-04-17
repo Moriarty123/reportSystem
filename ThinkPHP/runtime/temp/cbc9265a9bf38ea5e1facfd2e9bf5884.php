@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1555434187;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\index\index.html";i:1555516135;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,7 +181,7 @@
 					<span>账号：<?php echo \think\Session::get('account'); ?></span>&nbsp;&nbsp;
 					<div class="top">
 						<span class="left">您上次的登录时间： <?php echo date('Y-m-d H:i:s',\think\Session::get('lastTime')); ?> &nbsp;&nbsp;&nbsp;&nbsp;如非您本人操作，请及时</span>
-						<a href="/teacher/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
+						<a href="/admin/user/updatePwdPage" style="color: #538ec6;">【更改密码】</a>
 					</div>
 					<div class="sec">这是您第<span class="num"><?php echo \think\Session::get('count'); ?></span>次登录！</div>
 					<?php endif; ?>
