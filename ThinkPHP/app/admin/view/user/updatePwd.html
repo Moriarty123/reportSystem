@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院实验报告在线撰写系统</title>
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="__JS__/jquery3.2.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/index/public.js"></script>
+    <script type="text/javascript" src="__JS__/teacher/updatePwd.js"></script>
+
+    <link rel="stylesheet" href="__CSS__/index/index.css" />
+    <link rel="stylesheet" href="__CSS__/common/common.css" />
+    <link rel="stylesheet" href="__CSS__/common/footer.css" />
+    <link rel="stylesheet" href="__CSS__/common/menu.css">
+    <link rel="stylesheet" href="__CSS__/common/detail.css">
+    <link rel="stylesheet" href="__CSS__/teacher/user.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
+</head>
+<body>
+    <!-- 头部开始-->
+    {include file="../app/common/view/html/header.html"}
+    <!-- 头部结束-->
+
+    <!-- 左边菜单开始-->
+    {include file="../app/teacher/view/common/menu.html"}
+    <!-- 左边菜单结束-->
+
+	<!--main开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2><strong>修改登录密码</strong></h2>
+			</div>
+			<form action="/admin/user/updatePwd" method="post" class="add_form" onsubmit="return checkUser()">
+				<input type="hidden" name="id" value="{$user.user_id}" />
+				<div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>原始密码：</label>
+                    <input type="password" name="bepwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Bepwd()" onblur="checkBepwd()" />
+                    <span class="tip" id="tip-bepwd">请输入原始密码,字母数字组合，6-16位字符</span>
+                </div>
+                <div class="add_list">
+					<label class="add_label"><span class="xing">*</span>新密码：</label>
+					<input type="password" name="pwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Pwd()" onblur="checkPwd()" />
+					<span class="tip" id="tip-pwd">请输入新密码,字母数字组合，6-16位字符</span>
+				</div>
+				<div class="add_list">
+					<label class="add_label"><span class="xing">*</span>确认密码：</label>
+					<input type="password" name="repwd" class="add_input" placeholder="字母数字组合，6-16位字符" onfocus="Repwd()" onblur="checkRepwd()" />
+					<span class="tip" id="tip-repwd">确认密码必须一致</span>
+				</div>
+				<input type="submit" value="修改" class="add_submit" />
+			</form>
+		</div>
+	</div>
+	<!--main结束-->
+
+    <!-- 清除浮动 -->
+    <div style="clear: both;"></div>
+
+    <!-- 底部开始-->
+    {include file="../app/common/view/html/footer.html"}
+    <!-- 底部结束-->
+
+</body>
+</html>
