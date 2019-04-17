@@ -1,12 +1,12 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"F:\study\www\reportSystem\ThinkPHP\public/../app/common\view\html\fail.html";i:1555340660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"F:\study\www\reportSystem\ThinkPHP\public/../app/common\view\html\fail.html";i:1555433511;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"> 
     <title>跳转提示</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
+    <script src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 

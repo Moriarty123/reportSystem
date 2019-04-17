@@ -61,6 +61,7 @@ class Login extends Controller
 
 		//3.2查询账号是否存在
 		$password = md5($password);
+        $password = md5($password);
 		$where = "account = '$account' and password = '$password'";
 		$user = $userModel	->where($where)
     						->find();
@@ -82,7 +83,7 @@ class Login extends Controller
         session('lastTime',$user['lastTime']);
         session('count', $user['count']+1);
 
-    	//4.2判断登录角色，账号长度为7是教师，为12是学生
+    	//4.2判断登录角色，permission大于10是教师，为1是学生
         $permission = $user['permission'];
 
         if ($permission / 10 >= 1) {
@@ -91,15 +92,7 @@ class Login extends Controller
         else {
             $this->success('学生登录成功','/student/index/index');
         }
-    	// if ($user['permission'] == 1) {
-    	// 	$this->success('教师登录成功','/teacher/index/index');
-    	// }
-    	// else if ($user['permission'] == 2) {
-    	// 	$this->success('学生登录成功','/student/index/index');
-    	// }
-     //    else {
-     //        $this->redirect('index/index/login');
-     //    }
+
     }
 
     //退出登录
