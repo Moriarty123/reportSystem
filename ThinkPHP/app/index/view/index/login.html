@@ -23,48 +23,42 @@
     <!-- 头部结束-->
 
 
-    <!-- 主体开始 -->
-    <div class="loginContainer">
-        <div class="loginDiv">
-
-            <form class="loginForm" action="/index/login/login" method="post">
-                <div class="sectionDiv">
-                    <label class="sectionLabel">账号：</label>
-                    {eq name="Think.session.isRemember" value="false"}
-                    <input type="text" name="account" class="form-control sectionInput">
-                    {else}
-                    <input type="text" name="account" class="form-control sectionInput" value="{$Think.session.reaccount}">
-                    {/eq}
-
+    <!-- main -->
+    <div class="w3layouts-main" style="margin-top: 0px;"> 
+        <div class="bg-layer">
+            <h1 style="margin-top: 0px;">登录系统</h1>
+            <div class="header-main">
+                <div class="main-icon">
+                    <span class="fa fa-eercast"></span>
                 </div>
-                <br>
-                <div class="sectionDiv">
-                    <label class="sectionLabel">密码：</label>
-
-                    {eq name="Think.session.isRemember" value="false"}
-                    <input type="password" name="password" class="form-control sectionInput">
-                    {else}
-                    <input type="password" name="password" class="form-control sectionInput" value="{$Think.session.repassword}">
-                    {/eq}
+                <div class="header-left-bottom">
+                    <form action="/index/login/login" method="post">
+                        <div class="icon1">
+                            <span class="fa fa-user"></span>
+                            <input type="text" name="account" placeholder="账号" required="" value="{$Think.session.reaccount}"/>
+                        </div>
+                        <div class="icon1">
+                            <span class="fa fa-lock"></span>
+                            <input type="password" name="password" placeholder="密码" required="" value="{$Think.session.repassword}"/>
+                        </div>
+                        <div class="login-check">
+                           <label class="checkbox">
+                            {eq name="Think.session.isRemember" value="false"}
+                            <input type="checkbox" name="rememberMe">
+                            {else}
+                            <input type="checkbox" name="rememberMe" checked="true">
+                            {/eq}
+                            <i> </i>记住我</label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn">登录</button>
+                        </div>
+                    </form> 
                 </div>
-                <div style="clear: both;"></div>
-                <div class="sectionCheckBoxDiv">
-                    {eq name="Think.session.isRemember" value="false"}
-                    <input type="checkbox" name="rememberMe">
-                    {else}
-                    <input type="checkbox" name="rememberMe" checked="true">
-                    {/eq}
-
-                    <label style="font-size: 16px;">记住我</label>
-                </div>
-
-                <div class="ButtonDiv sectionSubmitDiv">
-                    <input type="submit" name="" class="Button">
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    <!-- 主体结束 -->
+    </div>  
+    <!-- //main -->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>

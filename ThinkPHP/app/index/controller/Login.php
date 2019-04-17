@@ -59,14 +59,15 @@ class Login extends Controller
     	//3.1创建模型
 		$userModel = new userModel();
 
-		//3.2查询账号是否存在
+		//3.2查询账号是否存在，密码使用双层MD5加密
 		$password = md5($password);
+        $password = md5($password);
 		$where = "account = '$account' and password = '$password'";
-		$login = $userModel	->where($where)
+		$user = $userModel	->where($where)
     						->find();
 
     	//2.3显示查询结果，查询错误则报错，查询正确继续执行
-    	if (empty($login)) {
+    	if (empty($user)) {
             Log::record('账号或密码错误！','error');
     		$this->error('账号或密码错误！');
     	}
@@ -78,20 +79,20 @@ class Login extends Controller
         $userModel->where($where)->setField('lastTime', time());
 
     	session('account', $account);
-        session('user_id', $login['user_id']);
-        session('lastTime',$login['lastTime']);
-        session('count', $login['count']+1);
+        session('user_id', $user['user_id']);
+        session('lastTime',$user['lastTime']);
+        session('count', $user['count']+1);
 
-    	//4.2判断登录角色，账号长度为7是教师，为12是学生
-    	if (strlen($account) == 7) {
-    		$this->success('教师登录成功','/teacher/index/index');
-    	}
-    	else if (strlen($account) == 12) {
-    		$this->success('学生登录成功','/student/index/index');
-    	}
-        else {
-            $this->redirect('index/index/login');
+    	//4.2判断登录角色，permission大于10是教师，为1是学生
+        $permission = $user['permission'];
+
+        if ($permission / 10 >= 1) {
+            $this->success('教师登录成功','/teacher/index/index');
         }
+        else {
+            $this->success('学生登录成功','/student/index/index');
+        }
+
     }
 
     //退出登录

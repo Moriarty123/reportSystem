@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1554540536;s:36:"../app/index/view/common/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1555433648;s:36:"../app/index/view/common/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,48 +48,42 @@
     <!-- 头部结束-->
 
 
-    <!-- 主体开始 -->
-    <div class="loginContainer">
-        <div class="loginDiv">
-
-            <form class="loginForm" action="/index/login/login" method="post">
-                <div class="sectionDiv">
-                    <label class="sectionLabel">账号：</label>
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="text" name="account" class="form-control sectionInput">
-                    <?php else: ?>
-                    <input type="text" name="account" class="form-control sectionInput" value="<?php echo \think\Session::get('reaccount'); ?>">
-                    <?php endif; ?>
-
+    <!-- main -->
+    <div class="w3layouts-main" style="margin-top: 0px;"> 
+        <div class="bg-layer">
+            <h1 style="margin-top: 0px;">登录系统</h1>
+            <div class="header-main">
+                <div class="main-icon">
+                    <span class="fa fa-eercast"></span>
                 </div>
-                <br>
-                <div class="sectionDiv">
-                    <label class="sectionLabel">密码：</label>
-
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="password" name="password" class="form-control sectionInput">
-                    <?php else: ?>
-                    <input type="password" name="password" class="form-control sectionInput" value="<?php echo \think\Session::get('repassword'); ?>">
-                    <?php endif; ?>
+                <div class="header-left-bottom">
+                    <form action="/index/login/login" method="post">
+                        <div class="icon1">
+                            <span class="fa fa-user"></span>
+                            <input type="text" name="account" placeholder="账号" required="" value="<?php echo \think\Session::get('reaccount'); ?>"/>
+                        </div>
+                        <div class="icon1">
+                            <span class="fa fa-lock"></span>
+                            <input type="password" name="password" placeholder="密码" required="" value="<?php echo \think\Session::get('repassword'); ?>"/>
+                        </div>
+                        <div class="login-check">
+                           <label class="checkbox">
+                            <?php if(\think\Session::get('isRemember') == 'false'): ?>
+                            <input type="checkbox" name="rememberMe">
+                            <?php else: ?>
+                            <input type="checkbox" name="rememberMe" checked="true">
+                            <?php endif; ?>
+                            <i> </i>记住我</label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn">登录</button>
+                        </div>
+                    </form> 
                 </div>
-                <div style="clear: both;"></div>
-                <div class="sectionCheckBoxDiv">
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="checkbox" name="rememberMe">
-                    <?php else: ?>
-                    <input type="checkbox" name="rememberMe" checked="true">
-                    <?php endif; ?>
-
-                    <label style="font-size: 16px;">记住我</label>
-                </div>
-
-                <div class="ButtonDiv sectionSubmitDiv">
-                    <input type="submit" name="" class="Button">
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    <!-- 主体结束 -->
+    </div>  
+    <!-- //main -->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>

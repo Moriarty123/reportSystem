@@ -61,6 +61,7 @@ class Login extends Controller
 
 		//3.2查询账号是否存在
 		$password = md5($password);
+        $password = md5($password);
         $isAdmin = "permission >= 100";
 		$where = "account = '$account' and password = '$password'";
 		$login = $userModel	->where($where)

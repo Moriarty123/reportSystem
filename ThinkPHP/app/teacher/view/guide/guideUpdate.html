@@ -123,7 +123,7 @@
                     upBtnText: '上传', 
                     upLinkUrl:"upload.php",
                     upLinkExt:"zip,rar,txt",
-                    upImgUrl:"/teacher/common/upload",
+                    upImgUrl:"http://reportsystem/upload.aspx",
                     upImgExt:"jpg,jpeg,gif,png",
                     upFlashUrl:"upload.php",
                     upFlashExt:"swf",
@@ -137,15 +137,20 @@
         // console.log("{$txtContent}");
 
         var scpMgr = new CaptureManager();
-        scpMgr.Config["PostUrl"] = "/teacher/common/upload";
+        scpMgr.Config["PostUrl"] = "http://reportsystem/upload.php";
         scpMgr.event.postComplete = function (url) {
-            var img = '<img src="' + url + "?t=" + new Date().getTime()+ '"/>';
+            // url = str_replace("../../", "./", url);
+            // alert(url);
+            url = url.substring(1)
+            // alert(url);
+            var img = '<img src="' + url + '"/>';
             editor.appendHTML(img);
         };
         scpMgr.loadAuto();
 
         
 </script>
+
 
 
 

@@ -1,18 +1,18 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1555433678;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>计算机学院实验报告在线撰写系统</title>
-    <link rel="shortcut icon" href="/static/images/school.ico" />
+    <link rel="shortcut icon" href="__IMG__/school.ico" />
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/index/login.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/detail.css" />
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
+    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
@@ -30,7 +30,7 @@
 <!-- 头部 -->
 <div class="head">
     <div class="headL">
-        <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
+        <img class="headLogo" src="__IMG__/school.png" style="width: 100px; float: left;"/>
         <div class="titleDiv">
             <p class="title">计算机学院实验报告在线撰写系统</p>
         </div>
@@ -54,45 +54,42 @@
 <!-- 头部结束 -->
     <!-- 头部结束-->
 
-    <!-- 主体开始 -->
-    <div class="loginContainer">
-        <div class="loginDiv">
-            <h2 style="margin: 0 auto; position: absolute; left: 180px; top:0px;">管理员登录</h2>
-            <form class="loginForm" action="/admin/login/login" method="post">
-                <div class="sectionDiv">
-                    <label class="sectionLabel">账号：</label>
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="text" name="account" class="form-control sectionInput">
-                    <?php else: ?>
-                    <input type="text" name="account" class="form-control sectionInput" value="<?php echo \think\Session::get('reaccount'); ?>">
-                    <?php endif; ?>
+    <!-- main -->
+    <div class="w3layouts-main" style="margin-top: 0px;"> 
+        <div class="bg-layer">
+            <h1 style="margin-top: 0px;">登录系统</h1>
+            <div class="header-main">
+                <div class="main-icon">
+                    <span class="fa fa-eercast"></span>
                 </div>
-                <br>
-                <div class="sectionDiv">
-                    <label class="sectionLabel">密码：</label>
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="password" name="password" class="form-control sectionInput">
-                    <?php else: ?>
-                    <input type="password" name="password" class="form-control sectionInput" value="<?php echo \think\Session::get('repassword'); ?>">
-                    <?php endif; ?>
+                <div class="header-left-bottom">
+                    <form action="/admin/login/login" method="post">
+                        <div class="icon1">
+                            <span class="fa fa-user"></span>
+                            <input type="text" name="account" placeholder="账号" required="" value="<?php echo \think\Session::get('reaccount'); ?>"/>
+                        </div>
+                        <div class="icon1">
+                            <span class="fa fa-lock"></span>
+                            <input type="password" name="password" placeholder="密码" required="" value="<?php echo \think\Session::get('repassword'); ?>"/>
+                        </div>
+                        <div class="login-check">
+                           <label class="checkbox">
+                            <?php if(\think\Session::get('isRemember') == 'false'): ?>
+                            <input type="checkbox" name="rememberMe">
+                            <?php else: ?>
+                            <input type="checkbox" name="rememberMe" checked="true">
+                            <?php endif; ?>
+                            <i> </i>记住我</label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn">登录</button>
+                        </div>
+                    </form> 
                 </div>
-                <div style="clear: both;"></div>
-                <div class="sectionCheckBoxDiv">
-                    <?php if(\think\Session::get('isRemember') == 'false'): ?>
-                    <input type="checkbox" name="rememberMe">
-                    <?php else: ?>
-                    <input type="checkbox" name="rememberMe" checked="true">
-                    <?php endif; ?>
-                    <label style="font-size: 16px;">记住我</label>
-                </div>
-
-                <div class="ButtonDiv sectionSubmitDiv">
-                    <input type="submit" name="" class="Button">
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    <!-- 主体结束 -->
+    </div>  
+    <!-- //main -->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
