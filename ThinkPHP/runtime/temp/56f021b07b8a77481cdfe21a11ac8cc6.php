@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\report\reportEditor.html";i:1555605038;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,8 +82,12 @@
 			</div>
 
 		</div>
-		
-		<div style="float: left; widows: 620px">
+		<div style="float: left; width: 620px;">
+
+            <textarea id="txtContent" name="txtContent" id="txtContent" rows="12" cols="80" style="width:620px;height:665px;" ></textarea>
+                <div id="scpPanel"></div>
+        </div>
+		<div style="float: right; widows: 620px">
 			<form action="/student/report/reportEditor" method="post">
                 <input type="hidden" name="courseNo" value="<?php echo $guide['courseNo']; ?>">
                 <input type="hidden" name="taskNo" value="<?php echo $guide['taskNo']; ?>">
@@ -96,11 +100,7 @@
 				<input type="submit" name="submit" class="Button" style="float: left;margin: 5px; " value="提交">
 			</form>
 		</div>
-		<div style="float: right; width: 620px;">
-
-			<textarea id="txtContent" name="txtContent" id="txtContent" rows="12" cols="80" style="width:620px;height:665px;" ></textarea>
-				<div id="scpPanel"></div>
-		</div>
+		
 	</div>
 	<!--课程列表结束-->
 

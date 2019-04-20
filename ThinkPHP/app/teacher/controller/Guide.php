@@ -440,7 +440,7 @@ class Guide extends Common
             $html = "";
         }
 
-        //3.PDF显示
+        //3.PDF导出
         exportPdf($html);
     }
 

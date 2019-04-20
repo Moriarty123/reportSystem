@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1555777014;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -190,28 +190,36 @@
                 <h2>撰写实验指导</h2>
             </div>
             <form action="/teacher/guide/guideEditor" method="post" onsubmit="return checkSubmit()">
-                <div>
-                    <input type="text" name="guideName" id="guideName" style="width: 100%; margin-bottom: 5px; padding-left: 5px;" placeholder="实验指导名称"></div>
-                <div>
-                    <select name="courseNo" id="courseNo" style="width: 100%; margin-bottom: 5px;">
+                <div style="margin-top: 10px; margin-left: 20px;">
+                    <label>实验课程：</label>
+                    <select name="courseNo" id="courseNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验课程--</option>
                         <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
                         <option value="<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></option>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
                     </select>
                 </div>
-                <div>
-                    <select name="taskNo" id="taskNo" style="width: 100%; margin-bottom: 5px;">
+                <div style="margin-top: 10px; margin-left: 20px;">
+                    <label>实验任务：</label>
+                    <select name="taskNo" id="taskNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验任务--</option>
                         <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
                         <option value="<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></option>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
                     </select>
                 </div>
+                <div style="margin-top: 10px; margin-left: 20px;">
+                    <label>实验指导：</label>
+                    <input type="text" name="guideName" id="guideName" style="width: 25%; margin-bottom: 5px; padding-left: 5px;" placeholder="实验指导名称">
+                </div>
+                
+                <div style="margin-top: 10px; margin-left: 20px;">
+                    <span>请在下面填写实验指导内容：</span></div>
                 <textarea id="txtContent" name="txtContent" id="txtContent" rows="12" cols="80" style="width:1065px;height:665px;" ></textarea>
                 <div id="scpPanel"></div>
+                
                 <div class="ButtonDiv" style="width: 300px; margin-bottom: 20px; ">
-                    <input type="submit" name="" value="保存" class="Button" style="float: left; margin: 5px;">
+                    <!-- <input type="submit" name="" value="保存" class="Button" style="float: left; margin: 5px;"> -->
                     <input type="submit" name="" value="提交" class="Button" style="float: left; margin: 5px;">
                 </div>
             </form>
@@ -239,44 +247,44 @@
 
 <!-- 编辑器配置 -->
 <script type="text/javascript" language="javascript">
-        var editor;
-        $(pageInit);
+    var editor;
+    $(pageInit);
 
-        function test() {
+    function test() {
         alert("sda");
-        }
-        function pageInit()
+    }
+    function pageInit()
+    {
+        var allPlugin = {
+            scp: { c: 'scp', t: '截屏', e: function () { scpMgr.Capture(); } }
+        };
+        editor = $('#txtContent').xheditor(
         {
-            var allPlugin = {
-                scp: { c: 'scp', t: '截屏', e: function () { scpMgr.Capture(); } }
-            };
-            editor = $('#txtContent').xheditor(
-                {
-                    plugins: allPlugin, 
-                    tools: 'Cut,Copy,Paste,Pastetext,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Flash,Media,Emot,Table,scp,Source,Fullscreen,About',
-                    upBtnText: '上传', 
-                    upLinkUrl:"upload.php",
-                    upLinkExt:"zip,rar,txt",
-                    upImgUrl:"http://reportsystem/upload.aspx",
-                    upImgExt:"jpg,jpeg,gif,png",
-                    upFlashUrl:"upload.php",
-                    upFlashExt:"swf",
-                    upMediaUrl:"upload.php",
-                    upMediaExt:"avi",
-                    html5Upload:false,
-                    onUpload:'text'
-                    });  
-                function show(msg) {
-                    alert(msg)
-                }
+            plugins: allPlugin, 
+            tools: 'Cut,Copy,Paste,Pastetext,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Flash,Media,Emot,Table,scp,Source,Fullscreen,About',
+            upBtnText: '上传', 
+            upLinkUrl:"upload.php",
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"http://reportsystem/upload.php",
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"upload.php",
+            upFlashExt:"swf",
+            upMediaUrl:"upload.php",
+            upMediaExt:"avi",
+            html5Upload:false,
+            onUpload:'text'
+        });  
+        function show(msg) {
+            alert(msg)
         }
+    }
 
 
-        
 
-        var scpMgr = new CaptureManager();
-        scpMgr.Config["PostUrl"] = "http://reportsystem/upload.php";
-        scpMgr.event.postComplete = function (url) {
+
+    var scpMgr = new CaptureManager();
+    scpMgr.Config["PostUrl"] = "http://reportsystem/upload.php";
+    scpMgr.event.postComplete = function (url) {
             // url = str_replace("../../", "./", url);
             // alert(url);
             url = url.substring(1)
@@ -285,8 +293,8 @@
             editor.appendHTML(img);
         };
         scpMgr.loadAuto();
-</script>
+    </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-</script>
+    </script>
