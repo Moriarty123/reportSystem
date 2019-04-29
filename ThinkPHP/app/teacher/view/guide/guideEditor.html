@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="__CSS__/teacher/guide.css" />
     <link rel="stylesheet" href="__CSS__/teacher/display.css" />
     <link rel="stylesheet" href="__CSS__/teacher/guideAdd.css" />
+    <link rel="stylesheet" href="__CSS__/teacher/add.css" />
 
 
     <link type="text/css" rel="Stylesheet" href="__XHEDITOR__/scp/scp.css"/>
@@ -59,7 +60,7 @@
             </div>
             <form action="/teacher/guide/guideEditor" method="post" onsubmit="return checkSubmit()">
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验课程：</label>
+                    <label><span class="xing">*</span>实验课程：</label>
                     <select name="courseNo" id="courseNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验课程--</option>
                         {volist name="courseList" id="course"}
@@ -68,7 +69,7 @@
                     </select>
                 </div>
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验任务：</label>
+                    <label><span class="xing">*</span>实验任务：</label>
                     <select name="taskNo" id="taskNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验任务--</option>
                         {volist name="taskList" id="task"}
@@ -77,7 +78,7 @@
                     </select>
                 </div>
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验指导：</label>
+                    <label><span class="xing">*</span>实验指导：</label>
                     <input type="text" name="guideName" id="guideName" style="width: 25%; margin-bottom: 5px; padding-left: 5px;" placeholder="实验指导名称">
                 </div>
                 

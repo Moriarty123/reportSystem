@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1555777014;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1555779089;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/static/css/teacher/guide.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
     <link rel="stylesheet" href="/static/css/teacher/guideAdd.css" />
+    <link rel="stylesheet" href="/static/css/teacher/add.css" />
 
 
     <link type="text/css" rel="Stylesheet" href="/static/xheditor/scp/scp.css"/>
@@ -191,7 +192,7 @@
             </div>
             <form action="/teacher/guide/guideEditor" method="post" onsubmit="return checkSubmit()">
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验课程：</label>
+                    <label><span class="xing">*</span>实验课程：</label>
                     <select name="courseNo" id="courseNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验课程--</option>
                         <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
@@ -200,7 +201,7 @@
                     </select>
                 </div>
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验任务：</label>
+                    <label><span class="xing">*</span>实验任务：</label>
                     <select name="taskNo" id="taskNo" style="width: 25%; margin-bottom: 5px;">
                         <option value="-1">--请选择实验任务--</option>
                         <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
@@ -209,7 +210,7 @@
                     </select>
                 </div>
                 <div style="margin-top: 10px; margin-left: 20px;">
-                    <label>实验指导：</label>
+                    <label><span class="xing">*</span>实验指导：</label>
                     <input type="text" name="guideName" id="guideName" style="width: 25%; margin-bottom: 5px; padding-left: 5px;" placeholder="实验指导名称">
                 </div>
                 
