@@ -70,4 +70,34 @@ class Role extends Common
 
     }
 
+    //删除系统角色
+    public function roleDelete()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("删除系统角色", "notice");
+
+        //1、获取roleNo
+        $roleNo = input("get.roleNo");
+
+        if ($roleNo == "1" || $roleNo == "2" || $roleNo == "3") {
+            Log::record("基本角色不可删除！", "error");
+            $this->error("基本角色不可删除！", "/admin/role/roleList");
+        }
+
+        //2、从数据库删除
+        $roleModel = new roleModel();
+
+        $role = $roleModel->find($roleNo);
+        if (empty($role)) {
+            Log::record("该角色不存在！", "error");
+            $this->error("该角色不存在！", "/admin/role/roleList");
+        }
+
+        $roleModel->destroy($roleNo);
+
+        //3、后续操作
+        $this->success("删除系统角色成功！", "/admin/role/roleList");
+    }
+
 }

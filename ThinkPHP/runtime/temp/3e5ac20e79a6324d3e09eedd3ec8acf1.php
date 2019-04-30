@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1556647571;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1556649382;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,7 +203,7 @@
 						<td><?php echo $vo['roleName']; ?></td>
 						<td><?php echo $vo['roleDescribe']; ?></td>
 						<td><?php echo $vo['permission']; ?></td>
-						<td><button class="btn btn-danger btn-xs" >删除</button></td>
+						<td><a href="/admin/role/roleDelete?roleNo=<?php echo $vo['roleNo']; ?>" style="color: #FFF;" class="btn btn-danger btn-xs" onclick="return del();">删除</a></td>
 					</tr>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</table>
@@ -262,9 +262,9 @@
 						<textarea id="roleDescribe" name="roleDescribe" style="width: 100%; margin-top: 10px; margin-bottom: 10px; height: 70px; border-radius: 5px;" value="">	
 						</textarea>
 					</div>
-					<div style="height: auto;">
+					<div>
 						选择角色权限：
-						<div style="width: 100%; margin-top: 10px; margin-bottom: 10px;text-align: center;" class="btn-group-xs" id="functions">
+						<div style="width: 100%; margin-top: 10px; margin-bottom: 10px;text-align: center;" class="btn-group-xs" id="functions" style="height: auto;">
 							<?php if(is_array($functionsList) || $functionsList instanceof \think\Collection || $functionsList instanceof \think\Paginator): $i = 0; $__LIST__ = $functionsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$function): $mod = ($i % 2 );++$i;?>
 							<a class="btn btn-primary" style="float: left; border: 1px solid #000; " onclick="$(this).toggleClass('btn-success');" value="<?php echo $function['functionNo']; ?>"><?php echo $function['functionName']; ?></a>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -273,7 +273,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<input type="submit" name="" class="btn btn-success" value="提交更改">
+					<input style="margin-top: 10px;" type="submit" name="" class="btn btn-success" value="提交更改">
 				</div>
 				</form>
 			</div><!-- /.modal-content -->
@@ -305,16 +305,6 @@
 
 <script type="text/javascript">
 function del(){
-	return window.confirm("你确认要删除该实验课程吗？");
+	return window.confirm("你确认要删除该系统角色吗？");
 }
-function checkdel(){
-	return window.confirm("你确认要删除选中的实验课程吗？");
-}
-
-function changeButton() {
-	$(this).click(function(){
-        $(this).toggleClass("btn-success");
-    });
-}
-
 </script>
