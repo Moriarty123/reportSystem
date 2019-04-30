@@ -6,6 +6,7 @@ use think\Log;
 use app\common\controller\Common;
 
 use app\admin\model\Role as roleModel;
+use app\admin\model\Functions as functionsModel;
 
 class Role extends Common
 {
@@ -21,47 +22,52 @@ class Role extends Common
         //0.测试
         // dump($_POST);
         Log::record("权限列表", "notice");
-
-        $roleModel = new roleModel();
-
-        $roleList = $roleModel->select();
         
-        $this->assign('roleList', $roleList);
+        //获取角色列表
+        $roleModel = new roleModel();
+        $roleList = $roleModel->select();
+        $this->assign("roleList", $roleList);
+
+        //获取方法列表
+        $functionsModel = new functionsModel();
+        $functionsList = $functionsModel->select();
+        $this->assign("functionsList", $functionsList);
 
         return $this->fetch("roleList");
     }
 
-    // //用户权限设置
-    // public function roleUser()
-    // {
-    //     //0.测试
-    //     // dump($_POSt);
-    //     Log::record("用户权限设置", "notice");
+    //添加系统角色
+    public function roleAdd()
+    {
+        //0.测试
+        // dump($_POST);
+        Log::record("添加系统角色", "notice");
 
-    //     //1、获取功能列表
-    //     $roleName = input("post.roleName");
-    //     $functionNos = input("post.function");
+        //1、获取数据
+        $roleName = input("post.roleName");
+        $roleDescribe = input("post.roleDescribe");
+        $permission = input("post.permission");
+        $functions = input("post.functions");
 
-    //     //2、保存系统角色
-    //     $data = [
-    //         'roleName' = $roleName
-    //     ];
+        $data = [
+            "roleName" => $roleName,
+            "roleDescribe" => $roleDescribe,
+            "permission" => $permission,
+            "functions" => $functions
+        ];
+        // dump($data);
 
-    //     $roleModel = new roleModel();
-    //     $role = $roleModel->save($data);
+        //2、添加到数据库
+        $roleModel = new roleModel();
+        $role = $roleModel->save($data);
+        if (empty($role)) {
+            Log::record("添加系统角色失败！", "error");
+            $this->error("添加系统角色失败！", "/admin/role/roleList");
+        }
 
-    //     //3、保存系统角色所有功能
-    //     $functionModel = new functionModel();
-    //     $roleNo = $role->roleNo;
-    //     foreach ($functionNos as $key => $no) {
-    //         //获取函数
-    //         $function = $functionModel->get($no);
-    //         $data = [
-    //             'roleNo' => $roleNo,
-    //             'function' => $function->functionPath;
-    //         ];
-    //        $functionModel->save($no);
-    //     }
+        //3、后续操作
+        $this->success("添加系统角色成功！", "/admin/role/roleList");
 
-    // }
+    }
+
 }
