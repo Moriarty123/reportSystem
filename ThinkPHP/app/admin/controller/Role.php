@@ -8,6 +8,8 @@ use app\common\controller\Common;
 use app\admin\model\Role as roleModel;
 use app\admin\model\Functions as functionsModel;
 use app\admin\model\User as userModel;
+use app\admin\model\Teacher as teacherModel;
+use app\admin\model\Student as studentModel;
 
 class Role extends Common
 {
@@ -121,13 +123,43 @@ class Role extends Common
         ];
         $user = $userModel->update($data, $userWhere);
 
+        if (strlen($account) == 7) {
+            $teacherModel = new teacherModel();
+            $teacherWhere = "teacherNo = {$account}";
+            $teacherData = [
+                "teacherNo" => $account,
+                "roleNo" => $roleNo
+            ];
+            $teacher = $teacherModel->update($teacherData, $teacherWhere);
+        }
+        else {
+            $studentModel = new studentModel();
+            $studentWhere = "studentNo = {$account}";
+            $studentData = [
+                "studentNo" => $account,
+                "roleNo" => $roleNo
+            ];
+            $student = $studentModel->update($studentData, $studentWhere);
+        }
+
         if (empty($user)) {
             Log::record("设置用户权限失败！", "error");
-            $this->error("设置用户权限失败！", "/admin/teacher/teacherList");
+            if (strlen($account) == 7) {
+                $this->error("设置用户权限失败！", "/admin/teacher/teacherList");
+            }
+            else {
+                $this->error("设置用户权限失败！", "/admin/student/studentList");
+            }
+            
         }
 
         //3.后续操作
-        $this->success("设置用户权限成功！", "/admin/teacher/teacherList");
+        if (strlen($account) == 7) {
+                $this->success("设置用户权限成功！", "/admin/teacher/teacherList");
+            }
+            else {
+                $this->success("设置用户权限成功！", "/admin/student/studentList");
+            }
     }
 
 }

@@ -78,6 +78,9 @@
 						<a href="/admin/student/studentDelete?studentNo={$vo.studentNo}" style='margin-left: 5px;'>
 							<i class="fa fa-trash-alt" title="删除"></i>
 						</a>
+						<a href="/admin/student/studentRole?studentNo={$vo.studentNo}" style='margin-left: 5px;float: left;'>
+							<i class="fa fa-user-tag" title="设置权限"></i>
+						</a>
 					</td>
 				</tr>
 				{/volist}
