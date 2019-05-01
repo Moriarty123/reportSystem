@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554455681;s:35:"../app/common/view/html/header.html";i:1554120095;s:34:"../app/admin/view/common/menu.html";i:1554306177;s:35:"../app/common/view/html/footer.html";i:1554052431;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1556697190;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,6 +103,12 @@
 				<a class="cks" href="/admin/student/studentList">学生列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a class="cks" href="/admin/student/addPage">添加学生</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--学生管理结束-->
 		<!--课程管理开始-->
@@ -118,19 +124,25 @@
 				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
+			<dd>
+				<img class="coin11" src="/static/images/coin111.png" />
+				<img class="coin22" src="/static/images/coin222.png" />
+				<a href="/admin/course/addPage" class="cks">添加课程信息</a>
+				<img class="icon5" src="/static/images/coin21.png" />
+			</dd>
 		</dl>
 		<!--课程管理结束-->
 		<!--专业班级开始-->
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-reply a"></i>
-					专业班级
+					学院专业
 				<i class="fas fa-angle-down b"></i>
 			</dt>
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/major/majorList" class="cks">专业列表</a>
+				<a href="/admin/institute/index" class="cks">学院专业</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>
@@ -185,7 +197,7 @@
 					<th style="width: 150px;">电子邮箱</th>
 					<th style="width: 150px;">联系电话</th>
 					<th style="width: 100px;">权限</th>
-					<th style="width: 100px;">操作</th>
+					<th style="width: 120px;">操作</th>
 				</tr>
 				<?php if(is_array($teacherList) || $teacherList instanceof \think\Collection || $teacherList instanceof \think\Paginator): $i = 0; $__LIST__ = $teacherList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
@@ -199,14 +211,17 @@
 					<td><?php echo $vo['phoneNum']; ?></td>
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
-						<a href="/admin/teacher/detailPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 10px;float: left;'>
+						<a href="/admin/teacher/detailPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
+						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
-						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;' onclick="return  del();">
+						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;' onclick="return  del();">
 							<i class="fa fa-trash-alt" title="删除"></i>
+						</a>
+						<a href="/admin/teacher/teacherRole?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
+							<i class="fa fa-user-tag" title="设置权限"></i>
 						</a>
 					</td>
 				</tr>

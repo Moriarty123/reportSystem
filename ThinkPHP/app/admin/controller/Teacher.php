@@ -7,6 +7,8 @@ use think\Log;
 use app\common\controller\Common;
 
 use app\admin\model\Teacher as teacherModel;
+use app\admin\model\Role as roleModel;
+use app\admin\model\Functions as functionsModel;
 
 class Teacher extends Common
 {
@@ -290,5 +292,27 @@ class Teacher extends Common
 
         //3.后续操作
         return $this->fetch("teacherDetail");
+    }
+
+    //设置教师权限页面
+    public function teacherRole() {
+        //0.测试
+        // dump($_GET);
+        Log::record("设置教师权限页面", "notice");
+        
+        $teacherNo = input("get.teacherNo");
+        $this->assign("account", $teacherNo);
+
+        //获取角色列表
+        $roleModel = new roleModel();
+        $roleList = $roleModel->select();
+        $this->assign("roleList", $roleList);
+
+        //获取方法列表
+        $functionsModel = new functionsModel();
+        $functionsList = $functionsModel->select();
+        $this->assign("functionsList", $functionsList);
+
+        return $this->fetch("teacherRole");
     }
 }

@@ -11,6 +11,8 @@ use app\admin\model\Institute as instituteModel;
 use app\admin\model\Grade as gradeModel;
 use app\admin\model\Major as majorModel;
 use app\admin\model\Classes as classesModel;
+use app\admin\model\Role as roleModel;
+use app\admin\model\Functions as functionsModel;
 
 class Student extends Common
 {
@@ -371,5 +373,27 @@ class Student extends Common
 
         //4.后续操作
         $this->success("添加学生信息成功！", "/admin/student/studentList");
+    }
+
+    //设置学生权限页面
+    public function studentRole() {
+        //0.测试
+        // dump($_GET);
+        Log::record("设置学生权限页面", "notice");
+        
+        $studentNo = input("get.studentNo");
+        $this->assign("account", $studentNo);
+
+        //获取角色列表
+        $roleModel = new roleModel();
+        $roleList = $roleModel->select();
+        $this->assign("roleList", $roleList);
+
+        //获取方法列表
+        $functionsModel = new functionsModel();
+        $functionsList = $functionsModel->select();
+        $this->assign("functionsList", $functionsList);
+
+        return $this->fetch("studentRole");
     }
 }

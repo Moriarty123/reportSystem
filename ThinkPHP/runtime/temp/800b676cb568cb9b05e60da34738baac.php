@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1555779203;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -167,14 +167,9 @@
     <div id="MainForm">
         <div class="form_boxA">
             <div class="a">
-                <h2>添加实验任务</h2>
+                <h2>发布实验任务</h2>
             </div>
             <form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>任务名称：</label>
-                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
-                </div>
-
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>所属课程：</label>
                     <select name="courseNo" id="courseNo" class="add_input">
@@ -184,7 +179,10 @@
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </select>
                 </div>
-
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>任务名称：</label>
+                    <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
+                </div>
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>开始时间：</label>
                     <input type="datetime-local" id="startTime" name="startTime" class="add_input"  />

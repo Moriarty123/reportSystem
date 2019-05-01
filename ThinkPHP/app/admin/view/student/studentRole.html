@@ -42,11 +42,11 @@
 			<div class="a">
 				<h2>角色列表</h2>
 				
-				<div style="width: 100px; float: right; margin-right: 50px;">
+<!-- 				<div style="width: 100px; float: right; margin-right: 50px;">
 					<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 					<i class="fas fa-plus"></i>&nbsp;添加系统角色
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div>
 				<table>
@@ -63,7 +63,7 @@
 						<td>{$vo.roleName}</td>
 						<td>{$vo.roleDescribe}</td>
 						<td>{$vo.permission}</td>
-						<td><a href="/admin/role/roleDelete?roleNo={$vo.roleNo}" style="color: #FFF;" class="btn btn-danger btn-xs" onclick="return del();">删除</a></td>
+						<td><a href="/admin/role/roleSet?roleNo={$vo.roleNo}&account={$account}" style="color: #FFF;" class="btn btn-primary btn-xs">选择</a></td>
 					</tr>
 					{/volist}
 				</table>
@@ -134,29 +134,3 @@
 
 </body>
 </html>
-
-<!-- 筛选框开始-->
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#termFilter").click(function(){
-  			$("#termFilterDiv").slideToggle();
-		});
-
-		$("#operateSelect").change(function() {
-			var value = $("#operateSelect").val();
-
-			if (value == 2) {
-				$(window).attr('location','/teacher/excel/courseExcel');
-			}
-			
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
-
-<script type="text/javascript">
-function del(){
-	return window.confirm("你确认要删除该系统角色吗？");
-}
-</script>

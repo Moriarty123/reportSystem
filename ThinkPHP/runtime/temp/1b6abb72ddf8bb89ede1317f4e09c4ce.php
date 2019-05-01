@@ -1,10 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:86:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherDetail.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherRole.html";i:1556693489;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>计算机学院实验报告在线撰写系统</title>
     <link rel="shortcut icon" href="/static/images/school.ico" />
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
@@ -12,15 +16,17 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/teacher/updatePwd.js"></script>
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+    <script type="text/javascript" src="/static/js/admin/roleAdd.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/user.css" />
-    <link rel="stylesheet" href="/static/css/teacher/add.css" />
+    <link rel="stylesheet" href="/static/css/common/display.css">
+
+
 </head>
 <body>
     <!-- 头部开始-->
@@ -170,75 +176,41 @@
 </div>
     <!-- 左边菜单结束-->
 
-	<!--main开始-->
+	<!--课程列表开始-->
 	<div id="MainForm">
 		<div class="form_boxA">
 			<div class="a">
-				<h2><strong>教师信息</strong></h2>
+				<h2>角色列表</h2>
+				
+				<div style="width: 100px; float: right; margin-right: 50px;">
+					<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+					<i class="fas fa-plus"></i>&nbsp;添加系统角色
+					</button>
+				</div>
 			</div>
-            <div style="position: relative; left: 0px; top: 0px;">
-			<form action="/admin/teacher/teacherEdit" method="post" class="add_form" onsubmit="" style="margin-left: 220px;">
-				<input type="hidden" name="teacherNo" value="<?php echo $teacher['teacherNo']; ?>" />
-                <div class="add_list">
-                    <label class="add_label">职工号：</label>
-                    <input type="text" name="teacherNo" class="add_input" value="<?php echo $teacher['teacherNo']; ?>" disabled="disabled" />
-                </div>
-				<div class="add_list">
-                    <label class="add_label">姓名：</label>
-                    <input type="text" name="teacherName" class="add_input" value="<?php echo $teacher['teacherName']; ?>" disabled="disabled"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">职称：</label>
-                    <input type="text" name="title" class="add_input" value="<?php echo $teacher['title']; ?>" disabled="disabled"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">学位：</label>
-                    <input type="text" name="degree" class="add_input" value="<?php echo $teacher['degree']; ?>" disabled="disabled"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">邮件：</label>
-                    <input type="text" name="email" class="add_input" value="<?php echo $teacher['email']; ?>" disabled="disabled"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">手机：</label>
-                    <input type="text" name="phoneNum" class="add_input" value="<?php echo $teacher['phoneNum']; ?>" disabled="disabled"/>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">性别：</label>
-                    <input type="text" name="sex" class="add_input" value="<?php echo $teacher['sex']; ?>" disabled="disabled">
-                </div>
-<!--                 <div class="add_list">
-                    <label class="add_label">性别：</label>
-                    <select style="width: 270px;" name="sex">
-                        <?php if($teacher['sex'] == '男'): ?>
-                            <option value="男" selected="selected">男</option>   
-                            <option value="女">女</option> 
-                        <?php else: ?>
-                            <option value="男">男</option>   
-                            <option value="女" selected="selected">女</option> 
-                        <?php endif; ?>
-                    </select>
-                </div> -->
-                <!-- <div class="add_list">
-                    <label class="add_label">头像：</label>
-                    <input type="file" name="file" onchange="uploadsimage(this);" >
-                </div> -->
-                <div style="position: absolute; left: 720px; top: 50px; width: 150px;height: 150px;" id="imgBox">
-                    <?php if($teacher['headImg'] == ''): ?>
-                    <img src="/uploads/default/headImg.jpg" style="width: 100%;border-radius: 50%;" >
-                    <?php else: ?>
-                    <img src="<?php echo $teacher['headImg']; ?>" style="width: 100%;" >
-                    <?php endif; ?>
-                </div>
-                <input type="hidden" name="headImg" id="headImg">
-                <a href="/admin/teacher/teacherList" style="float: left; ">
-                    <input type="button" value="返回" class="add_submit" />
-                </a>
-			</form>
-            </div>
+			<div>
+				<table>
+					<tr>
+						<th style="width: 50px; ">角色号</th>
+						<th style="width: 100px; ">角色名称</th>
+						<th style="width: 200px; ">角色描述</th>
+						<th style="width: 100px; ">权限号</th>
+						<th style="width: 50px; ">操作</th>
+					</tr>
+					<?php if(is_array($roleList) || $roleList instanceof \think\Collection || $roleList instanceof \think\Paginator): $i = 0; $__LIST__ = $roleList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+					<tr>
+						<td><?php echo $vo['roleNo']; ?></td>
+						<td><?php echo $vo['roleName']; ?></td>
+						<td><?php echo $vo['roleDescribe']; ?></td>
+						<td><?php echo $vo['permission']; ?></td>
+						<td><a href="/admin/role/roleSet?roleNo=<?php echo $vo['roleNo']; ?>&account=<?php echo $account; ?>" style="color: #FFF;" class="btn btn-primary btn-xs">选择</a></td>
+					</tr>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+				</table>
+			</div>
 		</div>
 	</div>
-	<!--main结束-->
+	<!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -255,43 +227,58 @@
 <!-- 底部结束 -->
     <!-- 底部结束-->
 
+    <!-- 模态框（Modal） -->
+	<div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width:400px;margin:0 auto;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" 
+							aria-hidden="true">×
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						请在下面填写系统角色信息
+					</h4>
+				</div>
+				<form action="/admin/role/roleAdd" method="post" onsubmit="return checkSubmit();">
+				<div class="modal-body">
+					<div>
+					    角色名称：
+					    <input type="text" id="roleName" name="roleName" style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;">
+					</div>
+					<div>
+						权限号：
+						<input type="text" id="permission" name="permission" style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; ">
+					</div>
+					<div>
+						角色基本类型
+						<select style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; ">
+							<option>管理员</option>
+							<option>教师</option>
+							<option>学生</option>
+						</select>
+					</div>
+					<div>
+						角色描述：
+						<textarea id="roleDescribe" name="roleDescribe" style="width: 100%; margin-top: 10px; margin-bottom: 10px; height: 70px; border-radius: 5px;" value="">	
+						</textarea>
+					</div>
+					<div>
+						选择角色权限：
+						<div style="width: 100%; margin-top: 10px; margin-bottom: 10px;text-align: center;" class="btn-group-xs" id="functions" style="height: auto;">
+							<?php if(is_array($functionsList) || $functionsList instanceof \think\Collection || $functionsList instanceof \think\Paginator): $i = 0; $__LIST__ = $functionsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$function): $mod = ($i % 2 );++$i;?>
+							<a class="btn btn-primary" style="float: left; border: 1px solid #000; " onclick="$(this).toggleClass('btn-success');" value="<?php echo $function['functionNo']; ?>"><?php echo $function['functionName']; ?></a>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</div>
+						<input type="text" name="functions" value="" id="functionNos" style="display: none;">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input style="margin-top: 10px;" type="submit" name="" class="btn btn-success" value="提交更改">
+				</div>
+				</form>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 </body>
 </html>
-
-<script type="text/javascript">
-//上传图片
-function uploadsimage(obj) {
-    if ( obj.value == "" ) return;
-
-    var formdata = new FormData();
-
-    formdata.append("image", $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
-    formdata.append("path", 'sale');
-
-    console.log(formdata);
-
-    $.ajax({
-        type : 'post',
-        url : '/teacher/common/upload',
-        data : formdata,
-        cache : false,
-        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
-        contentType : false, // 不设置Content-type请求头
-        success : function(ret){
-            var html = '<img src="'+ret+'" style="width:100%; border-radius: 50%;">';
-
-
-            console.log(html);
-            $('#imgBox').html(html);
-            
-            
-            console.log(ret);
-            // $('#headImg').val(ret);
-            $('#headImg').attr('value', ret);
-        },
-        error : function(){ 
-            alert('图片上传失败');
-        }
-    });
-}
-</script>

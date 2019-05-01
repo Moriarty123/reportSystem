@@ -102,6 +102,7 @@ class Login extends Controller
         session('user_id', null);
         session('lastTime',null);
         session('count', null);
+        session('isAdmin', null);
 
         $this->success('退出登录成功！', '/index/index/index');
     }
