@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1556692648;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -197,7 +197,7 @@
 					<th style="width: 150px;">电子邮箱</th>
 					<th style="width: 150px;">联系电话</th>
 					<th style="width: 100px;">权限</th>
-					<th style="width: 100px;">操作</th>
+					<th style="width: 120px;">操作</th>
 				</tr>
 				<?php if(is_array($teacherList) || $teacherList instanceof \think\Collection || $teacherList instanceof \think\Paginator): $i = 0; $__LIST__ = $teacherList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 				<tr>
@@ -211,14 +211,18 @@
 					<td><?php echo $vo['phoneNum']; ?></td>
 					<td><?php echo $vo['roleNo']; ?></td>
 					<td>
-						<a href="/admin/teacher/detailPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 10px;float: left;'>
+						<a href="/admin/teacher/detailPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;'>
+						<a href="/admin/teacher/editPage?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
-						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 15px;float: left;' onclick="return  del();">
+						<a href="/admin/teacher/teacherDelete?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;' onclick="return  del();">
 							<i class="fa fa-trash-alt" title="删除"></i>
+						</a>
+						
+						<a href="/admin/teacher/teacherRole?teacherNo=<?php echo $vo['teacherNo']; ?>" style='margin-left: 5px;float: left;'>
+							<i class="fa fa-user-tag" title="设置权限"></i>
 						</a>
 					</td>
 				</tr>

@@ -7,6 +7,7 @@ use app\common\controller\Common;
 
 use app\admin\model\Role as roleModel;
 use app\admin\model\Functions as functionsModel;
+use app\admin\model\User as userModel;
 
 class Role extends Common
 {
@@ -98,6 +99,35 @@ class Role extends Common
 
         //3、后续操作
         $this->success("删除系统角色成功！", "/admin/role/roleList");
+    }
+
+    //设置用户权限
+    public function roleSet()
+    {
+        //0.测试
+        // dump($_GET);
+        Log::record("设置用户权限", "notice");
+
+        //1.获取数据
+        $account = input("get.account");
+        $roleNo = input("get.roleNo");
+
+        //2.更新数据库
+        $userModel = new userModel();
+        $userWhere = "account = {$account}";
+        $data = [
+            "account" => $account,
+            "roleNo" => $roleNo
+        ];
+        $user = $userModel->update($data, $userWhere);
+
+        if (empty($user)) {
+            Log::record("设置用户权限失败！", "error");
+            $this->error("设置用户权限失败！", "/admin/teacher/teacherList");
+        }
+
+        //3.后续操作
+        $this->success("设置用户权限成功！", "/admin/teacher/teacherList");
     }
 
 }

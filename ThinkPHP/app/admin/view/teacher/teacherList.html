@@ -57,7 +57,7 @@
 					<th style="width: 150px;">电子邮箱</th>
 					<th style="width: 150px;">联系电话</th>
 					<th style="width: 100px;">权限</th>
-					<th style="width: 100px;">操作</th>
+					<th style="width: 120px;">操作</th>
 				</tr>
 				{volist name="teacherList" id="vo"}
 				<tr>
@@ -71,14 +71,18 @@
 					<td>{$vo.phoneNum}</td>
 					<td>{$vo.roleNo}</td>
 					<td>
-						<a href="/admin/teacher/detailPage?teacherNo={$vo.teacherNo}" style='margin-left: 10px;float: left;'>
+						<a href="/admin/teacher/detailPage?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;'>
 							<i class="fa fa-eye" title="查看"></i>
 						</a>
-						<a href="/admin/teacher/editPage?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;'>
+						<a href="/admin/teacher/editPage?teacherNo={$vo.teacherNo}" style='margin-left: 5px;float: left;'>
 							<i class="fa fa-edit" title="编辑"></i>
 						</a>
-						<a href="/admin/teacher/teacherDelete?teacherNo={$vo.teacherNo}" style='margin-left: 15px;float: left;' onclick="return  del();">
+						<a href="/admin/teacher/teacherDelete?teacherNo={$vo.teacherNo}" style='margin-left: 5px;float: left;' onclick="return  del();">
 							<i class="fa fa-trash-alt" title="删除"></i>
+						</a>
+						
+						<a href="/admin/teacher/teacherRole?teacherNo={$vo.teacherNo}" style='margin-left: 5px;float: left;'>
+							<i class="fa fa-user-tag" title="设置权限"></i>
 						</a>
 					</td>
 				</tr>
