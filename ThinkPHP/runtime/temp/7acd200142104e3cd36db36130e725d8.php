@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1555433648;s:36:"../app/index/view/common/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/index\view\index\login.html";i:1555433648;s:36:"../app/index/view/common/header.html";i:1556704628;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,12 @@
 <body>
 
     <!-- 头部开始-->
-    <!-- 头部 -->
+    <style type="text/css">
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<!-- 头部 -->
 <div class="head">
     <div class="headL">
         <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>

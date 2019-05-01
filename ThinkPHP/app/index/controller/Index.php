@@ -33,6 +33,11 @@ class Index extends Controller
     public function toIndex()
     {
         $account = session('account');
+        $isAdmin = session('isAdmin');
+        dump($isAdmin);
+        if ($isAdmin == true) {
+            $this->redirect('/admin/index/index');
+        }
 
         if (!empty($account)) {
             if (strlen($account) == 7) {

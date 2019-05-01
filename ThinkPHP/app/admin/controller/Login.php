@@ -84,6 +84,7 @@ class Login extends Controller
         session('user_id', $login['user_id']);
         session('lastTime',$login['lastTime']);
         session('count', $login['count']+1);
+        session('isAdmin', true);
 
         //4.2登录角色
         $this->success('管理员登录成功','/admin/index/index');
@@ -96,6 +97,7 @@ class Login extends Controller
         session('user_id', null);
         session('lastTime',null);
         session('count', null);
+        session('isAdmin', null);
 
         $this->success('退出登录成功！', '/index/index/index');
     }
