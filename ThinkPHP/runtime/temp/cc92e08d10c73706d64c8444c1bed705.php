@@ -1,27 +1,27 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1556811061;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\index\index.html";i:1556816169;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>计算机学院实验报告在线撰写系统</title>
-    <link rel="shortcut icon" href="/static/images/school.ico" />
-    
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>计算机学院实验报告在线撰写系统</title>
+	<link rel="shortcut icon" href="/static/images/school.ico" />
+	
+	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
+	<link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
-    <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/index/public.js"></script>
+	<script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/index/public.js"></script>
 
-    <link rel="stylesheet" href="/static/css/index/index.css" />
-    <link rel="stylesheet" href="/static/css/common/common.css" />
-    <link rel="stylesheet" href="/static/css/common/footer.css" />
-    <link rel="stylesheet" href="/static/css/common/menu.css">
-    <link rel="stylesheet" href="/static/css/common/detail.css">
+	<link rel="stylesheet" href="/static/css/index/index.css" />
+	<link rel="stylesheet" href="/static/css/common/common.css" />
+	<link rel="stylesheet" href="/static/css/common/footer.css" />
+	<link rel="stylesheet" href="/static/css/common/menu.css">
+	<link rel="stylesheet" href="/static/css/common/detail.css">
 </head>
 <body>
-    <!-- 头部开始-->
-    <style type="text/css">
+	<!-- 头部开始-->
+	<style type="text/css">
     
     a:hover {
         text-decoration: none;
@@ -54,41 +54,42 @@
     </div>
 </div>
 <!-- 头部结束 -->
-    <!-- 头部结束-->
+	<!-- 头部结束-->
 
-    <!-- 左边菜单开始-->
-    <div class="container" style="margin-top:20px; height: 500px;">
+	<!-- 左边菜单开始-->
+	<div class="container" style="margin-top:20px; height: 500px;">
 
-    <div class="leftsidebar_box" id="leftMenu">
-        <dl class="system_log">
-            <dt>
-                <i class="fas fa-home a"></i>
-                    <a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
-            </dt>
-        </dl>
-        <!--实验任务开始-->
-        <?php if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if(isset($vo['children'])): ?>
-        <dl class="system_log" id="menu1">
-            <dt>
-                <?php echo $vo['html']; ?>
-                    <span class="menu-text"><?php echo $vo['menuName']; ?></span>
-                <i class="fas fa-angle-down   b"></i>
-            </dt>
-            
-	            <?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection || $vo['children'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$no): $mod = ($i % 2 );++$i;?>   
-	            <dd>
-	                <img class="coin11" src="/static/images/coin111.png" />
-	                <img class="coin22" src="/static/images/coin222.png" />
-	                <a class="cks" href="<?php echo $no['href']; ?>"><?php echo $no['menuName']; ?></a>
-	                <img class="icon5" src="/static/images/coin21.png" />
-	            </dd>
-	            <?php endforeach; endif; else: echo "" ;endif; ?>
-            
-        </dl><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-    </div>
-</div>
+		<div class="leftsidebar_box" id="leftMenu">
+			<dl class="system_log">
+				<dt>
+					<i class="fas fa-home a"></i>
+					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+				</dt>
+			</dl>
+			<!--实验任务开始-->
+			<?php if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if(isset($vo['children'])): ?>
+			<dl class="system_log" id="menu1">
+				<dt>
+					<?php echo $vo['html']; ?>
+					<span class="menu-text"><?php echo $vo['menuName']; ?></span>
+					<i class="fas fa-angle-down   b"></i>
+				</dt>
+				
+				<?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection || $vo['children'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$no): $mod = ($i % 2 );++$i;?>   
+				<dd>
+					<img class="coin11" src="/static/images/coin111.png" />
+					<img class="coin22" src="/static/images/coin222.png" />
+					<a class="cks" href="<?php echo $no['href']; ?>"><?php echo $no['menuName']; ?></a>
+					<img class="icon5" src="/static/images/coin21.png" />
+				</dd>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+				
+			</dl>
+			<?php endif; endforeach; endif; else: echo "" ;endif; ?>
+		</div>
+	</div>
 
-    <!-- 左边菜单结束-->
+	<!-- 左边菜单结束-->
 
 	<!--main开始-->
 	<div style="position: absolute; left: 250px; top: 92px; height
@@ -131,14 +132,14 @@
 			</td>
 		</tr>
 	</table>
-	</div>
-	<!--main结束-->
+</div>
+<!--main结束-->
 
-    <!-- 清除浮动 -->
-    <div style="clear: both;"></div>
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
 
-    <!-- 底部开始-->
-    <!-- 底部开始 -->
+<!-- 底部开始-->
+<!-- 底部开始 -->
 <footer>
     <div class="footer-body">
         <div class="footer">
@@ -147,7 +148,7 @@
     </div>
 </footer>
 <!-- 底部结束 -->
-    <!-- 底部结束-->
+<!-- 底部结束-->
 
 </body>
 </html>

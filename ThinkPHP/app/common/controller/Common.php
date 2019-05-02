@@ -11,6 +11,19 @@ use app\teacher\model\Menu as menuModel;
 
 class Common extends Controller
 {
+    protected $beforeActionList = [
+        'getMenus'
+    ];
+
+    //前置方法，默认对所有方法使用
+    public function getMenus() {
+        //获取用户权限方法
+        //0.1获取左侧菜单
+        
+        $menus = $this->getMenu();
+        $this->assign("menus", $menus);
+    }
+
 	//index
 	public function index()
 	{

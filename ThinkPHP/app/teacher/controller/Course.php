@@ -57,10 +57,6 @@ class Course extends Common
     public function courseMenu() 
     {
         //0.测试
-        //0.1获取左侧菜单
-        $common = new Common();
-        $menus = $common->getMenu();
-        $this->assign("menus", $menus);
         // dump($_POST);
         Log::record('显示课程列表','notice');
 
@@ -87,10 +83,6 @@ class Course extends Common
     public function showTask()
     {
         //0.测试
-        //0.1获取左侧菜单
-        $common = new Common();
-        $menus = $common->getMenu();
-        $this->assign("menus", $menus);
         // dump($_POST);
         Log::record('显示课程任务列表','notice');
 
@@ -118,10 +110,6 @@ class Course extends Common
     public function courseSearch()
     {
         //0.测试
-        //0.1获取左侧菜单
-        $common = new Common();
-        $menus = $common->getMenu();
-        $this->assign("menus", $menus);
         // dump($_POST); 
         Log::record('模糊查找课程','notice');
 
@@ -168,10 +156,6 @@ class Course extends Common
     public function studentList()
     {
         //0.测试
-        //0.1获取左侧菜单
-        $common = new Common();
-        $menus = $common->getMenu();
-        $this->assign("menus", $menus);
         // dump($_GET);
         Log::record('查看该课程学生');
 
@@ -214,10 +198,6 @@ class Course extends Common
     public function courseDelete()
     {
         //0.测试
-        //0.1获取左侧菜单
-        $common = new Common();
-        $menus = $common->getMenu();
-        $this->assign("menus", $menus);
         // dump($_POST);
         Log::record("实验课程删除");
 
