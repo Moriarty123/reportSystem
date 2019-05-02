@@ -37,6 +37,7 @@ class Guide extends Common
         ->where($where)
         ->alias('a')
         ->join('course b', 'a.courseNo = b.courseNo')
+        ->field("a.*, b.courseName")
         ->paginate(15);
 
         $guideNumber = $teacherModel    ->guide()

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:79:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskAdd.html";i:1555779203;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556777273;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\task\taskEdit.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556777273;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -188,30 +188,36 @@
     <div id="MainForm">
         <div class="form_boxA">
             <div class="a">
-                <h2>发布实验任务</h2>
+                <h2>修改实验任务</h2>
             </div>
-            <form action="/teacher/task/taskAdd" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>所属课程：</label>
-                    <select name="courseNo" id="courseNo" class="add_input">
-                            <option value="null">--请选择实验课程--</option>
-                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                                <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-                        </select>
-                </div>
+            <form action="/teacher/task/taskEdit" method="post" enctype="multipart/form-data" class="add_form" onsubmit="return checkSubmit()">
+                <input type="hidden" name="taskNo" value="<?php echo $task['taskNo']; ?>">
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>任务名称：</label>
                     <input type="text" id="taskName" name="taskName" placeholder="输入实验任务名称" class="add_input" />
                 </div>
+
+                <div class="add_list">
+                    <label class="add_label"><span class="xing">*</span>所属课程：</label>
+                    <select name="courseNo" id="courseNo" class="add_input">
+                            <option value="null">--请选择实验课程--</option>
+                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['courseNo'] == $task['courseNo']): ?>
+                                    <option value="<?php echo $vo['courseNo']; ?>" selected = "selected"><?php echo $vo['courseName']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
+                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                </div>
+                <div><input type="hidden" name="courseNo" value="<?php echo $task['courseNo']; ?>"></div>
+
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>开始时间：</label>
-                    <input type="datetime-local" id="startTime" name="startTime" class="add_input"  />
+                    <input type="datetime-local" id="startTime" name="startTime" class="add_input" value="<?=date('Y-m-d',$task->startTime).'T'.date('H:i:s',$task->startTime)?>" />
                 </div>
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>截止时间：</label>
-                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" />
+                    <input type="datetime-local" id="endTime" name="endTime" class="add_input" value="<?=date('Y-m-d',$task->endTime).'T'.date('H:i:s',$task->endTime)?>" />
                 </div>
 
                 <div class="add_list">
@@ -225,9 +231,11 @@
                     <label class="add_label"><span class="xing">*</span>实验指导：</label>
                     <select name="guideNo" class="add_input" id="guideNo">
                         <option value="null">--请选择实验指导--</option>
-                            <?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                                <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                            <?php if(is_array($guideList) || $guideList instanceof \think\Collection || $guideList instanceof \think\Paginator): $i = 0; $__LIST__ = $guideList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['guideNo'] == $task['guideNo']): ?>
+                                    <option value="<?php echo $vo['guideNo']; ?>" selected = "selected"><?php echo $vo['guideName']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $vo['guideNo']; ?>"><?php echo $vo['guideName']; ?></option>
+                                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
                     </select>
                 </div>
 
@@ -241,9 +249,9 @@
 
                 <div class="add_list">
                     <label class="add_label"><span class="xing">*</span>任务描述：</label>
-                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe"></textarea>
+                    <textarea name="taskDescribe" class="add_textarea" id="taskDescribe"><?php echo $task['taskDescribe']; ?></textarea>
                 </div>
-                <input type="submit" value="发布" class="add_submit" onclick="return publish();" />
+                <input type="submit" value="提交" class="add_submit" />
             </form>
         </div>
     </div>
@@ -275,7 +283,9 @@
             $("#publishedFilterDiv").slideToggle();
         });
 
+        $("#taskName").val('<?php echo $task['taskName']; ?>');
         
+        $("#taskDescribe'").html('<?php echo $task['taskDescribe']; ?>');
     });
 </script>
 <!-- 筛选框结束 -->
@@ -341,11 +351,4 @@ function uploadsimage(obj) {
         }
     });
 }
-</script>
-
-<script type="text/javascript">
-function publish(){
-	return window.confirm("你确认要发布该实验任务吗？");
-}
-
 </script>

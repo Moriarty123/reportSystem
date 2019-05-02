@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/student/view/common/menu.html";i:1554737906;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/student\view\index\index.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/student/view/common/menu.html";i:1556648418;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -143,7 +143,7 @@
 			<dd>
 				<img class="coin11" src="/static/images/coin111.png" />
 				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/student/score/scoreShow" class="cks">实验课程成绩</a>
+				<a href="/student/score/scoreShow" class="cks">课程成绩统计</a>
 				<img class="icon5" src="/static/images/coin21.png" />
 			</dd>
 		</dl>

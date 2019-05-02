@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\course\studentList.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556777273;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,6 +159,27 @@
 		
 	</div>
 </div>
+
+<script type="text/javascript">
+	function onloadFunctions() {
+		$.ajax({
+    	// type : 'post',
+    	url : '/teacher/common/onloadFunctions',
+    	// data : {"data" : "qwe"},
+    	cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            // alert(ret);
+        },
+        error : function(){ 
+        	// alert('图片上传失败');
+        }
+    });
+	}
+
+	onloadFunctions();
+</script>
     <!-- 左边菜单结束-->
 
 	<!--课程列表开始-->
