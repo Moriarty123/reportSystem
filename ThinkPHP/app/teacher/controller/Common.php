@@ -2,6 +2,12 @@
 namespace app\teacher\controller;
 
 use think\Controller;
+use think\Log;
+
+use app\teacher\model\User as userModel;
+use app\teacher\model\Role as roleModel;
+use app\teacher\model\Functions as functionsModel;
+use app\teacher\model\Menu as menuModel;
 
 class Common extends Controller
 {
@@ -44,7 +50,7 @@ class Common extends Controller
             }
         }
         else {
-        echo $file->getError();
+            echo $file->getError();
         }
     }
 
@@ -70,15 +76,51 @@ class Common extends Controller
         }
     }
 
-    //菜单方法列表
-    public function onloadFunctions()
+    //获取左边菜单
+    public function getMenu()
     {
         //0.测试
         // dump($_POST);
         // Log::record("菜单方法列表", "notice");
 
         //1.获取当前账号的权限方法
+        //1.1获取角色
         $account = session("account");
-        
+        $userModel = new userModel();
+        $userWhere = "account = {$account}";
+        $user = $userModel->where($userWhere)->find();
+        $roleNo = $user->roleNo;
+
+        //1.2获取权限方法
+        $roleModel = new roleModel();
+        $roleWhere = "roleNo = {$roleNo}";
+        $role = $roleModel->where($roleWhere)->find();
+        $functions = $role->functions;
+        $functions = substr($functions,0,strlen($functions)-1); 
+
+        //2.获取所有一级菜单
+        $menuModel = new menuModel();
+        $functionMenu = menuModel::all($functions);//获取角色所有方法（二级菜单）
+        $authRule = menuModel::all();//获取所有菜单
+        $menus = array();      
+
+        foreach ($authRule as $key => $value) {
+            $menu = $value->toArray();
+            if ($menu['parentNo'] == 0) {
+                $menus[] = $menu;
+            }     
+        } 
+
+        //3.遍历所有菜单，查找所有二级菜单
+        foreach ($menus as $k=>$v){
+            foreach ($functionMenu as $kk=>$vv){
+                if($v['menuNo']==$vv['parentNo']){
+                    $temp = $vv->toArray();
+                    // dump($temp);
+                    $menus[$k]['children'][] = $temp;
+                }
+            }
+        }
+        return $menus;
     }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideImport.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556799690;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:82:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\score\scoreShow.html";i:1554540536;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556799690;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,22 +12,41 @@
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
-    <script type="text/javascript" src="/static/js/teacher/guideImport.js"></script>
-    <script type="text/javascript" src="/static/js/wangEditor/wangEditor.js"></script>
-    <!-- <script type="text/javascript" src="__WANGEDITOR__/release/wangEditor.js"></script> -->
-    
+    <script type="text/javascript" src="/static/js/common/checkBox.js"></script>
+    <script type="text/javascript" src="/static/js/Echarts/echarts.min.js"></script>
 
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
-    <link rel="stylesheet" href="/static/css/teacher/guide.css" />
+    <link rel="stylesheet" href="/static/css/teacher/course.css" />
     <link rel="stylesheet" href="/static/css/teacher/display.css" />
-    <link rel="stylesheet" href="/static/css/teacher/add.css" />
-
 </head>
 
+<style type="text/css">
+.title-right {
+	width: 100px; float: right; margin-right: 30px;margin-top: 20px;
+}
+
+.selectDiv {
+	height: 80px; position: relative; top: 0px; left: 0px;
+}
+
+.selectDiv .courseSelect {
+	position: absolute; left: 100px; top: 30px;
+}
+
+.selectDiv .taskSelect {
+	position: absolute; left: 350px; top: 30px;
+}
+
+.selectDiv .submit {
+	position: absolute; left: 650px; top: 30px;
+}
+
+
+</style>
 <body>
     <!-- 头部开始-->
     <style type="text/css">
@@ -206,49 +225,46 @@
 </script>
     <!-- 左边菜单结束-->
 
-    <!--课程列表开始-->
-    <div id="MainForm">
-        <div class="form_boxA">
-            <div class="a">
-                <h2>导入实验指导</h2>
-            </div>
-            <div class="guideAddDiv" style="margin:0 auto;">
-                <form action="/teacher/guide/guideImport" enctype="multipart/form-data" method="post" class="add_form" onsubmit="return checkSubmit()">
-                
-                <div class="add_list" style="padding-top: 5px;">
-                    <label class="add_label"><span class="xing">*</span>实验课程：</label>
-                    <select name="courseNo" id="courseNo" style="padding-top: 5px; width: 250px; ">
-                            <option value="-1">--请选择实验课程--</option>
-                            <?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                            <option value="<?php echo $vo['courseNo']; ?>"><?php echo $vo['courseName']; ?></option>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-                        </select>
-                </div>
-                <div class="add_list">
-                    <label class="add_label">实验任务：</label>
-                    <select name="taskNo" id="taskNo" style="padding-top: 5px; width: 250px;">
-                            <option value="-1">--请选择实验任务--</option>
-                            <?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                            <option value="<?php echo $vo['taskNo']; ?>"><?php echo $vo['taskName']; ?></option>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-                        </select>
-                </div>
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>指导名称：</label>
-                    <input type="text" id="guideName" name="guideName" class="add_input"  style="padding-top: 5px; width: 250px;">
-                </div>
-                <div class="add_list">
-                    <label class="add_label"><span class="xing">*</span>实验指导：</label>
-                    <input type="file" name="file" id="file" accept=".pdf" onchange="uploadPdf(this);" style="width: 250px;" multiple>
-                    <input type="hidden" name="filePath" id="filePath">
-                </div>
-                <input type="submit" value="确定" class="add_submit" />
-            </form>
-            </div>
-            
-        </div>
-    </div>
-    <!--课程列表结束-->
+	<!--课程列表开始-->
+	<div id="MainForm">
+		<div class="form_boxA">
+			<div class="a">
+				<h2>学生成绩分布</h2>
+				
+				<div class="title-right">
+					<select onchange="window.location=this.value">
+						<option value="-1">--其他操作--</option>
+						<option>同步数据</option>
+					</select>
+				</div>
+			</div>
+			<div class="selectDiv">
+				<form action="/teacher/score/scoreShow" method="post">
+					<!-- <select class="courseSelect" name="courseNo" id="course">
+						<option value="-1">--请选择实验课程--</option>
+						<?php if(is_array($courseList) || $courseList instanceof \think\Collection || $courseList instanceof \think\Paginator): $i = 0; $__LIST__ = $courseList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$course): $mod = ($i % 2 );++$i;?>
+						<option value="<?php echo $course['courseNo']; ?>"><?php echo $course['courseName']; ?></option>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</select> -->
+					<div id="taskDiv">
+					<select class="taskSelect" name="taskNo" id="task">
+						<option value="-1">--请选择实验任务--</option>
+						<?php if(is_array($taskList) || $taskList instanceof \think\Collection || $taskList instanceof \think\Paginator): $i = 0; $__LIST__ = $taskList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$task): $mod = ($i % 2 );++$i;?>
+						<option value="<?php echo $task['taskNo']; ?>"><?php echo $task['taskName']; ?></option>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</select>
+					</div>
+					<input type="submit" name="submit" value="确定" class="submit">
+				</form>
+			</div>
+
+			<div style="width: 100%; height: 600px; ">
+				<div style="width: 600px; height: 500px; margin:0 auto; " id="chart"></div>
+			</div>
+			 
+		</div>
+	</div>
+	<!--课程列表结束-->
 
     <!-- 清除浮动 -->
     <div style="clear: both;"></div>
@@ -268,36 +284,88 @@
 </body>
 </html>
 
+
+
 <script type="text/javascript">
-//上传pdf
-function uploadPdf(obj) {
-    if ( obj.value == "" ) return;
 
-    var formdata = new FormData();
+        /*基于准备好的dom，初始化echarts实例*/
+        var myChart = echarts.init(document.getElementById('chart'));
 
-    formdata.append("pdf" , $(obj)[0].files[0]);//$(obj)[0].files[0]为文件对象
+        /*指定图表的配置和数据*/
+        var option = {
+            title:{    //主标题
+                text:'学生成绩分布图',
+                textStyle:{    //标题样式
+                    color:'red',
+                    fontWeight:'bold'
+                },
+                padding:[5,10,5,10],    //标题内边距，默认5
+                margin:[5,5,5,5],
+                itemGap:5,    //主副标题纵向间隔，默认10
+                left:'left',    //具体的像素值，百分比，
+                backgroundColor:'#ccc',    //标题背景颜色，默认透明，支持RGB,十六进制数
+                borderWidth:'3',    //边框
+                borderColor:'rgb(98,52,51)',    //边框颜色
+                //图形阴影的模糊大小，下面四个配合使用
+                shadowBlur:'10',
+                shadowColor:'rgba(0,0,0,0.5)',
+                shadowOffsetX:'10',
+                shadowOffsetY:'5'
+            },
+            tooltip:{},    //提示框
+            legend:{    //图例组件，点击图例控制哪些不显示
+                data:['分数'],
+            },
+        
+            xAxis:{
+                type:'category',    //坐标轴类型 类目(默认)，时间，数值
+                // data:["衬衫","羊毛衫","手套","裤子","高跟鞋","袜子"],
+                //数据可以从数据库提取
+                data:["A", "B", "C", "D", "E"],
+                
+                name:'成绩',        //坐标轴名称
+                nameTextStyle:{        //坐标轴名称的文字样式
+                    color:'green',
+                },
+                nameRotate:'10',    //坐标轴名字旋转角度
+                //inverse:true,        //反向坐标轴
+                boundaryGap:true,    //坐标轴两边留白策略
+            
+                axisTick:{
+                    alignWithLabel:true,    //刻度线和标签对其
+                    inside:false,    //刻度是否朝内，默认朝外
+                },
+                position:'bottom',    //x轴的位置
+                
+            },
+            yAxis:{},
 
-    $.ajax({
-        type : 'post',
-        url : '/teacher/common/uploadPdf',
-        data : formdata,
-        cache : false,
-        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
-        contentType : false, // 不设置Content-type请求头
-        success : function(ret){
-            $filePath = "/uploads/"+ret;
-            $filePath = $filePath.replace("\\","/");
+            series:[{
+                name:'人数',
+                type:'bar',
+                // data:[5,20,36,10,10,20]
+                //数据可以从数据库提取
+                data:[<?php echo $count[0]; ?>,<?php echo $count[1]; ?>,<?php echo $count[2]; ?>,<?php echo $count[3]; ?>,<?php echo $count[4]; ?>]
+            }]
+        };
 
-            $("#filePath").val($filePath);
-            // alert($filePath);
-        },
-        error : function(){ 
-            alert('pdf上传失败');
-        }
-    });
-}
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
 </script>
 
 
+<!-- <script type="text/javascript">
+	
+	$(document).ready(function(){
+	  $("#course").change(function(){
+	  	var courseNo = $(this).val();
+	  	alert(courseNo);
+	  	console.log(courseNo);
 
+	    
+
+	    $("#task").html(html);
+	  });
+	});
+</script> -->
 
