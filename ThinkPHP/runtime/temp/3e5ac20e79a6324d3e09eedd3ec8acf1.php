@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1556649382;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\role\roleList.html";i:1556880746;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +10,10 @@
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/js/bootstrap.min.js">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="/static/css/common/menu.css">
     <link rel="stylesheet" href="/static/css/common/detail.css">
     <link rel="stylesheet" href="/static/css/common/display.css">
+    <link rel="stylesheet" href="/static/css/common/add.css">
 
 
 </head>
@@ -66,115 +68,38 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-    
+	<div class="container" style="margin-top:20px; min-height: 500px;">
 
-<div class="container" style="margin-top:20px; height: 500px;">
-	<div class="leftsidebar_box">
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-home a"></i>
+		<div class="leftsidebar_box" id="leftMenu">
+			<dl class="system_log">
+				<dt>
+					<i class="fas fa-home a"></i>
 					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
-			</dt>
-		</dl>
-		<!--教师管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-users  a"></i>
-					教师管理
-				<i class="fas fa-angle-down   b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--教师管理结束-->
-		<!--学生管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					学生管理
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/student/studentList">学生列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/student/addPage">添加学生</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--学生管理结束-->
-		<!--课程管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-comments a"></i>
-					课程管理
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/course/addPage" class="cks">添加课程信息</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--课程管理结束-->
-		<!--专业班级开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-reply a"></i>
-					学院专业
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/institute/index" class="cks">学院专业</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--专业班级结束-->
-		<!--角色权限开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-file-invoice-dollar a"></i>
-					角色权限
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/role/roleList" class="cks">权限列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--角色权限结束-->
-		
+				</dt>
+			</dl>
+			<!--实验任务开始-->
+			<?php if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if(isset($vo['children'])): ?>
+			<dl class="system_log" id="menu1">
+				<dt>
+					<?php echo $vo['html']; ?>
+					<span class="menu-text"><?php echo $vo['menuName']; ?></span>
+					<i class="fas fa-angle-down   b"></i>
+				</dt>
 
-		
+				<?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection || $vo['children'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$no): $mod = ($i % 2 );++$i;?>   
+				<dd>
+					<img class="coin11" src="/static/images/coin111.png" />
+					<img class="coin22" src="/static/images/coin222.png" />
+					<a class="cks" href="<?php echo $no['href']; ?>"><?php echo $no['menuName']; ?></a>
+					<img class="icon5" src="/static/images/coin21.png" />
+				</dd>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+
+			</dl>
+			<?php endif; endforeach; endif; else: echo "" ;endif; ?>
+		</div>
 	</div>
-</div>
-    <!-- 左边菜单结束-->
+	<!-- 左边菜单结束-->
 
 	<!--课程列表开始-->
 	<div id="MainForm">
@@ -203,7 +128,9 @@
 						<td><?php echo $vo['roleName']; ?></td>
 						<td><?php echo $vo['roleDescribe']; ?></td>
 						<td><?php echo $vo['permission']; ?></td>
-						<td><a href="/admin/role/roleDelete?roleNo=<?php echo $vo['roleNo']; ?>" style="color: #FFF;" class="btn btn-danger btn-xs" onclick="return del();">删除</a></td>
+						<td>
+							<a href="/admin/role/roleDelete?roleNo=<?php echo $vo['roleNo']; ?>" style="color: #FFF;" class="btn btn-danger btn-xs" onclick="return del();">删除</a>
+						</td>
 					</tr>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</table>
@@ -242,31 +169,32 @@
 				<form action="/admin/role/roleAdd" method="post" onsubmit="return checkSubmit();">
 				<div class="modal-body">
 					<div>
-					    角色名称：
+					    <span class="xing">*</span>角色名称：
 					    <input type="text" id="roleName" name="roleName" style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;">
 					</div>
 					<div>
-						权限号：
+						<span class="xing">*</span>权限号：
 						<input type="text" id="permission" name="permission" style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; ">
 					</div>
 					<div>
 						角色基本类型
-						<select style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; ">
-							<option>管理员</option>
-							<option>教师</option>
-							<option>学生</option>
+						<select id="userStyle" style="width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; " onchange="changeUser();">
+							<option value="-1">--请选择角色基本类型--</option>
+							<option value="3">管理员</option>
+							<option value="1">教师</option>
+							<option value="2">学生</option>
 						</select>
 					</div>
 					<div>
-						角色描述：
+						<span class="xing">*</span>角色描述：
 						<textarea id="roleDescribe" name="roleDescribe" style="width: 100%; margin-top: 10px; margin-bottom: 10px; height: 70px; border-radius: 5px;" value="">	
 						</textarea>
 					</div>
 					<div>
-						选择角色权限：
+						<span class="xing">*</span>选择角色权限(绿色表示已选)：
 						<div style="width: 100%; margin-top: 10px; margin-bottom: 10px;text-align: center;" class="btn-group-xs" id="functions" style="height: auto;">
 							<?php if(is_array($functionsList) || $functionsList instanceof \think\Collection || $functionsList instanceof \think\Paginator): $i = 0; $__LIST__ = $functionsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$function): $mod = ($i % 2 );++$i;?>
-							<a class="btn btn-primary" style="float: left; border: 1px solid #000; " onclick="$(this).toggleClass('btn-success');" value="<?php echo $function['functionNo']; ?>"><?php echo $function['functionName']; ?></a>
+							<a id="f<?php echo $function['functionNo']; ?>" class="btn btn-primary" style="float: left; border: 1px solid #000; " onclick="$(this).toggleClass('btn-success');" value="<?php echo $function['functionNo']; ?>"><?php echo $function['functionName']; ?></a>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</div>
 						<input type="text" name="functions" value="" id="functionNos" style="display: none;">
@@ -283,28 +211,38 @@
 </body>
 </html>
 
-<!-- 筛选框开始-->
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-  		$("#termFilter").click(function(){
-  			$("#termFilterDiv").slideToggle();
-		});
-
-		$("#operateSelect").change(function() {
-			var value = $("#operateSelect").val();
-
-			if (value == 2) {
-				$(window).attr('location','/teacher/excel/courseExcel');
-			}
-			
-		});
-	});
-</script>
-<!-- 筛选框结束 -->
 
 <script type="text/javascript">
 function del(){
 	return window.confirm("你确认要删除该系统角色吗？");
+}
+
+function changeUser() {
+	var all = ["#f1", "#f2", "#f3", "#f4", "#f5", "#f6", "#f7", "#f8","#f9", "#f10", "#f11", "#f12", "#f13", "#f14","#f15", "#f16", "#f17", "#f18", "#f19", "#f20", "#f21", "#f22"];
+	var admin = ["#f1", "#f2", "#f3", "#f4", "#f5", "#f6", "#f7", "#f8"];
+	var student = ["#f9", "#f10", "#f11", "#f12", "#f13", "#f14"];
+	var teacher = ["#f15", "#f16", "#f17", "#f18", "#f19", "#f20", "#f21", "#f22"];
+
+	//清除所有点击
+	$.each(all, function(key, value) {
+		$(value).removeClass('btn-success');
+	});
+	
+	var userStyle = $("#userStyle").val();
+	if (userStyle == 3) {
+		$.each(admin, function(key, value) {
+			$(value).addClass('btn-success');
+		});
+	}
+	else if (userStyle == 2) {
+		$.each(student, function(key, value) {
+			$(value).addClass('btn-success');
+		});
+	}
+	else if (userStyle == 1) {
+		$.each(teacher, function(key, value) {
+			$(value).addClass('btn-success');
+		});
+	}
 }
 </script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1555519713;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideUpdate.html";i:1555519713;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1556799690;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,7 +84,7 @@
     
 
 <div class="container" style="margin-top:20px; height: 500px;">
-	<div class="leftsidebar_box">
+	<div class="leftsidebar_box" id="leftMenu">
 		<dl class="system_log">
 			<dt>
 				<i class="fas fa-home a"></i>
@@ -92,7 +92,7 @@
 			</dt>
 		</dl>
 		<!--实验任务开始-->
-		<dl class="system_log">
+		<dl class="system_log" id="menu1">
 			<dt>
 				<i class="fas fa-users  a"></i>
 					实验任务
@@ -177,10 +177,48 @@
 		</dl>
 		<!--统计资料结束-->
 		
-
 		
 	</div>
 </div>
+
+<script type="text/javascript">
+	function onloadFunctions() {
+		$.ajax({
+    	// type : 'post',
+    	url : '/teacher/common/onloadFunctions',
+    	// data : {"data" : "qwe"},
+    	cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            // alert(ret);
+            $("#leftMenu").append(ret);
+        },
+        error : function(){ 
+        	// alert('图片上传失败');
+        }
+    });
+	}
+	function onloadMenu() {
+		$.ajax({
+    	// type : 'post',
+    	url : '/teacher/common/onloadMenu',
+    	// data : {"data" : "qwe"},
+    	cache : false,
+        processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+        contentType : false, // 不设置Content-type请求头
+        success : function(ret){
+            // alert(ret);
+            $("#leftMenu").append(ret);
+        },
+        error : function(){ 
+        	// alert('图片上传失败');
+        }
+    });
+	}
+	// onloadMenu()
+	// onloadFunctions();
+</script>
     <!-- 左边菜单结束-->
 
     <!--课程列表开始-->

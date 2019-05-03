@@ -1,0 +1,67 @@
+<!-- <div class="page-sidebar" id="sidebar">
+ 
+    <ul class="nav sidebar-menu">
+    {volist name="menus" id="vo"}     --> 
+        <!--Dashboard-->
+        <!-- <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text">{$vo.menuName}</span>
+                <i class="menu-expand"></i>
+            </a> 
+            {if isset($vo['children'])}
+            <ul class="submenu">
+            {volist name="$vo['children']"  id="no"}           
+                <li>
+                    <a href="{$no.href}">                    
+                                    <span class="menu-text">
+                                    {$no.menuName}                
+                                    </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+                {/volist}
+            </ul>
+            {/if}
+        </li>
+ 
+      {/volist}
+ 
+    </ul> -->
+    <!-- /Sidebar Menu -->
+<!-- </div> -->
+
+
+
+<div class="container" style="margin-top:20px; height: 500px;">
+
+    <div class="leftsidebar_box" id="leftMenu">
+        <dl class="system_log">
+            <dt>
+                <i class="fas fa-home a"></i>
+                    <a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+            </dt>
+        </dl>
+        <!--实验任务开始-->
+        {volist name="menus" id="vo"}
+        <dl class="system_log" id="menu1">
+            <dt>
+                <i class="fas fa-users  a"></i>
+                    <span class="menu-text">{$vo.menuName}</span>
+                <i class="fas fa-angle-down   b"></i>
+            </dt>
+            {if isset($vo['children'])}
+            {volist name="$vo['children']"  id="no"}   
+            <dd>
+                <img class="coin11" src="__IMG__/coin111.png" />
+                <img class="coin22" src="__IMG__/coin222.png" />
+                <a class="cks" href="{$no.href}">课程列表</a>
+                <img class="icon5" src="__IMG__/coin21.png" />
+            </dd>
+            {/volist}
+            {/if}
+        </dl>
+        {/volist}
+    </div>
+</div>
+

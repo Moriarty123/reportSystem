@@ -23,6 +23,10 @@ class Course extends Common
     public function courseList()
     {
         //0.测试
+        //0.1获取左侧菜单
+        $common = new Common();
+        $menus = $common->getMenu();
+        $this->assign("menus", $menus);
         // dump($_POST);
         Log::record('显示课程列表','notice');
 

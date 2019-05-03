@@ -35,7 +35,39 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-    {include file="../app/admin/view/common/menu.html"}
+    <div class="container" style="margin-top:20px; min-height: 500px;">
+
+        <div class="leftsidebar_box" id="leftMenu">
+            <dl class="system_log">
+                <dt>
+                    <i class="fas fa-home a"></i>
+                    <a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+                </dt>
+            </dl>
+            <!--实验任务开始-->
+            {volist name="menus" id="vo"}
+            {if isset($vo['children'])}
+            <dl class="system_log" id="menu1">
+                <dt>
+                    {$vo.html}
+                    <span class="menu-text">{$vo.menuName}</span>
+                    <i class="fas fa-angle-down   b"></i>
+                </dt>
+
+                {volist name="$vo['children']"  id="no"}   
+                <dd>
+                    <img class="coin11" src="__IMG__/coin111.png" />
+                    <img class="coin22" src="__IMG__/coin222.png" />
+                    <a class="cks" href="{$no.href}">{$no.menuName}</a>
+                    <img class="icon5" src="__IMG__/coin21.png" />
+                </dd>
+                {/volist}
+
+            </dl>
+            {/if}
+            {/volist}
+        </div>
+    </div>
     <!-- 左边菜单结束-->
 
     <!--main开始-->

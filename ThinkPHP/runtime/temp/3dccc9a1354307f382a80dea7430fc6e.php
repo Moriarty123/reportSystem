@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseAdd.html";i:1554624298;s:35:"../app/common/view/html/header.html";i:1554540536;s:34:"../app/admin/view/common/menu.html";i:1554626983;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\course\courseAdd.html";i:1556820251;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,114 +60,37 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-    
+    <div class="container" style="margin-top:20px; min-height: 500px;">
 
-<div class="container" style="margin-top:20px; height: 500px;">
-	<div class="leftsidebar_box">
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-home a"></i>
-					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
-			</dt>
-		</dl>
-		<!--教师管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-users  a"></i>
-					教师管理
-				<i class="fas fa-angle-down   b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/teacher/teacherList">教师列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/teacher/addPage">添加教师</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--教师管理结束-->
-		<!--学生管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-book-open a"></i>
-					学生管理
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/student/studentList">学生列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/admin/student/addPage">添加学生</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--学生管理结束-->
-		<!--课程管理开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-comments a"></i>
-					课程管理
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/course/courseList" class="cks">实验课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/course/addPage" class="cks">添加课程信息</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--课程管理结束-->
-		<!--专业班级开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-reply a"></i>
-					学院专业
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/institute/index" class="cks">学院专业</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--专业班级结束-->
-		<!--角色权限开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-file-invoice-dollar a"></i>
-					角色权限
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/admin/role/roleList" class="cks">权限列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--角色权限结束-->
-		
+        <div class="leftsidebar_box" id="leftMenu">
+            <dl class="system_log">
+                <dt>
+                    <i class="fas fa-home a"></i>
+                    <a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+                </dt>
+            </dl>
+            <!--实验任务开始-->
+            <?php if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if(isset($vo['children'])): ?>
+            <dl class="system_log" id="menu1">
+                <dt>
+                    <?php echo $vo['html']; ?>
+                    <span class="menu-text"><?php echo $vo['menuName']; ?></span>
+                    <i class="fas fa-angle-down   b"></i>
+                </dt>
 
-		
-	</div>
-</div>
+                <?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection || $vo['children'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$no): $mod = ($i % 2 );++$i;?>   
+                <dd>
+                    <img class="coin11" src="/static/images/coin111.png" />
+                    <img class="coin22" src="/static/images/coin222.png" />
+                    <a class="cks" href="<?php echo $no['href']; ?>"><?php echo $no['menuName']; ?></a>
+                    <img class="icon5" src="/static/images/coin21.png" />
+                </dd>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+
+            </dl>
+            <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+    </div>
     <!-- 左边菜单结束-->
 
     <!--main开始-->

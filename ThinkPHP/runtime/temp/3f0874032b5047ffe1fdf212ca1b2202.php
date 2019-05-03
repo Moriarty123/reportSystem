@@ -1,18 +1,18 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1555433678;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\login\index.html";i:1556818675;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>计算机学院实验报告在线撰写系统</title>
-    <link rel="shortcut icon" href="__IMG__/school.ico" />
+    <link rel="shortcut icon" href="/static/images/school.ico" />
     <link rel="stylesheet" href="/static/css/index/index.css" />
     <link rel="stylesheet" href="/static/css/index/login.css" />
     <link rel="stylesheet" href="/static/css/common/common.css" />
     <link rel="stylesheet" href="/static/css/common/footer.css" />
     <link rel="stylesheet" href="/static/css/common/detail.css" />
-    <link rel="stylesheet" href="__FONTAWESOME__/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="__FONTAWESOME__/css/all.css" />
-    <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/fontawesome-5.5.0/css/all.css" />
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
 
     <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/index/public.js"></script>
@@ -30,7 +30,7 @@
 <!-- 头部 -->
 <div class="head">
     <div class="headL">
-        <img class="headLogo" src="__IMG__/school.png" style="width: 100px; float: left;"/>
+        <img class="headLogo" src="/static/images/school.png" style="width: 100px; float: left;"/>
         <div class="titleDiv">
             <p class="title">计算机学院实验报告在线撰写系统</p>
         </div>

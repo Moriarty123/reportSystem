@@ -8,7 +8,7 @@ use app\common\controller\Common;
 use app\teacher\model\User as userModel;
 
 class User extends Common
-{
+{    
 	// 首页
     public function index()
     {

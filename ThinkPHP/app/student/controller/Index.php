@@ -5,7 +5,7 @@ use think\Controller;
 
 use app\common\controller\Common;
 
-class Index extends controller
+class Index extends Common
 {
 	// 首页
     public function index()

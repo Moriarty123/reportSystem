@@ -48,7 +48,7 @@ function changeFunctions() {
     		if (success == "btn btn-primary btn-success") {
     			value = $(this).attr('value');
     			values += value;
-    			values += ";";
+    			values += ",";
     		}
     		$('#functionNos').attr('value', values);
     	}

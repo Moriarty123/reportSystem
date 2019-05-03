@@ -97,4 +97,41 @@ class User extends Common
 
     }
 
+    //导入用户
+    public function importUser()
+    {
+        $time = time();
+
+        $userModel = new userModel();
+        $user = $userModel->order("user_id desc")->select();
+
+        foreach ($user as $key => $value) {
+            $v = $value->toArray();
+            $id = $v['account'];
+            $password = "dgut".$id;
+            $password = md5($password);
+            $password = md5($password);
+
+            if (strlen($id) == 7) {
+                $permission = "10";
+                $role = 1;
+            }
+            else {
+                $permission = "1";
+                $role = 2;   
+            }
+            $data = [
+                "lastTime" => $time,
+                "password" => $password,
+                "permission" => $permission,
+                "roleNo" => $role
+            ];
+            // dump($data);
+
+            $where = "account = '{$id}'";
+            // dump($where);
+            $userModel->update($data, $where);
+        }
+    }
+
 }

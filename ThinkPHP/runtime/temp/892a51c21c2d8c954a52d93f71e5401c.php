@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1555779089;s:35:"../app/common/view/html/header.html";i:1554540536;s:36:"../app/teacher/view/common/menu.html";i:1554782303;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/teacher\view\guide\guideEditor.html";i:1556816877;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,106 +82,38 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-    
+    <div class="container" style="margin-top:20px; height: 500px;">
 
-<div class="container" style="margin-top:20px; height: 500px;">
-	<div class="leftsidebar_box">
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-home a"></i>
-					<a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
-			</dt>
-		</dl>
-		<!--实验任务开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-users  a"></i>
-					实验任务
-				<i class="fas fa-angle-down   b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseList">课程列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/course/courseMenu">实验任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a class="cks" href="/teacher/task/addPage">发布任务</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			
-		</dl>
-		<!--实验任务结束-->
-		<!--实验指导开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-comments a"></i>
-					 实验指导
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/guideList" class="cks">实验指导列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/editorPage" class="cks">撰写实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/guide/importPage" class="cks">导入实验指导</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--实验指导结束-->
-		<!--批阅报告开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-reply a"></i>
-					学生报告
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/report/reportList" class="cks">实验报告列表</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--批阅报告结束-->
-		<!--统计资料开始-->
-		<dl class="system_log">
-			<dt>
-				<i class="fas fa-file-invoice-dollar a"></i>
-					统计资料
-				<i class="fas fa-angle-down b"></i>
-			</dt>
-			<dd>
-				<img class="coin11" src="/static/images/coin111.png" />
-				<img class="coin22" src="/static/images/coin222.png" />
-				<a href="/teacher/score/scoreShow" class="cks">学生成绩分布</a>
-				<img class="icon5" src="/static/images/coin21.png" />
-			</dd>
-		</dl>
-		<!--统计资料结束-->
-		
+        <div class="leftsidebar_box" id="leftMenu">
+            <dl class="system_log">
+                <dt>
+                    <i class="fas fa-home a"></i>
+                    <a href="/teacher/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+                </dt>
+            </dl>
+            <!--实验任务开始-->
+            <?php if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if(isset($vo['children'])): ?>
+            <dl class="system_log" id="menu1">
+                <dt>
+                    <?php echo $vo['html']; ?>
+                    <span class="menu-text"><?php echo $vo['menuName']; ?></span>
+                    <i class="fas fa-angle-down   b"></i>
+                </dt>
+                
+                <?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection || $vo['children'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$no): $mod = ($i % 2 );++$i;?>   
+                <dd>
+                    <img class="coin11" src="/static/images/coin111.png" />
+                    <img class="coin22" src="/static/images/coin222.png" />
+                    <a class="cks" href="<?php echo $no['href']; ?>"><?php echo $no['menuName']; ?></a>
+                    <img class="icon5" src="/static/images/coin21.png" />
+                </dd>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+                
+            </dl>
+            <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+    </div>
 
-		
-	</div>
-</div>
     <!-- 左边菜单结束-->
 
     <!--课程列表开始-->
