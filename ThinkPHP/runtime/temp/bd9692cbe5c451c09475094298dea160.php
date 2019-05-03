@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1556817383;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"F:\study\www\reportSystem\ThinkPHP\public/../app/admin\view\teacher\teacherList.html";i:1556820345;s:35:"../app/common/view/html/header.html";i:1554540536;s:35:"../app/common/view/html/footer.html";i:1554540536;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +59,7 @@
     <!-- 头部结束-->
 
     <!-- 左边菜单开始-->
-	<div class="container" style="margin-top:20px; height: 500px;">
+	<div class="container" style="margin-top:20px; min-height: 500px;">
 
 		<div class="leftsidebar_box" id="leftMenu">
 			<dl class="system_log">
